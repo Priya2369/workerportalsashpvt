@@ -1,0 +1,20 @@
+
+.first{
+    border:2px solid black;
+    width: 220px;;
+     height:880px;
+    /* margin-top: 3rem;
+    margin-left: 2rem;
+    text-align:left; */ 
+    margin-bottom: 20px;
+}
+.second{
+    border:1px solid black;
+    /* height: 660px; */
+    margin-top:0rem;
+    /* margin-bottom: 2px; */
+    padding-top:2px;
+    padding-left: 10px;
+    width: 200px;
+    margin-left: 8px;
+}

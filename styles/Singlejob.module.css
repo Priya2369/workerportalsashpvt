@@ -1,0 +1,98 @@
+.heading
+{
+    border:1px solid black ;
+    text-align: center;
+    background-color: burlywood;
+    padding-top: 2rem;
+    font-size: medium;
+    font-family: sans-serif;
+    height: 70px;
+    }
+    .ARAPL{
+        border:1px solid black;
+       
+        width:50%;
+    }
+    .Square{
+        border:1px solid black double;
+        width:50px;
+        height:50px;
+        padding-left:10px;
+        margin-left: -10px;
+        background-color:gainsboro;
+        
+
+    }
+.ARAPL .li{
+        display: inline-block;
+        padding:4px;
+        text-shadow: gray;
+        text-align: left;
+        margin-left: 20px;
+        margin-bottom: -20px;
+        
+
+    }
+    .Description{
+        border: 1px solid black;
+        width: 50%;
+    }
+     .h2{
+         padding-left: 6px;
+         font-family: sans-serif;
+         text-align: center;
+     }
+     .p{
+         padding-left: 10px;
+     }
+     .Overview{
+         border: 1px solid black;
+         width: 350px;
+         float: right;
+         margin-top: 2px;
+         
+         
+     }
+     .Information{
+      /*  border: 1px solid black;
+        width: 30%;*/
+        float: right;
+        margin-top: 300px;
+        margin-right:-255px;
+        
+        
+
+     }
+     .Submit{
+       /* width:200px;
+        padding:7px;
+        font-size: 16px;
+        font-family: sans-serif;
+        font-weight: 600px;
+        border:none;
+        border-radius: 3px;
+        color:blue;
+        cursor:pointer;
+        border:1px solid ;
+        margin-bottom: 20px;*/
+        width: 100px;
+        padding:7px;
+        border:1px solid;
+        cursor: pointer;
+        margin-left:70px;
+        margin-bottom: 7px;
+        background-color:blue;
+        font-family: sans-serif;
+        border-radius: 6px;
+     }
+.sigj{
+    /* width: 700px; */
+    /* display: flex;
+    flex-wrap: wrap;
+    justify-content: center; */
+}   
+    
+
+    
+
+

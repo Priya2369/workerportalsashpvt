@@ -1,0 +1,40 @@
+.heading
+{
+    border:1px solid black ;
+    text-align: center;
+    background-color: rgb(248, 244, 209);
+    padding-top: 5rem;
+    font-size: medium;
+    font-family: sans-serif;
+    height: 200px;
+    }
+.img{
+    
+    display: block; 
+    float:right;
+    width: 400px;
+    height:800px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 10px;
+
+}
+.div{
+    border:2px solid rgba(104, 101, 101, 0.281);
+    width:800px;
+    height:1000px;
+    margin:2px;
+    margin-left: 30px;
+    margin-top: 30px;
+}
+.h2{
+    font-family: sans-serif;
+    padding-left: 8px;
+}
+.p{
+    position: relative;
+    padding-left: 4px;
+    text-align:left;
+    margin-left: 20px;
+    margin-right: 20px;
+}

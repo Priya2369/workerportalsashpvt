@@ -1,0 +1,103 @@
+.tabcontent {
+    /* float: left; */
+    padding: 0px 12px;
+    border: 1px solid #ccc;
+    width:490px;
+    /* border-left: none; */
+    height: 552px;
+    position: relative;
+}
+.abs{
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+    margin-top: 20px;
+  
+  }
+  .main{
+    margin-top: 15px;
+  margin-left: 25px;
+  }
+  .mailp{
+    position: relative;
+  }
+  .mail{
+   position: absolute;
+    right: 39px;
+    bottom: 5px;
+    font-size: 13px;
+  }
+    .long{
+        width: 425px;
+    }
+    .short{
+        width: 200px;
+        
+    }
+    .flexdiv{
+      display: flex;
+    }
+    .leftmargin{
+      margin-left: 25px;
+    }
+   
+    .tacbox {
+      display:block;
+      padding: 10px;
+      margin: 2em;
+      border: 3px solid #ddd;
+      background-color: #eee;
+      max-width: 800px;
+      margin-top: 150px;
+    }
+    .h3{
+      border: 2px solid black;
+      text-align:center ;
+      width: 350px;
+      margin-left: 50px;
+    }
+    .btn {
+      background-color:rgba(0,86,162);
+      color: white;
+      margin-top: 20px;
+      /* padding: 15px; */
+      /* padding: 15px 20px; */
+      border: white;
+      cursor: pointer;
+      width: 100px;
+      height: 40px;
+      opacity: 0.9;
+      float:right;
+      font-size: 15px;
+      margin-bottom: -10px;
+      border-radius: 5px;
+
+
+      
+    }
+    .float{
+      margin-left: 0%;
+    }
+   .ul{
+     margin-right: 30px;
+     margin-left: 0%;
+   }
+   .box{
+     border: 2px solid black;
+     margin-top: 20px;
+   }
+   @media only screen and (min-width: 600px){
+    .tabcontent {border-left: none;}
+    .tabcontent {width: 500px;}
+  }
+  @media only screen and (max-width: 600px){
+    .tabcontent {margin-top: 100px;}
+    .tabcontent {margin-left: -320px;}
+    .tabcontent {width: 354px;}
+    .tabcontent {height: 590px;}
+    .main {margin-left: 0px;}
+    
+    .long {width: 330px;}
+    .h3 {width: 280px;}
+    .h3 {margin-left: 20px;}
+  }

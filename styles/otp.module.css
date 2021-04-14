@@ -1,0 +1,47 @@
+
+
+.container{
+    display: flex;
+    flex-flow: column;
+    height: 50%;
+    align-items: space-around;
+    justify-content: center;
+    border: 1px solid rgb(212, 166, 166);
+    width: 350px;
+    height: 200px;
+    margin: 20px;
+    padding: 20px;
+    
+}
+.userInput{
+    display: flex;
+    justify-content: center;
+    
+}
+
+.inpt{
+    margin: 15px;
+    padding: 10px;
+    width: 35px;
+    height: 35px;
+}
+.butm{
+    width: 300px;
+    height: 30px;
+    margin: 25px auto 0 auto;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    color: white;
+    background-color: rgb(40, 40, 158);
+    
+}
+
+.toper{
+    text-align: center;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: medium;
+    padding: 12px;
+    color:black;
+    
+}

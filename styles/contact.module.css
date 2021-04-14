@@ -1,0 +1,204 @@
+.box{
+	width: 350px;
+    height: 600px;
+	position:relative;
+    /* border: 2px solid #b1aeae; */
+    margin-top: 50px;
+    margin-left: 5px;
+}
+.fullName{
+    /* text-align: center; */
+    border: 2px solid #b1aeae;
+
+    position: relative;
+    line-height: 70px;
+    width: 320px;
+    margin-left: 15px;
+    border-radius: 6px;
+    padding: 0 22px;
+    font-size: 16px;
+    margin-top: 45px;
+    font-weight: bold;
+    /* width: 300px;
+    height: 30px; */
+    /* padding: 50px 100px; */
+	text-transform: capitalize;
+}
+
+
+.form{ 
+    /* margin: 0; */
+margin-left: -160px;
+margin-right: 50px;
+
+}
+.form form { margin-top: 50px;
+    margin-right: 50px;
+}
+.formcontrole{
+    position: relative;
+    left: 175px;
+    top: 20px;
+    line-height: 70px;
+    border-radius: 6px;
+    width: 320px;
+    padding-left: 20px;
+    /* padding: 0 125px; */
+    font-size: 16px;
+    font-weight: bold;
+    border: 2px solid #b1aeae;
+}
+.formcontrolp{
+    position:relative;
+    left: 175px;
+    top: 40px;
+    line-height: 70px;
+    border-radius: 6px;
+    width: 320px;
+    padding-left: 20px;
+    /* padding: 0 125px; */
+    font-size: 16px;
+    /* color: #555; */
+    font-weight: bold;
+    border: 2px solid #b1aeae;
+
+
+}
+/* .formcontrol {    width: 100%;}
+.formcontrol {    background-color: #fff;    border: 1px solid #ccc;    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    color: #555;    display: block;    font-size: 14px;     line-height: 1.42857;    padding: 6px 6px;
+    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;    width: 500px;
+	  text-transform: capitalize;margin: center;} */
+
+
+.from .formgroup {    margin-top: 23px;width: 100px;
+    color: rgb(3, 3, 3);
+    font-size: 18px;
+    font-weight: 700;
+}
+.msg{
+    position: relative;
+    line-height: 100px;
+    width: 320px;
+    margin-left: 15px;
+    border-radius: 6px;
+    padding: 0 22px;
+    font-size: 16px;
+    margin-top: 60px;
+}
+.submit{
+    position: relative;
+    width: 200px; 
+    height: 50px;
+    padding: 0 0px;
+    margin-left:75px ;
+    background: #052283;
+	font-weight: bold;
+	color: white;
+	border: 0 none;
+	border-radius: 10px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.box1{
+    border: 2px solid #b1aeae;
+    
+    margin-top: 50px; 
+    width: 350px;
+    height: 200px;
+    margin-bottom: 420px;
+  }
+.cntinf{
+    margin-top: 10px;
+    text-align: start;
+    margin-left: 10px;
+    font-size: x-large;
+    color: #000000;
+    text-align: center;
+    
+}
+.inf{
+    font-size: x-small;
+    color: #0a0a0a;
+}
+.mapouter
+{
+    position:relative;
+    text-align:right;
+    width:335px;
+    height:300px;
+    margin-top: 40px;
+
+}
+.gmap_canvas {
+    overflow:hidden;
+    background:none!important;
+    width:315px;
+    height:385px;
+}
+.gmap_iframe {
+    width:600px!important;
+    height:400px!important;
+}
+.env{
+    background-color: rgb(47, 100, 47);
+    color: rgb(242, 250, 242);
+    margin-right: 20px;
+}
+.map{
+   background-color: rgb(47, 100, 47);
+   color: rgb(242, 250, 242);
+   margin-right: 20px;
+   margin-bottom: -5px;
+
+} 
+.loc{
+    margin-right: 20px;
+    margin-top: -20px;
+}
+
+/* .mapouter{
+    position:relative;
+    text-align:right;
+    height:200px;
+    width:600px;
+    margin-top: 50px;
+
+}
+.gmap_canvas {
+    overflow:hidden;
+    background:none!important;
+    height:200px;
+    width:400px;
+} */
+/* .h2{
+    text-align:center ;
+    width: 350px;
+    margin-left: 50px;
+} */
+.cont{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* width: 700px; */
+    /* text-align: center; */
+}
+@media only screen and (min-width: 600px) {
+    .box {width: 600px;}
+    .fullName {width: 550px;}
+    .fullName {margin-left: 25px;}
+    .msg {width: 550px;}
+    .msg {margin-left: 25px;}
+    .msg {top: -45px;}
+    .formcontrole {width: 270px;}
+    .formcontrole { left: 185px;}
+    .formcontrole {top: 45px;}
+    .formcontrolp {width: 270px;}
+    .formcontrolp {left: 465px;}
+    .formcontrolp {top: -30px;}
+    .box1 {margin-left: 20px;}
+    .gmap_canvas {width: 350px;}
+    .submit {margin-top: -15px;}
+    .submit {margin-left: 25px;}
+    .box {border: 2px solid #b1aeae;}
+}
