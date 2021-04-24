@@ -137,3 +137,35 @@
 	color:#5c5a5a;
 	font-style: oblique;
 }
+
+/* css for slide */
+.slider {
+	position:relative;
+	height: 50vh;
+	
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+  }
+.leftArrow{
+	position: absolute;
+	top: 50%;
+	left: 300px;
+	
+	color: rgb(16, 67, 207);
+
+	cursor: pointer;
+	user-select: none;
+} 
+
+.rightArrow{
+	position: absolute;
+  top: 50%;
+  right: 300px;
+ 
+  color:rgb(16, 67, 207);;
+ 
+  cursor: pointer;
+  user-select: none;
+}

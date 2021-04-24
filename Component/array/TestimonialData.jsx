@@ -7,6 +7,22 @@ const TestimonialData =[
         Pline2:" resposibility!So start caring for your body and it will care for you.Eat clean itwill",
         Pline3:"care for you and workout hard."
     },
+    {
+        image:"./3.jpg",
+        uName:"Karry",
+        skill:"owner",
+        Pline1:"I am at ane where I just want to be fit and healthy our bodies are our",
+        Pline2:" resposibility!So start caring for your body and it will care for you.Eat clean itwill",
+        Pline3:"care for you and workout hard."
+    },
+    {
+        image:"./3.jpg",
+        uName:"Jarry",
+        skill:"owner",
+        Pline1:"I am at ane where I just want to be fit and healthy our bodies are our",
+        Pline2:" resposibility!So start caring for your body and it will care for you.Eat clean itwill",
+        Pline3:"care for you and workout hard."
+    },
     
 ];
 

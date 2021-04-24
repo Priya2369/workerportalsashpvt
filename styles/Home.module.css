@@ -70,6 +70,13 @@
 	
 	
 }
+.aboutus{
+	justify-content: center;
+	/* display: flex; */
+	margin-bottom: 50px;
+  margin-top: 50px;
+
+}
 @media only screen and (min-width: 600px) {
     .cards {max-width: 700px;}
 	.cards {min-width: 700px}

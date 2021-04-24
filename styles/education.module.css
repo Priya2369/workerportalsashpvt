@@ -3,7 +3,7 @@
     padding: 0px 12px;
     border: 1px solid #ccc;
     width:490px;
-    /* border-left: none; */
+    border-left: none;
     height: 552px;
     position: relative;
 }
@@ -58,7 +58,6 @@
     .btn {
       background-color:rgba(0,86,162);
       color: white;
-      /* padding: 15px 20px; */
       border: white;
       cursor: pointer;
       width: 100px;
@@ -99,6 +98,7 @@
    }
    .short1{
     width: 180px;
+
   }
   @media only screen and (min-width: 600px){
     .tabcontent {border-left: none;}
@@ -112,5 +112,6 @@
     .main {margin-left: 0px;}
     .Education {width: 330px;}
     .long {width: 330px;}
-
+    /* .h3 {width: 280px;}
+    .h3 {margin-left: 20px;} */
   }

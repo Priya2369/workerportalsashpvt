@@ -243,6 +243,7 @@ div .hori-line {
 	background-color: rgb(241, 241, 241);
 }
 .SearchTitle{
+	
 	text-align: center;
 	/* display: flex; */
 	flex-wrap: wrap;
@@ -250,14 +251,39 @@ div .hori-line {
 
 	
 }
+.suggest{
+	text-align: center;
+	flex-wrap: wrap;
+	padding-top: 30;
+	margin-left: 25.2%;
+}
+.suggestLocation{
+	text-align: center;
+	flex-wrap: wrap;
+	padding-top: 30;
+	margin-left: 45%;
+}
+.suggestion{
+	justify-content: center;
+	width: 300px;
+	cursor: pointer;
+	padding: 5px; 
+	border-right: 1px solid black;
+	border-left: 1px solid black;
+	border-bottom: 1px solid black;
+}
+.suggestion:hover{
+	background-color: rgb(0, 51, 192);
+	
+}
 .jobt{
-		width: 250px;
+		width: 300px;
 		height: 40px;
 		font-size: 18px;
 		text-align: center;
 }
 .dropbtn{
-	width: 250px;
+	width: 300px;
 	height: 40px;
 	background-color: rgb(255, 255, 255);
 	color: rgb(0, 0, 0);

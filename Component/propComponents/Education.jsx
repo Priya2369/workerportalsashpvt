@@ -3,25 +3,13 @@ import styles from '../../styles/education.module.css'
 import TextField from './TextField'
 
 
-export default function Education({setStep, userData, setUserData}) {
-
-    const { education,
-        specialization,
-        PassingYear,
-        yearGap,
-        collegeUniversity,
-        CGPAPercentage,
-        } = userData;
-
-
+export default function Education() {
   return (
     <>
     <div id="education" className={styles.tabcontent}>
         <div className={styles.main}>
             <div className={styles.long}>
-                <select required="" name="education" className={styles.Education}
-                value={education}
-                onChange={(e) => setUserData({ ...userData, education: e.target.value })}>
+                <select required="" name="education" className={styles.Education}>
                     {/* <option selected disabled value="Highest Education"></option> */}
                     <option value="edc">Higest EducationEducation</option>
 
@@ -36,38 +24,27 @@ export default function Education({setStep, userData, setUserData}) {
                 {/* <label alt="Higest Education" placeholder="Higest Education"></label> */}
             </div>
              <div className={styles.long}>
-            <TextField  types="text"  placeholder={"Specialization"} 
-            val={specialization}
-            InputEvent={(e)=>setUserData({...userData, specialization:e.target.value})}/>
+            <TextField  types="text"  placeholder={"Specialization"}/>
             </div>
             <div className={styles.flexdiv}>
                 <div className={styles.short}>
-                <TextField  types="date"  placeholder={"Passing Year"}
-                val={PassingYear}
-                InputEvent={(e)=>setUserData({...userData, PassingYear:e.target.value})}/>
+                <TextField  types="date"  placeholder={"Passing Year"}/>
                 </div>
                 <div className={styles.short, styles.leftmargin}>
-                <TextField  types="text"  placeholder={"Year Gap"}
-                val={yearGap}
-                InputEvent={(e)=>setUserData({...userData, yearGap:e.target.value})}/>
+                <TextField  types="text"  placeholder={"Year Gap"}/>
                 </div>
             </div>
             <div class="long">
-            <TextField  types="text"  placeholder={"College/University"} 
-            val={collegeUniversity}
-            InputEvent={(e)=>setUserData({...userData, collegeUniversity:e.target.value})}/>
+            <TextField  types="text"  placeholder={"College/University"}/>
             </div>
             <div class="long">
-            <TextField  types="text"  placeholder={"CGPA/Percentage%"}
-            val={CGPAPercentage}
-            InputEvent={(e)=>setUserData({...userData, CGPAPercentage:e.target.value})}/>
+            <TextField  types="text"  placeholder={"CGPA/Percentage%"}/>
             </div>
             {/* <div className={styles.short, styles.leftmargin}>
             <TextField  types="text"  placeholder={"CGPA/Percentage%"}/>
             </div> */}
             <div className={styles.abs}>
-                <button type="button" onClick={() => setStep(3)} className={styles.btn} >Next</button>
-                <button type="button" onClick={() => setStep(1)} className={styles.btn} >Back</button>
+                <button type="submit" className={styles.btn}>Next</button>
             </div>
         </div>
     </div>

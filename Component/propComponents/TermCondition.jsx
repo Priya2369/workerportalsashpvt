@@ -2,10 +2,7 @@ import Head from 'next/head'
 import styles from '../../styles/termCondition.module.css'
 
 
-export default function TermCondition({setStep, submitData,userData, setUserData}) {
-    const { termCondition,
-     } = userData;
-
+export default function TermCondition() {
     return (
     <>
 
@@ -25,14 +22,12 @@ export default function TermCondition({setStep, submitData,userData, setUserData
                     <li>I accept all the above information given are correct.</li>
                 </ul>
                 <div className={styles.tacbox}>
-                    <input  type="checkbox" value={termCondition}
-                    onClick={(e)=>setUserData({...userData, termCondition:e.target.checked})}/>
-                    <label htmlFor="checkbox" > Agree To All Conditions</label>
+                    <input id="checkbox" type="checkbox" />
+                    <label for="checkbox"> Agree To All Conditions</label>
                 </div>
             </div>
             <div className={styles.abs}>
-                <button type="submit" onClick={submitData} className={styles.btn}>Submit</button>
-                <button type="button" onClick={() => setStep(3)} className={styles.btn} >Back</button>
+                <button type="submit" className={styles.btn}>Submit</button>
             </div>
         </div>
     </div>

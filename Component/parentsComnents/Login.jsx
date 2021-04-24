@@ -17,31 +17,12 @@ export default function Login() {
 
        }
 
-    //    const InputEvent = (e)=>{
-    //     console.log(e.target.value)
-    //     const{name , value} = e.target
-    //     setDetail((preValue)=>{
-    //       return{
-    //         ...preValue,
-    //         [name]:value,
-  
-    //       }
-    //     });
-        
-    // }
 
+       
 
-        // const InputEvent = (e)=>{
-        //     const newdata = {...detail}
-        //     newdata[e.target.vName] = e.target.value
-        //     setDetail(newdata)
-        //     console.log(newdata)
+        // useEffect(()=>{
             
-        // }
-
-        useEffect(()=>{
-            
-        })
+        // })
   return (
     <>
     <div className={styles.mainDiv}>

@@ -10,7 +10,7 @@ const Layout = ({ children }) => {
 			<Header />
 			{/* <Flex/> */}
 			{children}
-			{/* <Footer /> */}
+			<Footer />
 		</>
 	);
 };

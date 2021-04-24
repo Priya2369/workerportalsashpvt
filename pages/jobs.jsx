@@ -1,5 +1,5 @@
 import FilterJob from '../Component/parentsComnents/FilterJob'
-import FeaturedJob from '../Component/parentsComnents/FeaturedJobParents'
+import FeaturedJob from '../Component/parentsComnents/FeaturedJobJobs'
 import styles from '../styles/job.module.css'
 import Flex from '../Component/Flex'
 

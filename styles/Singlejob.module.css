@@ -8,10 +8,11 @@
     font-family: sans-serif;
     height: 70px;
     }
-    .ARAPL{
+.ARAPL{
         border:1px solid black;
-       
-        width:50%;
+        height: 100px;
+        width: 600px;
+        margin-top: 10PX;
     }
     .Square{
         border:1px solid black double;
@@ -35,32 +36,35 @@
     }
     .Description{
         border: 1px solid black;
-        width: 50%;
+        width: 600px;
+        margin-left: -600px;
+        margin-top: 120px;
+        height: 510px;
     }
      .h2{
-         padding-left: 6px;
+         padding-left: 15px;
          font-family: sans-serif;
-         text-align: center;
+         /* text-align: center; */
      }
      .p{
-         padding-left: 10px;
+         padding-left: 20px;
      }
      .Overview{
          border: 1px solid black;
-         width: 350px;
+         width: 300px;
          float: right;
-         margin-top: 2px;
-         
-         
+         margin-top: 10px;
+         height: 310px;
+         /* margin-left: 25px; */
      }
      .Information{
-      /*  border: 1px solid black;
-        width: 30%;*/
+       /* border: 1px solid black; */
+        width: 300PX;
         float: right;
-        margin-top: 300px;
-        margin-right:-255px;
-        
-        
+        margin-top: 330px;
+        /* margin-right:-200px; */
+        margin-left: -300px;
+        margin-bottom: 10px;
 
      }
      .Submit{
@@ -85,14 +89,23 @@
         font-family: sans-serif;
         border-radius: 6px;
      }
-.sigj{
+.sigjob{
     /* width: 700px; */
-    /* display: flex;
+    display: flex;
     flex-wrap: wrap;
-    justify-content: center; */
+    justify-content: center;
 }   
-    
-
-    
+.h3{
+    padding-left: 10px;
+}
+@media only screen and (max-width: 600px){
+    .ARAPL {width: 350px;}
+    .Description {width: 350px;}
+    .Description {margin-left: -350px;}
+    .Description {height: 730px;}
+}
+@media only screen and (min-width: 600px){
+    .Overview {margin-left: 25px;}
+}
 
 

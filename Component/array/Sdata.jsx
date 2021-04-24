@@ -22,6 +22,10 @@ const Sdata =[
     {
         image:"./drafting-compass-solid.svg",
         sName:"Website Development"
+    },
+    {
+        image:"./drafting-compass-solid.svg",
+        sName:"Website Development"
     }
 ];
 

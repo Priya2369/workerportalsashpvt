@@ -7,10 +7,13 @@
     align-items: space-around;
     justify-content: center;
     border: 1px solid rgb(212, 166, 166);
-    width: 350px;
-    height: 200px;
-    margin: 20px;
-    padding: 20px;
+    width: 380px;
+    height: 180px;
+    position:absolute;
+    right: 50%;
+    bottom: 35%;
+    background-color: white;
+    
     
 }
 .userInput{
@@ -20,7 +23,7 @@
 }
 
 .inpt{
-    margin: 15px;
+    margin: 11px;
     padding: 10px;
     width: 35px;
     height: 35px;
