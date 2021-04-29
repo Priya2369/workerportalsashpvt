@@ -17,7 +17,7 @@ const Sdata =[
     },
     {
         image:"./drafting-compass-solid.svg",
-        sName:"UI UX Designer"
+        sName:"Software Engineer"
     },
     {
         image:"./drafting-compass-solid.svg",

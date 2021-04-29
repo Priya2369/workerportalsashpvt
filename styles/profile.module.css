@@ -58,7 +58,7 @@
       margin-left: 50px;
     }
     .btn {
-      background-color:rgba(0,86,162);
+      background-color: rgb(44, 44, 151);
       color: white;
       border-radius: 5px;
 
@@ -125,23 +125,9 @@
     box-sizing: border-box;
     background: #fff;
     border-radius: 4px;
-    font-size: 18px;
+    font-size: 15px;
     color: #898989; 
   }
-  .firstname{
-    position: relative;
-      width: 200px;
-      display: flex;
-      height: 40px;
-  }
-.firstname{
-  position: relative;
-    width: 200px;
-    display: flex;
-    height: 40px;
-}
-    
-  
   @media only screen and (min-width: 600px){
     .tabcontent {width: 500px;}
     .long {width: 450px;}

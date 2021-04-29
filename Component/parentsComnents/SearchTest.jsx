@@ -1,25 +1,33 @@
 import Head from "next/head";
-import { useState,useContext, } from "react";
-import {JobSearchContext} from '../context/JobSearchContext'
+import { useState } from "react";
 import styles from "../../styles/Home.module.css";
 import state from "../array/state";
 import skills from '../array/skill'
 
-// const JobSearchContext = createContext({}); 
-export default function Search() {
-const {setLocation, location, setJobType, jobType} = useContext(JobSearchContext)
-  
-  // const [text, setText] = useState("");
-  // const[job, setJob] = useState("");
+export default function SearchTest() {
+  const [text, setText] = useState({
+      skill:'',
+      location:'',
+  });
+//   const[job, setJob] = useState("");
   const [suggestions, setSuggestions] = useState([]);
   const [suggestion1, setSuggestion1] = useState([])
 
+  function submit(e){
+    e.preventDefault();
+    console.log(text)
+    
 
-  const jobTypeHandler = (jobType)=>{
+}
+
+
+
+
+  const jobTypeHandler = (job)=>{
     let matches = [];
-    if (jobType.length > 0) {
+    if (job.length > 0) {
       matches = skills.filter((skill) => {
-        const regex = new RegExp(`${jobType}`, "gi");
+        const regex = new RegExp(`${job}`, "gi");
         // console.log(area.State);
         const loc = skill.value;
         console.log(typeof loc);
@@ -28,17 +36,17 @@ const {setLocation, location, setJobType, jobType} = useContext(JobSearchContext
     }
     setSuggestion1(matches);
 
-   setJobType(jobType)
-    console.log(location);
+setJob(job)
+    console.log(text);
   }
 
 
 
-  const LocationHandler = (location) => {
+  const LocationHandler = (text) => {
     let matches = [];
-    if (location.length > 0) {
+    if (text.length > 0) {
       matches = state.filter((area) => {
-        const regex = new RegExp(`${location}`, "gi");
+        const regex = new RegExp(`${text}`, "gi");
         // console.log(area.State);
         const loc = area;
         console.log(typeof loc);
@@ -47,31 +55,26 @@ const {setLocation, location, setJobType, jobType} = useContext(JobSearchContext
     }
     setSuggestions(matches);
 
-    setLocation(location);
+    setText(text);
     
   };
 
 
-  const onSuggestHandler = (location)=>{
-      setLocation(location);
+  const onSuggestHandler = (text, job)=>{
+      setText(text);
       setSuggestions([])
 
     //   setJob(job);
     //   setSuggestion1([])
   }
 
-  const onSuggestHandler1 = (jobType)=>{
+  const onSuggestHandler1 = (job)=>{
     
 
-    setJobType(jobType);
+    setJob(job);
     setSuggestion1([])
 }
-function submit(e){
-  e.preventDefault();
-  console.log(location)
-  console.log(jobType)
 
-}
 
 
 
@@ -87,8 +90,8 @@ function submit(e){
             placeholder="Job Title or Keywords"
             autoComplete="off"
             name="search"
-            value={jobType}
-            onChange={(e) => jobTypeHandler(e.target.value)}
+            value={text.skill}
+            onChange={e => setText({location:text.location, skill:e.target.value})}
             // onBlur={()=>{
             //     setTimeout(()=>{
             //         setSuggestion1([])
@@ -105,8 +108,8 @@ function submit(e){
             placeholder="Location"
             autoComplete="off"
             name="search"
-            value={location}
-            onChange={(e) => LocationHandler(e.target.value)}
+            value={text.location}
+            onChange={e => setText({skill:text.skill, location:e.target.value})}
             // onBlur={()=>{
             //     setTimeout(()=>{
             //         setSuggestions([])
@@ -119,7 +122,7 @@ function submit(e){
           
     
 
-          <button className="sbtn" type="submit" onClick={e => submit(e)}>
+          <button className="sbtn" type="submit" onClick={e=>submit(e)}>
             Search
           </button>
           <div  className="suggest">
@@ -148,5 +151,4 @@ function submit(e){
       </div>
     </>
   );
-  
 }

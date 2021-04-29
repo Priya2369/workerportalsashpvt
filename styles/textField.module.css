@@ -1,7 +1,7 @@
  .input {
     box-sizing: border-box;
     width: 100%;
-    height: 40px;
+    height: 45px;
     margin: 0 0 25px;
     padding: 1em;
     border: 1px solid #ccc;
@@ -9,7 +9,7 @@
     resize: none;
     outline: none;
     border-radius: 4px;
-    font-size: 18px;
+    font-size: 15px;
   }
   .input[required]:focus + .label[placeholder]:before,
 .input[required]:valid + .label[placeholder]:before {
