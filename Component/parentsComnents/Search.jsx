@@ -7,10 +7,12 @@ import skills from '../array/skill'
 
 // const JobSearchContext = createContext({}); 
 export default function Search() {
-const {setLocation, location, setJobType, jobType} = useContext(JobSearchContext)
+const {setLocation, location, setJobType, jobType, searchLocation, setSearchLocation,searchJob, setSearchJob} = useContext(JobSearchContext)
   
   // const [text, setText] = useState("");
   // const[job, setJob] = useState("");
+  // const [searchLocation, setSearchLocation] = useState("")
+  // const [searchJob, setSearchJob] = useState("")
   const [suggestions, setSuggestions] = useState([]);
   const [suggestion1, setSuggestion1] = useState([])
 
@@ -65,14 +67,15 @@ const {setLocation, location, setJobType, jobType} = useContext(JobSearchContext
 
     setJobType(jobType);
     setSuggestion1([])
+   
 }
 function submit(e){
   e.preventDefault();
-  console.log(location)
-  console.log(jobType)
+  setSearchLocation(location)
+  setSearchJob(jobType)
 
 }
-
+ 
 
 
   return (

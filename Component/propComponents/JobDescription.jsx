@@ -1,16 +1,25 @@
 import Head from 'next/head'
 import styles from '../../styles/jobDescription.module.css'
 import TextField from './TextField'
-
+import Select from 'react-select'
+import options from '../array/state'
+import state from '../array/option'
+import { useState } from 'react'
 
 export default function JobDescription({setStep,userData, setUserData}) {
-    const { fullName,
+    const [data, setData] = useState([])
+    let { fullName,
         interestArea,
         prefferedLocation,
         sector,
         skill,
         experience,
         } = userData;
+
+        function onchange(value){
+        prefferedLocation = value
+        }
+         
     return (
     <>
      <div id="jobDescription"  className={styles.tabcontent}>
@@ -20,10 +29,15 @@ export default function JobDescription({setStep,userData, setUserData}) {
             val={interestArea}
             InputEvent={(e)=>setUserData({...userData, interestArea:e.target.value})}/>
             </div>
+            
             <div className={styles.long}>
-            <TextField  types="text"  placeholder={"Preffered Location"}
-            val={prefferedLocation}
-            InputEvent={(e)=>setUserData({...userData, prefferedLocation:e.target.value})}/>
+            <Select isMulti={true} options={state} placeholder="preffered Location" 
+              onChange={onchange}></Select>
+             {/* <TextField  types="text"  placeholder={"Preffered Location"}
+             val={prefferedLocation}
+             InputEvent={(e)=>setUserData({...userData, prefferedLocation:e.target.value})}/> */}
+
+
             </div>
             <div className={styles.flexdiv}>
                 <div className={styles.short}>
@@ -49,11 +63,14 @@ export default function JobDescription({setStep,userData, setUserData}) {
                 </div>
             </div> */}
             <div className={styles.abs}>
+            
                 <button type="submit" onClick={() => setStep(4)} className={styles.btn}>Next</button>
                 <button type="button" onClick={() => setStep(2)} className={styles.btn} >Back</button>
             </div>
+           
         </div>
     </div>
+    
     </>
   )
 }

@@ -5,7 +5,7 @@ import BrowseTopCategories from '../Component/propComponents/BrowseTopCategories
 import Sdata from '../Component/propComponents/Sdata';
 import { v4 as uuidv4 } from 'uuid';
 import Search from '../Component/parentsComnents/Search'
-import SearchTest from '../Component/parentsComnents/SearchTest'
+
 import TestimonialSlide from '../Component/parentsComnents/TestimonialSlide'
 import FeaturedJob from '../Component/parentsComnents/FeaturedJobParents'
 import Flex from '../Component/Flex'
@@ -17,6 +17,9 @@ import { JobSearchContext } from '../Component/context/JobSearchContext';
 // }
 
 export default function Home() {
+	const [searchLocation, setSearchLocation] = useState("")
+  const [searchJob, setSearchJob] = useState("")
+	
 	const [catagories ,setCatagories]=useState();
 	const [location, setLocation] = useState("");
   const[jobType, setJobType] = useState("");
@@ -27,7 +30,7 @@ export default function Home() {
 		
 		<Flex line1="Find the"  line2="most exciting" line3="Job here"/>
 		{/* <JobSearchContext.Provider value={{setLocation, setJobType, location, jobType}}><Search/></JobSearchContext.Provider> */}
-		<JobSearchContext.Provider value={{setLocation, setJobType, location, jobType,catagories, setCatagories}}>
+		<JobSearchContext.Provider value={{setLocation, setJobType, location, jobType,catagories, setCatagories, searchLocation, setSearchLocation,searchJob, setSearchJob}}>
 		<Search/>
 			<div className="indexh1">
 				<h1>Browse Top categories</h1>

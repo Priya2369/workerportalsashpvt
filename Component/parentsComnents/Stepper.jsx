@@ -144,7 +144,7 @@ export default function StepperForm() {
 
     }
 
-  const props = { setStep, submitData,userData, setUserData }; 
+  const props = { setStep, submitData,userData, setUserData}; 
 
   
 

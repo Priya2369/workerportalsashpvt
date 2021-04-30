@@ -12,15 +12,14 @@ import "firebase/auth";
 import {getCookies} from '../config/FirebaseToken'
 export default function FeaturedJobParents() {
 
-  const {location, jobType, catagories} = useContext(JobSearchContext);
+  const {location, jobType, catagories, searchLocation,searchJob} = useContext(JobSearchContext);
   // initFirebase();
   // const cookies = new Cookies();
   const [items, setItems] = useState([]);
-function sector(){
-  if(jobType){
-    jobType
-  }else catagories
-}
+  // if(jobType===""||location===""){
+  //   getData();
+  // }
+
 
   useEffect(() => {
     
@@ -28,13 +27,13 @@ function sector(){
       try {
         const coookieValue = getCookies();
         //  console.log(coookieValue)
-        const url1 = `http://localhost:8080/api/v1/business/project/public?sectors=${jobType}&location=${location}&page=0&limit=50&sort=createdAt&sortOrder=asc`
+        const url1 = `http://localhost:8080/api/v1/business/project/public?sectors=${searchJob}&location=${searchLocation}&page=0&limit=50&sort=createdAt&sortOrder=asc`
         const url2 = `http://localhost:8080/api/v1/business/project/public?location=${location}&sectors=${jobType || catagories}&page=0&limit=50&sort=createdAt&sortOrder=asc`
         // const url3 = `http://localhost:8080/api/v1/business/project/public?sectors=agriculture&page=0&limit=50&sort=createdAt&sortOrder=asc`
          const url4 = `http://localhost:8080/api/v1/business/project/public?page=0&limit=50&sort=createdAt&sortOrder=asc`
         
         const res = await axios.get(
-          url2,
+          url1,
           {
             headers: {
               // authorization:cookies.get('access_token') ,
@@ -49,7 +48,7 @@ function sector(){
       }
     }
     getData();
-  },[location, jobType, catagories]);
+  },[searchLocation,searchJob]);
   return (
     <>
       {/* <div>

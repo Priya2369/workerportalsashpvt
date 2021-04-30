@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Select from 'react-select'
 import styles from '../../styles/education.module.css'
 import TextField from './TextField'
 
@@ -19,11 +20,11 @@ export default function Education({ setStep, userData, setUserData }) {
             <div id="education" className={styles.tabcontent}>
                 <div className={styles.main}>
                     <div className={styles.long}>
-                        <select required="" name="education" className={styles.Education}
+                        <select required=""  name="education" ismulti="true" className={styles.Education}
                             value={education}
                             onChange={(e) => setUserData({ ...userData, education: e.target.value })}>
                             {/* <option selected disabled value="Highest Education"></option> */}
-                            <option value="edc">Higest EducationEducation</option>
+                            <option value="edc">Higest Education</option>
 
                             <option value="PG">PG</option>
                             <option value="UG">UG</option>
