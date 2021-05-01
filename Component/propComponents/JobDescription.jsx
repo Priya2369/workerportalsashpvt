@@ -18,6 +18,7 @@ export default function JobDescription({setStep,userData, setUserData}) {
 
         function onchange(value){
         prefferedLocation = value
+            console.log(prefferedLocation);
         }
          
     return (
