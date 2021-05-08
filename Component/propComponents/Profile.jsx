@@ -1,107 +1,141 @@
 import Head from 'next/head'
+import React, { useContext,createContext,useState } from 'react';
 import styles from '../../styles/profile.module.css'
 import TextField from './TextField'
+import stat from '../array/pincodeCityDistrictState'
+import { ErrorSharp } from '@material-ui/icons';
+import validation from '../validation/Validation'
+import { validate } from 'uuid';
 
 
-export default function Profile({ setStep, userData, setUserData }) {
+export default function Profile({ firstNext, formik}) {
 
-    const { fullName,
-        date,
-        phoneNo,
-        gender,
-        age,
-        email,
-        address,
-        pincode,
-        city,
-        state,
-        country, } = userData;
+    // let { firstName,
+    //     lastName,
+    //     date,
+    //     phoneNo,
+    //     gender,
+    //     age,
+    //     email,
+    //     address,
+    //     pincode,
+    //     city,
+    //     state,
+    //     country, } = formik;
+       
+
+        
+
+    //    const code = address.split(',')[0].trim()
+    //    const citi = address.split(',')[1]
+    //    const dist = address.split(',')[2]
+    //    const sta = address.split(',')[3]
+
+    //    const firstNext = (e) =>{
+    //     setError(validation(userData));
+    //     setStep(2)
+    //    }
+
+
 
     return (
         <>
 
             <div className={styles.tabcontent}>
-                <div className={styles.main}>
-                    <div className={styles.long}>
-                        <TextField types="text" placeholder={"Full Name"}
-                            val={fullName}
-                            InputEvent={(e) => setUserData({ ...userData, fullName: e.target.value })}
-
-                        />
-
+                <div className={styles.main}> 
+                   
+                    <div className={styles.flexdiv}>
+                        <div className={styles.short}>
+                            <TextField types="text" placeholder={"First Name"}
+                            required
+                            onBlur={formik.handleBlur}
+                            name="firstName"
+                                val={formik.values.firstName}
+                                InputEvent={formik.handleChange}/>
+                                {formik.touched.firstName && formik.errors.firstName?<p className={styles.error}>{formik.errors.firstName}</p>:null}
+                        </div>
+                        <div className={styles.short, styles.leftmargin}>
+                            <TextField types="text" placeholder={"Last Name"}
+                            onBlur={formik.handleBlur}
+                            name="lastName"
+                                val={formik.values.lastName}
+                                InputEvent={formik.handleChange} />
+                                 {formik.touched.lastName && formik.errors.lastName?<p className={styles.error}>{formik.errors.lastName}</p>:null}
+                        </div>
                     </div>
                     <div className={styles.flexdiv}>
                         <div className={styles.short}>
                             <TextField types="date"
-                                val={date}
-                                InputEvent={(e) => setUserData({ ...userData, date: e.target.value })} />
+                              name="date"
+                                val={formik.values.date}
+                                InputEvent={formik.handleChange} placeholder={"Date of birth"} />
                         </div>
                         <div className={styles.short, styles.leftmargin}>
-                            <TextField types="number" placeholder={"Phone no."} val={phoneNo}
-                                InputEvent={(e) => setUserData({ ...userData, phoneNo: e.target.value })} />
+                            <TextField types="number" placeholder={"Phone no."} 
+                             onBlur={formik.handleBlur}
+                            name="phoneNo"
+                            val={formik.values.phoneNo}
+                                InputEvent={formik.handleChange} />
+                            {formik.touched.phoneNo && formik.errors.phoneNo?<p className={styles.error}>{formik.errors.phoneNo}</p>:null}
                         </div>
                     </div>
                     <div className={styles.flexdiv}>
                         <div className={styles.short}>
-                            <select className={styles.gen} value={gender}
-                                onChange={(e) => setUserData({ ...userData, gender: e.target.value })}>
-                                <option value="Gender">Gender</option>
-                                <option value="Female">Female</option>
-                                <option value="Male">Male</option>
-                                <option value="Other">Other</option>
-
-
-                            </select>
+                            <select className={styles.gen} name="gender" onBlur={formik.handleBlur} value={formik.values.gender}
+                                onChange={formik.handleChange}>
+                                <option value="gender">Gender</option>
+                                <option value="female">female</option>
+                                <option value="male">male</option>
+                                <option value="other">other</option>
+                                </select>
+                        {formik.touched.gender && formik.errors.gender?<p className={styles.error}>{formik.errors.gender}</p>:null}
                         </div>
                         <div className={styles.short, styles.leftmargin}>
                             <TextField types="number" placeholder={"Age"}
-                                val={age}
-                                InputEvent={(e) => setUserData({ ...userData, age: e.target.value })} />
+                            onBlur={formik.handleBlur}
+                            name="age"
+                                val={formik.values.age}
+                                InputEvent={formik.handleChange} />
+                                {formik.touched.age && formik.errors.age?<p className={styles.error}>{formik.errors.age}</p>:null}
                         </div>
                     </div>
 
                     <div className={styles.long}>
                         <TextField types="text" placeholder={"E-mail"}
-                            val={email}
-                            InputEvent={(e) => setUserData({ ...userData, email: e.target.value })} />
+                        name="email"
+                            val={formik.values.email}
+                            onBlur={formik.handleBlur}
+                            InputEvent={formik.handleChange} />
+                            {formik.touched.email && formik.errors.email?<p className={styles.error}>{formik.errors.email}</p>:null}
                     </div>
                     <div className={styles.mailp}>
                         <div className={styles.mail}>
                             <a href="#">Creat New E-mail</a><br />
                         </div>
                     </div>
+                               
                     <div className={styles.long}>
-                        <TextField types="text" placeholder={"Address"}
-                            val={address}
-                            InputEvent={(e) => setUserData({ ...userData, address: e.target.value })} />
+                        <input list="jobs" placeholder="address"
+                        onBlur={formik.handleBlur}
+                        name="address"
+                         value={formik.values.address}
+                        onChange={formik.handleChange} 
+                        // className={styles.Education}
+                        className={styles.long}/>
+                        <datalist id="jobs" >
+                             {stat.map((val, i)=>{
+                                return <option key={i} value={val}></option>
+
+                                })}
+                            
+                          </datalist>
+                          {formik.touched.address && formik.errors.address?<p className={styles.error}>{formik.errors.address}</p>:null}
+                        
                     </div>
 
-                    <div className={styles.flexdiv}>
-                        <div className={styles.short}>
-                            <TextField types="number" placeholder={"Pincode"}
-                                val={pincode}
-                                InputEvent={(e) => setUserData({ ...userData, pincode: e.target.value })} />
-                        </div>
-                        <div className={styles.short, styles.leftmargin}>
-                            <TextField types="text" placeholder={"City"}
-                                val={city}
-                                InputEvent={(e) => setUserData({ ...userData, city: e.target.value })} />
-                        </div>
-                    </div>
-                    <div className={styles.flexdiv}>
-                        <div className={styles.short}>
-                            <TextField types="text" placeholder={"State"}
-                                val={state}
-                                InputEvent={(e) => setUserData({ ...userData, state: e.target.value })} />
-                        </div>
-                        <div className={styles.short, styles.leftmargin}>
-                            <TextField types="text" placeholder={"Country"}
-                                val={country}
-                                InputEvent={(e) => setUserData({ ...userData, country: e.target.value })} />
-                        </div>
-                    </div>
+                  
                     <div className={styles.abs}>
-                        <button type="button" onClick={() => setStep(2)} className={styles.btn} >Next</button>
+                        <button type="button" onClick={() => firstNext()} className={styles.btn} >Next</button>
 
                     </div>
                 </div>

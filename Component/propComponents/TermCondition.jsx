@@ -2,9 +2,9 @@ import Head from 'next/head'
 import styles from '../../styles/termCondition.module.css'
 
 
-export default function TermCondition({setStep, submitData,userData, setUserData}) {
-    const { termCondition,
-     } = userData;
+export default function TermCondition({setStep, submitData,userData, setUserData, formik}) {
+    // const { termCondition,
+    //  } = userData;
 
     return (
     <>
@@ -25,8 +25,10 @@ export default function TermCondition({setStep, submitData,userData, setUserData
                     <li>I accept all the above information given are correct.</li>
                 </ul>
                 <div className={styles.tacbox}>
-                    <input  type="checkbox" value={termCondition}
-                    onClick={(e)=>setUserData({...userData, termCondition:e.target.checked})}/>
+                    <input  type="checkbox" 
+                     name="termCondition"
+                     value={formik.values.termCondition}
+                    onChange={formik.handleChange} />
                     <label htmlFor="checkbox" > Agree To All Conditions</label>
                 </div>
             </div>

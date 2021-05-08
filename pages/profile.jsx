@@ -10,7 +10,7 @@ export default function ProfilePage() {
     <>
     <div><Flex  line1="Find the"  line2="most exciting" line3="job here"/></div>
     <div className={styles.profiles}><Stepper/></div>
-    <Registration/>
+  
     
     
     </>

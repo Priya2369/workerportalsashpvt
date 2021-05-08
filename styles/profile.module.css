@@ -7,6 +7,29 @@
     height: 552px;
     position: relative;
 }
+/* .Education{
+  position: relative;
+  width: 440px;
+  display: flex;
+  height: 40px;
+  border: 1px solid #ccc;
+  padding: 0px 12px;
+  float: left;
+  box-sizing: border-box;
+  background: #fff;
+  border-radius: 4px;
+  font-size: 15px;
+  margin-bottom: 30px;
+  color: #898989; 
+
+ } */
+ .long{
+  height: 40px;
+  width: 440px;
+  margin-top: 20;
+  margin-bottom: 20;
+  
+}
 .abs{
     position: absolute;
     bottom: 25px;
@@ -58,7 +81,7 @@
       margin-left: 50px;
     }
     .btn {
-      background-color:rgba(0,86,162);
+      background-color: rgb(44, 44, 151);
       color: white;
       border-radius: 5px;
 
@@ -114,6 +137,10 @@
     color: #fff;
     padding: 15px 20px 10px 10px;
   } */
+
+  .error{
+    color: red;
+  }
   .gen{
     position: relative;
     width: 200px;
@@ -125,7 +152,7 @@
     box-sizing: border-box;
     background: #fff;
     border-radius: 4px;
-    font-size: 18px;
+    font-size: 15px;
     color: #898989; 
   }
   @media only screen and (min-width: 600px){

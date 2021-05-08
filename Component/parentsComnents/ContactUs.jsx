@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import{ React, useState, useEffect} from 'react';
-import{ faEnvelope} from '@fortawesome/free-regular-svg-icons';
+import{ faEnvelope, } from '@fortawesome/free-regular-svg-icons';
 import{ faMap} from '@fortawesome/free-regular-svg-icons';
 
 
@@ -62,26 +62,26 @@ export default function ContactUs() {
             </div>
             </form>
         </div>
-        <div class={styles.box1}>
+        <div className={styles.box1}>
                 <div className={styles.cntinf}> Contact Info</div> 
-                     <ul class={styles.ul}>< FontAwesomeIcon icon={faMap} className={styles.map}/>
-                        <ul class={styles.loc}>
+                     <ul className={styles.ul}>< FontAwesomeIcon icon={faMap} className={styles.map}/>
+                        <ul className={styles.loc}>
                         plot 1109/19,Siba Nager(S.N-24),<br></br>
                         Badagada Brit Colony,Khordha,<br></br>
                         Bhubaneswar,Odisha-751018(IN)<br></br><br></br>
                         </ul>
 
                      </ul> 
-                    <div class={styles.inf}>
+                    <div className={styles.inf}>
                         
                         <ul ><FontAwesomeIcon icon={faEnvelope} className={styles.env}/>
 
                         info@mosahay.info
                         </ul>
                     </div> 
-            <div class={styles.mapouter}>
-                <div class={styles.gmap_canvas}>
-                    <iframe class={styles.gmap_iframe} frameborder="0" scrolling="no" marginheight="0" marginwidth="0" 
+            <div className={styles.mapouter}>
+                <div className={styles.gmap_canvas}>
+                    <iframe className={styles.gmap_iframe} frameborder="0" scrolling="no" marginheight="0" marginwidth="0" 
                     src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=University of Oxford&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe><a href="https://www.embedmymap.com/">Embed My Map</a>
                 </div>
             </div>

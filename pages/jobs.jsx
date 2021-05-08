@@ -1,9 +1,20 @@
 import FilterJob from '../Component/parentsComnents/FilterJob'
-import FeaturedJob from '../Component/parentsComnents/FeaturedJobParents'
+import { useState, useContext} from 'react';
+import FeaturedJob from '../Component/parentsComnents/FeaturedJobJobs'
 import styles from '../styles/job.module.css'
 import Flex from '../Component/Flex'
+import { JobSearchContext } from '../Component/context/JobSearchContext';
 
 const Jobs = () =>{
+    const [getfilterValue, setFilterValue] = useState({
+        jobCatagories:"",
+        jobType:"",
+        jobLocation:"",
+        experience:"",
+        postedWithin:"",
+        salary:""
+        })
+        let{jobCatagories, jobType, jobLocation, experience, postedWithin, salary} = getfilterValue
     return(
         <>
         <div> 
@@ -11,8 +22,11 @@ const Jobs = () =>{
         </div>
 
         <div className={styles.jobs}>
-        <FilterJob/>
+            <JobSearchContext.Provider value={{getfilterValue, setFilterValue, jobCatagories, jobType, jobLocation, experience, postedWithin, salary}}>
+            <FilterJob/>
         <FeaturedJob/>
+            </JobSearchContext.Provider>
+        
     
         </div>
         </>

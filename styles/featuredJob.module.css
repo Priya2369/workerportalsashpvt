@@ -61,7 +61,8 @@
   .skill {
     display: inline;
     padding: 5px 8px;
-    font-size: 12px;
+    font-size: 15px;
+   
 
   }
   
@@ -92,6 +93,10 @@
     margin-top: 26px;
     margin-bottom: -22px;
   }
+  /* .skill.fix{ 
+    display:inline;
+    position: absolute;
+  } */
   @media only screen and (min-width: 600px) {
     .jobCard {width: 700px;}
   }
