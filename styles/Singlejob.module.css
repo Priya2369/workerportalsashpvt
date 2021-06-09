@@ -1,0 +1,131 @@
+.heading
+{
+    border:1px solid black ;
+    text-align: center;
+    background-color: burlywood;
+    padding-top: 2rem;
+    font-size: medium;
+    font-family: sans-serif;
+    height: 70px;
+    }
+.sigjob{
+    
+    width: 100%;
+    background-color: rgb(228, 222, 215);
+    display: grid;
+    justify-content: center;
+}
+    .ARAPL{
+        box-shadow: 0 0 3px;
+        min-width: 800px;
+        max-width: max-content;
+        height: fit-content;
+        margin-top: 10PX;
+      position: sticky;
+      top: 0;
+        border: 0;
+        border-radius: 4px;
+        background-color: white;
+    }
+    .Square{
+        border:1px solid black double;
+        width:50px;
+        height:50px;
+        padding-left:10px;
+        margin-left: -10px;
+        background-color:gainsboro;
+        
+
+    }
+.ARAPL .li{
+        display: inline-block;
+        padding:4px;
+        text-shadow: gray;
+        
+        margin-left: 20px;
+        margin-bottom: -20px;
+        display: flex;
+        
+
+    }
+    .Overview{
+        box-shadow: 0 0 4px;
+        border-radius: 4px;
+        min-width: 800px;
+        max-width: max-content;
+        height: fit-content;
+        margin-bottom: 9px;
+        justify-items: center;
+       margin-top: -30px;
+        background-color: white;
+        /* margin-left: 25px; */
+    }
+    .Overview h2{
+       margin-left: 40px;
+       word-wrap:break-word;
+    }
+    .Overview p{
+        margin-left: 40px;
+        display: flex;
+        word-wrap:break-word;
+    }
+    .Submit{
+        width: 500px;
+        height: 30px;
+        margin-left: 50px;
+        background-color: blue;
+        color: white;
+        border-radius: 5px;
+
+    }
+    .Description{
+        box-shadow: 0 0 5px;
+        border-radius: 4px;
+        width: 800px;
+        
+        height: fit-content;
+        margin-bottom: -15px;
+        justify-items: center;
+        height: 510px;
+        margin-top: 4px;
+        background-color: white;
+
+    }
+    .Description h2{
+        text-align: center;
+        word-wrap:break-word;
+        
+        
+    }
+    .Description p{
+        margin-left: 60px;
+        word-wrap:break-word;
+    }
+    .Description li{
+        margin-left: 40px;
+        word-wrap:break-word;
+        
+    }
+     
+    .Information{
+        /* border: 1px solid black; */
+        min-width: 800px;
+        max-width: max-content;
+        height: fit-content;
+         background-color: white;
+         box-shadow: 0 0 4px;
+         border-radius: 4px;
+         margin-top: 30px;
+         /* margin-right:-200px; */
+         
+         margin-bottom: 10px;
+ 
+      }
+      .Information h3{
+          text-align: center;
+          word-wrap:break-word;
+      }
+      .Information p{
+          text-align: center;
+          word-wrap:break-word;
+      }

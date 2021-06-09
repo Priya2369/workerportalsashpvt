@@ -1,0 +1,8 @@
+.quickLinksList {
+	display: flex;
+	flex-wrap: wrap;
+}
+.icons svg {
+	margin: 0 1rem;
+	font-size: 25px;
+}

@@ -1,0 +1,71 @@
+
+.ndy{
+    display: flex;
+    /* margin-left: 72px; */
+    justify-content: center;
+    width: 100%;
+  
+}
+
+
+.circ{
+    width: 90px;
+    height: 90px;
+    background-color: rgb(239, 234, 245);
+    border-radius: 50%;
+    text-align: center;
+    margin-left: 100px;
+    margin-top: 40px;
+}
+.first{
+   
+    width: 300px;
+}
+.secon{
+    width: 300px;
+   
+}
+.third{
+    width: 300px;
+   
+}
+.four{
+    width: 300px;
+   
+}
+.ndy .numb{
+    
+    margin-top: 30px;
+    margin-left: 144px;
+}
+
+ .names{
+  
+   margin-top: 20px;
+   margin-left: 65px;
+}
+ .namej{
+    margin-top: 20px;
+    margin-left: 60px;
+}
+.namee{
+    margin-top: 20px;
+    margin-left: 60px;
+}
+.nameh{
+    margin-top: 20px;
+    margin-left: 50px; 
+}
+.ndy .circ img{
+    width: 100px;
+    height: 100px;
+}
+@media(max-width:736px){
+    .ndy{
+        display:grid;
+        margin-left: -280px;
+        margin-top: 50px;
+        margin-bottom: 5px;
+    }
+    
+}

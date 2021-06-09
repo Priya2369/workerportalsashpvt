@@ -1,0 +1,10 @@
+.jobs{
+    /* text-align: center; */
+    justify-items: center;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-top: 30px;
+    background-color: rgb(236, 236, 248);
+}
+

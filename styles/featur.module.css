@@ -1,0 +1,117 @@
+.jobCard {
+    display: grid;
+  
+    width: 90%;
+    
+    box-shadow: 0 0 2px;
+    border-radius: 10px;
+    font-family: 'Helvetica';
+    padding: 14px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    height: 250px;
+    width: 700px;
+    background-color: white;
+  }
+  .main{
+    display: flex;
+    justify-content: space-between;
+    width: 680px;
+   
+  }
+  .flexi{
+    display: flex;
+  }
+  .jobTitle {
+     
+     font-size: 16px;
+     align-self: start;
+     font-weight: 500;
+     margin-top: 8px;
+     padding: 0 24px;
+     margin-left: -10px;
+     font-family: sans-serif;
+   
+   }
+   .skillsContainer {
+  
+    align-self: center;
+    padding-top: 10px;
+    padding: 0 24px;
+    color: #777;
+    margin-left: -10px;
+    margin-top: -55px;
+  }
+  .company{
+    margin-left: -10px;
+    font-size: 15px;
+    padding: 5px 8px ;
+    display: inline-flex;
+   
+  }
+  .skills {
+    margin-left: -10px;
+    padding: 5px 8px;
+    font-size: 15px;
+    display: flex;
+    
+  }
+  .skills span{
+    margin-left: 10px;
+  }
+  .skilll {
+    margin-left: -10px;
+    padding: 5px 8px;
+    font-size: 15px;
+    display: flex;
+    
+  }
+  .skilll span{
+    margin-left: 10px;
+  }
+  .skillr {
+    margin-left: -10px;
+    padding: 5px 8px;
+    font-size: 15px;
+    display: flex;
+    
+    
+  }
+  .skillr span{
+    margin-left: 10px;
+    display: flex;
+  }
+  .skillp {
+    margin-left: -10px;
+    padding: 5px 8px;
+    font-size: 15px;
+    display: flex;
+    
+  }
+  .skillp span{
+    margin-left: 10px;
+  }
+  .apply{
+   
+   margin-top: 2px;
+   width: 120px;
+   height: 35px;
+   border-radius: 5px;
+   border: 0px;
+   color: white;
+   background-color:rgb(0, 51, 192);
+  }
+  
+  .visible{
+    margin-top: 5px;
+    margin-right: 20px;
+  }
+  .favr{
+    margin-top: 5px;
+    margin-right: 15px;
+  }
+  .company span{
+    margin-left: 10px;
+  }
+ 
+  

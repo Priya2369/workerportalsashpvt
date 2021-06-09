@@ -1,0 +1,18 @@
+.headerTop {
+	display: flex;
+	justify-content: space-between;
+	flex-direction: row;
+	padding: 0px 5rem;
+	background: #e5e5e5;
+}
+
+.icons svg {
+	margin: 0 1rem;
+	font-size: 20px;
+}
+
+@media screen and (max-width: 750px) {
+	.headerTop {
+		display: none;
+	}
+}
