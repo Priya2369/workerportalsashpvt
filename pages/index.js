@@ -9,7 +9,7 @@ import Open from '../Component/parentsComnents/Open'
 import TestimonialSlide from '../Component/parentsComnents/TestimonialSlide'
 import FeaturedJob from '../Component/parentsComnents/FeaturedJobParents'
 import Flex from '../Component/Flex'
-
+import Footer from '../Component/Footer'
 import { JobSearchContext } from '../Component/context/JobSearchContext';
 
 // function nbox(val){
@@ -50,7 +50,7 @@ export default function Home() {
       <Open/>
 	  <div><TestimonialSlide /></div>
 	  
-
+<Footer/>
 	  </>
 	); 
 }

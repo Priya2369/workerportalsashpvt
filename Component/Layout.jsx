@@ -64,7 +64,7 @@ console.log(singleUser)
 			
 			{/* <Flex/> */}
 			{children}
-			<Footer/>
+			{/* <Footer/> */}
 			</userContext.Provider>
 			
 

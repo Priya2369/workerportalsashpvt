@@ -5,6 +5,8 @@ import initFirebase from "./firebaseConfig";
 import "firebase/auth";
 import Cookies from 'universal-cookie';
 import { SettingsInputSvideoRounded } from '@material-ui/icons';
+import axios from "axios";
+import { API_CONSTANTS } from "./apiConstant";
 // import { useRouter } from 'next/router'
 
 
@@ -38,7 +40,7 @@ return confirmationResult
       };
  
 }
-export  function otpModule (otp, router, dispatch, setNaShow, setOpen, getData){
+export  function otpModule (otp, router, dispatch, setNaShow, setOpen){
   const cookies = new Cookies();
   // const {state, dispatch} = useContext(userContext)
     console.log(otp);
@@ -59,8 +61,9 @@ export  function otpModule (otp, router, dispatch, setNaShow, setOpen, getData){
         console.log(user);
 
         
+        
         setCookies();
-        getCookies()
+        const cookies = getCookies()
         console.log(getCookies())
         // dispatch({type:'USER', payload: true})
         // if(user){
@@ -70,23 +73,26 @@ export  function otpModule (otp, router, dispatch, setNaShow, setOpen, getData){
           if(user){
           const reqUrl =
             API_CONSTANTS.baseUrl + API_CONSTANTS.enrollment.SELF_PROFILE;
-          const res =  axios.get(reqUrl, {
+          axios.get(reqUrl, {
             headers: {
               // authorization:cookies.get('access_token') ,
-              authorization: getCookies(),
+              authorization: cookies,
             },
-          });
-          console.log(res.data.data);
+          }).then((res)=>{
+            console.log(res.data.data);
           if (!res.data.data) {
             router.push("/registration");
           } else if (res.data.data) {
             setNaShow(true);
             router.push("/jobs");
           }
+          }).catch(error=>console.log(error.message));
+          
         }
         } catch (error) {
           console.log("profile" + error);
         }
+        
         // getData()
         // router.push('/registration');
         

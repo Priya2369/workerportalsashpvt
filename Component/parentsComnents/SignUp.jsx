@@ -93,7 +93,7 @@ export default function SignUp() {
 
   function otpSubmit(e) {
     e.preventDefault();
-    otpModule(otp, router, dispatch, setNaShow, setOpen, getData);
+    otpModule(otp, router, dispatch, setNaShow, setOpen);
     // dispatch({type:'USER', payload: true})
     // getData()
   }

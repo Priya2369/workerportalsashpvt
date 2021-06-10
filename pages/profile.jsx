@@ -37,7 +37,7 @@ const LogIn = () => {
 console.log("profile............................")
   
 console.log(singleUser)
-  
+useEffect(() => {
     async function getData() {
       console.log("run....................")
       try{
@@ -54,15 +54,16 @@ console.log(singleUser)
           
           console.log("single data")
         //  general data custom input 
-          formik.setFieldValue("firstName",singleUser.generalData.name.split(",")[0].trim())
-          formik.setFieldValue("address",singleUser.generalData.address)
+          formik.setFieldValue("firstName",res.data.data.generalData.name.split(",")[0].trim())
+          formik.setFieldValue("lastName",res.data.data.generalData.name.split(",")[0].trim())
+          formik.setFieldValue("address",res.data.data.generalData.address)
           // formik.setFieldValue("date",res.data.data.generalData.dateOfBirth)
-          formik.setFieldValue("gender",singleUser.generalData.gender)
+          formik.setFieldValue("gender",res.data.data.generalData.gender)
           // formik.setFieldValue("age",res.data.data.generalData.age)
-          formik.setFieldValue("email",singleUser.generalData.email)
+          formik.setFieldValue("email",res.data.data.generalData.email)
           // skill data
-          formik.setFieldValue("passingYear",singleUser.generalData.email)
-          formik.setFieldValue("education",singleUser.skillData.education)
+          formik.setFieldValue("passingYear",res.data.data.generalData.email)
+          formik.setFieldValue("education",res.data.data.skillData.education)
           
           
         }catch (error){ 
@@ -71,6 +72,8 @@ console.log(singleUser)
 
 
         }
+        getData()
+      },[])
 
  
        
@@ -614,7 +617,7 @@ console.log(singleUser)
             </div>
 
             <div className={styles.buttonDiv}><button type="submit" className={styles.button}>Save</button></div>
-            <div><button type='button' onClick={()=>getData()}>update</button></div>
+            {/* <div><button type='button' onClick={()=>getData()}>update</button></div> */}
           </form>
         </div>
       </div>

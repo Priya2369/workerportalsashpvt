@@ -21,8 +21,8 @@
         max-width: max-content;
         height: fit-content;
         margin-top: 10PX;
-      position: sticky;
-      top: 0;
+      /* position: sticky;
+      top: 0; */
         border: 0;
         border-radius: 4px;
         background-color: white;
