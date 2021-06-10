@@ -122,18 +122,18 @@ const Singlejob = () =>{
             
             <div className={styles.Overview}>
               <h2 className={styles.h2}>Job Overview</h2>
-                <div className={styles.p}>
-                  <p><EventAvailableIcon/>Posted Date:&nbsp; &nbsp; &nbsp; &nbsp;1 Mar 2021</p>
-                  <div><AssessmentIcon/>Vacancy : &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+                <div className={styles.div}>
+                  <div className={styles.div}><EventAvailableIcon/>Posted Date:&nbsp; &nbsp; &nbsp; &nbsp;1 Mar 2021</div>
+                  <div className={styles.div}><AssessmentIcon/>Vacancy : &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
                   {vacancy}
                   </div>
                   
                   
 
 
-                  <p><ScheduleIcon/>Job Nature :&nbsp; &nbsp;&nbsp; &nbsp;
-                  {singleJob.natureOfEmployment.employmentType}</p>
-                  <div>₹ Salary : &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;{salaryRang} yearly</div>
+                  <div className={styles.div}><ScheduleIcon/>Job Nature :&nbsp; &nbsp;&nbsp; &nbsp;
+                  {singleJob.natureOfEmployment.employmentType}</div>
+                  <div className={styles.div}>₹ Salary : &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;{salaryRang} yearly</div>
                  <div>{singleJob.facility.accommodation?<p>accommodation:yes </p>:<p>accommodation:No</p>}</div>
                   <div>{singleJob.facility.transport?<p>transport:yes </p>:<p>transport:No</p>}</div>
                   <div>{singleJob.facility.canteen?<p>canteen:yes </p>:<p>canteen:No</p>}</div>
@@ -150,7 +150,7 @@ const Singlejob = () =>{
             {/* Job Description */}
               <div className={styles.Description}>
                 <h2 className={styles.h2}>Job Description</h2>
-                <p className={styles.p}><WorkOutlineOutlinedIcon fontSize="small"/>{singleJob.description}</p>
+                <p className={styles.p}>{singleJob.description}Paragraphs are the building blocks of papers. Many students define paragraphs in terms of length: a paragraph is a group of at least five sentences, a paragraph is half a page long, etc. In reality, though, the unity and coherence of ideas among sentences is what constitutes a paragraph. A paragraph is defined as “a group of sentences or a single sentence that forms a unit” (Lunsford and Connors 116). Length and appearance do not determine whether a section in a paper is a paragraph. For instance, in some styles of writing, particularly journalistic styles, a paragraph can be just one sentence long. Ultimately, a paragraph is a sentence or group of sentences that support one main idea. In this handout, we will refer to this as the “controlling idea,” because it controls what happens in the rest of the paragraph.</p>
                 {/* <h2 className={styles.h2}>Required Knowledege,Skills and Abilities</h2>
                 <ul type="star">
                   <li>System Software Development.</li>

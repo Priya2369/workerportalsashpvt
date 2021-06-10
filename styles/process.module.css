@@ -5,7 +5,7 @@
     margin-top: 100px;
 }
 .jobs{
-   margin-left: 34%;
+   /* margin-left: 34%; */
     margin-top: 30px;
     background-color: #DDDCFF;
     border-radius: 40px;
@@ -21,7 +21,7 @@
     color: #211DFF;
 }
 .empn{
-    margin-left: 2%;
+    margin-left: 10px;
     margin-top: 30px;
     background-color: #FDE7D3;
     border-radius: 40px;
@@ -29,6 +29,12 @@
     width: 200px;
     height: 40px;
     cursor: pointer;
+}
+
+.btngg{
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }
 .empn a{
     font-size: medium;

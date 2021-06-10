@@ -5,6 +5,7 @@
 	background: #fcfcfd;
 	z-index: 1;
 	width: 100%;
+	border: 1px solid black;
 }
 .swiperContainer {
 	width: 100%;
@@ -136,17 +137,34 @@
 	font-size: x-large;
 	color:#5c5a5a;
 	font-style: oblique;
+	padding-left: 20px;
+	padding-right: 20px;
+	/* border: 1px solid black; */
 }
 
 /* css for slide */
 .slider {
 	position:relative;
 	height: 50vh;
-	
+	/* border: 1px solid black; */
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	margin-left: 100px;
+	margin-right: 100px;
+
+
 	
+	
+	height: fit-content;
+	
+	justify-items: center;
+	/* height: 510px; */
+	
+	
+
   }
 .leftArrow{
 	position: absolute;

@@ -28,8 +28,9 @@ export default function TestimonialSlide(){
         <>
         
         <div className={styles.slider}>
+          <div>
 	  < ArrowBackIosIcon  onClick={prevSlide} className={styles.leftArrow} fontSize='large'/>
-	  < ArrowForwardIosIcon  onClick={nextSlide} className={styles.rightArrow} fontSize='large'/>
+	  < ArrowForwardIosIcon  onClick={nextSlide} className={styles.rightArrow} fontSize='large'/></div>
 	  
 
 	  {TestimonialData.map((val,index) => {
@@ -40,7 +41,9 @@ export default function TestimonialSlide(){
 
               {index === current && (
                   <Testimonial image={val.image} uName={val.uName} skill={val.skill} 
-                  Pline1={val.Pline1} Pline2={val.Pline2} Pline3={val.Pline3}/>
+                  Pline1={val.Pline1} 
+                  // Pline2={val.Pline2} Pline3={val.Pline3}
+                  />
               
               )}
                 </div>

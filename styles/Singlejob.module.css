@@ -68,6 +68,14 @@
         margin-left: 40px;
         display: flex;
         word-wrap:break-word;
+        /* border: 1px solid black; */
+    }
+
+    .div{
+        margin-left: 40px;
+        
+        word-wrap:break-word;
+        /* border: 1px solid black; */
     }
     .Submit{
         width: 500px;
@@ -84,12 +92,17 @@
         width: 800px;
         
         height: fit-content;
-        margin-bottom: -15px;
+        margin-bottom: 15px;
         justify-items: center;
-        height: 510px;
+        /* height: 510px; */
         margin-top: 4px;
         background-color: white;
 
+    }
+    .p{
+        
+        margin-right: 40px;
+        word-wrap: break-word;
     }
     .Description h2{
         text-align: center;
