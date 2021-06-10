@@ -64,10 +64,49 @@ const Singlejob = () =>{
       
     }
   }
+// map for salary range 
+  let salaryRang;
+  if(singleJob.requirements){
+    salaryRang = singleJob.requirements.map((requ, id) => {
+      return (
+        <div key={id}>
+          <div>
+            {requ.details.map((sal, id) => {
+              return (
+                <div key={id}>
+                  {sal.salaryPerMonth.minValue}-
+                  {sal.salaryPerMonth.maxValue}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      );
+    })}
+
+    // map for Vacancy
+    let vacancy;
+    if(singleJob.requirements){
+      vacancy = singleJob.requirements.map((requ, id) => {
+        return (
+          <div key={id}>
+            <div>
+              {requ.details.map((vac, id)=>{
+                return(
+                  <div key={id}>{vac.noOfPeople}</div>
+                )
+              })}
+            </div>
+          </div>
+        );
+      })
+    }
+  
 
     return(
         <>
-          <div className={styles.sigjob}>
+        {singleJob.title && singleJob.location && singleJob.natureOfEmployment && singleJob.facility&&singleJob.description?
+        <div className={styles.sigjob}>
             {/* jobcard */}
           <div className={styles.ARAPL}>
                
@@ -75,22 +114,7 @@ const Singlejob = () =>{
                  <li className={styles.li}><div className={styles.Square}></div></li><br/><br/>
                    <li className={styles.li}><WorkOutlineOutlinedIcon/>{singleJob.title}</li><br/>
                    <li className={styles.li}><LocationOnOutlinedIcon/>{singleJob.location}</li><br/>
-                   <li className={styles.li}>{singleJob.requirements.map((requ, id) => {
-                    return (
-                      <div key={id}>
-                        <div>
-                          {requ.details.map((sal, id) => {
-                            return (
-                              <div key={id}>
-                                {sal.salaryPerMonth.minValue}-
-                                {sal.salaryPerMonth.maxValue}
-                              </div>
-                            );
-                          })}
-                        </div>
-                      </div>
-                    );
-                  })}</li>
+                   <li className={styles.li}>{salaryRang}</li>
                </ul>
             </div><br/><br/>
 
@@ -101,19 +125,7 @@ const Singlejob = () =>{
                 <div className={styles.p}>
                   <p><EventAvailableIcon/>Posted Date:&nbsp; &nbsp; &nbsp; &nbsp;1 Mar 2021</p>
                   <div><AssessmentIcon/>Vacancy : &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
-                  {singleJob.requirements.map((requ, id) => {
-                    return (
-                      <div key={id}>
-                        <div>
-                          {requ.details.map((vac, id)=>{
-                            return(
-                              <div key={id}>{vac.noOfPeople}</div>
-                            )
-                          })}
-                        </div>
-                      </div>
-                    );
-                  })}
+                  {vacancy}
                   </div>
                   
                   
@@ -121,30 +133,15 @@ const Singlejob = () =>{
 
                   <p><ScheduleIcon/>Job Nature :&nbsp; &nbsp;&nbsp; &nbsp;
                   {singleJob.natureOfEmployment.employmentType}</p>
-                  <p>₹ Salary : &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;{singleJob.requirements.map((requ, id) => {
-                    return (
-                      <div key={id}>
-                        <div>
-                          {requ.details.map((sal, id) => {
-                            return (
-                              <div key={id}>
-                                {sal.salaryPerMonth.minValue}-
-                                {sal.salaryPerMonth.maxValue}
-                              </div>
-                            );
-                          })}
-                        </div>
-                      </div>
-                    );
-                  })} yearly</p>
-                 <p>{singleJob.facility.accommodation?<p>accommodation:yes </p>:<p>accommodation:No</p>}</p>
-                  <p>{singleJob.facility.transport?<p>transport:yes </p>:<p>transport:No</p>}</p>
-                  <p>{singleJob.facility.canteen?<p>canteen:yes </p>:<p>canteen:No</p>}</p>
-                  <p>{singleJob.facility.cookingArea?<p>cookingArea:yes </p>:<p>cookingArea:No</p>}</p>
-                  <p>{singleJob.facility.medicalCheckup?<p>medicalCheckup:yes </p>:<p>medicalCheckup:No</p>}</p>
-                  <p>{singleJob.facility.healthInsurance?<p>healthInsurance:yes </p>:<p>healthInsurance:No</p>}</p>
-                  <p>{singleJob.facility.industrialSafetyGears?<p>industrialSafetyGears:yes </p>:<p>industrialSafetyGears:No</p>}</p>
-                  <p>{singleJob.facility.overTime?<p>overTime:yes </p>:<p>overTime:No</p>}</p>
+                  <div>₹ Salary : &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;{salaryRang} yearly</div>
+                 <div>{singleJob.facility.accommodation?<p>accommodation:yes </p>:<p>accommodation:No</p>}</div>
+                  <div>{singleJob.facility.transport?<p>transport:yes </p>:<p>transport:No</p>}</div>
+                  <div>{singleJob.facility.canteen?<p>canteen:yes </p>:<p>canteen:No</p>}</div>
+                  <div>{singleJob.facility.cookingArea?<p>cookingArea:yes </p>:<p>cookingArea:No</p>}</div>
+                  <div>{singleJob.facility.medicalCheckup?<p>medicalCheckup:yes </p>:<p>medicalCheckup:No</p>}</div>
+                  <div>{singleJob.facility.healthInsurance?<p>healthInsurance:yes </p>:<p>healthInsurance:No</p>}</div>
+                  <div>{singleJob.facility.industrialSafetyGears?<p>industrialSafetyGears:yes </p>:<p>industrialSafetyGears:No</p>}</div>
+                  <div>{singleJob.facility.overTime?<p>overTime:yes </p>:<p>overTime:No</p>}</div>
                   <button type="button" className={styles.Submit} onClick={(e)=>applyJob(e)}>Apply Now</button>
                 </div>
             </div>
@@ -200,7 +197,7 @@ const Singlejob = () =>{
             
      
             
-            </div>     
+            </div>:<div>Loding...................</div> }    
         </>
     )
 }

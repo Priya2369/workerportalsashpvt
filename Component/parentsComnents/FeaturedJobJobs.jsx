@@ -109,7 +109,7 @@ export default function FeaturedJobJobs() {
             );
           })}
       </div>
-      <div>{jobCatagories}</div>
+      
     </>
   );
 }

@@ -12,7 +12,7 @@ import {initialState, reducer} from '../Component/reducer/UseReducer'
 const Layout = ({ children }) => {
 	console.log("layout.....................")
 	const [navShow, setNaShow] = useState()
-	const [singleJob, setSingleJob] = useState([{}])
+	const [singleJob, setSingleJob] = useState({})
 	const [state, dispatch] = useReducer(reducer, initialState);
 	const [searchLocation, setSearchLocation] = useState("")
   const [searchJob, setSearchJob] = useState("")
