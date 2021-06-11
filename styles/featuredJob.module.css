@@ -93,6 +93,22 @@
     margin-top: 26px;
     margin-bottom: -22px;
   }
+  .dataErrorCard{
+    height: 80vh;
+	width: 50vw;
+	background: #fff;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	font-family: 'Merriweather Sans', sans-serif;
+  margin-left: 10px;
+  border: 1px solid black;
+  }
+  .serachImg{
+    height: 200px;
+    width: 200px;
+  }
   /* .skill.fix{ 
     display:inline;
     position: absolute;

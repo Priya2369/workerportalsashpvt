@@ -41,6 +41,7 @@ export default async function tokenauth(detail, setShow) {
 
 }
 export function otpModule(otp, router, dispatch, setNaShow, setOpen) {
+ 
   const cookies = new Cookies();
   // const {state, dispatch} = useContext(userContext)
   console.log(otp);
@@ -51,15 +52,17 @@ export function otpModule(otp, router, dispatch, setNaShow, setOpen) {
   // console.log(codee);
   optConfirm
     .confirm(otpInput)
-    .then(function(result) {
+    .then(async function(result) {
       console.log("User signed in successfully.");
       // console.log("Result" + result.verificationID);
       let user = result.user;
-      // const token = firebase.auth().currentUser.getIdToken(true))
-      console.log(user.getIdToken())
+       let userToken = await firebase.auth().currentUser.getIdToken(true);
+       console.log(userToken)
+      // console.log(user.getIdToken(true))
+      // console.log(user.getIdToken())
       console.log(user);
       // setCookies();
-      // setCookies.then(() => {
+      setCookies.then(() => {
         const cookies = getCookies()
         console.log(cookies);
         // dispatch({type:'USER', payload: true})
@@ -74,7 +77,7 @@ export function otpModule(otp, router, dispatch, setNaShow, setOpen) {
             axios.get(reqUrl, {
               headers: {
                 // authorization:cookies.get('access_token') ,
-                authorization: cookies,
+                authorization:userToken,
               },
             }).then((res) => {
               console.log(res.data.data);
@@ -96,11 +99,12 @@ export function otpModule(otp, router, dispatch, setNaShow, setOpen) {
 
         // }
       })
-    // })
+    })
     .catch(function(error) {
       console.log(error);
       alert("Incorrect OTP");
     });
+  
 }
 
 // export function setCookies() {
@@ -114,34 +118,19 @@ export function otpModule(otp, router, dispatch, setNaShow, setOpen) {
 //   });
 // }
 
-// export let setCookies = new Promise((resolve, reject) => {
-//   initFirebase()
-//   const cookies = new Cookies();
-//   console.log("set cookies")
-//   firebase.auth().onIdTokenChanged(async user => {
-//     if (user) {
-//       const token = await user.getIdToken(true);
-//       console.log(true)
-//       cookies.set('access_token', token, { path: '/', maxAge: 60 * 60 });
-//     }
-//   });
-//   console.log(cookies);
-//   return resolve(true)
-// })
-
-(function setCookies(){
+export let setCookies = new Promise((resolve, reject) => {
   initFirebase()
   const cookies = new Cookies();
   console.log("set cookies")
   firebase.auth().onIdTokenChanged(async user => {
     if (user) {
       const token = await user.getIdToken(true);
-      console.log(true)
       cookies.set('access_token', token, { path: '/', maxAge: 60 * 60 });
     }
   });
   console.log(cookies);
-})();
+  return resolve(true)
+})
 
 
 export function getCookies() {
@@ -150,7 +139,6 @@ export function getCookies() {
   initFirebase();
 
   console.log(cookies);
-  console.log(cookies.get('access_token'))
   return cookies.get('access_token');
 }
 
