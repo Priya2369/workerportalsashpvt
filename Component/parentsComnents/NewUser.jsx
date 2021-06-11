@@ -121,7 +121,7 @@ export default function AddressForm() {
      
      <Typography variant="h6" align="center"
      >
-        Regist ration Form
+        Registration Form
       </Typography>
       <Grid container spacing={3}  style={paperStyle}>
         

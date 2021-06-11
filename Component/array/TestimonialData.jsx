@@ -15,7 +15,7 @@ const TestimonialData =[
         image:"./3.jpg",
         uName:"Jarry",
         skill:"owner",
-        Pline1:"I am at ane where I just want to be fit and healthy our bodies are our resposibility!So start caring for your body and it will care for you.Eat clean it will care for you and workout hard."
+        Pline1:"I am at ane where I just want to be fit and healthy our bodies are our resposibility!So start caring for your body and it will care for you.Eat clean it will care for you and workout hard.This is Surbhi.I found this organization and joined it with the help of one of my closest friends."
     },
     
 ];
