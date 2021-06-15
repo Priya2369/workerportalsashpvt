@@ -22,11 +22,12 @@ import { API_CONSTANTS} from '../config/apiConstant'
 import { useRouter } from 'next/router'
 
 
+
 toast.configure();
 
 
 export default function AddressForm() {
-  const {  setNaShow} = useContext(userContext);
+  const {  setShowHeader} = useContext(userContext);
   const router = useRouter();
   const [educationData, setEducationData] = useState("");
 
@@ -90,6 +91,9 @@ export default function AddressForm() {
         });
 
         console.log(res["message"]);
+        setShowHeader(true)
+        localStorage.setItem("user_info",JSON.stringify(res.data.profile))
+        
         console.log("name" + formik.values.passingYear);
       } catch (error) {
         console.log(`Error: ${error}`);
@@ -263,11 +267,11 @@ export default function AddressForm() {
             label="Agree To All Conditions"
           />
         </Grid>
-        <Grid item xs={12}><Button align="center" variant="contained" 
+        <Grid item xs={12}><div className="newUserbtns"><Button align="center" variant="contained" 
         color="primary" type="submit" fullWidth
         >
         Register
-      </Button></Grid>
+      </Button></div></Grid>
 
       </Grid>
       

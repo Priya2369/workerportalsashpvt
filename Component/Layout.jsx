@@ -11,8 +11,14 @@ import {initialState, reducer} from '../Component/reducer/UseReducer'
 
 const Layout = ({ children }) => {
 	console.log("layout.....................")
-	const [navShow, setNaShow] = useState()
-	const [singleJob, setSingleJob] = useState({})
+
+
+	// state for heade route hide shoe
+	const [showHeader, setShowHeader] = useState(false)
+
+
+
+	const [singleJob, setSingleJob] = useState({ })
 	const [state, dispatch] = useReducer(reducer, initialState);
 	const [searchLocation, setSearchLocation] = useState("")
   const [searchJob, setSearchJob] = useState("")
@@ -26,10 +32,14 @@ const [detail, setDetail] = useState({
 
 
 
-	
+	// state for serach component   Search.jsx
 	const [catagories ,setCatagories]=useState();
 	const [location, setLocation] = useState("");
   const[jobType, setJobType] = useState("");
+
+//   state for filter job search
+const [locationSearch, setLocationSearch] =useState()
+const [catagoriesSearch, setCatagiriesSearch] = useState()
   const [getfilterValue, setFilterValue] = useState({
 	jobCatagories:"",
 	jobTypes:"",
@@ -39,6 +49,7 @@ const [detail, setDetail] = useState({
 	salary:""
 	})
 	let{jobCatagories, jobTypes, jobLocation, experience, postedWithin, salary} = getfilterValue
+
 	//   get single user value for profile update 
 const [singleUser, setSingleUser] = useState()
 console.log(singleUser)
@@ -54,11 +65,14 @@ console.log(singleUser)
 
 	return (
 		<>
-		<userContext.Provider value = {{state, dispatch, navShow, setNaShow,singleJob, setSingleJob,
+		<userContext.Provider value = {{state, dispatch, singleJob, setSingleJob,
 			setLocation, setJobType, location, jobType,catagories, setCatagories,
 			 searchLocation, setSearchLocation,searchJob, setSearchJob,
 			 jobCatagories, jobTypes, jobLocation, experience, postedWithin, salary, setFilterValue, getfilterValue,
-			 detail, setDetail, singleUser, setSingleUser}}>
+			 detail, setDetail, singleUser, setSingleUser,
+			 catagoriesSearch, setCatagiriesSearch,
+			 locationSearch, setLocationSearch,
+			 showHeader, setShowHeader}}>
 			<Header />
 			
 			

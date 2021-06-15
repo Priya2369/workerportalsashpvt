@@ -26,8 +26,18 @@ const Header_Bottom = () => {
 	initFirebase(); 
 	const router = useRouter();
 	const cookies = new Cookies();
+
+	useEffect(()=>{
+
+		const data = localStorage.getItem("user_info")
+		
+		if(data){ 
+		  setShowHeader(true)
+		 }
+		
+		},[])
 	
-	const {state, dispatch, setNaShow, navShow,  setSingleUser, singleUser} = useContext(userContext)
+	const {state, dispatch, showHeader, setShowHeader,  setSingleUser, singleUser} = useContext(userContext)
 // function for user logOut.....................
 	 function logout(e){
 		e.preventDefault();
@@ -37,10 +47,14 @@ const Header_Bottom = () => {
 	.then(() => {
 	  console.log('Signed Out');
 	  cookies.remove('access_token')
-	  if(!cookies.get("acess_token")){
-	//    dispatch({type:'USER', payload: false})
-	 setNaShow(false)
-	  router.push('/');}
+	  
+	  localStorage.removeItem("user_info");
+	  setShowHeader(false)
+	  router.push('/')
+	//   if(!localStorage.get("user_info")){
+	// //    dispatch({type:'USER', payload: false})
+	//         setNaShow(false)
+	//   router.push('/');}
 
 	
 	})
@@ -76,40 +90,20 @@ const Header_Bottom = () => {
 				}
 	}
 
-	// useEffect(()=>{
-	// 	const userFormLocalStorage = localStorage.getItem("singleUser");
-	// 	setSingleUser(JSON.parse(JSON.stringify(userFormLocalStorage)))
-	// 	},[singleUser])
-		
-	// 	useEffect(()=>{
-	// 	localStorage.setItem("singleUser", JSON.stringify(singleUser))
-	// 	},[singleUser]);
-
-	// useEffect(()=>{
-	// 	localStorage.removeItem('data');
-	// 	localStorage.removeItem('singleUser');
-	// })
+	
 
 
 	
 
-useEffect(()=>{
 
-const data = localStorage.getItem('data')
 
-if(data){ 
-  setSingleUser(JSON.parse(JSON.stringify(data)))
- }
+// // SetItem in localStorage for single user
 
-},[singleUser])
+// useEffect(()=>{
+// console.log(singleUser)
+//   localStorage.setItem('data',JSON.stringify(singleUser))
 
-// SetItem in localStorage for single user
-
-useEffect(()=>{
-console.log(singleUser)
-  localStorage.setItem('data',JSON.stringify(singleUser))
-
-},[])
+// },[])
 		
 	
 
@@ -119,7 +113,7 @@ console.log(singleUser)
 		<>
 		
 
-		{navShow && <div className={style.headerBottom}>
+		{showHeader? <div className={style.headerBottom}>
 			<span><img src='/logo.png' alt="Logo" /></span>
 			{/* <Header_Navigation></Header_Navigation> */}
 			<nav className={navigation.navigation}>
@@ -148,8 +142,7 @@ console.log(singleUser)
 			<div className={style.sideBar}>
 				<Header_SideBar />
 			</div>
-		</div>}
-		{!navShow && <div className={style.headerBottom}>
+		</div>:<div className={style.headerBottom}>
 			<span><img src='/logo.png' alt="Logo" /></span>
 			{/* <Header_Navigation></Header_Navigation> */}
 			<nav className={navigation.navigation}>

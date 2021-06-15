@@ -17,8 +17,8 @@
 }
     .ARAPL{
         box-shadow: 0 0 3px;
-        min-width: 800px;
-        max-width: max-content;
+        width: 800px;
+        word-wrap: break-word;
         height: fit-content;
         margin-top: 10PX;
       /* position: sticky;
@@ -51,8 +51,8 @@
     .Overview{
         box-shadow: 0 0 4px;
         border-radius: 4px;
-        min-width: 800px;
-        max-width: max-content;
+        width: 800px;
+        word-wrap:break-word;
         height: fit-content;
         margin-bottom: 9px;
         justify-items: center;
@@ -72,10 +72,29 @@
     }
 
     .div{
-        margin-left: 40px;
-        
+       
+       margin-left: 8px;
         word-wrap:break-word;
         /* border: 1px solid black; */
+    }
+    .pos{
+        display: flex;
+        margin-left: 35px;
+    }
+    .vac{
+        display: flex;
+        margin-left: 35px;
+        margin-top: 5px;
+    }
+    .sch{
+        display: flex;
+        margin-left: 35px;
+        margin-top: 5px;
+    }
+    .sal{
+        display: flex;
+        margin-left: 35px;
+        margin-top: 5px;
     }
     .Submit{
         width: 500px;
@@ -142,3 +161,29 @@
           text-align: center;
           word-wrap:break-word;
       }
+
+      @media(max-width:736px){
+          
+        .ARAPL{
+            
+            width: 400px;
+           margin-left: 0px;
+            
+            
+        }
+
+        .Overview{
+            width: 400px;
+            margin-left: 0px;
+        }
+        
+        .Submit{
+            width: 300px;
+           
+            
+        }
+        .Description{
+            width: 400px;
+            margin-left: 0px;
+        }
+     }

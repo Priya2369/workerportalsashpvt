@@ -123,17 +123,17 @@ const Singlejob = () =>{
             <div className={styles.Overview}>
               <h2 className={styles.h2}>Job Overview</h2>
                 <div className={styles.div}>
-                  <div className={styles.div}><EventAvailableIcon/>Posted Date:&nbsp; &nbsp; &nbsp; &nbsp;1 Mar 2021</div>
-                  <div className={styles.div}><AssessmentIcon/>Vacancy : &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+                  <div className={styles.pos}><EventAvailableIcon/>Posted Date:&nbsp; &nbsp; &nbsp; &nbsp;1 Mar 2021</div>
+                  <div className={styles.vac}><AssessmentIcon/>Vacancy : &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
                   {vacancy}
                   </div>
                   
                   
 
 
-                  <div className={styles.div}><ScheduleIcon/>Job Nature :&nbsp; &nbsp;&nbsp; &nbsp;
+                  <div className={styles.sch}><ScheduleIcon/>Job Nature :&nbsp; &nbsp;&nbsp; &nbsp;
                   {singleJob.natureOfEmployment.employmentType}</div>
-                  <div className={styles.div}>₹ Salary : &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;{salaryRang} yearly</div>
+                  <div className={styles.sal}>₹ Salary : &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;{salaryRang} yearly</div>
                  <div>{singleJob.facility.accommodation?<p>accommodation:yes </p>:<p>accommodation:No</p>}</div>
                   <div>{singleJob.facility.transport?<p>transport:yes </p>:<p>transport:No</p>}</div>
                   <div>{singleJob.facility.canteen?<p>canteen:yes </p>:<p>canteen:No</p>}</div>

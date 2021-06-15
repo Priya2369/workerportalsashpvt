@@ -11,7 +11,7 @@
   align-items:center;
   align-content:center;
   justify-content:center;
-  background-color: rgb(245, 245, 200);
+  background: rgb(245, 245, 200);
   background-image: url("../public/image7.gif");
   background-size: cover;
   background-position: center;

@@ -396,6 +396,17 @@ div .hori-line {
   .custom-field.two input:focus {
     background-size: 100% 0.15em, 100% 0.1em, 100%;
   }
+
+  @media (max-width:736px) {
+	  .custom-field.two input{
+		  width: 250px;
+
+	  }
+	  .newUserBtns button{
+		  width: 200px;
+
+	  }
+  }
   
 
 @media only screen and (max-width: 600px) {

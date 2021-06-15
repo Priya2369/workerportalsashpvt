@@ -27,7 +27,7 @@ export default async function tokenauth(detail, setShow) {
         // SMS sent. Prompt user to type the code from the message, then sign the
         // user in with confirmationResult.confirm(code).
         if ((window.confirmationResult = confirmationResult)) {
-          setShow(true);
+          setShow(true)
         }
         // console.log(confirmationResult);
         console.log("OTP is sent");
@@ -40,7 +40,7 @@ export default async function tokenauth(detail, setShow) {
   };
 
 }
-export function otpModule(otp, router, dispatch, setNaShow, setOpen) {
+export function otpModule(otp, router, dispatch,  setOpen, setShowHeader) {
  
   const cookies = new Cookies();
   // const {state, dispatch} = useContext(userContext)
@@ -84,7 +84,10 @@ export function otpModule(otp, router, dispatch, setNaShow, setOpen) {
               if (!res.data.data) {
                 router.push("/registration");
               } else if (res.data.data) {
-                setNaShow(true);
+               
+                console.log(res.data.data);
+                localStorage.setItem("user_info",JSON.stringify(res.data.data))
+                setShowHeader(true)
                 router.push("/jobs");
               }
             }).catch(error => console.log(error.message));

@@ -12,7 +12,7 @@
     position:absolute;
     /* right: 40%; */
     bottom: 30%;
-    background-color: white;
+background-color: white;
     
     
 }
@@ -50,4 +50,10 @@
     padding: 12px;
     color:black;
     
+}
+@media (max-width:736px) {
+    .container{
+        left: -40px;
+        
+    }
 }

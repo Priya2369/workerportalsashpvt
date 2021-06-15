@@ -44,7 +44,7 @@
     height: 38px;
     border: none;
     outline: none;
-    background-color: white;
+    background: white;
     /* text-align: center; */
     cursor: pointer;
     /* transition: 0.3s; */
@@ -71,6 +71,87 @@
   border-left: 6px solid  #ff6600;
   
 }
+
+
+
+/*header css*/
+.Header{
+  width: 100%;
+  height: 25vh;
+  background:  #3880ff;
+ display: flex;
+  justify-content: space-between;
+  
+  
+}
+.left{
+  width: 90vh;
+  height: 22vh;
+  margin-top: 10px;
+
+  margin-left: 160px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.right{
+  width: 60vh;
+  height: 22vh;
+  margin-top: 10px;
+  color: #ff6600;
+  margin-right: 90px;
+  text-align: center;
+  background:white ;
+}
+.imgs{
+  width: 12vh;
+  height: 12vh;
+  border-radius: 50%;
+  background: white;
+  text-align: center;
+  margin-top: 13px;
+  margin-left: 64px;
+
+}
+.imgs img{
+  width: 12vh;
+  height: 12vh;
+
+}
+.dats{
+ 
+  margin-left: 20px;
+  margin-top: 8px;
+  width: 65vh;
+  word-wrap: break-word;
+}
+.name h{
+  font-size: 20px;
+  color: white;
+  
+}
+.phone{
+  display: flex;
+  margin-top: 15px;
+  margin-left: 20px;
+  color: white;
+}
+.email{
+  display: flex;
+  margin-top: 5px;
+  margin-left: 20px;
+  color: white;
+}
+.exp{
+  display: flex;
+  margin-top: 5px;
+  margin-left: 20px;
+  color: white;
+}
+
+
+
+/*----------------------------------------------*/
 
 
  /* ............................................................. */
@@ -155,7 +236,7 @@
   margin-bottom: 20px;
   margin-left: 20vw;
   font-size: medium;
-  background-color:  rgb(0, 51, 192);
+  background:  rgb(0, 51, 192);
   border-left: 3px solid ;
   outline: none;
 }
@@ -171,7 +252,7 @@
   padding: 10px;
   margin: 2em;
   border: 3px solid #ddd;
-  background-color: #eee;
+  background: #eee;
   max-width: 800px;
   margin-top: 150px;
 }
@@ -183,4 +264,24 @@
   border: 2px solid black;
   margin-top: 20px;
 }
- 
+ @media (max-width:736px) {
+   .tab{
+     margin-left: 5px;
+     text-align: center;
+     width: 120px;
+   }
+   .tablinks{
+     padding: 0%;
+     
+   }
+   .tab2{
+     width: 275px;
+     margin-left: 135px;
+     
+   }
+
+   .Header{
+    display: none;
+  }
+   
+ }

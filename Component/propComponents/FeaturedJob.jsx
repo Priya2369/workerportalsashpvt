@@ -19,6 +19,7 @@ export default function FeaturedJob(props) {
   const {  setSingleJob } = useContext(userContext);
   const [id, setId] = useState(props.id);
   
+  
 
   const router = useRouter();
   const click = async () => {

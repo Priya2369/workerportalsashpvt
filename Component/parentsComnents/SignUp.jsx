@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { React, useState, useEffect, useContext } from "react";
-import styles from "../../styles/login.module.css";
+import styles from "../../styles/signUp.module.css";
 import TextField from "../propComponents/TextField";
 import Otp from "../parentsComnents/Otp";
 import Link from "next/link";
@@ -18,7 +18,7 @@ import tokenauth, { otpModule, cookies } from "../config/FirebaseToken";
 // import { auth } from 'firebase'
 
 export default function SignUp() {
-  const { state, dispatch, setNaShow, detail, setDetail } =
+  const { state, dispatch,  detail, setDetail,showHeader, setShowHeader } =
     useContext(userContext);
 
   initFirebase();
@@ -83,17 +83,17 @@ export default function SignUp() {
     console.log(detail);
     setUpRecaptcha();
 
-    const cornfirmResults = tokenauth(detail, setShow);
+    const cornfirmResults = tokenauth(detail,setShow );
     // if(cornfirmResults.confirmationResult){
     //   setShow(true)
     // }
   }
 
-  const props = { otp, setOtp, otpSubmit, setShow };
+  const props = { otp, setOtp, otpSubmit,  };
 
   function otpSubmit(e) {
     e.preventDefault();
-    otpModule(otp, router, dispatch, setNaShow, setOpen);
+    otpModule(otp, router, dispatch,  setOpen,setShowHeader);
     // dispatch({type:'USER', payload: true})
     // getData()
   }

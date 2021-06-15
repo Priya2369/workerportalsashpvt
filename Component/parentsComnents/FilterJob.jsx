@@ -5,20 +5,27 @@ import {JobSearchContext} from '../context/JobSearchContext'
 import {userContext} from '../context/UserContext'
 
 export default function FilterJob() {
-  const {getfilterValue, setFilterValue, jobCatagories, jobType, jobLocation, experience, postedWithin, salary} = useContext(userContext)
+  const {getfilterValue, setFilterValue, jobCatagories, jobType, jobLocation, experience, postedWithin, salary,
+ setCatagiriesSearch,locationSearch, setLocationSearch} = useContext(userContext)
   const [show, setShow] = useState(true )
-  // const [getfilterValue, setFilterValue] = useState({
-  //   jobCatagories:"",
-  //   jobType:"",
-  //   jobLocation:"",
-  //   experience:"",
-  //   postedWithin:"",
-  //   salary:""
-  //   })
-  //   let{jobCatagories, jobType, jobLocation, experience, postedWithin, salary} = getfilterValue
-console.log(getfilterValue)
+  
+  
 
 
+function SearchCat(e){
+  e.preventDefault();
+ 
+  setCatagiriesSearch(jobCatagories)
+  // setSearchJob(jobType)
+
+}
+function SearchLoc(e){
+  e.preventDefault();
+  setLocationSearch(jobLocation)
+  
+  
+
+}
   return (
     <>
       <div className={styles.first}>
@@ -33,14 +40,17 @@ console.log(getfilterValue)
             <h6 >Job Category</h6>
             <input list="jobs" placeholder="All Categories" 
             value={jobCatagories}
-            onChange={(e) => setFilterValue({ ...getfilterValue, jobCatagories: e.target.value })} />
+            onChange={(e) => setFilterValue({ ...getfilterValue, jobCatagories: e.target.value })}
+             />
             <datalist id="jobs" >
-              <option value="front-end developer"></option>
+              <option value="front-end developer"  ></option>
               <option value="Back-end developer"></option>
               <option value="Software developer"></option>
 
 
-            </datalist><br /><br />
+            </datalist><button onClick={(e)=>SearchCat(e)}>search</button><br /><br />
+
+
             <h6>Job Type</h6>
             <input type="checkbox" name="Full Time" /> Full Time<br />
             <input type="checkbox" name="Part Time" /> Part Time <br />
@@ -56,7 +66,7 @@ console.log(getfilterValue)
               <option value="Mumbai"></option>
               <option value="Delhi"></option>
               <option value="Banglore"></option>
-            </datalist><br />
+            </datalist><button onClick={(e)=>SearchLoc(e)}>search</button><br />
             <h6>Experience</h6>
             <input type="checkbox" name="1-2 years" /> 1-2 Years<br />
             <input type="checkbox" name="2-3 years" /> 2-3 years <br />
@@ -69,6 +79,8 @@ console.log(getfilterValue)
             <input type="checkbox" name="Last Month" /> Last Month<br />
             <h6>Salary</h6>
             <input type="range" min="8000" max="15000" />
+
+            
           </div>
           
 
