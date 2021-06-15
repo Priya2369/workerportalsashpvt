@@ -11,19 +11,13 @@ console.log("mklop")
     return(
         <>
         {getCookies()?
-         
+        
          
          
          <ProfileUpdate/>
          
-        :
-
-
-        <div className={styles.errorCard}>
-        <h1><Link href="/signup">
-				<a>Login</a>
-			</Link> please................</h1>
-        </div>
+        :<SignUp/>
+        
        
         
       }

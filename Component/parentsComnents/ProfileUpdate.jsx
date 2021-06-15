@@ -205,12 +205,12 @@ useEffect(() => {
       
 
       {/* profile Header */}
-      {/* <div className={styles.Header}>
+      <div className={styles.Header}>
           <div className={styles.left}>
              <div className={styles.imgs}><img src='./3.jpg'/></div>
              <div className={styles.dats}>
              
-               <div className={styles.name}><h1>{profileName.name}</h1><CreateOutlinedIcon fontSize="small"/></div>
+               <div className={styles.name}><h1><b>{profileName.name}</b></h1><CreateOutlinedIcon fontSize="small"/></div>
                <div className={styles.phone}><PhoneEnabledOutlinedIcon fontSize="small"/> &nbsp; &nbsp; {profileName.mobileNumber}</div>
                <div className={styles.email}><EmailOutlinedIcon fontSize="small"/>&nbsp; &nbsp;{profileName.email}</div>
                <div className={styles.exp}><BusinessCenterOutlinedIcon fontSize="small"/>&nbsp; &nbsp;1 year 6 month</div>
@@ -221,7 +221,7 @@ useEffect(() => {
 
              Applied Job
           </div>
-      </div> */}
+      </div>
 
 
 
