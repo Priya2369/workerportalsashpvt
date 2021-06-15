@@ -205,7 +205,7 @@ useEffect(() => {
       
 
       {/* profile Header */}
-      <div className={styles.Header}>
+      {/* <div className={styles.Header}>
           <div className={styles.left}>
              <div className={styles.imgs}><img src='./3.jpg'/></div>
              <div className={styles.dats}>
@@ -221,7 +221,7 @@ useEffect(() => {
 
              Applied Job
           </div>
-      </div>
+      </div> */}
 
 
 
