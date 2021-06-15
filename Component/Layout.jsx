@@ -38,8 +38,7 @@ const [detail, setDetail] = useState({
   const[jobType, setJobType] = useState("");
 
 //   state for filter job search
-const [locationSearch, setLocationSearch] =useState()
-const [catagoriesSearch, setCatagiriesSearch] = useState()
+
   const [getfilterValue, setFilterValue] = useState({
 	jobCatagories:"",
 	jobTypes:"",
@@ -70,8 +69,8 @@ console.log(singleUser)
 			 searchLocation, setSearchLocation,searchJob, setSearchJob,
 			 jobCatagories, jobTypes, jobLocation, experience, postedWithin, salary, setFilterValue, getfilterValue,
 			 detail, setDetail, singleUser, setSingleUser,
-			 catagoriesSearch, setCatagiriesSearch,
-			 locationSearch, setLocationSearch,
+			 
+			
 			 showHeader, setShowHeader}}>
 			<Header />
 			

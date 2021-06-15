@@ -14,6 +14,8 @@ import CreateOutlinedIcon from '@material-ui/icons/CreateOutlined';
 import PhoneEnabledOutlinedIcon from '@material-ui/icons/PhoneEnabledOutlined';
 import EmailOutlinedIcon from '@material-ui/icons/EmailOutlined';
 import BusinessCenterOutlinedIcon from '@material-ui/icons/BusinessCenterOutlined';
+import LaptopIcon from '@material-ui/icons/Laptop';
+import { useRouter } from 'next/router'
 
 import { FaUser, 
   
@@ -30,7 +32,7 @@ toast.configure();
 
 
 const ProfileUpdate = () => {
-
+  const router = useRouter();
 
   const { detail, singleUser} = useContext(userContext);
   const [showProfile, setShowprofile] = useState(true);
@@ -38,6 +40,7 @@ const ProfileUpdate = () => {
   const [showJobDescription, setShowJobDescription] = useState(false);
   const [showCondition, setShowCondition] = useState(false);
   const [profileName, setProfileName] = useState({})
+  const [applied, setApplied] = useState([])
   
 
 console.log("profile............................")
@@ -57,11 +60,13 @@ useEffect(() => {
           });
           console.log(res.data.data)
           setProfileName(res.data.data.generalData)
+          setApplied(res.data.data.appliedProject)
+          localStorage.setItem("profile_info",JSON.stringify(res.data.data))
           
           console.log("single data")
         //  general data custom input 
-          formik.setFieldValue("firstName",res.data.data.generalData.name.split(",")[0].trim())
-          formik.setFieldValue("lastName",res.data.data.generalData.name.split(",")[0].trim())
+          formik.setFieldValue("firstName",res.data.data.generalData.name.split(" ")[0].trim())
+          formik.setFieldValue("lastName",res.data.data.generalData.name.split(" ")[1].trim())
           formik.setFieldValue("address",res.data.data.generalData.address)
           // formik.setFieldValue("date",res.data.data.generalData.dateOfBirth)
           formik.setFieldValue("gender",res.data.data.generalData.gender)
@@ -198,8 +203,19 @@ useEffect(() => {
 
     // submitt end......
   });
-  //   console.log(formik.values)
+  // map for applied project
+  let apply;
+if(applied){
+  apply= applied.map((appl, id)=>{
+    return <p key={id}>{appl.project.title}</p>
+  })
+}
 
+
+function onApplied(e){
+  e.preventDefault();
+  router.push('/appliedjob');
+}
   return (
     <>
       
@@ -210,17 +226,20 @@ useEffect(() => {
              <div className={styles.imgs}><img src='./3.jpg'/></div>
              <div className={styles.dats}>
              
-               <div className={styles.name}><h1><b>{profileName.name}</b></h1><CreateOutlinedIcon fontSize="small"/></div>
+               <div className={styles.name}><h1><b>{profileName.name}</b></h1><div><CreateOutlinedIcon fontSize="small"/></div></div>
                <div className={styles.phone}><PhoneEnabledOutlinedIcon fontSize="small"/> &nbsp; &nbsp; {profileName.mobileNumber}</div>
                <div className={styles.email}><EmailOutlinedIcon fontSize="small"/>&nbsp; &nbsp;{profileName.email}</div>
                <div className={styles.exp}><BusinessCenterOutlinedIcon fontSize="small"/>&nbsp; &nbsp;1 year 6 month</div>
                
              </div>
-          </div>
+          </div>{applied?
           <div className={styles.right}>
+            <div className={styles.applied} onClick={(e)=>onApplied(e)}>
 
-             Applied Job
-          </div>
+             <LaptopIcon />&nbsp;Applied Job  &nbsp;&nbsp;<span> {applied.length}</span></div>
+          
+             
+          </div>:null}
       </div>
 
 
@@ -245,9 +264,7 @@ useEffect(() => {
           >
             Job Description
           </Link></button>
-          <button className={styles.p}><Link to="condition"
-            smooth={true}
-            duration={1000} className={styles.tablinks}>Terms & Conditions</Link></button>
+         
         </div>
 
         {/* ............................................ */}
@@ -615,33 +632,7 @@ useEffect(() => {
             </div>
 
             {/* Term and condition .......................................... */} 
-            <div className={styles.formOne} id="condition">
-            <h2
-                className={styles.hover}
-                onClick={() => setShowCondition(!showCondition)}
-              >
-                Accept the Term&Condtion
-              </h2>
-              {showCondition?
-              <div className={styles.box}>
-              <ul className={styles.ul}>
-                  <li>I am 18 and above.</li>
-                  <li>If hired,I agree to abide by all of the company rules and regulations.<br/>
-                      I agree that in the event my employment may be terminated at any time by either party
-                      for any reason or for no reason. </li>
-                  <li>I accept all the above information given are correct.</li>
-              </ul>
-              <div className={styles.tacbox}>
-                  <input  type="checkbox" 
-                   name="termCondition"
-                   value={formik.values.termCondition}
-                  onChange={formik.handleChange} />
-                  <label htmlFor="checkbox" > Agree To All Conditions</label>
-              </div>
-          </div>
-          :null}
-
-            </div>
+            
 
             <div className={styles.buttonDiv}><button type="submit" className={styles.button}>Save</button></div>
             {/* <div><button type='button' onClick={()=>getData()}>update</button></div> */}

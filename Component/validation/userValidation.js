@@ -15,13 +15,13 @@ const Validation = values =>{
 let errors = {};
 if(!firstName){
     errors.firstName = " First Name is required"
-}else if (firstName.length<4 || firstName.length>20 || !/^[a-z]([a-z,.'-]*)+(\s[a-z,.'-]+)*$/i.test(values.firstName)){
+}else if (firstName.trim().length<4 || firstName.trim().length>20 || !/^[a-z]([a-z,.'-]*)+(\s[a-z,.'-]+)*$/i.test(values.firstName)){
     errors.firstName ="First name should be alphabetic and atleast 4-20 character long"
 }
 
 if(!lastName){
     errors.lastName = "Last Name is required"
-}else if (lastName.length<3 || lastName.length>20 || !/^[a-z]([a-z,.'-]*)+(\s[a-z,.'-]+)*$/i.test(values.lastName)){
+}else if (lastName.trim().length<3 || lastName.trim().length>20 || !/^[a-z]([a-z,.'-]*)+(\s[a-z,.'-]+)*$/i.test(values.lastName)){
     errors.lastName ="last name should be alphabetic and atleast 4-20 character long"
 }
 

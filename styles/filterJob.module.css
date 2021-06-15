@@ -93,6 +93,17 @@
     left: 50%;
    
 }
+.btnn button{
+    width: 80px;
+    height: 25px;
+    background-color: #ff6600;
+    color: white;
+    margin-left: 65px;
+    border-radius: 5px;
+}
+.btnn button:hover{
+    background-color: #3880ff;
+}
 .range .field input::-webkit-slider-thumb{
     -webkit-appearance: none;
     

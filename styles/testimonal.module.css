@@ -133,6 +133,13 @@
 	color:#828588;
 
 }
+.pGraph{
+	width: 80rem;
+	
+	word-wrap: break-word;
+	
+	
+}
 .para{
 	font-size: x-large;
 	color:#5c5a5a;

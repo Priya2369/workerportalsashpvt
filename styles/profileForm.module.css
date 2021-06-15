@@ -3,7 +3,7 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);  
  margin-left: 15vw;
   
-  height: 500px;
+  height: 350px;
   /* padding-left: 4vw; */
   /* padding-right: 4vw; */
   
@@ -94,14 +94,19 @@
   justify-content: space-between;
 }
 
+.applied{
+  display: flex;
+  margin-top: 60px;
+}
 .right{
-  width: 60vh;
-  height: 22vh;
+  
+  width: 25vh;
+  height: 18vh;
   margin-top: 10px;
-  color: #ff6600;
-  margin-right: 90px;
+  color: white;
+  margin-right: 160px;
   text-align: center;
-  background:white ;
+  
 }
 .imgs{
   width: 12vh;
@@ -114,8 +119,11 @@
 
 }
 .imgs img{
-  width: 12vh;
-  height: 12vh;
+  
+  width: 13vh;
+  height: 13vh;
+  border-radius: 10px;
+
 
 }
 .dats{
@@ -125,10 +133,14 @@
   width: 65vh;
   word-wrap: break-word;
 }
-.name h{
-  font-size: 20px;
+.name h1{
+  
+  font-size: 30px;
   color: white;
   
+}
+.name{
+  display: flex;
 }
 .phone{
   display: flex;
@@ -177,7 +189,7 @@
  
   padding: 10px;
   /* background: dodgerblue; */
-  background: rgb(0, 51, 192);
+  background: #3880ff;
   color: white;
   min-width: 50px;
   text-align: center;
@@ -201,7 +213,7 @@
 }
 .input:focus{
   /* border: 2px solid dodgerblue; */
-  border:2px solid  rgb(0, 51, 192);
+  border:2px solid  #3880ff;
 }
 /* .jobCard .tab{
   align-content: flex-start;
@@ -236,7 +248,7 @@
   margin-bottom: 20px;
   margin-left: 20vw;
   font-size: medium;
-  background:  rgb(0, 51, 192);
+  background:  #3880ff;
   border-left: 3px solid ;
   outline: none;
 }

@@ -124,6 +124,8 @@ function submit(e){
           <button className="sbtn" type="submit" onClick={e => submit(e)}>
             Search
           </button>
+
+          <div className='suggestionCard'>
           <div  className="suggest">
           {suggestion1 && suggestion1.map((suggestion,i)=>(
               <div key={i} className="suggestion"  
@@ -141,12 +143,10 @@ function submit(e){
                   {suggestion}</div>
             ))}
           </div>
+          </div>
+
         </div>
-        {/* {city.map((val, i)=>{
-                    return (
-                        <div>{val.State}</div>
-                    )
-                })} */}
+       
       </div>
     </>
   );

@@ -11,48 +11,10 @@ import {API_CONSTANTS} from '../config/apiConstant'
 
 export default function FeaturedJobJobs() {
   const [items, setItems] = useState([]);
-  const { catagoriesSearch, locationSearch,  searchLocation,searchJob} = useContext(userContext);
+  const {   searchLocation,searchJob} = useContext(userContext);
   useEffect(() => {
     async function getData() {
-      if( locationSearch){
-        try {
-       const reqUrl = API_CONSTANTS.baseUrl+ API_CONSTANTS.project.SEARCH_ALL_PROJECTS_PUBLIC+"?sectors=&location="+locationSearch+"&page=0&limit=50&sort=createdAt&sortOrder=asc"
-          
-  
-          const res = await axios.get(reqUrl, {
-            headers: {
-              // authorization:cookies.get('access_token') ,
-               authorization:getCookies() ,
-            },
-          });
-          console.log(res);
-          setItems(res.data.projects);
-        } catch (error) {
-          console.log(error);
-        }
-
-
-      }else if(catagoriesSearch ){
-        try {
-          const reqUrl = API_CONSTANTS.baseUrl+ API_CONSTANTS.project.SEARCH_ALL_PROJECTS_PUBLIC+"?sectors="+catagoriesSearch+"&location=&page=0&limit=50&sort=createdAt&sortOrder=asc"
-             
-     
-             const res = await axios.get(reqUrl, {
-               headers: {
-                 // authorization:cookies.get('access_token') ,
-                  authorization:getCookies() ,
-               },
-             });
-             console.log(res);
-             setItems(res.data.projects);
-           } catch (error) {
-             console.log(error);
-           }
-   
-
-      }
-      
-      else if(searchLocation || searchJob){
+      if(searchLocation || searchJob){
         try {
        
 
@@ -90,7 +52,7 @@ export default function FeaturedJobJobs() {
     }
     }
     getData();
-  }, [locationSearch, catagoriesSearch,searchLocation,searchJob]);
+  }, [searchLocation,searchJob]);
   return (
     <>
       {items.length ===0?<div className={styles.dataErrorCard}>

@@ -50,7 +50,7 @@ export default function AddressForm() {
       const testDefault = {
         generalData: {
            registerBy: "self",
-          name: values.firstName + " " + values.lastName,
+          name: values.firstName.trim() + " " + values.lastName.trim(),
           dateOfBirth: values.date,
           // age: Number(values.age),
           gender: values.gender,

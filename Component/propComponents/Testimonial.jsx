@@ -27,7 +27,7 @@ export default function Testimonial(props) {
                                 </div>
                                
                             </div>
-                            <p className={styles.para}>"{props.Pline1}"</p>
+                           <div className={styles.pGraph}><p className={styles.para}>"{props.Pline1}"</p></div> 
                             
                         </div>
                     

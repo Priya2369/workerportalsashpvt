@@ -5,27 +5,22 @@ import {JobSearchContext} from '../context/JobSearchContext'
 import {userContext} from '../context/UserContext'
 
 export default function FilterJob() {
-  const {getfilterValue, setFilterValue, jobCatagories, jobType, jobLocation, experience, postedWithin, salary,
- setCatagiriesSearch,locationSearch, setLocationSearch} = useContext(userContext)
+  const {getfilterValue, setFilterValue, jobCatagories,  jobLocation, 
+ setSearchLocation, setSearchJob} = useContext(userContext)
   const [show, setShow] = useState(true )
   
   
 
 
-function SearchCat(e){
+function SearchFilter(e){
   e.preventDefault();
  
-  setCatagiriesSearch(jobCatagories)
-  // setSearchJob(jobType)
-
-}
-function SearchLoc(e){
-  e.preventDefault();
-  setLocationSearch(jobLocation)
-  
+  setSearchJob(jobCatagories)
+  setSearchLocation(jobLocation)
   
 
 }
+
   return (
     <>
       <div className={styles.first}>
@@ -33,6 +28,8 @@ function SearchLoc(e){
           <div onClick={() => setShow(!show)} className={styles.show}>
             <FilterListIcon fontSize='large' onClick={() => setShow(!show)} />Filter jobs
             </div>
+            {/* <button onClick={(e)=>SearchFilter(e)}>search</button><br /><br /> */}
+            <div className={styles.btnn} onClick={(e)=>SearchFilter(e)}> <button>Apply</button></div>
             </h4>
        
         {show ?
@@ -48,7 +45,7 @@ function SearchLoc(e){
               <option value="Software developer"></option>
 
 
-            </datalist><button onClick={(e)=>SearchCat(e)}>search</button><br /><br />
+            </datalist>
 
 
             <h6>Job Type</h6>
@@ -66,7 +63,7 @@ function SearchLoc(e){
               <option value="Mumbai"></option>
               <option value="Delhi"></option>
               <option value="Banglore"></option>
-            </datalist><button onClick={(e)=>SearchLoc(e)}>search</button><br />
+            </datalist>
             <h6>Experience</h6>
             <input type="checkbox" name="1-2 years" /> 1-2 Years<br />
             <input type="checkbox" name="2-3 years" /> 2-3 years <br />
