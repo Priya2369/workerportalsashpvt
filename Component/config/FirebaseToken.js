@@ -7,9 +7,10 @@ import Cookies from 'universal-cookie';
 import { SettingsInputSvideoRounded } from '@material-ui/icons';
 import axios from "axios";
 import { API_CONSTANTS } from "./apiConstant";
+import { toast } from "react-toastify";
 // import { useRouter } from 'next/router'
 
-
+toast.configure();
 
 export default async function tokenauth(detail, setShow) {
   initFirebase();
@@ -37,6 +38,16 @@ export default async function tokenauth(detail, setShow) {
 
   } catch (error) {
     console.log(error);
+    toast.error(error.message, {
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      position: "bottom-right",
+      autoClose: 5000,
+    });
+
   };
 
 }
@@ -54,6 +65,16 @@ export function otpModule(otp, router, dispatch,  setOpen, setShowHeader) {
     .confirm(otpInput)
     .then(async function(result) {
       console.log("User signed in successfully.");
+      toast.success("OTP verified", {
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        position: "bottom-right",
+        autoClose: 5000,
+      });
+
       // console.log("Result" + result.verificationID);
       let user = result.user;
        let userToken = await firebase.auth().currentUser.getIdToken(true);
@@ -105,7 +126,17 @@ export function otpModule(otp, router, dispatch,  setOpen, setShowHeader) {
     })
     .catch(function(error) {
       console.log(error);
-      alert("Incorrect OTP");
+      
+      toast.error("Incorrect OTP", {
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        position: "bottom-right",
+        autoClose: 5000,
+      });
+
     });
   
 }

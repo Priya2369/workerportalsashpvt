@@ -109,7 +109,7 @@ export default function AddressForm() {
       }
        resetForm({values:''})
        router.push('/jobs');
-       setNaShow(true)
+      //  setNaShow(true)
     },
   })
   useEffect(() => {
