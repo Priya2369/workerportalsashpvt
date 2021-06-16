@@ -115,12 +115,16 @@
   }
   @media (max-width:736px){
     .jobCard{
-      width: 400px;
+      width: 340px;
+      margin-left: 0px;
 
     }
     .main{
-      width: 340px;
+      width: 320px;
 
+    }
+    .apply{
+      width:80px;
     }
     .skillsContainer{
       margin-top: 5px;

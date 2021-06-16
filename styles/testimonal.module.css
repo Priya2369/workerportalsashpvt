@@ -194,3 +194,16 @@
   cursor: pointer;
   user-select: none;
 }
+@media (max-width:736px) {
+	.pGraph{
+		width: 350px;
+	
+	}
+	.leftArrow{
+		left: 220px;
+	}
+	.rightArrow{
+		left: -90px;
+	}
+	
+}

@@ -1,7 +1,4 @@
- 
-
-
-const Applied = () =>{
+ const Applied = () =>{
 
 
     return(

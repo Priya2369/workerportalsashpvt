@@ -268,7 +268,7 @@ export default function AddressForm() {
           />
         </Grid>
         <Grid item xs={12}><div className="newUserbtns"><Button align="center" variant="contained" 
-        color="primary" type="submit" fullWidth
+        color="primary" type="submit" 
         >
         Register
       </Button></div></Grid>
