@@ -51,10 +51,6 @@ const Header_Bottom = () => {
 	  localStorage.removeItem("user_info");
 	  setShowHeader(false)
 	  router.push('/')
-	//   if(!localStorage.get("user_info")){
-	// //    dispatch({type:'USER', payload: false})
-	//         setNaShow(false)
-	//   router.push('/');}
 
 	
 	})

@@ -1,6 +1,12 @@
 // import { slide as Menu } from 'react-burger-menu';
 import Menu from 'react-burger-menu/lib/menus/slide';
-
+import { useState, useEffect, createContext, useReducer,useContext } from "react";
+import {userContext} from '../context/UserContext'
+import initFirebase from '../config/firebaseConfig'
+import firebase from "firebase/app";
+import { useRouter } from 'next/router'
+import { getCookies } from "../config/FirebaseToken";
+import Cookies from 'universal-cookie';
 import Link from 'next/link';
 
 const styles = {
@@ -64,29 +70,94 @@ const styles = {
 	},
 };
 
-const Header_SideBar = () => (
+
+
+const Header_SideBar = () => {
+	const router = useRouter();
+	const cookies = new Cookies();
+
+	const {state, dispatch, showHeader, setShowHeader,  setSingleUser, singleUser} = useContext(userContext)
+	function logout(e){
+		e.preventDefault();
+		
+		
+		firebase.auth().signOut()
+	.then(() => {
+	  console.log('Signed Out');
+	  cookies.remove('access_token')
+	  
+	  localStorage.removeItem("user_info");
+	  setShowHeader(false)
+	  router.push('/')
+
+	
+	})
+	.catch(e=>{
+	 console.error('Sign Out Error', e);
+	});
+	
+	  }
+
+
+	useEffect(()=>{
+	
+		const data = localStorage.getItem("user_info")
+		
+		if(data){ 
+		  setShowHeader(true)
+		 }
+		
+		},[])
+
+
+	return(
+		<>
 	<Menu styles={styles}>
-		<nav>
+		{showHeader?<nav>
 			<Link href="/">
 				<a className="menuItem">Home</a>
 			</Link>
 			<Link href="/jobs">
 				<a className="menuItem">Jobs</a>
 			</Link>
-			<Link href="/companies">
+			{/* <Link href="/companies">
 				<a className="menuItem">Companies</a>
-			</Link>
+			</Link> */}
 			<Link href="/about">
 				<a className="menuItem">About</a>
 			</Link>
 			<Link href="/contact">
 				<a className="menuItem">Contact</a>
 			</Link>
-			<Link href="/contact">
-			<button className="loginButton">Login</button>
+			<Link href="/profile">
+			<a className="menuItem">profile</a>
+			</Link>
+			<Link href="/">
+			<button className="loginButton" onClick={(e)=>logout(e)}>Logout</button>
 			</Link>
 		</nav>
+		
+		:<nav>
+			<Link href="/">
+				<a className="menuItem">Home</a>
+			</Link>
+			{/* <Link href="/jobs">
+				<a className="menuItem">Jobs</a>
+			</Link> */}
+			{/* <Link href="/companies">
+				<a className="menuItem">Companies</a>
+			</Link> */}
+			<Link href="/about">
+				<a className="menuItem">About</a>
+			</Link>
+			<Link href="/contact">
+				<a className="menuItem">Contact</a>
+			</Link>
+			<Link href="/signup">
+			<button className="loginButton">Login</button>
+			</Link></nav>}
 	</Menu>
-);
+	</>
+	)};
 
 export default Header_SideBar;
