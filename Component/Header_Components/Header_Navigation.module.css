@@ -17,4 +17,7 @@
 	.navigation {
 		display: none;
 	}
+	.logout{
+		display: none;
+	}
 }
