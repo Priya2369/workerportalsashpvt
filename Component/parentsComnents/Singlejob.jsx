@@ -10,6 +10,8 @@ import WorkOutlineOutlinedIcon from '@material-ui/icons/WorkOutlineOutlined';
 import EventAvailableIcon from '@material-ui/icons/EventAvailable';
 import AssessmentIcon from '@material-ui/icons/Assessment';
 import ScheduleIcon from '@material-ui/icons/Schedule';
+import ClearIcon from '@material-ui/icons/Clear';
+import CheckIcon from '@material-ui/icons/Check';
 
 toast.configure();
 
@@ -111,10 +113,10 @@ const Singlejob = () =>{
           <div className={styles.ARAPL}>
                
                <ul className={styles.ul}>
-                 <li className={styles.li}><div className={styles.Square}></div></li><br/><br/>
-                   <li className={styles.li}><WorkOutlineOutlinedIcon/>{singleJob.title}</li><br/>
-                   <li className={styles.li}><LocationOnOutlinedIcon/>{singleJob.location}</li><br/>
-                   <li className={styles.li}>{salaryRang}</li>
+                 <li className={styles.li}><div className={styles.Square}><img src='./com.png'/></div></li><br/><br/>
+                   <li className={styles.li}><WorkOutlineOutlinedIcon/>&nbsp;<b>{singleJob.title}</b></li><br/>
+                   <li className={styles.li}><LocationOnOutlinedIcon/>&nbsp;<b>{singleJob.location}</b></li><br/>
+                   <li className={styles.li}> <span><b>₹</b></span> &nbsp;<b>{salaryRang}</b></li>
                </ul>
             </div><br/><br/>
 
@@ -123,25 +125,29 @@ const Singlejob = () =>{
             <div className={styles.Overview}>
               <h2 className={styles.h2}>Job Overview</h2>
                 <div className={styles.div}>
-                  <div className={styles.pos}><EventAvailableIcon/>Posted Date:&nbsp; &nbsp; &nbsp; &nbsp;1 Mar 2021</div>
-                  <div className={styles.vac}><AssessmentIcon/>Vacancy : &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
-                  {vacancy}
+                  <div className={styles.pos}><EventAvailableIcon/>&nbsp;&nbsp;<b>Posted Date</b>&nbsp; &nbsp; &nbsp; &nbsp;:&nbsp;&nbsp;<b>1 Mar 2021</b></div>
+                  <div className={styles.vac}><AssessmentIcon/>&nbsp;&nbsp;<b>Vacancy </b> &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:
+                  &nbsp;&nbsp;<b>{vacancy}</b>
                   </div>
                   
                   
 
 
-                  <div className={styles.sch}><ScheduleIcon/>Job Nature :&nbsp; &nbsp;&nbsp; &nbsp;
-                  {singleJob.natureOfEmployment.employmentType}</div>
-                  <div className={styles.sal}>₹ Salary : &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;{salaryRang} yearly</div>
-                 <div>{singleJob.facility.accommodation?<p>accommodation:yes </p>:<p>accommodation:No</p>}</div>
-                  <div>{singleJob.facility.transport?<p>transport:yes </p>:<p>transport:No</p>}</div>
-                  <div>{singleJob.facility.canteen?<p>canteen:yes </p>:<p>canteen:No</p>}</div>
-                  <div>{singleJob.facility.cookingArea?<p>cookingArea:yes </p>:<p>cookingArea:No</p>}</div>
-                  <div>{singleJob.facility.medicalCheckup?<p>medicalCheckup:yes </p>:<p>medicalCheckup:No</p>}</div>
-                  <div>{singleJob.facility.healthInsurance?<p>healthInsurance:yes </p>:<p>healthInsurance:No</p>}</div>
-                  <div>{singleJob.facility.industrialSafetyGears?<p>industrialSafetyGears:yes </p>:<p>industrialSafetyGears:No</p>}</div>
-                  <div>{singleJob.facility.overTime?<p>overTime:yes </p>:<p>overTime:No</p>}</div>
+                  <div className={styles.sch}><ScheduleIcon/>&nbsp;&nbsp;<b>Job Nature </b>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;:
+                  &nbsp;&nbsp;<b>{singleJob.natureOfEmployment.employmentType}</b></div>
+                  <div className={styles.sal}><b>₹ &nbsp;&nbsp; Salary</b>  &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;<b>{salaryRang}</b>&nbsp;<b>Monthly</b></div>
+                  <div className={styles.true}>
+                 <div>{singleJob.facility.accommodation?<p>accommodation: <CheckIcon/> </p>:<p>accommodation: <ClearIcon/></p>}</div>
+                  <div className={styles.trans}>{singleJob.facility.transport?<p>transport: <CheckIcon/> </p>:<p>transport:<ClearIcon/></p>}</div>
+                  <div className={styles.canten}>{singleJob.facility.canteen?<p>canteen:  <CheckIcon/></p>:<p>canteen:<ClearIcon/></p>}</div>
+                  <div className={styles.cookg}>{singleJob.facility.cookingArea?<p>cookingArea:  <CheckIcon/></p>:<p>cookingArea:<ClearIcon/></p>}</div>
+                  </div>
+                  <div className={styles.false}>
+                  <div>{singleJob.facility.medicalCheckup?<p>medicalCheckup: <CheckIcon/> </p>:<p>medicalCheckup:<ClearIcon/></p>}</div>
+                  <div>{singleJob.facility.healthInsurance?<p>healthInsurance:  <CheckIcon/></p>:<p>healthInsurance:<ClearIcon/></p>}</div>
+                  <div>{singleJob.facility.industrialSafetyGears?<p>industrialSafetyGears: <CheckIcon/> </p>:<p>industrialSafetyGears:<ClearIcon/></p>}</div>
+                  <div>{singleJob.facility.overTime?<p>overTime: <CheckIcon/> </p>:<p>overTime:<ClearIcon/></p>}</div>
+                  </div>
                   <button type="button" className={styles.Submit} onClick={(e)=>applyJob(e)}>Apply Now</button>
                 </div>
             </div>

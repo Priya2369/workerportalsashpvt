@@ -23,7 +23,9 @@ const Jobs = () =>{
 
         <div className={styles.jobs}>
             
-        <div className={styles.filter}><FilterJob/></div>
+        {/* <div className={styles.filter}> */}
+            <FilterJob/>
+            {/* </div> */}
         <div><FeaturedJob/></div>
            
         

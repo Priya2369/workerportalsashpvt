@@ -14,6 +14,7 @@
     height: 40px;
     cursor: pointer;
     justify-items: center;
+    outline: none;
 
 }
 .jobs a{
@@ -25,6 +26,7 @@
     margin-top: 30px;
     background-color: #FDE7D3;
     border-radius: 40px;
+    outline: none;
     border: 0px;
     width: 200px;
     height: 40px;

@@ -1,110 +1,77 @@
-
-.first{
-    box-shadow: 0 0 2px;
-    width: 220px;
-    position: sticky;
-    min-height: 80px;
-    max-height: 980px;
-    left: 0%;
-    top:0%;
-    background-color: white;
+.mainDiv{
+    display: grid;
+  
+    width: 90%;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    /* box-shadow: 0 0 2px; */
     border-radius: 10px;
-    /* margin-top: 3rem;
-    margin-left: 2rem;
-    text-align:left; */ 
+    font-family: 'Helvetica';
+    padding: 14px;
     margin-bottom: 20px;
-    border: 1px solid white;
-    
+    margin-left: 10px;
+    /* height: 250px; */
+    width: 700px;
+    background-color: white;
 }
- .second{
-    box-shadow: 0 0 2px;
-    /* height: 660px; */
-    margin-top:0rem;
-    /* margin-bottom: 2px; */
-    padding-top:2px;
-    padding-left: 10px;
+.first{
+    display: flex;
+    margin-bottom: 20px;
+    
+
+}
+
+.first input{
+    background: inherit;
+    border: 1px solid #ccc;
+    border-radius: 1rem;
+    margin-left: 40px;
+    padding: 1rem;
+    line-height: 1.25rem;
     width: 200px;
+    outline: none;
     
-    margin-left: 8px;
-    margin-bottom: 40px;
-    
+ 
 }
-.show{
-    cursor: pointer;
-    height: 50px;
+
+.radioSection{
     display: flex;
     
-   
-    justify-content: center;
-    transition-duration: 0.3s;
+}
+.radioBtn1{
+    margin-left: 40px;
 }
 
- .show:hover{
-     box-shadow: 0 0 10px rgb(0, 0, 0, 0.5);
-    
- }
-.valuel{
-    position:absolute;
-    font-size: 18px;
-    font-weight: 600;
-    left: 10px;
-    top:881px;
+.radioBtn2{
+    /* margin-right: 200px; */
+    /* border: 1px solid black; */
+    padding-left: 110px;
 }
-.valuer{
-    position:absolute;
-    font-size: 18px;
-    font-weight: 600;
-    right: 40px;
-    top:882px;
-}
-.slider{
-    width: 100%;
-}
-.slider span{
+.filterBtn{
+    /* border: 5px solid black; */
+    margin-left: 10vh;
+    width: 90px;
     height: 30px;
-    position: absolute;
-    width: 30px;
-    background: #664AFF;
-    color: #fff;
-    
-    transform: translateX(-50%) ;
-    z-index: 2;
-    text-align: center;
-    top:820px;
-    left: 50%;
-   
-}
-.slider span{
-    height: 30px;
-    position: absolute;
-    width: 30px;
-    content: "";
-    background: #664AFF;
-   
-    color: #fff;
-    font-weight: 500;
-    transform: translateX(-50%) rotate(45deg) ;
-    z-index: -1;
-    border-bottom-left-radius: 50%;
-    border-top-right-radius: 50%;
-    border-top-left-radius: 50%;
-   
-    top:820px;
-    left: 50%;
-   
+    background-color:blue;
+    color: white;
+    border: 0;
+    border-radius: 5px;
+    font-size:medium;
 }
 .btnn button{
-    width: 80px;
-    height: 25px;
-    background-color: #ff6600;
+    width: 90px;
+    height: 30px;
+    background-color: #59B957;
     color: white;
-    margin-left: 65px;
+    border: 0;
     border-radius: 5px;
+    font-size:medium;
+    margin-left: 32vh;
 }
 .btnn button:hover{
-    background-color: #3880ff;
+    background-color: blue;
 }
-.range .field input::-webkit-slider-thumb{
-    -webkit-appearance: none;
-    
+
+.jobTyeCard{
+    display: grid;
+    border: 1px solid black;
 }

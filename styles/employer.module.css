@@ -38,9 +38,9 @@
 }
 
 .names{
-  
+    text-align: center;
     margin-top: 20px;
-    margin-left: 50px;
+    margin-left: 0px;
  }
   .namej{
      margin-top: 20px;
@@ -48,11 +48,13 @@
  }
  .namee{
      margin-top: 20px;
-     margin-left: 60px;
+     margin-left: 10px;
+     text-align: center;
  }
  .nameh{
      margin-top: 20px;
-     margin-left: 50px; 
+     margin-left: 20px; 
+     text-align: center;
  }
 .numb{
     margin-top: 30px;

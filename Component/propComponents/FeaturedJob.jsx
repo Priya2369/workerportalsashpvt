@@ -58,7 +58,7 @@ export default function FeaturedJob(props) {
      
       <div className={styles.jobCard} onClick={click} id={props.id}>
         <div className={styles.main}>
-          {" "}
+          
           <div className={styles.jobTitle}>
             <b>{props.company}</b>
           </div>
@@ -67,7 +67,7 @@ export default function FeaturedJob(props) {
               <VisibilityIcon fontSize="small" />
             </div>
             <div className={styles.favr}>
-              {" "}
+              
               <FavoriteIcon fontSize="small" />
             </div>
 

@@ -245,7 +245,7 @@ function onApplied(e){
 
 
       <div>
-        <div className={styles.tab}>
+        {/* <div className={styles.tab}>
           <h2>Quick Link</h2>
           <button className={styles.p}>
            
@@ -265,7 +265,8 @@ function onApplied(e){
             Job Description
           </Link></button>
          
-        </div>
+        </div> */}
+        
 
         {/* ............................................ */}
 

@@ -3,13 +3,19 @@ import styles from '../../styles/filterJob.module.css'
 import FilterListIcon from '@material-ui/icons/FilterList';
 import {JobSearchContext} from '../context/JobSearchContext'
 import {userContext} from '../context/UserContext'
+import Radio from '@material-ui/core/Radio';
+import RadioGroup from '@material-ui/core/RadioGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import FormControl from '@material-ui/core/FormControl';
+import FormLabel from '@material-ui/core/FormLabel';
+import Grid from '@material-ui/core/Grid';
+
 
 export default function FilterJob() {
   const {getfilterValue, setFilterValue, jobCatagories,  jobLocation, 
- setSearchLocation, setSearchJob} = useContext(userContext)
-  const [show, setShow] = useState(true )
-  
-  
+ setSearchLocation, setSearchJob,jobTypes,salary} = useContext(userContext)
+ 
+ const [show, setShow] = useState(false)
 
 
 function SearchFilter(e){
@@ -21,20 +27,16 @@ function SearchFilter(e){
 
 }
 
+
   return (
     <>
-      <div className={styles.first}>
-        <h4>
-          <div onClick={() => setShow(!show)} className={styles.show}>
-            <FilterListIcon fontSize='large' onClick={() => setShow(!show)} />Filter jobs
-            </div>
-            {/* <button onClick={(e)=>SearchFilter(e)}>search</button><br /><br /> */}
-            <div className={styles.btnn} onClick={(e)=>SearchFilter(e)}> <button>Apply</button></div>
-            </h4>
+      
        
-        {show ?
-          <div className={styles.second}>
-            <h6 >Job Category</h6>
+        
+          <div className={styles.mainDiv}>
+
+          <div className={styles.first}>
+            {/* <h6 >Job Category</h6> */}
             <input list="jobs" placeholder="All Categories" 
             value={jobCatagories}
             onChange={(e) => setFilterValue({ ...getfilterValue, jobCatagories: e.target.value })}
@@ -48,14 +50,11 @@ function SearchFilter(e){
             </datalist>
 
 
-            <h6>Job Type</h6>
-            <input type="checkbox" name="Full Time" /> Full Time<br />
-            <input type="checkbox" name="Part Time" /> Part Time <br />
-            <input type="checkbox" name="Remote" /> Remote <br />
-            <input type="checkbox" name="Freelance" /> Freelance<br /><br />
+             
+           
 
-            <h6>Job Location</h6>
-            <input list="locations" placeholder="Anywhere" 
+            {/* <h6>Job Location</h6> */}
+            <input list="locations" placeholder="Location" 
             value={jobLocation}
             onChange={(e) => setFilterValue({ ...getfilterValue, jobLocation: e.target.value })} 
             /><br />
@@ -64,25 +63,56 @@ function SearchFilter(e){
               <option value="Delhi"></option>
               <option value="Banglore"></option>
             </datalist>
-            <h6>Experience</h6>
-            <input type="checkbox" name="1-2 years" /> 1-2 Years<br />
-            <input type="checkbox" name="2-3 years" /> 2-3 years <br />
-            <input type="checkbox" name="3-4 years" /> 3-4 years <br />
-            <input type="checkbox" name="4-more.." /> 4-more..<br /><br />
-            <h6>Posted Within</h6>
-            <input type="checkbox" name="Any" /> Any<br />
-            <input type="checkbox" name="Today" /> Today <br />
-            <input type="checkbox" name="Last Week" /> Last Week <br />
-            <input type="checkbox" name="Last Month" /> Last Month<br />
-            <h6>Salary</h6>
-            <input type="range" min="8000" max="15000" />
+
+            <button className={styles.filterBtn} onClick={() => setShow(!show)}>Filter</button>
+
+            </div>
+            
+
+          {show?<div className={styles.radioSection}>
+
+<div className={styles.radioBtn1}>
+            <FormControl component="fieldset" >
+      <FormLabel component="legend">jobType</FormLabel>
+      <RadioGroup aria-label="jobtype" name="jobtype1" value={jobTypes} 
+      onChange={(e) => setFilterValue({ ...getfilterValue, jobTypes: e.target.value })} >
+        
+        <FormControlLabel value="parmanent" control={<Radio />} label="Parmanent" />
+        <FormControlLabel value="contract" control={<Radio />} label="Contract" />
+        
+      </RadioGroup>
+    </FormControl>
+    </div>
+
+
+   
+    
+<div className={styles.radioBtn2}>
+    <FormControl component="fieldset" >
+      <FormLabel component="legend">Salary</FormLabel>
+      <RadioGroup aria-label="salary" name="salary1" value={salary} 
+      onChange={(e) => setFilterValue({ ...getfilterValue, salary: e.target.value })}>
+        <FormControlLabel value="10,000" control={<Radio />} label="10,000 to 20,000" />
+        <FormControlLabel value="20,000" control={<Radio />} label="20,000 to 40,000" />
+        <FormControlLabel value="30,000" control={<Radio />} label="40,000 to 50,000" />
+        
+      </RadioGroup>
+    </FormControl></div></div>:null }
+
+    <div className={styles.btnn} onClick={(e)=>SearchFilter(e)}> <button>Apply</button></div>
+
+
+
+             
+            
+           
 
             
           </div>
           
+          
 
-          : null}
-      </div>
+      
     </>
   )
 }

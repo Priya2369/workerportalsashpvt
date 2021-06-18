@@ -16,7 +16,7 @@
     justify-content: center;
 }
     .ARAPL{
-        box-shadow: 0 0 3px;
+        box-shadow: 0 0 5px rgb(228, 222, 215);
         width: 800px;
         word-wrap: break-word;
         height: fit-content;
@@ -24,33 +24,34 @@
       /* position: sticky;
       top: 0; */
         border: 0;
-        border-radius: 4px;
+        border-radius: 8px;
         background-color: white;
+        color: rgb(105, 128, 128);
     }
-    .Square{
-        border:1px solid black double;
-        width:50px;
-        height:50px;
-        padding-left:10px;
-        margin-left: -10px;
-        background-color:gainsboro;
+    .li span{
+        font-size: large;
+        margin-left: 5px;
+    }
+    
+    .Square img{
+        width: 60px;
+        height: 60px;
         
-
     }
 .ARAPL .li{
         display: inline-block;
         padding:4px;
         text-shadow: gray;
         
-        margin-left: 20px;
+        margin-left: 0px;
         margin-bottom: -20px;
         display: flex;
         
 
     }
     .Overview{
-        box-shadow: 0 0 4px;
-        border-radius: 4px;
+        box-shadow: 0 0 5px rgb(228, 222, 215);
+        border-radius: 8px;
         width: 800px;
         word-wrap:break-word;
         height: fit-content;
@@ -58,6 +59,7 @@
         justify-items: center;
        margin-top: -30px;
         background-color: white;
+        color: rgb(105, 128, 128);
         /* margin-left: 25px; */
     }
     .Overview h2{
@@ -74,7 +76,7 @@
     .div{
        
        margin-left: 8px;
-        word-wrap:break-word;
+        border: 1px black;
         /* border: 1px solid black; */
     }
     .pos{
@@ -93,23 +95,38 @@
     }
     .sal{
         display: flex;
-        margin-left: 35px;
+        margin-left: 40px;
         margin-top: 5px;
     }
     .Submit{
         width: 500px;
         height: 30px;
-        margin-left: 50px;
+        margin-left: 130px;
         background-color: blue;
         color: white;
         border-radius: 5px;
+        border: 0;
 
     }
-    .Description{
-        box-shadow: 0 0 5px;
-        border-radius: 4px;
-        width: 800px;
+    .Submit:hover{
+        background-color: rgb(119, 115, 196);
         
+
+    }
+    .trans{
+        margin-left: 20px;
+    }
+    .canten{
+        margin-left: 50px;
+    }
+    .cookg{
+        margin-left: 60px;
+    }
+    .Description{
+        box-shadow: 0 0 5px rgb(243, 238, 232);
+        border-radius: 8px;
+        width: 800px;
+        color: rgb(105, 128, 128);
         height: fit-content;
         margin-bottom: 15px;
         justify-items: center;
@@ -160,6 +177,12 @@
       .Information p{
           text-align: center;
           word-wrap:break-word;
+      }
+      .true{
+          display: flex;
+      }
+      .false{
+          display: flex;
       }
 
       @media(max-width:736px){
