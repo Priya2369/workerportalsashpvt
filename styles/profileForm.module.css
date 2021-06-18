@@ -131,16 +131,18 @@
   margin-left: 20px;
   margin-top: 8px;
   width: 65vh;
-  word-wrap: break-word;
+  /* word-wrap: break-word; */
 }
 .name h1{
   
-  font-size: 30px;
+  font-size: 20px;
   color: white;
   
 }
 .name{
   display: flex;
+  width: fit-content;
+  /* border: 1px solid black; */
 }
 .phone{
   display: flex;
