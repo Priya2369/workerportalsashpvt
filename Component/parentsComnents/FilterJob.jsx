@@ -10,13 +10,14 @@ import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
 import Grid from '@material-ui/core/Grid';
 import AddIcon from '@material-ui/icons/Add';
+import ImportExportIcon from '@material-ui/icons/ImportExport';
 
 
 export default function FilterJob() {
   const {getfilterValue, setFilterValue, jobCatagories,  jobLocation, 
- setSearchLocation, setSearchJob,jobTypes,salary} = useContext(userContext)
+ setSearchLocation, setSearchJob,jobTypes,salary, setJobType} = useContext(userContext)
  
- const [show, setShow] = useState(false)
+ const [show, setShow] = useState(true)
 
 
 function SearchFilter(e){
@@ -24,6 +25,8 @@ function SearchFilter(e){
  
   setSearchJob(jobCatagories)
   setSearchLocation(jobLocation)
+  setJobType(jobTypes)
+
   
 
 }
@@ -68,8 +71,8 @@ function SearchFilter(e){
             </datalist>
             </div>
 
-            <button className={styles.filterBtn} onClick={() => setShow(!show)}>
-              <div className={styles.FIcon}><AddIcon/></div></button>
+            {/* <div className={styles.filterBtn} onClick={() => setShow(!show)}>
+             <ImportExportIcon/></div> */}
 
             </div>
             
@@ -82,7 +85,7 @@ function SearchFilter(e){
       <RadioGroup aria-label="jobtype" name="jobtype1" value={jobTypes} 
       onChange={(e) => setFilterValue({ ...getfilterValue, jobTypes: e.target.value })} >
         <div className={styles.rdiobtn1}>
-        <FormControlLabel value="parmanent" control={<Radio />} label="Parmanent" />
+        <FormControlLabel value="permanent" control={<Radio />} label="Parmanent" />
         <FormControlLabel value="contract" control={<Radio />} label="Contract" />
         </div>
       </RadioGroup>

@@ -53,21 +53,21 @@
 .rdiogrp{
     display: flex;
 }
-.filterBtn{
-    /* border: 5px solid black; */
-    margin-left: 10vh;
+/* .filterBtn{
+   
+    margin-left: 15vh;
     width: 90px;
-    height: 30px;
-    background-color:blue;
-    color: white;
+    height: 50px;
+   
+    color: blue;
     border: 0;
-    border-radius: 5px;
-    font-size:medium;
+   
+    font-size:x-large;
 }
 
 .FIcon{
     display: flex;
-}
+} */
 .btnn button{
     width: 120px;
    height: 35px;
