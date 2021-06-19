@@ -338,6 +338,7 @@ div .hori-line {
 	text-align: center;
 	border: 0;
 	outline: none;
+	border-right: 1px solid black;
 }
 .dropbtn{
 width: 300px;

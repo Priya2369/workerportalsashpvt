@@ -82,24 +82,24 @@ export default function FeaturedJob(props) {
         </div>
         <div className={styles.skillsContainer}>
           <div className={styles.company}>
-            <BusinessIcon fontSize="small" />
-            <span>Company : {props.company}</span>
+            <BusinessIcon fontSize="small" />&nbsp;&nbsp;
+            Company &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp; {props.company}
           </div>
           <div className={styles.skills}>
-            <DehazeIcon fontSize="small" />
-            <span>Catagory :{props.skill}</span>
+            <DehazeIcon fontSize="small" />&nbsp;&nbsp;
+            Catagory &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;{props.skill}
           </div>
           <div className={styles.skilll}>
-            <LocationOnIcon fontSize="small" />
-            <span>Location : {props.location}</span>
+            <LocationOnIcon fontSize="small" />&nbsp;&nbsp;
+            Location &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: &nbsp;{props.location}
           </div>
           <div className={styles.skillr}>
-            {" "}
-            ₹ <span>Salary Range:{props.salary}</span>
+            
+           <b>₹</b> &nbsp;&nbsp; Salary Range &nbsp;:&nbsp;&nbsp;{props.salary}
           </div>
           <div className={styles.skillp}>
-            <EventAvailableIcon fontSize="small" />
-            <span>Posted on : 23 jan 2021</span>
+            <EventAvailableIcon fontSize="small" />&nbsp;&nbsp;
+            Posted on &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp; 23 jan 2021
           </div>
         </div>
       </div>

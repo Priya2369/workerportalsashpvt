@@ -63,7 +63,7 @@
         /* margin-left: 25px; */
     }
     .Overview h2{
-       margin-left: 40px;
+       margin-left: 45px;
        word-wrap:break-word;
     }
     .Overview p{
@@ -99,13 +99,13 @@
         margin-top: 5px;
     }
     .Submit{
-        width: 500px;
-        height: 30px;
-        margin-left: 130px;
-        background-color: blue;
-        color: white;
+        width: 120px;
+        height: 35px;
         border-radius: 5px;
-        border: 0;
+        border: 0px;
+        color: white;
+        background-color:#3880ff;
+        margin-left: 37px;
 
     }
     .Submit:hover{
@@ -147,7 +147,7 @@
         
     }
     .Description p{
-        margin-left: 60px;
+        margin-left: 50px;
         word-wrap:break-word;
     }
     .Description li{
@@ -190,23 +190,77 @@
         .ARAPL{
             
             width: 340px;
-           margin-left: 0px;
+            margin-left: 0px;
             
             
         }
+        .ul{
+            margin-left: -20px;
+        }
+        .true{
+            display: grid;
+            font-size: small;
+            margin-left: -10px;
+        }
+        .false{
+            display: grid;
+            font-size: small;
+            margin-left: -20px;
 
+        }
+        .trans{
+            margin-left: 0px;
+        }
+        .canten{
+            margin-left: 0px;
+        }
+        .cookg{
+            margin-left: 0px;
+        }
+        .trfls{
+            display: flex;
+            font-size: small;
+            margin-left: -15px;
+        }
         .Overview{
             width: 340px;
             margin-left: 0px;
+
         }
-        
+        .Overview h2{
+            margin-left: 20px;
+        }
+        .pos{
+            font-size: small;
+            margin-left: 10px;
+        }
+        .vac{
+            font-size: small;
+            margin-left: 10px;
+        }
+        .sch{
+            font-size: small;
+            margin-left: 10px;
+        }
+        .sal{
+            font-size: small;
+            margin-left: 17px;
+        }
         .Submit{
             width: 240px;
+            margin-left: 16px;
            
             
         }
         .Description{
             width: 340px;
+            margin-left: 0px;
+            
+        }
+        .Description p{
+            margin-left: 20px;
+        }
+        .Description h2{
             margin-left: 0px;
         }
      }

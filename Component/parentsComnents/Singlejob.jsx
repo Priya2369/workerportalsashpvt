@@ -136,6 +136,7 @@ const Singlejob = () =>{
                   <div className={styles.sch}><ScheduleIcon/>&nbsp;&nbsp;<b>Job Nature </b>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;:
                   &nbsp;&nbsp;<b>{singleJob.natureOfEmployment.employmentType}</b></div>
                   <div className={styles.sal}><b>₹ &nbsp;&nbsp; Salary</b>  &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;<b>{salaryRang}</b>&nbsp;<b>Monthly</b></div>
+                  <div className={styles.trfls}>
                   <div className={styles.true}>
                  <div>{singleJob.facility.accommodation?<p>accommodation: <CheckIcon/> </p>:<p>accommodation: <ClearIcon/></p>}</div>
                   <div className={styles.trans}>{singleJob.facility.transport?<p>transport: <CheckIcon/> </p>:<p>transport:<ClearIcon/></p>}</div>
@@ -147,6 +148,7 @@ const Singlejob = () =>{
                   <div>{singleJob.facility.healthInsurance?<p>healthInsurance:  <CheckIcon/></p>:<p>healthInsurance:<ClearIcon/></p>}</div>
                   <div>{singleJob.facility.industrialSafetyGears?<p>industrialSafetyGears: <CheckIcon/> </p>:<p>industrialSafetyGears:<ClearIcon/></p>}</div>
                   <div>{singleJob.facility.overTime?<p>overTime: <CheckIcon/> </p>:<p>overTime:<ClearIcon/></p>}</div>
+                  </div>
                   </div>
                   <button type="button" className={styles.Submit} onClick={(e)=>applyJob(e)}>Apply Now</button>
                 </div>

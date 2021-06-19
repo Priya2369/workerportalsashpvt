@@ -9,6 +9,7 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
 import Grid from '@material-ui/core/Grid';
+import AddIcon from '@material-ui/icons/Add';
 
 
 export default function FilterJob() {
@@ -36,6 +37,8 @@ function SearchFilter(e){
           <div className={styles.mainDiv}>
 
           <div className={styles.first}>
+
+          <div>
             {/* <h6 >Job Category</h6> */}
             <input list="jobs" placeholder="All Categories" 
             value={jobCatagories}
@@ -63,8 +66,10 @@ function SearchFilter(e){
               <option value="Delhi"></option>
               <option value="Banglore"></option>
             </datalist>
+            </div>
 
-            <button className={styles.filterBtn} onClick={() => setShow(!show)}>Filter</button>
+            <button className={styles.filterBtn} onClick={() => setShow(!show)}>
+              <div className={styles.FIcon}><AddIcon/></div></button>
 
             </div>
             
@@ -73,13 +78,13 @@ function SearchFilter(e){
 
 <div className={styles.radioBtn1}>
             <FormControl component="fieldset" >
-      <FormLabel component="legend">jobType</FormLabel>
+      <FormLabel component="legend"><b>JobType</b></FormLabel>
       <RadioGroup aria-label="jobtype" name="jobtype1" value={jobTypes} 
       onChange={(e) => setFilterValue({ ...getfilterValue, jobTypes: e.target.value })} >
-        
+        <div className={styles.rdiobtn1}>
         <FormControlLabel value="parmanent" control={<Radio />} label="Parmanent" />
         <FormControlLabel value="contract" control={<Radio />} label="Contract" />
-        
+        </div>
       </RadioGroup>
     </FormControl>
     </div>
@@ -89,17 +94,18 @@ function SearchFilter(e){
     
 <div className={styles.radioBtn2}>
     <FormControl component="fieldset" >
-      <FormLabel component="legend">Salary</FormLabel>
+      <FormLabel component="legend"><b>Salary</b></FormLabel>
       <RadioGroup aria-label="salary" name="salary1" value={salary} 
       onChange={(e) => setFilterValue({ ...getfilterValue, salary: e.target.value })}>
+      <div className={styles.rdiogrp}>
         <FormControlLabel value="10,000" control={<Radio />} label="10,000 to 20,000" />
         <FormControlLabel value="20,000" control={<Radio />} label="20,000 to 40,000" />
         <FormControlLabel value="30,000" control={<Radio />} label="40,000 to 50,000" />
-        
+      </div>  
       </RadioGroup>
     </FormControl></div></div>:null }
 
-    <div className={styles.btnn} onClick={(e)=>SearchFilter(e)}> <button>Apply</button></div>
+    <div className={styles.btnn} onClick={(e)=>SearchFilter(e)}> <button><b>Apply</b></button></div>
 
 
 

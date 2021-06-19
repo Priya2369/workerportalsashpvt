@@ -10,14 +10,15 @@
     margin-bottom: 20px;
     margin-left: 10px;
     /* height: 250px; */
-    width: 700px;
+    width: 800px;
     background-color: white;
 }
 .first{
     display: flex;
     margin-bottom: 20px;
-    
-
+    justify-content:space-between;
+    margin-left: -30px;
+   
 }
 
 .first input{
@@ -34,17 +35,23 @@
 }
 
 .radioSection{
-    display: flex;
+    display: grid;
     
 }
 .radioBtn1{
-    margin-left: 40px;
+    margin-left: 15px;
+}
+.rdiobtn1{
+    display: flex;
 }
 
 .radioBtn2{
     /* margin-right: 200px; */
     /* border: 1px solid black; */
-    padding-left: 110px;
+    padding-left: 15px;
+}
+.rdiogrp{
+    display: flex;
 }
 .filterBtn{
     /* border: 5px solid black; */
@@ -57,21 +64,43 @@
     border-radius: 5px;
     font-size:medium;
 }
+
+.FIcon{
+    display: flex;
+}
 .btnn button{
-    width: 90px;
-    height: 30px;
-    background-color: #59B957;
-    color: white;
-    border: 0;
-    border-radius: 5px;
-    font-size:medium;
+    width: 120px;
+   height: 35px;
+   border-radius: 5px;
+   border: 0px;
+   color: white;
+   background-color:#3880ff;
+  
     margin-left: 32vh;
+    float: right;
+    margin-top: -40px;
 }
 .btnn button:hover{
-    background-color: blue;
+    background-color:rgb(74, 74, 141);
 }
 
 .jobTyeCard{
     display: grid;
     border: 1px solid black;
+}
+@media (max-width:736px) {
+    .mainDiv{
+        width: 340px;
+        margin-left: 0;
+        
+    }
+    .btnn button{
+        margin-top: 0;
+        float: none;
+        margin-left: 17vh;
+        width: 80px;
+    }
+    .filterBtn{
+        margin-left: 0;
+    }
 }

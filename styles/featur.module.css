@@ -10,7 +10,7 @@
     margin-bottom: 10px;
     margin-left: 10px;
     height: 250px;
-    width: 700px;
+    width: 800px;
     background-color: white;
   }
 
@@ -39,7 +39,7 @@
    
    }
    .skillsContainer {
-  
+    font-size: small;
     align-self: center;
     padding-top: 10px;
     padding: 0 24px;
@@ -52,49 +52,44 @@
     font-size: 15px;
     padding: 5px 8px ;
     display: inline-flex;
-   
+   font-size: small;
   }
   .skills {
     margin-left: -10px;
     padding: 5px 8px;
     font-size: 15px;
     display: flex;
-    
+    font-size: small;
   }
-  .skills span{
-    margin-left: 10px;
-  }
+  
   .skilll {
     margin-left: -10px;
     padding: 5px 8px;
     font-size: 15px;
     display: flex;
-    
+    font-size: small;
   }
-  .skilll span{
-    margin-left: 10px;
-  }
+  
   .skillr {
-    margin-left: -10px;
+    margin-left: -5px;
     padding: 5px 8px;
     font-size: 15px;
     display: flex;
-    
+    font-size: small;
     
   }
-  .skillr span{
-    margin-left: 10px;
-    display: flex;
-  }
+  
   .skillp {
     margin-left: -10px;
     padding: 5px 8px;
     font-size: 15px;
     display: flex;
-    
+    font-size: small;
   }
-  .skillp span{
-    margin-left: 10px;
+  .main button:hover{
+    
+      background-color: rgb(74, 74, 141);
+    
   }
   .apply{
    
@@ -104,8 +99,10 @@
    border-radius: 5px;
    border: 0px;
    color: white;
+   margin-right: 7px;
    background-color:#3880ff;
   }
+  
   
   .visible{
     margin-top: 5px;
@@ -134,6 +131,7 @@
     .skillsContainer{
       margin-top: 5px;
       word-wrap: break-word;
+      
     }
   }
  
