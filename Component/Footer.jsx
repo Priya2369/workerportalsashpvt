@@ -1,5 +1,10 @@
 import Link from 'next/link';
 import Head from 'next/head';
+import InstagramIcon from '@material-ui/icons/Instagram';
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
+import FacebookIcon from '@material-ui/icons/Facebook';
+import TwitterIcon from '@material-ui/icons/Twitter';
+import { YouTube } from '@material-ui/icons';
 // import styles from '../styles/Home.module.css';
 import style from './Footer.module.css';
 import {
@@ -31,11 +36,17 @@ let Home = () => {
 					</div>
 					<div className="social-links">
 							<div className={style.icons}>
-								<FontAwesomeIcon icon={faFacebookSquare} />
-								<FontAwesomeIcon icon={faTwitterSquare} />
-								<FontAwesomeIcon icon={faInstagramSquare} />
-								<FontAwesomeIcon icon={faYoutubeSquare} />
-								<FontAwesomeIcon icon={faLinkedin} />
+								
+								<a className={style.iconh} href="https://www.facebook.com/MoSahay-104123531455625/" 
+					rel="noopener noreferrer" target="_blank"><FacebookIcon/></a>
+					<a className={style.iconh} href="https://twitter.com/MoSahaymedia?s=08" 
+					rel="noopener noreferrer" target="_blank"><TwitterIcon/></a>
+					<a className={style.iconh} href="https://instagram.com/mosahaymedia?igshid=1914qch8611su" 
+					rel="noopener noreferrer" target="_blank"><InstagramIcon/></a>
+					<a className={style.iconh} href="https://youtube.com/channel/UCSqG4BHuKSaBvNsb-MDy9cQ" 
+					rel="noopener noreferrer" target="_blank"><YouTube/></a>
+					<a className={style.iconh} href="https://www.linkedin.com/company/mosahay" 
+					rel="noopener noreferrer" target="_blank"><LinkedInIcon/></a>
 							</div>
 							
 					</div>

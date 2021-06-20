@@ -66,26 +66,26 @@ const Header_Bottom = () => {
   }
 
   // function for user user profile page ...............
-  async function profileEdit(e) {
-    e.preventDefault();
-    try {
-      const reqUrl =
-        API_CONSTANTS.baseUrl + API_CONSTANTS.enrollment.SELF_PROFILE;
-      const res = await axios.get(reqUrl, {
-        headers: {
-          // authorization:cookies.get('access_token') ,
-          authorization: getCookies(),
-        },
-      });
-      console.log(res.data.data);
-      setSingleUser(res.data.data);
-      console.log("single user data save in state");
+  // async function profileEdit(e) {
+  //   e.preventDefault();
+  //   try {
+  //     const reqUrl =
+  //       API_CONSTANTS.baseUrl + API_CONSTANTS.enrollment.SELF_PROFILE;
+  //     const res = await axios.get(reqUrl, {
+  //       headers: {
+  //         // authorization:cookies.get('access_token') ,
+  //         authorization: getCookies(),
+  //       },
+  //     });
+  //     console.log(res.data.data);
+  //     setSingleUser(res.data.data);
+  //     console.log("single user data save in state");
 
-      router.push("/profile");
-    } catch (error) {
-      console.log(error.message);
-    }
-  }
+  //     router.push("/profile");
+  //   } catch (error) {
+  //     console.log(error.message);
+  //   }
+  // }
 
   // // SetItem in localStorage for single user
 
@@ -117,9 +117,9 @@ const Header_Bottom = () => {
             <Link href="/contact">
               <a>Contact</a>
             </Link>
-            {/* <Link href="/profile"> */}
-            <a onClick={(e) => profileEdit(e)}>Profile</a>
-            {/* </Link> */}
+            <Link href="/profile">
+            <a >Profile</a>
+            </Link>
           </nav>
 
           <div className={style.notification}>

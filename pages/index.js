@@ -23,7 +23,7 @@ export default function Home() {
 // 	const [catagories ,setCatagories]=useState();
 // 	const [location, setLocation] = useState("");
 //   const[jobType, setJobType] = useState("");
-	let topCategoryCards = Sdata.map(val => <BrowseTopCategories key={uuidv4()} image={val.image} sName={val.sName} />);
+	
 
 	return (
 		<>
@@ -34,19 +34,8 @@ export default function Home() {
 		{/* <JobSearchContext.Provider value={{setLocation, setJobType, location, jobType,catagories, setCatagories, searchLocation, setSearchLocation,searchJob, setSearchJob}}> */}
 		<Flex />
 		{/* <Search/> */}
-			<div className="indexh1">
-				{/* <h1>Browse Top categories</h1> */}
-				{/* <div className={styles.cardsContainer}>
-					<div className={styles.cards}>{topCategoryCards}</div>
-				</div> */}
-			</div>
-			{/* <h1>Featured Jobs</h1>
-      <div className={styles.fjob}>
-		  <FeaturedJob/>
-	  
-        </div> */}
-		
-		{/* </JobSearchContext.Provider> */}
+			
+			
       <Open/>
 	  <div><TestimonialSlide /></div>
 	  

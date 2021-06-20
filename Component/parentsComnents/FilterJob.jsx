@@ -85,7 +85,7 @@ function SearchFilter(e){
       <RadioGroup aria-label="jobtype" name="jobtype1" value={jobTypes} 
       onChange={(e) => setFilterValue({ ...getfilterValue, jobTypes: e.target.value })} >
         <div className={styles.rdiobtn1}>
-        <FormControlLabel value="permanent" control={<Radio />} label="Parmanent" />
+        <FormControlLabel value="permanent" control={<Radio />} label="Permanent" />
         <FormControlLabel value="contract" control={<Radio />} label="Contract" />
         </div>
       </RadioGroup>
