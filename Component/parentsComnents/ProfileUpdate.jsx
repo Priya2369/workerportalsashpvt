@@ -296,7 +296,7 @@ function onApplied(e){
 
         <div className={styles.tab2}>
           <form onSubmit={formik.handleSubmit}>
-{/* profile information form componets */}
+                   {/* profile information form componets */}
             <div className={styles.formOne} id="profile">
               <h2
                 className={styles.hover}

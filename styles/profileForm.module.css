@@ -1,20 +1,25 @@
 .body{
   display: flex;
   justify-content: space-between;
-  background-color: rgb(209, 203, 196);
+  /* background-color: rgb(209, 203, 196); */
+  background-color: whitesmoke;
 }
 /*Header-----------*/
 .Header{
-  width: 25vw;
+  width: 23vw;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);  
-   height: 36vw;  
+   height: 26vw;  
   margin-top: 20px;
-  margin-left: 30px;
+  margin-left: 100px;
   background-color: white;
   border-radius: 10px;
   position: sticky;
   top: 65px;
   color: rgb(105, 128, 128);
+  /* justify-content: center; */
+  padding-left: 40px;
+  padding-right: 40px;
+
 }
 
 .left{
@@ -24,8 +29,8 @@
   text-align: center;
 }
 .imgs img{
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
   margin-top: 10px;
   border: 1px solid black;
 }
@@ -34,9 +39,9 @@
   margin-top: 15px;
   font-size: 20px;
 }
-.dats{
+/* .dats{
   margin-left: 25px;
-}
+} */
 .phone{
   margin-top: 10px;
   display: flex;
@@ -56,6 +61,9 @@
 }
 .applied{
   display: flex;
+  font-size: large;
+  cursor: pointer;
+  color: #ff6600;
 }
 
 /*Quick Link ................*/
@@ -151,7 +159,7 @@
  /* form...........*/
  .tab2{
   background-color: white;
-  margin-right: 30px;
+  margin-right: 100px;
   margin-top: 2vw;
   border-radius: 10px;
   /* border: 1px solid black; */
