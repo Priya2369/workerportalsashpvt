@@ -62,6 +62,9 @@
     color: white;
     font-size: medium;
 }
+
+
+
 @media (max-width:736px) {
     .post{
         width: 25vh;

@@ -30,12 +30,14 @@ const styles = {
 		background: '#bdc3c7',
 	},
 	bmMenuWrap: {
+		
 		position: 'fixed',
 		height: '100%',
 		left: '100vw',
 		top:'0',
 	},
 	bmMenu: {
+		zIndex:'4',
 		background: '#373a47',
 		padding: '2.5em 1.5em 0',
 		fontSize: '1.15em',

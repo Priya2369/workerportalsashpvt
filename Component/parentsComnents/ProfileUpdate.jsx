@@ -19,7 +19,7 @@ import { useRouter } from 'next/router'
 
 import { FaUser, 
   
-  FaEnvelope, 
+  FaEnvelope,
   FaGraduationCap,
   FaBusinessTime,
   FaAddressBook,
@@ -46,46 +46,67 @@ const ProfileUpdate = () => {
 console.log("profile............................")
   
 console.log(singleUser)
+// useEffect(() => {
+//     async function getData() {
+//       console.log("run....................")
+//       try{
+//     const reqUrl =
+//           API_CONSTANTS.baseUrl + API_CONSTANTS.enrollment.SELF_PROFILE;
+//           let res = await axios.get(reqUrl,{
+//             headers: {
+//               // authorization:cookies.get('access_token') ,
+//               authorization: getCookies(),
+//             },
+//           });
+//           console.log(res.data.data)
+//           setProfileName(res.data.data.generalData)
+//           setApplied(res.data.data.appliedProject)
+//           localStorage.setItem("profile_info",JSON.stringify(res.data.data))
+          
+//           console.log("single data")
+//         //  general data custom input 
+//           formik.setFieldValue("firstName",res.data.data.generalData.name.split(" ")[0].trim())
+//           formik.setFieldValue("lastName",res.data.data.generalData.name.split(" ")[1].trim())
+//           formik.setFieldValue("address",res.data.data.generalData.address)
+//           formik.setFieldValue("date",res.data.data.generalData.dateOfBirth.split("T")[0])
+//           formik.setFieldValue("gender",res.data.data.generalData.gender)
+//           // formik.setFieldValue("age",res.data.data.generalData.age)
+//           formik.setFieldValue("email",res.data.data.generalData.email)
+//           // skill data
+//           formik.setFieldValue("passingYear",res.data.data.generalData.email)
+//           formik.setFieldValue("education",res.data.data.skillData.education)
+          
+          
+//         }catch (error){ 
+//           console.log(error.message)
+//         }
+
+
+//         }
+//         getData()
+//       },[])
 useEffect(() => {
-    async function getData() {
-      console.log("run....................")
-      try{
-    const reqUrl =
-          API_CONSTANTS.baseUrl + API_CONSTANTS.enrollment.SELF_PROFILE;
-          let res = await axios.get(reqUrl,{
-            headers: {
-              // authorization:cookies.get('access_token') ,
-              authorization: getCookies(),
-            },
-          });
-          console.log(res.data.data)
-          setProfileName(res.data.data.generalData)
-          setApplied(res.data.data.appliedProject)
-          localStorage.setItem("profile_info",JSON.stringify(res.data.data))
-          
-          console.log("single data")
-        //  general data custom input 
-          formik.setFieldValue("firstName",res.data.data.generalData.name.split(" ")[0].trim())
-          formik.setFieldValue("lastName",res.data.data.generalData.name.split(" ")[1].trim())
-          formik.setFieldValue("address",res.data.data.generalData.address)
-          // formik.setFieldValue("date",res.data.data.generalData.dateOfBirth)
-          formik.setFieldValue("gender",res.data.data.generalData.gender)
-          // formik.setFieldValue("age",res.data.data.generalData.age)
-          formik.setFieldValue("email",res.data.data.generalData.email)
-          // skill data
-          formik.setFieldValue("passingYear",res.data.data.generalData.email)
-          formik.setFieldValue("education",res.data.data.skillData.education)
-          
-          
-        }catch (error){ 
-          console.log(error.message)
-        }
 
 
-        }
-        getData()
-      },[])
-
+  const data = JSON.parse(localStorage.getItem("user_info"));
+  
+  if (data) {
+    setProfileName(data.generalData)
+      setApplied(data.appliedProject)
+      //  general data custom input 
+         formik.setFieldValue("firstName",data.generalData.name.split(" ")[0].trim())
+         formik.setFieldValue("lastName",data.generalData.name.split(" ")[1].trim())
+        formik.setFieldValue("address",data.generalData.address)
+      formik.setFieldValue("date",data.generalData.dateOfBirth.split("T")[0])
+      formik.setFieldValue("gender",data.generalData.gender)
+       // formik.setFieldValue("age",data.generalData.age)
+        formik.setFieldValue("email",data.generalData.email)
+      // skill data
+        formik.setFieldValue("passingYear",data.generalData.email)
+         formik.setFieldValue("education",data.skillData.education)
+    
+  }
+    },[])
  
        
 
@@ -219,14 +240,15 @@ function onApplied(e){
   return (
     <>
       
-
+    <div className={styles.body}>
       {/* profile Header */}
       <div className={styles.Header}>
+      
           <div className={styles.left}>
              <div className={styles.imgs}><img src='./3.jpg'/></div>
              <div className={styles.dats}>
              
-               <div className={styles.name}><h1><b>{profileName.name}</b></h1><div><CreateOutlinedIcon fontSize="small"/></div></div>
+               <div className={styles.name}><span><b>{profileName.name}</b></span><div><CreateOutlinedIcon fontSize="small"/></div></div>
                <div className={styles.phone}><PhoneEnabledOutlinedIcon fontSize="small"/> &nbsp; &nbsp; {profileName.mobileNumber}</div>
                <div className={styles.email}><EmailOutlinedIcon fontSize="small"/>&nbsp; &nbsp;{profileName.email}</div>
                <div className={styles.exp}><BusinessCenterOutlinedIcon fontSize="small"/>&nbsp; &nbsp;1 year 6 month</div>
@@ -236,35 +258,37 @@ function onApplied(e){
           <div className={styles.right}>
             <div className={styles.applied} onClick={(e)=>onApplied(e)}>
 
-             <LaptopIcon />&nbsp;Applied Job  &nbsp;&nbsp;<span> {applied.length}</span></div>
+             <LaptopIcon />&nbsp;&nbsp;&nbsp;Applied Job  &nbsp;&nbsp;<span> {applied.length}</span></div>
           
              
           </div>:null}
+          
       </div>
 
 
 
       <div>
         <div className={styles.tab}>
-          <h2>Quick Link</h2>
+        <div className={styles.tabDiv}>
+          {/*<h2>Quick Link</h2>*/}
           <button className={styles.p}>
            
           <Link to="profile"
             smooth={true}
-            duration={1000} className={styles.tablinks}>Profile</Link>
+            duration={1000} className={styles.tablinksp}><h1>Profile</h1></Link>
             </button>
           <button className={styles.p}><Link to="educations"
             smooth={true}
-            duration={1000} className={styles.tablinks}>Education</Link></button>
-          <button className={styles.p}><Link className={styles.tablinks}
+            duration={1000} className={styles.tablinkse}><h1>Education</h1></Link></button>
+          <button className={styles.p}><Link className={styles.tablinksj}
             
             to="jobDescription"
             smooth={true}
             duration={1000}
           >
-            Job Description
+            <h1>Description</h1>
           </Link></button>
-         
+          </div>
         </div>
 
         {/* ............................................ */}
@@ -282,11 +306,11 @@ function onApplied(e){
                 
               </h2>
               {showProfile ? (
-                <div>
+                <div className={styles.size}>
                   <div className={styles.firstLastName}>
-                    <div className={styles.inputDiv}>
+                    <div className={styles.inputDivname}>
                       <span className={styles.icon}>
-                        <FaUser />
+                        <b>First Name</b>
                       </span>
                       <input
                         className={styles.input}
@@ -304,9 +328,9 @@ function onApplied(e){
                         <p className={styles.error}>{formik.errors.firstName}</p>
                       ) : null}
                     </div>
-                    <div className={styles.inputDiv}>
+                    <div className={styles.inputDivlast}>
                       <span className={styles.icon}>
-                        <FaUser />
+                        <b>Last Name</b>
                       </span>
                       <input
                         className={styles.input}
@@ -325,12 +349,12 @@ function onApplied(e){
                     </div>
                   </div>
                   <div className={styles.firstLastName}>
-                  <div className={styles.inputDiv}>
+                  <div className={styles.inputDivdate}>
                   <span className={styles.icon}>
-                        <FaCalendar />
+                       <b>D.O.B</b>
                       </span>
                     <input
-                      className={styles.input}
+                      className={styles.inputd}
                       type="date"
                       name="date"
                       value={formik.values.date}
@@ -339,9 +363,9 @@ function onApplied(e){
                     />
                   </div>
 
-                  <div className={styles.inputDiv}>
+                  <div className={styles.inputDivgen}>
                     <span className={styles.icon}>
-                      <FaUser />
+                      <b>Gender</b>
                     </span>
                     <select
                       className={styles.input}
@@ -365,7 +389,7 @@ function onApplied(e){
 
                   <div className={styles.inputDiv}>
                     <span className={styles.icon}>
-                      <FaUser />
+                      <b>Age</b>
                     </span>
                     <input
                       className={styles.input}
@@ -382,7 +406,7 @@ function onApplied(e){
                   ) : null}
                   <div className={styles.inputDiv}>
                     <span className={styles.icon}>
-                      <FaEnvelope />
+                      <b>E-Mail</b>
                     </span>
                     <input
                       className={styles.input}
@@ -399,7 +423,7 @@ function onApplied(e){
                   ) : null}
                   <div className={styles.inputDiv}>
                     <span className={styles.icon}>
-                      <FaAddressBook />
+                      <b>Address</b>
                     </span>
                     <input
                       className={styles.input}
@@ -434,10 +458,10 @@ function onApplied(e){
               </h2>
 
               {showEducation ? (
-                <div>
+                <div className={styles.size}>
                   <div className={styles.inputDiv}>
                     <span className={styles.icon}>
-                      <FaBookOpen />
+                      <b>Qualification</b>
                     </span>
                     <input
                       className={styles.input}
@@ -460,7 +484,7 @@ function onApplied(e){
                   ) : null}
                   <div className={styles.inputDiv}>
                     <span className={styles.icon}>
-                      <FaCalendar />
+                     <b> Year Of Passing</b>
                     </span>
                     <input
                       className={styles.input}
@@ -474,7 +498,7 @@ function onApplied(e){
                   </div>
                   <div className={styles.inputDiv}>
                     <span className={styles.icon}>
-                      <FaCalendar />
+                       <b>Year Gap</b>
                     </span>
                     <input
                       className={styles.input}
@@ -491,7 +515,7 @@ function onApplied(e){
                   ) : null}
                   <div className={styles.inputDiv}>
                     <span className={styles.icon}>
-                      <FaGraduationCap />
+                      <b>College & University</b>
                     </span>
                     <input
                       className={styles.input}
@@ -515,7 +539,7 @@ function onApplied(e){
 
                   <div className={styles.inputDiv}>
                     <span className={styles.icon}>
-                      <FaGraduationCap />
+                      <b>CGPA & Percentage</b>
                     </span>
                     <input
                       className={styles.input}
@@ -545,10 +569,10 @@ function onApplied(e){
               </h2>
 
               {showJobDescription ? (
-                <div>
+                <div className={styles.size}>
                   <div className={styles.inputDiv}>
                     <span className={styles.icon}>
-                      <FaLocationArrow />
+                      <b>Interest Area</b>
                     </span>
                     <input
                       className={styles.input}
@@ -566,7 +590,7 @@ function onApplied(e){
 
                   <div className={styles.inputDiv}>
                     <span className={styles.icon}>
-                      <FaUser />
+                      <b>Sector</b>
                     </span>
                     <input
                       className={styles.input}
@@ -589,7 +613,7 @@ function onApplied(e){
 
                   <div className={styles.inputDiv}>
                     <span className={styles.icon}>
-                      <FaUser />
+                      <b>Skill</b>
                     </span>
                     <input
                       className={styles.input}
@@ -612,7 +636,7 @@ function onApplied(e){
 
                   <div className={styles.inputDiv}>
                     <span className={styles.icon}>
-                      <FaUser />
+                      <b>Experience</b>
                     </span>
                     <input
                       className={styles.input}
@@ -638,6 +662,7 @@ function onApplied(e){
             {/* <div><button type='button' onClick={()=>getData()}>update</button></div> */}
           </form>
         </div>
+      </div>
       </div>
     </>
   );

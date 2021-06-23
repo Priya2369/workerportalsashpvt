@@ -100,7 +100,11 @@ const Header_Bottom = () => {
       {showHeader ? (
         <div className={style.headerBottom}>
           <span>
+          
+            <a href="/" >
             <img src="/logo.png" alt="Logo" />
+            </a>
+          
           </span>
 
           <nav className={navigation.navigation}>
@@ -133,7 +137,11 @@ const Header_Bottom = () => {
       ) : (
         <div className={style.headerBottom}>
           <span>
+          <Link href="/"><a>
             <img src="/logo.png" alt="Logo" />
+            </a>
+            </Link>
+
           </span>
 
           <nav className={navigation.navigation}>

@@ -1,9 +1,7 @@
 import Head from 'next/head';
 import { useState } from "react";
 import styles from '../styles/Home.module.css';
-import BrowseTopCategories from '../Component/propComponents/BrowseTopCategories';
-import Sdata from '../Component/propComponents/Sdata';
-import { v4 as uuidv4 } from 'uuid';
+import Process from '../Component/parentsComnents/Process'
 import Search from '../Component/parentsComnents/Search'
 import Open from '../Component/parentsComnents/Open'
 import TestimonialSlide from '../Component/parentsComnents/TestimonialSlide'
@@ -36,7 +34,10 @@ export default function Home() {
 		{/* <Search/> */}
 			
 			
-      <Open/>
+      
+	 
+	  <Open/>
+	  
 	  <div><TestimonialSlide /></div>
 	  
 <Footer/>

@@ -16,42 +16,46 @@ import Cookies from "universal-cookie";
 
 export default function FeaturedJob(props) {
   const cookies = new Cookies();
-  const {  setSingleJob } = useContext(userContext);
-  const [id, setId] = useState(props.id);
+  const {  setSingleJob,id, setId } = useContext(userContext);
+  // const [id, setId] = useState();
   
   
 
   const router = useRouter();
   const click = async () => {
     console.log(id);
-    if (cookies.get("access_token")) {
-      try {
-        //  console.log(coookieValue)
-        const reqUrl =
-          API_CONSTANTS.baseUrl +
-          API_CONSTANTS.project.SEARCH_OTHER_PROJECT_BY_ID +
-          id;
+    
 
-        const res = await axios.get(reqUrl, {
-          headers: {
-            // authorization:cookies.get('access_token') ,
-            authorization: getCookies(),
-          },  
-        });
-        console.log(res.data.project);
-        console.log(res.data);
-        console.log(res.data.project.contactDetails);
-        setSingleJob(res.data.project);
-        router.push("/companies");
-      } catch (error) {
-        console.log(error.message);
-        // if(error.message = "Request failed with status code 401"){
-        // router.push('/signup');
-        // }
-      }
-    } else {
-      router.push("/signup");
-    }
+    setId(props.id)
+    router.push("/companies");
+    // if (cookies.get("access_token")) {
+    //   try {
+    //     //  console.log(coookieValue)
+    //     const reqUrl =
+    //       API_CONSTANTS.baseUrl +
+    //       API_CONSTANTS.project.SEARCH_OTHER_PROJECT_BY_ID +
+    //       id;
+
+    //     const res = await axios.get(reqUrl, {
+    //       headers: {
+    //         // authorization:cookies.get('access_token') ,
+    //         authorization: getCookies(),
+    //       },  
+    //     });
+    //     console.log(res.data.project);
+    //     console.log(res.data);
+    //     console.log(res.data.project.contactDetails);
+    //     setSingleJob(res.data.project);
+    //     router.push("/companies");
+    //   } catch (error) {
+    //     console.log(error.message);
+    //     // if(error.message = "Request failed with status code 401"){
+    //     // router.push('/signup');
+    //     // }
+    //   }
+    // } else {
+    //   router.push("/signup");
+    // }
   };
   return (
     <>

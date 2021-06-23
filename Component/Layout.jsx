@@ -16,8 +16,10 @@ const Layout = ({ children }) => {
 	// state for heade route hide shoe
 	const [showHeader, setShowHeader] = useState(false)
 
+// state for single job id
+	const [id, setId] = useState();
 
-
+	// state for store single job details
 	const [singleJob, setSingleJob] = useState({ })
 	const [state, dispatch] = useReducer(reducer, initialState);
 	const [searchLocation, setSearchLocation] = useState("")
@@ -51,6 +53,9 @@ const [detail, setDetail] = useState({
 
 	//   get single user value for profile update 
 const [singleUser, setSingleUser] = useState()
+
+
+const [applied, setApplied] = useState([])
 console.log(singleUser)
 
 // useEffect(()=>{
@@ -69,8 +74,8 @@ console.log(singleUser)
 			 searchLocation, setSearchLocation,searchJob, setSearchJob,
 			 jobCatagories, jobTypes, jobLocation, experience, postedWithin, salary, setFilterValue, getfilterValue,
 			 detail, setDetail, singleUser, setSingleUser,
-			 
-			
+			 id, setId,
+			 applied, setApplied,
 			 showHeader, setShowHeader}}>
 			<Header />
 			

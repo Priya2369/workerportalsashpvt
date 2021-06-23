@@ -19,15 +19,16 @@ export default function Open() {
                   <a href="https://corporate.mosahay.org/sign-in" rel="noopener noreferrer" target="_blank">Post New Job </a></button>
            
           
-          <Link href="/signup">
+          <Link href="/jobs">
             
               <button className={styles.srch}><a>Search Job</a></button>
             
           </Link>
         </div>
-
-        <Process />
+        <Process/>
+       
       </div>
+       
       
     </>
   );

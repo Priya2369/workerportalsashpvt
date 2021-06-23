@@ -49,6 +49,17 @@
         
 
     }
+    .flexi{
+        display: flex;
+      }
+      .visible{
+        margin-top: 5px;
+        margin-right: 20px;
+      }
+      .favr{
+        margin-top: 5px;
+        margin-right: 15px;
+      }
     .Overview{
         box-shadow: 0 0 5px rgb(228, 222, 215);
         border-radius: 8px;
@@ -105,7 +116,7 @@
         border: 0px;
         color: white;
         background-color:#3880ff;
-        margin-left: 37px;
+        margin-left: 80%;
 
     }
     .Submit:hover{

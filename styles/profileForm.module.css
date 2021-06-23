@@ -1,46 +1,98 @@
-.tab {
- /* display: grid; */
+.body{
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(209, 203, 196);
+}
+/*Header-----------*/
+.Header{
+  width: 25vw;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);  
- margin-left: 15vw;
-  
-  height: 350px;
-  /* padding-left: 4vw; */
-  /* padding-right: 4vw; */
-  
-   text-align: center; 
-  position: fixed;
-  width: 18vw;
-  
-   
-  
+   height: 36vw;  
+  margin-top: 20px;
+  margin-left: 30px;
+  background-color: white;
+  border-radius: 10px;
+  position: sticky;
+  top: 65px;
+  color: rgb(105, 128, 128);
 }
 
-.jobCard {
-  display: grid;
-  grid-template-columns: 80px auto 100px;
-   grid-template-rows: 35px 10px 35px; 
-  width: 100%;
-  font-family: 'Helvetica';
-  
-  padding-top: 20px;
-  margin-bottom: 10px;
-  margin-left: 10px;
+.left{
+ display: grid;
 }
-.tab h2{
-  margin-bottom: 50px;
+.imgs{
+  text-align: center;
+}
+.imgs img{
+  width: 150px;
+  height: 150px;
+  margin-top: 10px;
+  border: 1px solid black;
+}
+.name{
+  display: flex;
+  margin-top: 15px;
+  font-size: 20px;
+}
+.dats{
+  margin-left: 25px;
+}
+.phone{
+  margin-top: 10px;
+  display: flex;
+}
+.email{
+  display: flex;
+  margin-top: 5px;
+}
+.exp{
+  display: flex;
+  margin-top: 5px;
+}
+.right{
+   margin-left: 23px;
+   margin-top: 30px;
+   
+}
+.applied{
+  display: flex;
 }
 
-.p{
-  /* margin-bottom: 2vw; */
-  /* display: -ms-flexbox; 
-  display: flex; */
+/*Quick Link ................*/
+
+.tabDiv{
+  width: 47vw;
+  display: flex;
+  justify-content: space-between;
+  font-size: large;
+}
+.tab {
+  /* display: grid; */
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);  
+   background-color: white;
+   height: 70px;
+   /* padding-left: 4vw; */
+   /* padding-right: 4vw; */
+   display: flex;
+   justify-content: center;
    
-   
+   border-radius: 10px;
+   margin-top: 20px;
+   width: 60vw;
+  
+   margin-right: 30px;
+   position: sticky;
+   top: 65px;
+  
+   color: rgb(105, 128, 128);
+ }
+ .p{
+  
+    margin-right: 15px;
     color: black;
-    padding-bottom: 30px;
-    padding-top: 30px;
-    margin-bottom: 20px;
-    width: 100%;
+    margin-top: 20px;
+   
+    width: 70px;
     height: 38px;
     border: none;
     outline: none;
@@ -50,158 +102,61 @@
     /* transition: 0.3s; */
    
 }
-
-
-
 .tablinks{
   color: #ff6600;
   cursor: pointer;
 
   font-weight: bold;
-  font-size: medium;
+  
   font-style: normal;
   
-  padding: 40px;
-  /* display: table-row-group; */
-  /* margin-bottom: 10%; */
   
 }
-
-.p:focus{
-  border-left: 6px solid  #ff6600;
-  
-}
-
-
-
-/*header css*/
-.Header{
-  width: 100%;
-  height: 25vh;
-  background:  #3880ff;
- display: flex;
-  justify-content: space-between;
-  
-  
-}
-.left{
-  width: 90vh;
-  height: 22vh;
-  margin-top: 10px;
-
-  margin-left: 160px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.applied{
-  display: flex;
-  margin-top: 60px;
-}
-.right{
-  
-  width: 25vh;
-  height: 18vh;
-  margin-top: 10px;
-  color: white;
-  margin-right: 160px;
-  text-align: center;
-  
-}
-.imgs{
-  width: 12vh;
-  height: 12vh;
-  border-radius: 50%;
-  background: white;
-  text-align: center;
-  margin-top: 13px;
-  margin-left: 64px;
-
-}
-.imgs img{
-  
-  width: 13vh;
-  height: 13vh;
-  border-radius: 10px;
-
-
-}
-.dats{
- 
-  margin-left: 20px;
-  margin-top: 8px;
-  width: 65vh;
-  /* word-wrap: break-word; */
-}
-.name h1{
-  
+.tablinksp h1{
   font-size: 20px;
-  color: white;
-  
-}
-.name{
-  display: flex;
-  width: fit-content;
-  /* border: 1px solid black; */
-}
-.phone{
-  display: flex;
-  margin-top: 15px;
-  margin-left: 20px;
-  color: white;
-}
-.email{
-  display: flex;
-  margin-top: 5px;
-  margin-left: 20px;
-  color: white;
-}
-.exp{
-  display: flex;
-  margin-top: 5px;
-  margin-left: 20px;
-  color: white;
-}
-
-
-
-/*----------------------------------------------*/
-
-
- /* ............................................................. */
-.inputDiv{
-  /* display: flex;
-  width: 100%;
-  margin-bottom: 16px; */
-  display: -ms-flexbox; 
-  display: flex;
-  width: 100%;
-  margin-bottom: 18px;
-
-}
-
-
-.hover{
+  color: #ff6600;
   cursor: pointer;
-  font-size: x-large;
+  margin-left: -45px;
+}
+.tablinksj h1{
+  font-size: 20px;
+  color: #ff6600;
+  cursor: pointer;
+  margin-left: -80px;
+
+}
+.tablinkse h1{
+  font-size: 20px;
+  color: #ff6600;
+  cursor: pointer;
+  margin-left: -75px;
+  align-items: center;
 }
 
 
-.icon{
- 
-  padding: 10px;
-  /* background: dodgerblue; */
-  background: #3880ff;
-  color: white;
-  min-width: 50px;
-  text-align: center;
-}
-.tab2{
-  margin-left: 36vw;
-  margin-right: 15vw;
-  margin-top: 5vw;
-  margin-bottom: 5vw;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ /* form...........*/
+ .tab2{
+  background-color: white;
+  margin-right: 30px;
+  margin-top: 2vw;
+  border-radius: 10px;
   /* border: 1px solid black; */
+  color: rgb(105, 128, 128);
+  width: 60vw;
 }
 
 .input{
@@ -241,18 +196,15 @@
 } */
 
  .button{
-  display: flex;
+  width: 120px;
+  height: 35px;
+  border-radius: 5px;
+  border: 0px;
   color: white;
-  padding-right: 40px;
-  padding-left: 40px;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  margin-bottom: 20px;
-  margin-left: 20vw;
-  font-size: medium;
-  background:  #3880ff;
-  border-left: 3px solid ;
-  outline: none;
+  background-color:#3880ff;
+  margin-left: 87px;
+  margin-bottom: 30px;
+  
 }
 
 
@@ -278,24 +230,57 @@
   border: 2px solid black;
   margin-top: 20px;
 }
- @media (max-width:736px) {
-   .tab{
-     margin-left: 5px;
-     text-align: center;
-     width: 100px;
-   }
-   .tablinks{
-     padding: 0%;
-     
-   }
-   .tab2{
-     width: 239px;
-     margin-left: 115px;
-     
-   }
-
-   .Header{
+.firstLastName{
+  display: flex;
+  
+}
+.inputDivlast{
+  margin-left: 10px;
+  width: 100%;
+}
+.inputDivname{
+  width: 100%;
+}
+.inputDivgen{
+   width: 100%;
+   margin-left: 10px;
+}
+.inputDivdate{
+  width: 100%;
+  
+  
+}
+.inputd{
+  width: 100%;
+  padding: 8px;
+  outline: none;
+  height: 35px;
+}
+.size{
+  width: 46vw;
+  
+}
+ 
+@media (max-width: 736px) {
+  .body{
+    display: grid;
+    width: 100%;
+  }
+  .Header{
     display: none;
   }
+  .tab{
+    
+    width: 340px;
+    margin-left: 10px;
+  }
+  .tab2{
+    width: 340px;
+    margin-left: 10px;
+  }
+  .tabDiv{
    
- }
+    width: 320px;
+  }
+  
+}
