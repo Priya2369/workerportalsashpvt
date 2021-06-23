@@ -68,6 +68,10 @@
 .FIcon{
     display: flex;
 } */
+
+.opSize{
+    height: 100px;
+}
 .btnn button{
     width: 120px;
    height: 35px;

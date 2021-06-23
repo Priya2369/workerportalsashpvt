@@ -18,7 +18,7 @@ import LaptopIcon from '@material-ui/icons/Laptop';
 import { useRouter } from 'next/router'
 
 import { FaUser, 
-  
+
   FaEnvelope,
   FaGraduationCap,
   FaBusinessTime,
@@ -46,45 +46,7 @@ const ProfileUpdate = () => {
 console.log("profile............................")
   
 console.log(singleUser)
-// useEffect(() => {
-//     async function getData() {
-//       console.log("run....................")
-//       try{
-//     const reqUrl =
-//           API_CONSTANTS.baseUrl + API_CONSTANTS.enrollment.SELF_PROFILE;
-//           let res = await axios.get(reqUrl,{
-//             headers: {
-//               // authorization:cookies.get('access_token') ,
-//               authorization: getCookies(),
-//             },
-//           });
-//           console.log(res.data.data)
-//           setProfileName(res.data.data.generalData)
-//           setApplied(res.data.data.appliedProject)
-//           localStorage.setItem("profile_info",JSON.stringify(res.data.data))
-          
-//           console.log("single data")
-//         //  general data custom input 
-//           formik.setFieldValue("firstName",res.data.data.generalData.name.split(" ")[0].trim())
-//           formik.setFieldValue("lastName",res.data.data.generalData.name.split(" ")[1].trim())
-//           formik.setFieldValue("address",res.data.data.generalData.address)
-//           formik.setFieldValue("date",res.data.data.generalData.dateOfBirth.split("T")[0])
-//           formik.setFieldValue("gender",res.data.data.generalData.gender)
-//           // formik.setFieldValue("age",res.data.data.generalData.age)
-//           formik.setFieldValue("email",res.data.data.generalData.email)
-//           // skill data
-//           formik.setFieldValue("passingYear",res.data.data.generalData.email)
-//           formik.setFieldValue("education",res.data.data.skillData.education)
-          
-          
-//         }catch (error){ 
-//           console.log(error.message)
-//         }
 
-
-//         }
-//         getData()
-//       },[])
 useEffect(() => {
 
 
@@ -249,16 +211,19 @@ function onApplied(e){
              <div className={styles.dats}>
              
                <div className={styles.name}><span><b>{profileName.name}</b></span><div><CreateOutlinedIcon fontSize="small"/></div></div>
-               <div className={styles.phone}><PhoneEnabledOutlinedIcon fontSize="small"/> &nbsp; &nbsp; {profileName.mobileNumber}</div>
-               <div className={styles.email}><EmailOutlinedIcon fontSize="small"/>&nbsp; &nbsp;{profileName.email}</div>
-               <div className={styles.exp}><BusinessCenterOutlinedIcon fontSize="small"/>&nbsp; &nbsp;1 year 6 month</div>
+               <div className={styles.phone}><PhoneEnabledOutlinedIcon fontSize="small"/>  {profileName.mobileNumber}</div>
+               <div className={styles.email}><EmailOutlinedIcon fontSize="small"/>{profileName.email}</div>
+               <div className={styles.exp}><BusinessCenterOutlinedIcon fontSize="small"/>1 year 6 month</div>
                
              </div>
           </div>{applied?
-          <div className={styles.right}>
-            <div className={styles.applied} onClick={(e)=>onApplied(e)}>
+          <div className={styles.right} onClick={(e)=>onApplied(e)}>
+          <LaptopIcon />
+            <div className={styles.marg}>
 
-             <LaptopIcon />&nbsp;&nbsp;&nbsp;Applied Job  &nbsp;&nbsp;<span> {applied.length}</span></div>
+             <span  className={styles.applied}> {applied.length}</span></div>
+             
+             &nbsp;&nbsp;&nbsp;Applied Job  &nbsp;&nbsp;
           
              
           </div>:null}

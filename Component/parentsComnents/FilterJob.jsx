@@ -11,6 +11,8 @@ import FormLabel from '@material-ui/core/FormLabel';
 import Grid from '@material-ui/core/Grid';
 import AddIcon from '@material-ui/icons/Add';
 import ImportExportIcon from '@material-ui/icons/ImportExport';
+import state from "../array/state";
+import skills from '../array/skill'
 
 
 export default function FilterJob() {
@@ -48,9 +50,9 @@ function SearchFilter(e){
             onChange={(e) => setFilterValue({ ...getfilterValue, jobCatagories: e.target.value })}
              />
             <datalist id="jobs" >
-              <option value="front-end developer"  ></option>
-              <option value="Back-end developer"></option>
-              <option value="Software developer"></option>
+            {skills.map((val, i) => {
+                        return <option key={i} value={val.value}></option>;
+                      })}
 
 
             </datalist>
@@ -64,10 +66,10 @@ function SearchFilter(e){
             value={jobLocation}
             onChange={(e) => setFilterValue({ ...getfilterValue, jobLocation: e.target.value })} 
             /><br />
-            <datalist id="locations">
-              <option value="Mumbai"></option>
-              <option value="Delhi"></option>
-              <option value="Banglore"></option>
+            <datalist id="locations"  >
+            {state.map((val, i) => {
+                        return <option key={i} value={val} ></option>;
+                      })}
             </datalist>
             </div>
 

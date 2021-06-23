@@ -8,7 +8,7 @@
 .Header{
   width: 23vw;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);  
-   height: 26vw;  
+   height: max-content; 
   margin-top: 20px;
   margin-left: 100px;
   background-color: white;
@@ -19,11 +19,16 @@
   /* justify-content: center; */
   padding-left: 40px;
   padding-right: 40px;
-
+  display: grid;
+  justify-content: center;
+   
 }
 
 .left{
  display: grid;
+ word-wrap: break-word;
+ width: 18vw;
+ 
 }
 .imgs{
   text-align: center;
@@ -37,7 +42,8 @@
 .name{
   display: flex;
   margin-top: 15px;
-  font-size: 20px;
+  /* font-size: 20px; */
+  width: 14vw;
 }
 /* .dats{
   margin-left: 25px;
@@ -45,26 +51,58 @@
 .phone{
   margin-top: 10px;
   display: flex;
+  width: 14vw;
+  word-wrap: break-word;
 }
 .email{
   display: flex;
   margin-top: 5px;
+  width: 20vw;
+font-size:unset;
+ 
 }
 .exp{
   display: flex;
   margin-top: 5px;
+  word-wrap: break-word;
 }
 .right{
    margin-left: 23px;
    margin-top: 30px;
-   
+   display: flex;
+   font-size: large;
+  cursor: pointer;
+  
+  color: #ff6600;
+  height: 60px;
+  padding-top: 20px;
 }
 .applied{
-  display: flex;
-  font-size: large;
-  cursor: pointer;
-  color: #ff6600;
+  /* display: flex; */
+  
+  
+  /* position: relative; */
+  /* border: 1px solid black; */
+  font-size: small;
+  
+  padding:5px 10px;
+  border-radius: 50%;
+  background-color: #3880ff;
+  color: white;
 }
+.marg{
+  margin-top: -15px;
+}
+
+/* .applied .badge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  padding: 5px 10px;
+  border-radius: 50%;
+  background-color:#3880ff;
+  color: white;
+} */
 
 /*Quick Link ................*/
 
@@ -93,6 +131,9 @@
    top: 65px;
   
    color: rgb(105, 128, 128);
+ }
+ .hover{
+   color: #3880ff;
  }
  .p{
   
@@ -172,6 +213,7 @@
  padding: 12px; */
  width: 100%;
  padding: 8px;
+ height: 45px;
  outline: none;
  
  
@@ -262,7 +304,7 @@
   width: 100%;
   padding: 8px;
   outline: none;
-  height: 35px;
+  
 }
 .size{
   width: 46vw;

@@ -67,13 +67,13 @@ export default function FeaturedJob(props) {
             <b>{props.company}</b>
           </div>
           <div className={styles.flexi}>
-            <div className={styles.visible}>
+            {/* <div className={styles.visible}>
               <VisibilityIcon fontSize="small" />
             </div>
             <div className={styles.favr}>
               
               <FavoriteIcon fontSize="small" />
-            </div>
+            </div> */}
 
             <button
               className={styles.apply}

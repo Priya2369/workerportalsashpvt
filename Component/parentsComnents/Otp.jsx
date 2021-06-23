@@ -15,7 +15,7 @@ export default function Otp ({otp, setOtp, otpSubmit, setShow}){
                 
             </div>
             <button className={styles.butm} onClick={(e)=>otpSubmit(e)}>Verify</button>
-            <p className={styles.toper}>Didn't receive the code?<span>RESEND</span></p>
+            {/* <p className={styles.toper}>Didn't receive the code?<span>RESEND</span></p> */}
             
         </div>
        

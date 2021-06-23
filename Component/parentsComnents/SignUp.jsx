@@ -101,7 +101,7 @@ export default function SignUp() {
   return (
     <>
       <div className={styles.mainDiv}>
-        <div className={styles.secDiv}></div>
+        {/* <div className={styles.secDiv}></div> */}
         <div className={styles.loginForm}>
           <form onSubmit={(e) => submit(e)}>
             <div id="recaptcha"></div> 
@@ -115,15 +115,7 @@ export default function SignUp() {
             <div className={styles.btn}>
               <button className={styles.login}>Send OTP</button>
             </div>
-            {/* <div className={styles.cna}>
-                    <button className={styles.newacc}> <Link href="/login"><a> Move to login page</a></Link></button>
-                </div> */}
-            {/* <div className={styles.fpass}>
-              <Link href="/login">
-                <a>Move to login page</a>
-              </Link>
-              <br />
-            </div> */}
+            
           </form>
           <div>{show ? <Otp {...props} /> : null}</div>
         </div>

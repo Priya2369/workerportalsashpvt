@@ -65,7 +65,7 @@ let viewDetails;
            </div>
              <div className={styles.left}>
                 <div className={styles.work}><LaptopIcon fontSize="small"/>&nbsp;&nbsp;{val.project.title}</div>
-                <div className={styles.location}><LocationOnIcon fontSize="small"/>&nbsp;&nbsp;Odisha</div>
+                <div className={styles.location}><LocationOnIcon fontSize="small"/>&nbsp;&nbsp;{val.project.location.split(",")[1]}</div>
                 
                 <div className={styles.time}><ScheduleIcon fontSize="small"/>&nbsp;&nbsp;Applied on {val.appliedOn.split("T")[0]}</div>
             </div>
