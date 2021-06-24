@@ -46,7 +46,45 @@ const ProfileUpdate = () => {
 console.log("profile............................")
   
 console.log(singleUser)
+// useEffect(() => {
+//     async function getData() {
+//       console.log("run....................")
+//       try{
+//     const reqUrl =
+//           API_CONSTANTS.baseUrl + API_CONSTANTS.enrollment.SELF_PROFILE;
+//           let res = await axios.get(reqUrl,{
+//             headers: {
+//               // authorization:cookies.get('access_token') ,
+//               authorization: getCookies(),
+//             },
+//           });
+//           console.log(res.data.data)
+//           setProfileName(res.data.data.generalData)
+//           setApplied(res.data.data.appliedProject)
+//           localStorage.setItem("profile_info",JSON.stringify(res.data.data))
+          
+//           console.log("single data")
+//         //  general data custom input 
+//           formik.setFieldValue("firstName",res.data.data.generalData.name.split(" ")[0].trim())
+//           formik.setFieldValue("lastName",res.data.data.generalData.name.split(" ")[1].trim())
+//           formik.setFieldValue("address",res.data.data.generalData.address)
+//           formik.setFieldValue("date",res.data.data.generalData.dateOfBirth.split("T")[0])
+//           formik.setFieldValue("gender",res.data.data.generalData.gender)
+//           // formik.setFieldValue("age",res.data.data.generalData.age)
+//           formik.setFieldValue("email",res.data.data.generalData.email)
+//           // skill data
+//           formik.setFieldValue("passingYear",res.data.data.generalData.email)
+//           formik.setFieldValue("education",res.data.data.skillData.education)
+          
+          
+//         }catch (error){ 
+//           console.log(error.message)
+//         }
 
+
+//         }
+//         getData()
+//       },[])
 useEffect(() => {
 
 
@@ -273,6 +311,7 @@ function onApplied(e){
               {showProfile ? (
                 <div className={styles.size}>
                   <div className={styles.firstLastName}>
+                  <div className={styles.fname}>
                     <div className={styles.inputDivname}>
                       <span className={styles.icon}>
                         <b>First Name</b>
@@ -293,6 +332,8 @@ function onApplied(e){
                         <p className={styles.error}>{formik.errors.firstName}</p>
                       ) : null}
                     </div>
+                    </div>
+                    <div className={styles.lname}>
                     <div className={styles.inputDivlast}>
                       <span className={styles.icon}>
                         <b>Last Name</b>
@@ -312,8 +353,9 @@ function onApplied(e){
                         <p className={styles.error}>{formik.errors.lastName}</p>
                       ) : null}
                     </div>
+                    </div>
                   </div>
-                  <div className={styles.firstLastName}>
+                  <div className={styles.firstLastName2}>
                   <div className={styles.inputDivdate}>
                   <span className={styles.icon}>
                        <b>D.O.B</b>
