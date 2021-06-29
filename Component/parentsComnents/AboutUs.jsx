@@ -44,9 +44,9 @@ const AboutUs = () =>{
                 </ul>
            
                 </div>
-                <div>
+                {/* <div>
                     <img src="img4.gif" className={styles.imgp}/>
-                </div>
+                </div> */}
         </div>
         </>
     )

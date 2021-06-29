@@ -94,12 +94,12 @@ const Header_Bottom = () => {
               <a>Jobs</a>
             </Link>
 
-            <Link href="/about">
+            {/* <Link href="/about">
               <a>About</a>
             </Link>
             <Link href="/contact">
               <a>Contact</a>
-            </Link>
+            </Link> */}
             <Link href="/profile">
             <a >Profile</a>
             </Link>

@@ -17,14 +17,7 @@ import BusinessCenterOutlinedIcon from '@material-ui/icons/BusinessCenterOutline
 import LaptopIcon from '@material-ui/icons/Laptop';
 import { useRouter } from 'next/router'
 
-import { FaUser, 
 
-  FaEnvelope,
-  FaGraduationCap,
-  FaBusinessTime,
-  FaAddressBook,
-   FaCalendar, 
-   FaBookOpen, FaLocationArrow } from "react-icons/fa";
 import { Link } from "react-scroll";
 // import {StickyContainer, Sticky} from 'react-sticky'
 import StickyBox from "react-sticky-box";
@@ -46,47 +39,9 @@ const ProfileUpdate = () => {
 console.log("profile............................")
   
 console.log(singleUser)
-// useEffect(() => {
-//     async function getData() {
-//       console.log("run....................")
-//       try{
-//     const reqUrl =
-//           API_CONSTANTS.baseUrl + API_CONSTANTS.enrollment.SELF_PROFILE;
-//           let res = await axios.get(reqUrl,{
-//             headers: {
-//               // authorization:cookies.get('access_token') ,
-//               authorization: getCookies(),
-//             },
-//           });
-//           console.log(res.data.data)
-//           setProfileName(res.data.data.generalData)
-//           setApplied(res.data.data.appliedProject)
-//           localStorage.setItem("profile_info",JSON.stringify(res.data.data))
-          
-//           console.log("single data")
-//         //  general data custom input 
-//           formik.setFieldValue("firstName",res.data.data.generalData.name.split(" ")[0].trim())
-//           formik.setFieldValue("lastName",res.data.data.generalData.name.split(" ")[1].trim())
-//           formik.setFieldValue("address",res.data.data.generalData.address)
-//           formik.setFieldValue("date",res.data.data.generalData.dateOfBirth.split("T")[0])
-//           formik.setFieldValue("gender",res.data.data.generalData.gender)
-//           // formik.setFieldValue("age",res.data.data.generalData.age)
-//           formik.setFieldValue("email",res.data.data.generalData.email)
-//           // skill data
-//           formik.setFieldValue("passingYear",res.data.data.generalData.email)
-//           formik.setFieldValue("education",res.data.data.skillData.education)
-          
-          
-//         }catch (error){ 
-//           console.log(error.message)
-//         }
 
-
-//         }
-//         getData()
-//       },[])
 useEffect(() => {
-
+try{
 
   const data = JSON.parse(localStorage.getItem("user_info"));
   
@@ -95,9 +50,11 @@ useEffect(() => {
       setApplied(data.appliedProject)
       //  general data custom input 
          formik.setFieldValue("firstName",data.generalData.name.split(" ")[0].trim())
-         formik.setFieldValue("lastName",data.generalData.name.split(" ")[1].trim())
+         formik.setFieldValue("lastName",data.generalData.name.split(/(?<=^\S+)\s/)[1])
         formik.setFieldValue("address",data.generalData.address)
-      formik.setFieldValue("date",data.generalData.dateOfBirth.split("T")[0])
+        if(data.generalData.dateOfBirth){
+       formik.setFieldValue("date",data.generalData.dateOfBirth.split("T")[0])
+        }
       formik.setFieldValue("gender",data.generalData.gender)
        // formik.setFieldValue("age",data.generalData.age)
         formik.setFieldValue("email",data.generalData.email)
@@ -105,6 +62,9 @@ useEffect(() => {
         formik.setFieldValue("passingYear",data.generalData.email)
          formik.setFieldValue("education",data.skillData.education)
     
+  }
+}catch (error) {
+    console.log(error);
   }
     },[])
  
@@ -162,7 +122,7 @@ useEffect(() => {
             // "poultry farmer"
           ],
           skillsOther: ["string"],
-          experience: values.experience,
+          experiences: values.experience,
 
           education: "passed primary (class 8th)",
 
@@ -264,7 +224,16 @@ function onApplied(e){
              &nbsp;&nbsp;&nbsp;Applied Job  &nbsp;&nbsp;
           
              
-          </div>:null}
+          </div>:<div className={styles.right} onClick={(e)=>onApplied(e)}>
+          <LaptopIcon />
+            <div className={styles.marg}>
+
+             <span  className={styles.applied}> 0</span></div>
+             
+             &nbsp;&nbsp;&nbsp;Applied Job  &nbsp;&nbsp;
+          
+             
+          </div>}
           
       </div>
 

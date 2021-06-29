@@ -13,12 +13,18 @@ import { useRouter } from "next/router";
     const[applyJob, setApplyJob] = useState([])
     // const [jobid, setjobId] = useState(val.project._id)
     useEffect(() => {
+      try{
         const data = JSON.parse(localStorage.getItem("user_info"));
     
         if (data) {
           setApplyJob(data.appliedProject)
         }
-      }, []);
+      }catch (error) {
+        console.log(error);
+      }
+
+      }
+      , []);
 
       let appliedJob;
  
@@ -38,7 +44,8 @@ let viewDetails;
       // setSingleJob(appliedJob.project._id)
     // }
     return(
-        <>
+      <>
+        {applyJob.length !=0?<div>
 
         <div className={styles.headerDiv}>
              <p>You've applied on {applyJob.length} jobs so far. Good luck.</p></div>
@@ -76,6 +83,7 @@ let viewDetails;
           )
       })}
         
+        </div>:<div  className={styles.headerDiv}><p>You have not applied any job!</p></div>}
         </>
     )
 }

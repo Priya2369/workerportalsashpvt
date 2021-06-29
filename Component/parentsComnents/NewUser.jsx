@@ -62,6 +62,7 @@ export default function AddressForm() {
         skillData: {
          
           education: values.education,
+          specialization:values.educationList
 
          
         },

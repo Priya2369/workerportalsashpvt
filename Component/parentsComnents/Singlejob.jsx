@@ -24,7 +24,7 @@ const Singlejob = () => {
   const { singleJob, setSingleJob, id, setId } = useContext(userContext);
   const [projectId, setProjectId] = useState(singleJob._id);
   console.log(singleJob);
-
+console.log(projectId)
   useEffect(() => {
     async function getJobByID() {
       if (cookies.get("access_token")) {
@@ -45,16 +45,14 @@ const Singlejob = () => {
           console.log(res.data);
           console.log(res.data.project.contactDetails);
           setSingleJob(res.data.project);
-          router.push("/companies");
+          
         } catch (error) {
           console.log(error.message);
           // if(error.message = "Request failed with status code 401"){
           // router.push('/signup');
           // }
         }
-      } else {
-        router.push("/signup");
-      }
+      } 
     }
 
     getJobByID();
@@ -62,13 +60,13 @@ const Singlejob = () => {
 
   async function applyJob(e) {
     e.preventDefault();
-    console.log(getCookies());
+    console.log(projectId)
     try {
       //  console.log(coookieValue)
       const reqUrl =
         API_CONSTANTS.baseUrl +
         API_CONSTANTS.enrollment.WORKER_APPLY_PROJRCT +
-        projectId;
+        singleJob._id;
 
       const res = await axios.post(
         reqUrl,
@@ -79,7 +77,8 @@ const Singlejob = () => {
           },
         }
       );
-      console.log(res.data);
+      console.log(res.data.projectData.value);
+      localStorage.setItem("user_info",JSON.stringify(res.data.projectData.value))
       // console.log(res.response.data)
       if (res.data.message === "Project apply successful") {
         toast.success("Project apply successful", {
@@ -328,6 +327,7 @@ const Singlejob = () => {
                     )}
                   </div>
                 </div>
+                {/* <p>projectid{singleJob._id}</p> */}
               </div>
               <button
                 type="button"

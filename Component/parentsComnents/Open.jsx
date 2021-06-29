@@ -7,29 +7,28 @@ import { useRouter } from "next/router";
 
 export default function Open() {
   const router = useRouter();
-  
+
   return (
     <>
       <div className={styles.hedar}>
         <h1>Hire staff or search jobs in All Cities</h1>
         <div className={styles.btngrp}>
-          
-            
-              <button className={styles.post}>
-                  <a href="https://corporate.mosahay.org/sign-in" rel="noopener noreferrer" target="_blank">Post New Job </a></button>
-           
-          
+          <a
+            href="https://corporate.mosahay.org/sign-in"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <button className={styles.post}>Post New Job</button>{" "}
+          </a>
+
           <Link href="/jobs">
-            
-              <button className={styles.srch}><a>Search Job</a></button>
-            
+            <button className={styles.srch}>
+              <a>Search Job</a>
+            </button>
           </Link>
         </div>
-        <Process/>
-       
+        <Process />
       </div>
-       
-      
     </>
   );
 }

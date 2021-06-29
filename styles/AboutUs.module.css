@@ -50,20 +50,6 @@
     /* border: 1px solid black; */
     margin-bottom: 20px;
 }
-.div{
-    /* border:2px solid rgba(104, 101, 101, 0.281); */
-    width: 650px;
-    /* height:900px; */
-    margin:2px;
-    /* margin-left: 30px; */
-    margin-top: 30px;
-
-    /* width: 500px;
-    height:1000px; 
-    margin-right: -50px;
-    margin-top: 10px;  */
-
-}
 
 
 .leftmargin{
@@ -75,11 +61,14 @@
     justify-content: center;
 }
 .p{
-    position: relative;
+    /* position: relative; */
     padding-left: 4px;
-    text-align:left;
-    margin-left: 20px;
-    margin-right: 20px;
+    text-align:center;
+    font-weight: 400;
+    font-size: 16px;
+    /* margin-left: 20px;
+    margin-right: 20px; */
+    font-family: "Poppins", sans-serif;
 }
 .abimg{
     display: block; 
@@ -91,8 +80,8 @@
     margin-top: 0px;
 }
 .about{
-    display: flex;
-    justify-content: center;
+    display: flex; 
+     justify-content: center; 
     flex-wrap: wrap;
 }
 @media only screen and (min-width: 600px){
