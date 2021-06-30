@@ -48,29 +48,36 @@ const styles = {
 	bmItemList: {
 		color: '#b8b7ad',
 		padding: '1em',
+		marginBottom: '10px',
 	},
 	bmItem: {
 		display: 'flex',
 		flexDirection: 'column',
+// 		color: '#d1d1d1',
+//   marginBottom: '10px',
+//   textAlign: 'left',
+//   textDecoration: 'none',
+  
 	},
 	bmOverlay: {
 		background: 'rgba(0, 0, 0, 0.3)',
 	},
-	menuItem: {
-		padding: '1rem',
-	},
-	loginButton: {
-		display: 'block',
-		backgroundColor: '#ff6600',
-		border: 'none',
-		color: 'white',
-		padding: '15px 32px',
-		textAlign: 'center',
-		textDecoration: 'none',
-		display:' inline-block',
-		fontsize: '16px',
-		borderRadius: '10px',
-	},
+	// menuItem: {
+	// 	padding: '1rem',
+	// },
+	// loginButton: {
+	// 	display: 'block',
+	// 	backgroundColor: '#ff6600',
+	// 	border: 'none',
+	// 	color: 'white',
+	// 	padding: '15px 32px',
+	// 	textAlign: 'center',
+	// 	textDecoration: 'none',
+	// 	display:' inline-block',
+	// 	fontsize: '16px',
+	// 	borderRadius: '10px',
+	// 	top:'10px',
+	// },
 };
 
 
