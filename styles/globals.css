@@ -401,6 +401,14 @@ border: 0;
     outline: none;
     font-size: 14px;
   }
+  .gridDiv{
+	
+	width: 750px;
+}
+.regDiv{
+	/* border: 1px solid black; */
+	margin-left: 5px;
+}
   
   .custom-field .placeholder {
     position: absolute;
@@ -448,8 +456,14 @@ border: 0;
   @media (max-width:736px) {
 	  .custom-field.two input{
 		  width: 250px;
-
+   
 	  }
+	  .regDiv{
+		width: 340px;
+	}
+	.gridDiv{
+		width: 310px;
+	}
 	  .newUserBtns button{
 		  width: 100px;
 

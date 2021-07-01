@@ -2,7 +2,9 @@ import Head from 'next/head'
 import{ React, useState, useEffect} from 'react';
 import{ faEnvelope, } from '@fortawesome/free-regular-svg-icons';
 import{ faMap} from '@fortawesome/free-regular-svg-icons';
-// import emailjs from 'emailjs-com';
+
+
+import emailjs from 'emailjs-com'
 
 
 
@@ -14,20 +16,20 @@ import TextField from '../propComponents/TextField'
 import { faMarker } from '@fortawesome/free-solid-svg-icons';
 
 export default function ContactUs() {
-    const [detail, setDetail] = useState({
-        Fname:'',
-        email:'',
-        No:'',
-        message:'',
-        })
+    // const [detail, setDetail] = useState({
+    //     name:'',
+    //     email:'',
+    //     No:'',
+    //     message:'',
+    //     })
 
        function submit(e){
            e.preventDefault();
-           console.log(detail)
-        //    emailjs.sendForm('service_sfm7kik','template_mt9b19e',e.target,"user_NxU5uNQCWbHXT7BrIW4r3")
-        //    .then(res=>{
-        //        console.log(res);
-        //    }).catch(error=>(console.log(error)))
+           console.log(e.target.value)
+           emailjs.sendForm('service_sfm7kik','template_mt9b19e',e.target,"user_NxU5uNQCWbHXT7BrIW4r3")
+           .then(res=>{
+               console.log(res);
+           }).catch(error=>(console.log(error)))
            
     //        try{
     //         window.Email.send({
@@ -59,26 +61,30 @@ export default function ContactUs() {
         <div className={styles.box}>
             <form onSubmit={e =>submit(e)}>
             <div >
-                <input type="text" placeholder="Full Name"className={styles.fullName}
-                onChange={e =>setDetail({Fname:e.target.value, email:detail.email, No:detail.No , message:detail.message})} 
-                value={detail.Fname}/>
+                <input type="text" placeholder="Full Name"className={styles.fullName} name="name"
+                // onChange={e =>setDetail({Fname:e.target.value, email:detail.email, No:detail.No , message:detail.message})} 
+                // value={detail.Fname}
+                />
             </div>
             <div className={styles.form}>
                 <div className={styles.formgroup}>
-                    <input type="text" placeholder="Email" className={styles.formcontrole}
-                    onChange={e =>setDetail({Fname:detail.Fname, email:e.target.value, No:detail.No , message:detail.message})}
-                    value={detail.email}/>
+                    <input type="text" placeholder="Email" className={styles.formcontrole} name="user_email"
+                    // onChange={e =>setDetail({Fname:detail.Fname, email:e.target.value, No:detail.No , message:detail.message})}
+                    // value={detail.email}
+                    />
                 </div>
                 <div className={styles.formgroup}>
-                    <input type="number" placeholder="Phone No"className={styles.formcontrolp}
-                    onChange={e =>setDetail({Fname:detail.Fname, email:detail.email, No:e.target.value , message:detail.message})}
-                    value={detail.No}/>
+                    <input type="number" placeholder="Phone No"className={styles.formcontrolp} name='number'
+                    // onChange={e =>setDetail({Fname:detail.Fname, email:detail.email, No:e.target.value , message:detail.message})}
+                    // value={detail.No}
+                    />
                 </div>
             </div>
             <div>
-                <textarea type='text' placeholder="message" className={styles.msg}
-                onChange={e =>setDetail({Fname:detail.Fname, email:detail.email, No:detail.No , message:e.target.value})}
-                value={detail.message}></textarea>
+                <textarea type='text' placeholder="message" className={styles.msg} name='message'
+                // onChange={e =>setDetail({Fname:detail.Fname, email:detail.email, No:detail.No , message:e.target.value})}
+                // value={detail.message}
+                ></textarea>
             </div>
 
             <div>

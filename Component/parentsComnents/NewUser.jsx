@@ -32,7 +32,7 @@ export default function AddressForm() {
   const [educationData, setEducationData] = useState("");
 
   const[show, setShow] = useState(false)
-  const paperStyle = { padding: '30px 20px', width: 700, margin: "20px auto",   }
+  const paperStyle = { padding: '30px 20px',  margin: "20px auto",   }
   const formik = useFormik({
     initialValues: {
       firstName: "",
@@ -122,12 +122,14 @@ export default function AddressForm() {
   }, [educationData]);
   return (
     <>
+    <div className="regDiv">
      <form onSubmit={formik.handleSubmit}>
      
      <Typography variant="h6" align="center"
      >
         Registration Form
       </Typography>
+      <div className="gridDiv">
       <Grid container spacing={3}  style={paperStyle}>
         
         <Grid item xs={12} sm={6}>
@@ -275,8 +277,10 @@ export default function AddressForm() {
       </Button></div></Grid>
 
       </Grid>
+      </div>
       
       </form>
+      </div>
     </>
   );
 }
