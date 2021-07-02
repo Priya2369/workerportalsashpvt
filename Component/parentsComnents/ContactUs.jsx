@@ -4,7 +4,7 @@ import{ faEnvelope, } from '@fortawesome/free-regular-svg-icons';
 import{ faMap} from '@fortawesome/free-regular-svg-icons';
 import { toast } from "react-toastify";
 
-import emailjs from 'emailjs-com'
+// import emailjs from 'emailjs-com'
 
 
 
@@ -28,21 +28,21 @@ export default function ContactUs() {
 
        function submit(e){
            e.preventDefault();
-           console.log(e.target.value)
-           emailjs.sendForm('service_sfm7kik','template_mt9b19e',e.target,"user_NxU5uNQCWbHXT7BrIW4r3")
-           .then(res=>{
-            toast.success("Email sent sucessfully", {
-                hideProgressBar: true,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                position: "bottom-right",
-                autoClose: 5000,
-              });
+        //    console.log(e.target.value)
+        //    emailjs.sendForm('service_sfm7kik','template_mt9b19e',e.target,"user_NxU5uNQCWbHXT7BrIW4r3")
+        //    .then(res=>{
+        //     toast.success("Email sent sucessfully", {
+        //         hideProgressBar: true,
+        //         closeOnClick: true,
+        //         pauseOnHover: true,
+        //         draggable: true,
+        //         progress: undefined,
+        //         position: "bottom-right",
+        //         autoClose: 5000,
+        //       });
 
-               console.log(res);
-           }).catch(error=>(console.log(error)))
+        //        console.log(res);
+        //    }).catch(error=>(console.log(error)))
            
     
 
