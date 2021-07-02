@@ -68,14 +68,17 @@
 
 @media (max-width:736px) {
     .post{
-        width: 25vh;
+        width: 20vh;
+        height: 5vh;
     }
     .srch{
-        width: 25vh;
+        width: 20vh;
+        height: 5vh;
     }
     .hedar{
        
         height: 1360px;
+        
       
        
     }
