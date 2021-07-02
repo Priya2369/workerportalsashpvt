@@ -58,9 +58,7 @@ export default function FeaturedJobParents() {
 
             </div> */}
       <div>
-        {items
-        
-        .slice(0, 10).map((item, id) => {
+        {items.map((item, id) => {
           return (
             <div key={item._id}  >
               <FeaturedJob

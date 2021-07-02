@@ -28,34 +28,7 @@ export default function FeaturedJob(props) {
 
     setId(props.id)
     router.push("/companies");
-    // if (cookies.get("access_token")) {
-    //   try {
-    //     //  console.log(coookieValue)
-    //     const reqUrl =
-    //       API_CONSTANTS.baseUrl +
-    //       API_CONSTANTS.project.SEARCH_OTHER_PROJECT_BY_ID +
-    //       id;
-
-    //     const res = await axios.get(reqUrl, {
-    //       headers: {
-    //         // authorization:cookies.get('access_token') ,
-    //         authorization: getCookies(),
-    //       },  
-    //     });
-    //     console.log(res.data.project);
-    //     console.log(res.data);
-    //     console.log(res.data.project.contactDetails);
-    //     setSingleJob(res.data.project);
-    //     router.push("/companies");
-    //   } catch (error) {
-    //     console.log(error.message);
-    //     // if(error.message = "Request failed with status code 401"){
-    //     // router.push('/signup');
-    //     // }
-    //   }
-    // } else {
-    //   router.push("/signup");
-    // }
+    
   };
   return (
     <>
@@ -103,7 +76,7 @@ export default function FeaturedJob(props) {
           </div>
           <div className={styles.skillp}>
             <EventAvailableIcon fontSize="small" />&nbsp;&nbsp;
-            Posted on &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp; 23 jan 2021
+            Posted on &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp; {props.postedOn}
           </div>
         </div>
       </div>

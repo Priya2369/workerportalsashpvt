@@ -63,11 +63,12 @@ export default function FeaturedJobJobs() {
         
         {items
           
-          .slice(0, 10)
+          
           .map((item, id) => {
             return (
               <div key={id}>
                 <FeaturedJob
+                postedOn={item.createdAt.split("T")[0]}
                 id={item._id}
                   company={item.title}
                   skill={item.requirements.map((skill, id)=>{
