@@ -11,15 +11,15 @@ import {API_CONSTANTS} from '../config/apiConstant'
 
 export default function FeaturedJobJobs() {
   const [items, setItems] = useState([]);
-  const {   searchLocation,searchJob,jobType} = useContext(userContext);
+  const {   searchLocation,searchJob,jobType, shorting} = useContext(userContext);
   
   useEffect(() => {
     async function getData() {
-      if(searchLocation || searchJob|| jobType){
+      if(searchLocation || searchJob|| jobType || shorting){
         try {
        
 
-          const reqUrl = API_CONSTANTS.baseUrl+ API_CONSTANTS.project.SEARCH_ALL_PROJECTS_PUBLIC+"?sectors="+searchJob+"&location="+searchLocation+"&employmentType="+jobType+"&page=0&limit=50&sort=createdAt&sortOrder=asc"
+          const reqUrl = API_CONSTANTS.baseUrl+ API_CONSTANTS.project.SEARCH_ALL_PROJECTS_PUBLIC+"?sectors="+searchJob+"&location="+searchLocation+"&employmentType="+jobType+"&page=0&limit=50&sort=createdAt&sortOrder="+shorting+""
           const res = await axios.get(reqUrl, {
             headers: {
               // authorization:cookies.get('access_token') ,

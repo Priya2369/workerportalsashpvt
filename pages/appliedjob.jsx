@@ -13,7 +13,7 @@ const AppliedJob = () =>{
          
          <Applied/>
          
-        </div>:<div>login</div>}
+        </div>:<div><SignUp/></div>}
         </>
     )
 }
