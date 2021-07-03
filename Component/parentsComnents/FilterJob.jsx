@@ -161,7 +161,7 @@ export default function FilterJob() {
 <div className={styles.radioBtn2}>
               <FormControl component="fieldset">
                 <FormLabel component="legend">
-                  <b>Shorted By Data</b>
+                  <b>Sorted By Date</b>
                 </FormLabel>
                 <RadioGroup
                   aria-label="shorting"
