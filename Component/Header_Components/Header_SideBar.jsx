@@ -30,7 +30,7 @@ const styles = {
 		background: '#bdc3c7',
 	},
 	bmMenuWrap: {
-		
+		display: 'inline-block',
 		position: 'fixed',
 		height: '100%',
 		left: '100vw',
@@ -121,8 +121,9 @@ const Header_SideBar = () => {
 
 
 	return(
-		<>
-	<Menu styles={styles}>
+		
+		<div id="outer-container">
+	<Menu isOpen={ true } styles={styles}>
 		{showHeader?<nav>
 			<Link href="/">
 				<a className="menuItem">Home</a>
@@ -167,7 +168,9 @@ const Header_SideBar = () => {
 			<button className="loginButton">Login</button>
 			</Link></nav>}
 	</Menu>
-	</>
+	</div>
+
 	)};
 
 export default Header_SideBar;
+

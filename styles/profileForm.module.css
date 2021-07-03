@@ -328,10 +328,20 @@ font-size:unset;
 @media (max-width: 736px) {
   .body{
     display: grid;
-    width: 100%;
+    width: 360px;
+    
   }
   .Header{
-    display: none;
+    position: unset;
+    width: 340px;
+    margin-left: 10px;
+  }
+  .dats{
+    margin-left: -30px;
+  }
+  .name{
+    
+    width: 300px;
   }
   .tab{
     
