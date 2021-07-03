@@ -38,6 +38,7 @@ const [detail, setDetail] = useState({
 	const [catagories ,setCatagories]=useState();
 	const [location, setLocation] = useState("");
   const[jobType, setJobType] = useState("");
+  const[shortJob, setShortJob] =useState("");
 
 //   state for filter job search
 
@@ -59,19 +60,12 @@ const [singleUser, setSingleUser] = useState()
 const [applied, setApplied] = useState([])
 console.log(singleUser)
 
-// useEffect(()=>{
-// const userFormLocalStorage = window.localStorage.getItem("singleUser");
-// setSingleUser(JSON.parse(userFormLocalStorage))
-// },[singleUser])
 
-// useEffect(()=>{
-// window.localStorage.setItem('singleUser', JSON.stringify(singleUser))
-// },[singleUser]);
 
 	return (
 		<>
 		<userContext.Provider value = {{state, dispatch, singleJob, setSingleJob,
-			setLocation, setJobType, location, jobType,catagories, setCatagories,
+			setLocation, setJobType, location, jobType,catagories, setCatagories,shortJob, setShortJob,
 			 searchLocation, setSearchLocation,searchJob, setSearchJob,
 			 jobCatagories, jobTypes, jobLocation, experience, postedWithin, salary,shorting, setFilterValue, getfilterValue,
 			 detail, setDetail, singleUser, setSingleUser,

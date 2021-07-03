@@ -25,6 +25,7 @@ export default function FilterJob() {
     jobTypes,
     shorting,
     setJobType,
+     setShortJob
   } = useContext(userContext);
 
   const [show, setShow] = useState(true);
@@ -35,6 +36,7 @@ export default function FilterJob() {
     setSearchJob(jobCatagories);
     setSearchLocation(jobLocation);
     setJobType(jobTypes);
+    setShortJob(shorting)
   }
 
   return (
