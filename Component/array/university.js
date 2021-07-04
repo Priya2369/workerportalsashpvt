@@ -469,6 +469,7 @@ const university =
 "Saurashtra University",
 "Saveetha Institute of Medical and Technical Sciences",
 "School of Planning & Architecture",
+"State council for technical Education and vocational training",
 "Shanmugha Arts, Science, Technology & Research Academy (SASTRA)",
 "Sharda University",
 "Sher-e-Kashmir University of Agricultural Science & Technology of Jammu",

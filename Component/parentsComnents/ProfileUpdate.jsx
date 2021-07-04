@@ -60,12 +60,27 @@ try{
       formik.setFieldValue("gender",data.generalData.gender)
 
       if(data.generalData.age){
-       // formik.setFieldValue("age",data.generalData.age)
+       formik.setFieldValue("age",data.generalData.age)
       }
         formik.setFieldValue("email",data.generalData.email)
       // skill data
         formik.setFieldValue("passingYear",data.generalData.email)
          formik.setFieldValue("education",data.skillData.education)
+         if(data.skillData.college){
+           formik.setFieldValue("collegeUniversity",data.skillData.college)
+
+         }
+         if(data.skillData.experiences){
+           formik.setFieldValue("experience", data.skillData.experiences)
+         }
+
+        //  if(data.skillData.mark){
+        //    formik.setValues("CGPAPercentage",data.skillData.mark)
+        //  }
+
+        //  if(data.skillData.passingYear){
+        //    formik.setFieldValue("PassingYear", data.skillData.passingYear)
+        //  }
     
   }
 }catch (error) {
