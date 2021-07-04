@@ -18,7 +18,7 @@ export default function Open() {
             rel="noopener noreferrer"
             target="_blank"
           >
-            <button className={styles.post}>Post New Job</button>{" "}
+            <button className={styles.post}>Post Job</button>{" "}
           </a>
 
           <Link href="/jobs">
