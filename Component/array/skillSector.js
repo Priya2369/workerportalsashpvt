@@ -1672,9 +1672,13 @@ const skillSector =  [
 
         ]
     }
-],
+]
 
 export default skillSector;
+
+
+
+
 const commonSkill =[
     {
         'name':'Config.Skills.accountant',

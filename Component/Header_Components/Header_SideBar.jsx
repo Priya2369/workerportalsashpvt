@@ -59,12 +59,11 @@ const styles = {
 //   textDecoration: 'none',
   
 	},
+
 	bmOverlay: {
 		background: 'rgba(0, 0, 0, 0.3)',
 	},
-	// menuItem: {
-	// 	padding: '1rem',
-	// },
+
 	// loginButton: {
 	// 	display: 'block',
 	// 	backgroundColor: '#ff6600',
@@ -79,7 +78,6 @@ const styles = {
 	// 	top:'10px',
 	// },
 };
-
 
 
 const Header_SideBar = () => {
@@ -126,31 +124,31 @@ const Header_SideBar = () => {
 	<Menu isOpen={ true } styles={styles}>
 		{showHeader?<nav>
 			<Link href="/">
-				<a className="menuItem">Home</a>
+				<a className="menuItem" style={{margin:12}}>Home</a>
 			</Link>
 			<Link href="/jobs">
-				<a className="menuItem">Jobs</a>
+				<a className="menuItem" style={{margin:12}}>Jobs</a>
 			</Link>
 			{/* <Link href="/companies">
 				<a className="menuItem">Companies</a>
 			</Link> */}
 			<Link href="/about">
-				<a className="menuItem">About</a>
+				<a className="menuItem" style={{margin:12}}>About</a>
 			</Link>
 			<Link href="/contact">
-				<a className="menuItem">Contact</a>
+				<a className="menuItem" style={{margin:12}}>Contact</a>
 			</Link>
 			<Link href="/profile">
-			<a className="menuItem">profile</a>
+			<a className="menuItem" style={{margin:12}}>profile</a>
 			</Link>
 			<Link href="/">
-			<button className="loginButton" onClick={(e)=>logout(e)}>Logout</button>
+			<button className="loginButton" style={{margin:12}} onClick={(e)=>logout(e)}>Logout</button>
 			</Link>
 		</nav>
 		
-		:<nav>
+		:<nav >
 			<Link href="/">
-				<a className="menuItem">Home</a>
+				<a className="menuItem" style={{margin:12}}>Home</a>
 			</Link>
 			{/* <Link href="/jobs">
 				<a className="menuItem">Jobs</a>
@@ -159,13 +157,13 @@ const Header_SideBar = () => {
 				<a className="menuItem">Companies</a>
 			</Link> */}
 			<Link href="/about">
-				<a className="menuItem">About</a>
+				<a className="menuItem" style={{margin:12}} >About</a>
 			</Link>
 			<Link href="/contact">
-				<a className="menuItem">Contact</a>
+				<a className="menuItem" style={{margin:12}}>Contact</a>
 			</Link>
 			<Link href="/signup">
-			<button className="loginButton">Login</button>
+			<button className="loginButton" style={{margin:12}}>Login</button>
 			</Link></nav>}
 	</Menu>
 	</div>

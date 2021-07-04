@@ -16,11 +16,13 @@ import EmailOutlinedIcon from '@material-ui/icons/EmailOutlined';
 import BusinessCenterOutlinedIcon from '@material-ui/icons/BusinessCenterOutlined';
 import LaptopIcon from '@material-ui/icons/Laptop';
 import { useRouter } from 'next/router'
+import SkillSector from '../array/skillSector'
+import skill from '../array/skill'
 
 
 import { Link } from "react-scroll";
 // import {StickyContainer, Sticky} from 'react-sticky'
-import StickyBox from "react-sticky-box";
+
 toast.configure();
 
 
@@ -56,7 +58,10 @@ try{
        formik.setFieldValue("date",data.generalData.dateOfBirth.split("T")[0])
         }
       formik.setFieldValue("gender",data.generalData.gender)
+
+      if(data.generalData.age){
        // formik.setFieldValue("age",data.generalData.age)
+      }
         formik.setFieldValue("email",data.generalData.email)
       // skill data
         formik.setFieldValue("passingYear",data.generalData.email)
@@ -165,7 +170,9 @@ try{
           autoClose: 5000,
         });
 
-        console.log(res["message"]);
+        localStorage.setItem("user_info",JSON.stringify(res.data.profile))
+
+        console.log(res.data.profile);
         console.log("name" + formik.values.passingYear);
       } catch (error) {
         console.log(`Error: ${error}`);
@@ -179,18 +186,18 @@ try{
           autoClose: 5000,
         });
       }
-      resetForm({values:''})
+      // resetForm({values:''})
     },
 
     // submitt end......
   });
   // map for applied project
   let apply;
-if(applied){
-  apply= applied.map((appl, id)=>{
-    return <p key={id}>{appl.project.title}</p>
-  })
-}
+// if(applied){
+//   apply= applied.map((appl, id)=>{
+//     return <p key={id}>{appl.project.title}</p>
+//   })
+// }
 
 
 function onApplied(e){
@@ -208,9 +215,9 @@ function onApplied(e){
              <div className={styles.imgs}><img src='./3.jpg'/></div>
              <div className={styles.dats}>
              
-               <div className={styles.name}><span><b>{profileName.name}</b></span><div><CreateOutlinedIcon fontSize="small"/></div></div>
-               <div className={styles.phone}><PhoneEnabledOutlinedIcon fontSize="small"/>  {profileName.mobileNumber}</div>
-               <div className={styles.email}><EmailOutlinedIcon fontSize="small"/>{profileName.email}</div>
+               {profileName.name?<div className={styles.name}><span><b>{profileName.name}</b></span><div><CreateOutlinedIcon fontSize="small"/></div></div>:null}
+               {profileName.mobileNumber?<div className={styles.phone}><PhoneEnabledOutlinedIcon fontSize="small"/>  {profileName.mobileNumber}</div>:null}
+               {profileName.email?<div className={styles.email}><EmailOutlinedIcon fontSize="small"/>{profileName.email}</div>:null}
                <div className={styles.exp}><BusinessCenterOutlinedIcon fontSize="small"/>1 year 6 month</div>
                
              </div>
@@ -577,10 +584,10 @@ function onApplied(e){
                       value={formik.values.sector}
                       onChange={formik.handleChange}
                     />
-                    <datalist id="sector">
-                      <option value="front-end developer"></option>
-                      <option value="Back-end developer"></option>
-                      <option value="Software developer"></option>
+                   <datalist id="sector">
+                      {SkillSector.map((val, i) => {
+                        return <option key={i} value={val.value}></option>;
+                      })}
                     </datalist>
                   </div>
                   {formik.touched.sector && formik.errors.sector ? (
@@ -601,9 +608,9 @@ function onApplied(e){
                       onChange={formik.handleChange}
                     />
                     <datalist id="skill">
-                      <option value="front-end developer"></option>
-                      <option value="Back-end developer"></option>
-                      <option value="Software developer"></option>
+                    {skill.map((val, i) => {
+                        return <option key={i} value={val.value}></option>;
+                      })}
                     </datalist>
                   </div>
                   {formik.touched.skill && formik.errors.skill ? (
