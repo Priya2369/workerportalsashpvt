@@ -36,6 +36,7 @@ const ProfileUpdate = () => {
   const [showCondition, setShowCondition] = useState(false);
   const [profileName, setProfileName] = useState({})
   const [applied, setApplied] = useState([])
+  const [skill, setSkill] = useState([])
   
 
 console.log("profile............................")
@@ -50,6 +51,7 @@ try{
   if (data) {
     setProfileName(data.generalData)
       setApplied(data.appliedProject)
+      setSkill(data.skillData)
       //  general data custom input 
          formik.setFieldValue("firstName",data.generalData.name.split(" ")[0].trim())
          formik.setFieldValue("lastName",data.generalData.name.split(/(?<=^\S+)\s/)[1])
@@ -74,13 +76,16 @@ try{
            formik.setFieldValue("experience", data.skillData.experiences)
          }
 
-        //  if(data.skillData.mark){
-        //    formik.setValues("CGPAPercentage",data.skillData.mark)
-        //  }
+         if(data.skillData.mark){
+           formik.setFieldValue("CGPAPercentage",data.skillData.mark)
+         }
 
-        //  if(data.skillData.passingYear){
-        //    formik.setFieldValue("PassingYear", data.skillData.passingYear)
-        //  }
+         if(data.skillData.passingYear){
+           formik.setFieldValue("PassingYear", data.skillData.passingYear)
+         }
+         if(data.skillData.yearGap){
+           formik.setFieldValue("yearGap", data.skillData.yearGap)
+         }
     
   }
 }catch (error) {
@@ -233,7 +238,7 @@ function onApplied(e){
                {profileName.name?<div className={styles.name}><span><b>{profileName.name}</b></span><div><CreateOutlinedIcon fontSize="small"/></div></div>:null}
                {profileName.mobileNumber?<div className={styles.phone}><PhoneEnabledOutlinedIcon fontSize="small"/>  {profileName.mobileNumber}</div>:null}
                {profileName.email?<div className={styles.email}><EmailOutlinedIcon fontSize="small"/>{profileName.email}</div>:null}
-               <div className={styles.exp}><BusinessCenterOutlinedIcon fontSize="small"/>1 year 6 month</div>
+               {skill.experiences?<div className={styles.exp}><BusinessCenterOutlinedIcon fontSize="small"/>{skill.experiences} year </div>:null}
                
              </div>
           </div>{applied?
