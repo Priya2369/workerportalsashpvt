@@ -123,8 +123,8 @@ try{
       yearGap: "",
       collegeUniversity: "",
       CGPAPercentage: "",
-      interestArea: "",
-      prefferedLocation: "",
+      // interestArea: "",
+      // prefferedLocation: "",
       sector: "",
       skill: "",
       experience: "",
@@ -412,9 +412,7 @@ function onApplied(e){
                       disabled
                     />
                   </div>
-                  {formik.touched.age && formik.errors.age ? (
-                    <p className={styles.error}>{formik.errors.age}</p>
-                  ) : null}
+                 
                   <div className={styles.inputDiv}>
                     <span className={styles.icon}>
                       <b>E-Mail</b>
