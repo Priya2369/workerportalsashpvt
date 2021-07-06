@@ -17,7 +17,8 @@ import BusinessCenterOutlinedIcon from '@material-ui/icons/BusinessCenterOutline
 import LaptopIcon from '@material-ui/icons/Laptop';
 import { useRouter } from 'next/router'
 import SkillSector from '../array/skillSector'
-import skill from '../array/skill'
+import skills from '../array/skill'
+import {calculateAge} from '../config/calculateAge'
 
 
 import { Link } from "react-scroll";
@@ -61,8 +62,8 @@ try{
         }
       formik.setFieldValue("gender",data.generalData.gender)
 
-      if(data.generalData.age){
-       formik.setFieldValue("age",data.generalData.age)
+      if(data.generalData.dateOfBirth){
+       formik.setFieldValue("age",calculateAge(data.generalData.dateOfBirth))
       }
         formik.setFieldValue("email",data.generalData.email)
       // skill data
@@ -86,6 +87,13 @@ try{
          if(data.skillData.yearGap){
            formik.setFieldValue("yearGap", data.skillData.yearGap)
          }
+         console.log(data.skillData.sectors)
+         if(data.skillData.sectors){
+           formik.setFieldValue("sector", data.skillData.sectors)
+         }
+         if(data.skillData.skills){
+          formik.setFieldValue("skill", data.skillData.skills)
+        }
     
   }
 }catch (error) {
@@ -116,7 +124,7 @@ try{
       collegeUniversity: "",
       CGPAPercentage: "",
       interestArea: "",
-      prefferedLocation: [""],
+      prefferedLocation: "",
       sector: "",
       skill: "",
       experience: "",
@@ -129,7 +137,7 @@ try{
           registerBy: "self",
           name: values.firstName + " " + values.lastName,
           dateOfBirth: values.date,
-          age: Number(values.age),
+         
           gender: values.gender,
           // mobileNumber: phoneNo,
           email: values.email,
@@ -137,15 +145,15 @@ try{
           address: values.address,
         },
         skillData: {
-          sectors: [
+          sectors: 
             values.sector,
             // "agriculture"
-          ],
+          
           sectorsOther: ["string"],
-          skills: [
+          skills: 
             values.skill,
             // "poultry farmer"
-          ],
+          
           skillsOther: ["string"],
           experiences: values.experience,
 
@@ -154,9 +162,9 @@ try{
           college: values.collegeUniversity,
           mark: values.CGPAPercentage,
           passingYear: values.PassingYear,
-          yearGap: values.yearGap.split("-")[0].trim(),
+          yearGap: values.yearGap,
 
-          preferredLocations: ["odisha"],
+          // preferredLocations: prefferedLocation,
           preferredLocationsOther: ["string"],
           otherInfo: "string",
         },
@@ -286,7 +294,7 @@ function onApplied(e){
             duration={1000}
           >
             <h1>Description</h1>
-          </Link></button>
+          </Link></button> 
           </div>
         </div>
 
@@ -316,7 +324,6 @@ function onApplied(e){
                         className={styles.input}
                         type="text"
                         placeholder={"First Name"}
-                        
                         onBlur={formik.handleBlur}
                         name="firstName"
                         value={formik.values.firstName}
@@ -402,6 +409,7 @@ function onApplied(e){
                       name="age"
                       value={formik.values.age}
                       onChange={formik.handleChange}
+                      disabled
                     />
                   </div>
                   {formik.touched.age && formik.errors.age ? (
@@ -573,23 +581,8 @@ function onApplied(e){
 
               {showJobDescription ? (
                 <div className={styles.size}>
-                  <div className={styles.inputDiv}>
-                    <span className={styles.icon}>
-                      <b>Interest Area</b>
-                    </span>
-                    <input
-                      className={styles.input}
-                      type="text"
-                      placeholder={"Interest Area"}
-                      onBlur={formik.handleBlur}
-                      name="interestArea"
-                      value={formik.values.interestArea}
-                      onChange={formik.handleChange}
-                    />
-                  </div>
-                  {formik.touched.interestArea && formik.errors.interestArea ? (
-                    <p className={styles.error}>{formik.errors.interestArea}</p>
-                  ) : null}
+                  
+                  
 
                   <div className={styles.inputDiv}>
                     <span className={styles.icon}>
@@ -628,7 +621,7 @@ function onApplied(e){
                       onChange={formik.handleChange}
                     />
                     <datalist id="skill">
-                    {skill.map((val, i) => {
+                    {skills.map((val, i) => {
                         return <option key={i} value={val.value}></option>;
                       })}
                     </datalist>

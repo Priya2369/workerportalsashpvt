@@ -76,7 +76,7 @@ export default function AddressForm() {
           API_CONSTANTS.baseUrl + API_CONSTANTS.enrollment.UPDATE_MANPOWER;
         const res = await axios.post(reqUrl, testDefault, {
           headers: {
-            // authorization:cookies.get('access_token') ,
+            
             authorization: getCookies(),
           },
         });

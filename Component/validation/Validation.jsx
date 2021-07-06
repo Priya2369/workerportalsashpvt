@@ -51,12 +51,6 @@ if (!phoneNo){
     errors.phoneNo = "invalid mobile number"
 }
 
-// validation for age 
-if(!age){
-    errors.age = "please fill the field"
-}else if(age<14 || age>80){
-    errors.age = "age should be between 15-80"
-}
 
 // validation for gender
 if(!gender){
@@ -90,13 +84,9 @@ if(!CGPAPercentage){
     errors.CGPAPercentage = "please fill the field"
 }
 
-if(!interestArea){
-    errors.interestArea = "please fill the field"
-}
 
-if(!prefferedLocation){
-    errors.prefferedLocation = "please fill the field"
-}
+
+
 
 if(!sector){
     errors.sector = "please fill the field"
