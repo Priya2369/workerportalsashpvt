@@ -229,7 +229,7 @@ export default function AddressForm() {
         
         <Grid item xs={12} >
         <label className="custom-field two">
-        <input list="pin" type="text" placeholder="&nbsp;" 
+        <input list="pin" type="text" placeholder="Pincode,City,District,State" 
         onBlur={formik.handleBlur}
         name="address"
         value={formik.values.address}

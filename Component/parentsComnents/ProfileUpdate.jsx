@@ -132,6 +132,7 @@ try{
     },
     validate: validation,
     onSubmit: async (values,{resetForm}) => {
+      console.log(typeof values.sector)
       const testDefault = {
         generalData: {
           registerBy: "self",
@@ -145,8 +146,10 @@ try{
           address: values.address,
         },
         skillData: {
-          sectors: 
-            values.sector,
+          sectors: [
+            values.sector.toString(),
+            // "agriculture"
+          ],
             // "agriculture"
           
           sectorsOther: ["string"],
@@ -162,7 +165,7 @@ try{
           college: values.collegeUniversity,
           mark: values.CGPAPercentage,
           passingYear: values.PassingYear,
-          yearGap: values.yearGap,
+          yearGap:Number(values.yearGap),
 
           // preferredLocations: prefferedLocation,
           preferredLocationsOther: ["string"],
@@ -437,7 +440,7 @@ function onApplied(e){
                     <input
                       className={styles.input}
                       list="jobs"
-                      placeholder="address"
+                      placeholder="Pincode,City,District,State"
                       onBlur={formik.handleBlur}
                       name="address"
                       value={formik.values.address}
@@ -511,7 +514,7 @@ function onApplied(e){
                     </span>
                     <input
                       className={styles.input}
-                      type="tept"
+                      type="text"
                       placeholder={"Year Gap"}
                       onBlur={formik.handleBlur}
                       name="yearGap"
