@@ -58,6 +58,16 @@ export default async function tokenauth(detail, setShow) {
       position: "bottom-right",
       autoClose: 5000,
     });
+  }else{
+    toast.error(error.message, {
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      position: "bottom-right",
+      autoClose: 5000,
+    });
   }
 
   };
