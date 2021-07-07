@@ -131,8 +131,12 @@ try{
       termCondition: false, 
     },
     validate: validation,
-    onSubmit: async (values,{resetForm}) => {
-      console.log(typeof values.sector)
+    
+    onSubmit: async (values,{resetForm}, errors) => {
+
+     if(errors){
+       console.log("feild errro...")
+     }
       const testDefault = {
         generalData: {
           registerBy: "self",
@@ -153,8 +157,9 @@ try{
             // "agriculture"
           
           sectorsOther: ["string"],
-          skills: 
-            values.skill,
+          skills: [
+            values.skill.toString(),
+          ],
             // "poultry farmer"
           
           skillsOther: ["string"],
@@ -179,6 +184,7 @@ try{
         },
       };
       console.log(values);
+      
       try {
         console.log("post data started");
         console.log(getCookies());
@@ -230,7 +236,9 @@ try{
 //   })
 // }
 
-
+// if(formik.errors){
+//   console.log("error error .......")
+// }
 function onApplied(e){
   e.preventDefault();
   router.push('/appliedjob');
@@ -277,7 +285,7 @@ function onApplied(e){
 
 
 
-      <div>
+      <div className={styles.dataDiv}>
         <div className={styles.tab}>
         <div className={styles.tabDiv}>
           {/*<h2>Quick Link</h2>*/}

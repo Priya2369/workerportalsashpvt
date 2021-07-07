@@ -43,8 +43,8 @@
 }
 .name{
   display: flex;
-  margin-top: 15px;
-  font-size: 15px;
+  margin-top: 10px;
+  font-size: 10px;
   
 }
 /* .dats{
@@ -93,7 +93,7 @@ font-size:unset;
   color: white;
 }
 .marg{
-  margin-top: -15px;
+  margin-top: -10px;
 }
 
 /* .applied .badge {
@@ -114,6 +114,8 @@ font-size:unset;
   justify-content: space-between;
   font-size: large;
 }
+
+
 .tab {
   /* display: grid; */
    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);  
@@ -139,7 +141,7 @@ font-size:unset;
  }
  .p{
   
-    margin-right: 15px;
+    margin-right: 10px;
     color: black;
     margin-top: 20px;
    
@@ -328,7 +330,7 @@ font-size:unset;
 @media (max-width: 736px) {
   .body{
     display: grid;
-    width: 360px;
+    width: 100%;
     
   }
   .Header{
@@ -342,6 +344,9 @@ font-size:unset;
   .name{
     
     width: 300px;
+  }
+  .dataDiv{
+    width: 355px;
   }
   .tab{
     
