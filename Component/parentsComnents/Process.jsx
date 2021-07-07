@@ -22,7 +22,7 @@ export default function Process () {
                   <h1>How it Works</h1>
                   <div className={styles.btnd}>
                       <div className={styles.btngg}>
-                      <button  onClick={()=>JobSeekers()} className={styles.jobs}><a> For Jobseekers</a></button>
+                      <button  onClick={()=>JobSeekers()} className={styles.jobs}><a> For Job Seekers</a></button>
                       <button onClick={()=>employers()} className={styles.empn}><a>For Employers</a></button></div>
                       {JobSeeker?<Jobseekers/>:null}
                       {employer?<Employer/>:null}

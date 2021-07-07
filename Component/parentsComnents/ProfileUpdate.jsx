@@ -420,7 +420,7 @@ function onApplied(e){
                       name="age"
                       value={formik.values.age}
                       onChange={formik.handleChange}
-                      disabled
+                      readOnly
                     />
                   </div>
                  
@@ -585,7 +585,7 @@ function onApplied(e){
                 className={styles.hover}
                 onClick={() => setShowJobDescription(!showJobDescription)}
               >
-                Add Jobdescription
+                Add Job Description
               </h2>
 
               {showJobDescription ? (

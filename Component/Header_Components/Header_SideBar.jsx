@@ -139,7 +139,7 @@ const Header_SideBar = () => {
 				<a className="menuItem" style={{margin:12}}>Contact</a>
 			</Link>
 			<Link href="/profile">
-			<a className="menuItem" style={{margin:12}}>profile</a>
+			<a className="menuItem" style={{margin:12}}>Profile</a>
 			</Link>
 			<Link href="/">
 			<button className="loginButton" style={{margin:12}} onClick={(e)=>logout(e)}>Logout</button>

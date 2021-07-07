@@ -64,7 +64,7 @@ export default function FeaturedJob(props) {
           </div>
           <div className={styles.skills}>
             <DehazeIcon fontSize="small" />&nbsp;&nbsp;
-            Catagory &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;{props.skill}
+            Category &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;{props.skill}
           </div>
           <div className={styles.skilll}>
             <LocationOnIcon fontSize="small" />&nbsp;&nbsp;
