@@ -24,14 +24,14 @@ let Home = () => {
 				
 					<div className="quick-links">
 						
+						<Link href ="/jobs">
+						<a><b>Jobs</b></a></Link>
 						
-						<a><b>Jobs</b></a>
-						
-						<a href=""><b>Companies</b></a>
-						
-						<a href=""><b>About</b></a>
-						
-						<a href=""><b>Contact</b></a>
+						{/* <a href=""><b>Companies</b></a> */}
+						<Link href ="/about">
+						<a href=""><b>About</b></a></Link>
+						<Link href ="/contact">
+						<a href=""><b>Contact</b></a></Link>
 						
 					</div>
 					<div className="social-links">

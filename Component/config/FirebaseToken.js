@@ -38,7 +38,8 @@ export default async function tokenauth(detail, setShow) {
 
   } catch (error) {
     console.log(error);
-    toast.error(error.message, {
+    if(error.code==="auth/internal-error" ){
+    toast.error("network errors", {
       hideProgressBar: true,
       closeOnClick: true,
       pauseOnHover: true,
@@ -47,6 +48,17 @@ export default async function tokenauth(detail, setShow) {
       position: "bottom-right",
       autoClose: 5000,
     });
+  }else if(error.code ==="auth/invalid-phone-number"){
+    toast.error("invalid phone number", {
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      position: "bottom-right",
+      autoClose: 5000,
+    });
+  }
 
   };
 
