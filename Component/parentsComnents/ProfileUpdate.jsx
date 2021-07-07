@@ -150,10 +150,11 @@ try{
           address: values.address,
         },
         skillData: {
-          sectors: [
-            values.sector.toString(),
-            // "agriculture"
-          ],
+          ...(values.sector &&{sectors: [
+             values.sector.toString(),
+            
+          ]})
+          ,
             // "agriculture"
           
           sectorsOther: ["string"],

@@ -62,7 +62,7 @@ export default function AddressForm() {
         skillData: {
          
           education: values.education,
-          specialization:values.educationList
+         ...(values.specialization && {specialization:values.educationList})
 
          
         },
@@ -114,7 +114,7 @@ export default function AddressForm() {
     },
   })
   useEffect(() => {
-    if (educationData === "Graduate" || educationData === "Diploma" || educationData === "12th" || educationData === "B.Tech") {
+    if (educationData === "Graduate" || educationData === "Diploma" || educationData === "12th" || educationData === "B.Tech" || educationData==="Master's degree" || educationData==="Doctorate or higher") {
       setShow(true)
     } else if (educationData === "10th Pass" || educationData === "Below 10th") {
       setShow(false)
