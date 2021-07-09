@@ -11,7 +11,7 @@ const Applied = () => {
   const router = useRouter();
   const { detail, singleUser, applied, setApplied, setSingleJob, setId } =
     useContext(userContext);
-  const [applyJob, setApplyJob] = useState([]);
+  const [applyJob, setApplyJob] = useState(false);
   // const [jobid, setjobId] = useState(val.project._id)
   useEffect(() => {
     try {
@@ -41,7 +41,7 @@ const Applied = () => {
   // }
   return (
     <>
-      {applyJob.length != 0 && Object.keys(appliedJob).length != 0 ? (
+      {applyJob &&  applyJob.length != 0 && Object.keys(appliedJob).length != 0 ? (
         <div>
           <div className={styles.headerDiv}>
             <p>You've applied on {applyJob.length} jobs so far. Good luck.</p>

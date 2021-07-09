@@ -159,6 +159,8 @@ export default function AddressForm() {
                         <p className={styles.error}>{formik.errors.lastName}</p>
                       ) : null}
         </Grid>
+
+
         <Grid item xs={12}>
         <label className="custom-field two">
         <input type="date" placeholder="&nbspn ;"
@@ -168,7 +170,12 @@ export default function AddressForm() {
          onChange={formik.handleChange}/>
         <span className="placeholder">DOB</span>
       </label>
+      {formik.touched.date && formik.errors.date ? (
+                        <p className={styles.error}>{formik.errors.date}</p>
+                      ) : null}
         </Grid>
+
+
         <Grid item xs={12} >
         <FormControl component="fieldset">
          <FormLabel component="legend">Gender</FormLabel>

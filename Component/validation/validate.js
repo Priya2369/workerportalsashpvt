@@ -1,4 +1,7 @@
 import * as yup from 'yup'
+
+import { calculateAge } from "../config/calculateAge";
+
 const Validation = values =>{
     let { firstName,
         lastName,
@@ -43,22 +46,27 @@ if(!email){
 
 
 
-// validation for age 
+// validation for date
+if(!date){
+    errors.date = "Date Is Required"
+}else if( calculateAge(date)>80 || calculateAge(date)<16){
+    errors.date = " Not Eligible"
+}
 
 
 // validation for gender
 if(!gender){
-    errors.gender = " gender required"
+    errors.gender = " Gender Required"
 }
 
 // validation for address
 if(!address){
-    errors.address = "address is required"
+    errors.address = "Address is Required"
 }
 
 // validation for education
 if(!education){
-   errors.education = " please fill your education"
+   errors.education = " please Fill Your Education"
 }
 
 
@@ -67,12 +75,12 @@ if(!education){
 //     }
 
  if(!collegeUniversity){
-        errors.collegeUniversity = "please fill the field"
+        errors.collegeUniversity = "Please Fill The Field"
 }
 
 
 if(!CGPAPercentage){
-    errors.CGPAPercentage = "please fill the field"
+    errors.CGPAPercentage = "Please Fill The Field"
 }
 
 
@@ -81,16 +89,16 @@ if(!CGPAPercentage){
 // }
 
 if(!sector){
-    errors.sector = "please fill the field"
+    errors.sector = "Please Fill The Field"
 }
 
 if(!skill){
-    errors.skill = "please fill the field"
+    errors.skill = "Please Fill The Field"
 }
 
-if(!experience){
-    errors.experience = "please fill the field"
-}
+// if(!experience){
+//     errors.experience = "please fill the field"
+// }
 
 
 
