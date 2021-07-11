@@ -571,7 +571,7 @@ const ProfileUpdate = () => {
                       <input
                         className={styles.input}
                         list="collegeUniversity"
-                        placeholder="collegeUniversity"
+                        placeholder="college & University"
                         onBlur={formik.handleBlur}
                         name="collegeUniversity"
                         value={formik.values.collegeUniversity}
@@ -685,7 +685,9 @@ const ProfileUpdate = () => {
                         onChange={formik.handleChange}
                       />
                     </div>
-                    
+                    {formik.touched.experience && formik.errors.experience ? (
+                        <p className={styles.error}>{formik.errors.experience}</p>
+                      ) : null}
                   </div>
                 ) : null}
               </div>

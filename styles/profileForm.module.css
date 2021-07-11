@@ -265,6 +265,8 @@ font-size:unset;
 
 .error{
   color:red;
+  margin-top: 4px;
+  margin-left: 38px;
 }
 
 .tacbox {

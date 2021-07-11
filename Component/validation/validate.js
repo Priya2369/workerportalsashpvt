@@ -96,9 +96,9 @@ if(!skill){
     errors.skill = "Please Fill The Field"
 }
 
-// if(!experience){
-//     errors.experience = "please fill the field"
-// }
+if(experience>40 ){
+    errors.experience = "Must be a safe number"
+}
 
 
 
