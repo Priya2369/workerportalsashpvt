@@ -89,7 +89,7 @@ font-size:unset;
   
   padding:5px 10px;
   border-radius: 50%;
-  background-color: #3880ff;
+  background-color: #0056a2;
   color: white;
 }
 .marg{
@@ -137,7 +137,7 @@ font-size:unset;
    color: rgb(105, 128, 128);
  }
  .hover{
-   color: #3880ff;
+   color: #0056a2;
  }
  .p{
   
@@ -224,7 +224,7 @@ font-size:unset;
 }
 .input:focus{
   /* border: 2px solid dodgerblue; */
-  border:2px solid  #3880ff;
+  border:2px solid  #0056a2;
 }
 /* .jobCard .tab{
   align-content: flex-start;
@@ -255,7 +255,7 @@ font-size:unset;
   border-radius: 5px;
   border: 0px;
   color: white;
-  background-color:#3880ff;
+  background-color:#0056a2;
   margin-left: 87px;
   margin-bottom: 30px;
   

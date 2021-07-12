@@ -29,7 +29,7 @@
     border-radius: 10px;
     /* position: sticky; */
     top: 65px;
-    color:#3880ff;
+    color:#0056a2;
    
 }
 .viewDiv{
@@ -38,7 +38,7 @@
     margin-right: 20px;
 }
 .viewDiv:hover{
-    color: blue;
+    color: #0056a2;
 }
 .right{
     display: flex;
