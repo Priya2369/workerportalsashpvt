@@ -4,56 +4,69 @@ import { JobSearchContext } from "../context/JobSearchContext";
 import {userContext} from '../context/UserContext'
 import styles from "../../styles/featuredJob.module.css";
 import FeaturedJob from "../propComponents/FeaturedJob";
-import FeaturdJobData from "../array/FeaturedJobData";
 import axios from "axios";
 import {getCookies} from '../config/FirebaseToken'
 import {API_CONSTANTS} from '../config/apiConstant'
 
 export default function FeaturedJobJobs() {
   const [items, setItems] = useState([]);
-  const {   searchLocation,searchJob,jobType, shortJob} = useContext(userContext);
+  const {   searchLocation,searchJob,jobType, sortJob} = useContext(userContext);
   
   useEffect(() => {
     async function getData() {
-      if(searchLocation || searchJob|| jobType || shortJob){
+      // if(searchLocation || searchJob|| jobType || shortJob){
         try {
-       
+          const params = {
+            page: 0,
+            limit: 50,
+            sort:"createdAt",
+            ...(sortJob && {sortOrder:sortJob}),
+            ...(searchJob && {sectors:searchJob}),
+            ...(searchLocation && {location:searchLocation}),
+            ...(jobType && {employmentType:jobType}),
+            // ...(contractorSearch.location && {
+            //   preferredLocations: contractorSearch.location,
+            // }),
+           
+          };
 
-          const reqUrl = API_CONSTANTS.baseUrl+ API_CONSTANTS.project.SEARCH_ALL_PROJECTS_PUBLIC+"?sectors="+searchJob+"&location="+searchLocation+"&employmentType="+jobType+"&page=0&limit=50&sort=createdAt&sortOrder="+shortJob+""
+          const reqUrl = API_CONSTANTS.baseUrl+ API_CONSTANTS.project.SEARCH_ALL_PROJECTS_PUBLIC
           const res = await axios.get(reqUrl, {
             headers: {
               // authorization:cookies.get('access_token') ,
                authorization:getCookies() ,
             },
+            params,
           });
           console.log(res.data.projects);
           setItems(res.data.projects);
         } catch (error) {
           console.log(error);
         }
-      } else {
+      }
+    //   } else {
 
-      try {
+    //   try {
        
 
-        const reqUrl = API_CONSTANTS.baseUrl+ API_CONSTANTS.project.SEARCH_ALL_PROJECTS_PUBLIC+"?sectors="+searchJob+"&location="+searchLocation+"&employmentType="+jobType+"&page=0&limit=50&sort=createdAt&sortOrder=asc"
+    //     const reqUrl = API_CONSTANTS.baseUrl+ API_CONSTANTS.project.SEARCH_ALL_PROJECTS_PUBLIC+"?sectors="+searchJob+"&location="+searchLocation+"&employmentType="+jobType+"&page=0&limit=50&sort=createdAt&sortOrder=asc"
         
 
-        const res = await axios.get(reqUrl, {
-          headers: {
-            // authorization:cookies.get('access_token') ,
-             authorization:getCookies() ,
-          },
-        });
-        console.log(res.data.projects);
-        setItems(res.data.projects);
-      } catch (error) {
-        console.log(error);
-      }
-    }
-    }
+    //     const res = await axios.get(reqUrl, {
+    //       headers: {
+    //         // authorization:cookies.get('access_token') ,
+    //          authorization:getCookies() ,
+    //       },
+    //     });
+    //     console.log(res.data.projects);
+    //     setItems(res.data.projects);
+    //   } catch (error) {
+    //     console.log(error);
+    //   }
+    // }
+    
     getData();
-  }, [searchLocation,searchJob, jobType,shortJob]);
+  }, [searchLocation,searchJob, jobType,sortJob]);
   return (
     <>
       {items.length ===0?<div className={styles.dataErrorCard}>

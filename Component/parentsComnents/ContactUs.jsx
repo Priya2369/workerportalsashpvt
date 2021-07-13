@@ -113,7 +113,7 @@ export default function ContactUs() {
             <div className={styles.mapouter}>
                 <div className={styles.gmap_canvas}>
                     <iframe className={styles.gmap_iframe} frameBorder="0" scrolling="no" marginHeight="0" marginWidth="0" 
-                    src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=University of Oxford&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe><a href="https://www.embedmymap.com/">Embed My Map</a>
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29938.693952551792!2d85.79515192789019!3d20.286324079919837!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a1909d626fffc1d%3A0xe19f5ac0b78f8e62!2sNayapalli%2C%20Bhubaneswar%2C%20Odisha!5e0!3m2!1sen!2sin!4v1626177707843!5m2!1sen!2sin"></iframe><a href="https://www.embedmymap.com/">Embed My Map</a>
                 </div>
             </div>
         </div>

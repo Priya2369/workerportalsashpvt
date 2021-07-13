@@ -137,7 +137,7 @@ const Header_Bottom = () => {
           </nav>
           <Link href="/signup">
             <a>
-              <button className={style.loginButton}> Login / signup</button>
+              <button className={style.loginButton}> Login / Signup</button>
             </a>
           </Link>
 

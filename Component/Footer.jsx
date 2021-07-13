@@ -52,7 +52,7 @@ let Home = () => {
 					</div>
 					<div className="hori-line"></div>
 					<div className="footer-heading footer-3">
-						<a href="index.html">
+						<a href="./">
 							<img src="/logo.png" />
 						</a>
 					</div>

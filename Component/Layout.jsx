@@ -38,7 +38,7 @@ const [detail, setDetail] = useState({
 	const [catagories ,setCatagories]=useState();
 	const [location, setLocation] = useState("");
   const[jobType, setJobType] = useState("");
-  const[shortJob, setShortJob] =useState("");
+  const[sortJob, setSortJob] =useState("");
 
 //   state for filter job search
 
@@ -65,7 +65,7 @@ console.log(singleUser)
 	return (
 		<>
 		<userContext.Provider value = {{state, dispatch, singleJob, setSingleJob,
-			setLocation, setJobType, location, jobType,catagories, setCatagories,shortJob, setShortJob,
+			setLocation, setJobType, location, jobType,catagories, setCatagories,sortJob, setSortJob,
 			 searchLocation, setSearchLocation,searchJob, setSearchJob,
 			 jobCatagories, jobTypes, jobLocation, experience, postedWithin, salary,shorting, setFilterValue, getfilterValue,
 			 detail, setDetail, singleUser, setSingleUser,

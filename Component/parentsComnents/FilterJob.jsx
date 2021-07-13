@@ -23,9 +23,9 @@ export default function FilterJob() {
     setSearchLocation,
     setSearchJob,
     jobTypes,
-    shorting,
+    sorting,
     setJobType,
-     setShortJob
+     setSortJob
   } = useContext(userContext);
 
   const [show, setShow] = useState(true);
@@ -36,7 +36,7 @@ export default function FilterJob() {
     setSearchJob(jobCatagories);
     setSearchLocation(jobLocation);
     setJobType(jobTypes);
-    setShortJob(shorting)
+    setSortJob(sorting)
   }
 
   return (
@@ -157,20 +157,20 @@ export default function FilterJob() {
               </FormControl>
             </div> */}
 
-{/* Job shorting........................ */}
+{/* Job sorting........................ */}
 <div className={styles.radioBtn2}>
               <FormControl component="fieldset">
                 <FormLabel component="legend">
                   <b>Sort By Date</b>
                 </FormLabel>
                 <RadioGroup
-                  aria-label="shorting"
-                  name="shorting1"
-                  value={shorting}
+                  aria-label="sorting"
+                  name="sorting1"
+                  value={sorting}
                   onChange={(e) =>
                     setFilterValue({
                       ...getfilterValue,
-                      shorting: e.target.value,
+                      sorting: e.target.value,
                     })
                   }
                 >
