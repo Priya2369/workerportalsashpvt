@@ -195,9 +195,9 @@ export default function FilterJob() {
         ) : null}
 
         <div className={styles.btnn} onClick={(e) => SearchFilter(e)}>
-          {" "}
+          
           <button>
-            <b>Apply</b>
+            <b>Search</b>
           </button>
         </div>
       </div>

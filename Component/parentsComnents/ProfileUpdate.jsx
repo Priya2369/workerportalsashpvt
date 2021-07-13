@@ -556,7 +556,7 @@ const ProfileUpdate = () => {
                         type="number"
                         placeholder={"Year Gap"}
                         onBlur={formik.handleBlur}
-                        name="yearGap"
+                        name="yearGap" 
                         value={formik.values.yearGap}
                         onChange={formik.handleChange}
                       />

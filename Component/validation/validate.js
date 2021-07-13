@@ -71,9 +71,9 @@ if(!education){
 }
 
 
-// if(!yearGap){
-//     errors.yearGap = "please fill the field"
-//     }
+if(yearGap<0 || yearGap>50){
+    errors.yearGap = "Must be a safe number"
+    }
 
  if(!collegeUniversity){
         errors.collegeUniversity = "Please Fill The Field"
