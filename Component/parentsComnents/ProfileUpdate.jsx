@@ -429,9 +429,9 @@ const ProfileUpdate = () => {
                           onChange={formik.handleChange}
                         >
                           <option value="gender">Gender</option>
-                          <option value="female">female</option>
-                          <option value="male">male</option>
-                          <option value="other">other</option>
+                          <option value="female">Female</option>
+                          <option value="male">Male</option>
+                          <option value="other">Other</option>
                         </select>
                       </div>
                       {formik.touched.gender && formik.errors.gender ? (

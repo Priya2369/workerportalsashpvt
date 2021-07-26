@@ -72,6 +72,8 @@ function submit(e){
   router.push('/jobs');
   setSearchLocation(location)
   setSearchJob(jobType)
+  // jobTypeHandler("")
+  // LocationHandler("")
 
 }
  

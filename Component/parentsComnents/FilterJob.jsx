@@ -39,6 +39,24 @@ export default function FilterJob() {
     setSortJob(sorting)
   }
 
+  function clearAll(e){
+    
+    e.preventDefault();
+    setFilterValue({
+      jobCatagories:"",
+	jobTypes:"",
+	jobLocation:"",
+	experience:"",
+	postedWithin:"",
+	salary:"",
+	sorting:""
+    })
+    setSearchJob();
+    setSearchLocation();
+    setJobType();
+    setSortJob()
+  }
+
   return (
     <>
       <div className={styles.mainDiv}>
@@ -82,8 +100,8 @@ export default function FilterJob() {
             </datalist>
           </div>
 
-          {/* <div className={styles.filterBtn} >
-             ALL</div> */}
+          <div className={styles.btnn1} onClick={clearAll} >
+             <button type='reset'>ALL</button></div>
         </div>
 
         {show ? (

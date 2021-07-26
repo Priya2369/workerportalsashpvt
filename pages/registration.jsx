@@ -1,21 +1,36 @@
  
 import NewUser from '../Component/parentsComnents/NewUser'
 import { getCookies } from "../Component/config/FirebaseToken";
-import SignUp from '../Component/parentsComnents/SignUp' 
+import SignUp from '../Component/parentsComnents/SignUp'
+import { useRouter } from "next/router";
+import {useEffect} from "react"; 
 
-const Registration = () =>{
-console.log("mklop")
+const Registration = (pageProps) =>{
+    const router = useRouter();
+    
+    useEffect(() => {
+        if (!getCookies()) {
+         console.log('..........notlogin.....');
+          router.push('/signup');
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+      }, []);
+      if (getCookies()) {
+        return <NewUser {...pageProps} isPrivate />;
+      }
+    
+      return null;
 
-    return(
-        <>{getCookies()?
-        <div > 
+    // return(
+    //     <>{getCookies()?
+    //     <div > 
          
          
-         <NewUser/>
+    //      <NewUser/>
          
-        </div>:<div><SignUp/></div>}
-        </>
-    )
+    //     </div>:<div><SignUp/></div>}
+    //     </>
+    // )
 }
 
 export default Registration;

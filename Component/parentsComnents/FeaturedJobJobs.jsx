@@ -10,11 +10,13 @@ import {API_CONSTANTS} from '../config/apiConstant'
 
 export default function FeaturedJobJobs() {
   const [items, setItems] = useState([]);
-  const {   searchLocation,searchJob,jobType, sortJob} = useContext(userContext);
+  const {   searchLocation,searchJob,jobType, sortJob,setLocation, setJobType} = useContext(userContext);
   
   useEffect(() => {
     async function getData() {
       // if(searchLocation || searchJob|| jobType || shortJob){
+        setLocation("")
+        setJobType("")
         try {
           const params = {
             page: 0,
@@ -24,10 +26,7 @@ export default function FeaturedJobJobs() {
             ...(searchJob && {sectors:searchJob}),
             ...(searchLocation && {location:searchLocation}),
             ...(jobType && {employmentType:jobType}),
-            // ...(contractorSearch.location && {
-            //   preferredLocations: contractorSearch.location,
-            // }),
-           
+            
           };
 
           const reqUrl = API_CONSTANTS.baseUrl+ API_CONSTANTS.project.SEARCH_ALL_PROJECTS_PUBLIC

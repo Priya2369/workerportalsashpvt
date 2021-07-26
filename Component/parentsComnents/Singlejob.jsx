@@ -187,10 +187,10 @@ console.log(projectId)
               </li>
               <br />
               <li className={styles.li}>
-                {" "}
+               
                 <span>
                   <b>₹</b>
-                </span>{" "}
+                </span>
                 &nbsp;<b>{salaryRang}</b>
               </li>
             </ul>

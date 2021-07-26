@@ -49,9 +49,9 @@ const [detail, setDetail] = useState({
 	experience:"",
 	postedWithin:"",
 	salary:"",
-	shorting:""
+	sorting:""
 	})
-	let{jobCatagories, jobTypes, jobLocation, experience, postedWithin, salary,shorting} = getfilterValue
+	let{jobCatagories, jobTypes, jobLocation, experience, postedWithin, salary,sorting} = getfilterValue
 
 	//   get single user value for profile update 
 const [singleUser, setSingleUser] = useState()
@@ -67,7 +67,7 @@ console.log(singleUser)
 		<userContext.Provider value = {{state, dispatch, singleJob, setSingleJob,
 			setLocation, setJobType, location, jobType,catagories, setCatagories,sortJob, setSortJob,
 			 searchLocation, setSearchLocation,searchJob, setSearchJob,
-			 jobCatagories, jobTypes, jobLocation, experience, postedWithin, salary,shorting, setFilterValue, getfilterValue,
+			 jobCatagories, jobTypes, jobLocation, experience, postedWithin, salary,sorting, setFilterValue, getfilterValue,
 			 detail, setDetail, singleUser, setSingleUser,
 			 id, setId,
 			 applied, setApplied,

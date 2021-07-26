@@ -75,7 +75,7 @@ export default function ContactUs() {
                     />
                 </div>
                 <div className={styles.formgroup}>
-                    <input type="number" placeholder="Phone No"className={styles.formcontrolp} name='number'
+                    <input type="text" placeholder="Phone No"className={styles.formcontrolp} name='number'
                     // onChange={e =>setDetail({Fname:detail.Fname, email:detail.email, No:e.target.value , message:detail.message})}
                     // value={detail.No}
                     />
@@ -94,7 +94,7 @@ export default function ContactUs() {
             </form>
         </div>
         <div className={styles.box1}>
-                <div className={styles.cntinf}> Contact Info</div> 
+                <div className={styles.cntinf}> CONTACT INFO</div> 
                      <ul className={styles.ul}>< FontAwesomeIcon icon={faMap} className={styles.map}/>
                         <ul className={styles.loc}>
                         plot 1109/19,Siba Nager(S.N-24),<br></br>

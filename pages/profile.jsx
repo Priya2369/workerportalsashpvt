@@ -1,28 +1,40 @@
  import ProfileUpdate from '../Component/parentsComnents/ProfileUpdate'
-import NewUser from '../Component/parentsComnents/NewUser'
 import { getCookies } from "../Component/config/FirebaseToken";
+import { useRouter } from "next/router";
+import {useEffect} from "react";
 import SignUp from '../Component/parentsComnents/SignUp' 
-// import styles from '../styles/profile.module.css';
-import Link from 'next/link'
 
-const profile = () =>{
-console.log("mklop")
 
-    return(
-        <>
-        {getCookies()?
+const profile = (pageProps) =>{
+  const router = useRouter();
+
+  useEffect(() => {
+    if (!getCookies()) {
+     console.log('..........notlogin.....');
+      router.push('/signup');
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+  if (getCookies()) {
+    return <ProfileUpdate {...pageProps} isPrivate />;
+  }
+
+  return null;
+    // return(
+    //     <>
+    //     {getCookies()?
         
          
          
-         <ProfileUpdate/>
+    //      <ProfileUpdate/>
          
-        :<SignUp/>
+    //     :<SignUp/>
         
        
         
-      }
-        </>
-    )
+    //   }
+    //     </>
+    // )
 }
 
 export default profile;
