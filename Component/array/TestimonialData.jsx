@@ -7,7 +7,7 @@ const TestimonialData =[
     },
     {
         image:"./surbhi.png",
-        uName:"Ms. Surbhi Pinha",
+        uName:"Ms. Surbhi Sinha",
         skill:"Angular Developer",
         Pline1:"I found this organization and joined it with the help of one of my closest friends. After joining MoSahay we joined a team with a mentor in it. I was working in MoSahay on the Designing team. The good thing there was we were free to pick any of the technology to work. I contributed there in Frontend; and apart from that, we did various things like RPA, WIX, WordPress, etc."
     },

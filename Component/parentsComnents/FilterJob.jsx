@@ -101,7 +101,7 @@ export default function FilterJob() {
           </div>
 
           <div className={styles.btnn1} onClick={clearAll} >
-             <button type='reset'>ALL</button></div>
+             <button type='reset'>All Clear</button></div>
         </div>
 
         {show ? (
