@@ -244,7 +244,7 @@ const ProfileUpdate = () => {
         <div className={styles.Header}>
           <div className={styles.left}>
             <div className={styles.imgs}>
-              <img src="./avtar.png" />
+              <img src="./4.png" />
             </div>
             <div className={styles.dats}>
               {profileName.name ? (
@@ -252,9 +252,7 @@ const ProfileUpdate = () => {
                   <span>
                     <b>{profileName.name}</b>
                   </span>
-                  <div>
-                    <CreateOutlinedIcon fontSize="small" />
-                  </div>
+                  
                 </div>
               ) : null}
               {profileName.mobileNumber ? (
@@ -640,7 +638,7 @@ const ProfileUpdate = () => {
                       />
                       <datalist id="sector">
                         {SkillSector.map((val, i) => {
-                          return <option key={i} value={val.value}></option>;
+                          return <option key={val.name} value={val.value}></option>;
                         })}
                       </datalist>
                     </div>
@@ -661,7 +659,13 @@ const ProfileUpdate = () => {
                         value={formik.values.skill}
                         onChange={formik.handleChange}
                       />
-                      <datalist id="skill">
+                      {/* <datalist id="skill">
+                      {SkillSector.map(skill=>
+                          formik.values.sector===skill.value && skill.skills.map(item=>
+                            <option key={item.name} value={item.value} ></option>)
+                          )}
+                      </datalist> */}
+                       <datalist id="skill">
                         {skills.map((val, i) => {
                           return <option key={i} value={val.value}></option>;
                         })}
@@ -700,6 +704,14 @@ const ProfileUpdate = () => {
                 </button>
               </div>
               {/* <div><button type='button' onClick={()=>getData()}>update</button></div> */}
+              {/* {SkillSector.map(skill=>
+                          formik.values.sector===skill.value && skill.skills.map(item=>
+                            <div key={item.name} >{item.value}</div>)
+                          )} */}
+                          {/* {SkillSector.map(skill=>
+                         
+                            <div key={skill.name} >{skill.value}</div>)
+                          } */}
             </form>
           </div>
         </div>

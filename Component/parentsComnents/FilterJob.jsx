@@ -25,7 +25,7 @@ export default function FilterJob() {
     jobTypes,
     sorting,
     setJobType,
-     setSortJob
+    setSortJob,
   } = useContext(userContext);
 
   const [show, setShow] = useState(true);
@@ -36,25 +36,26 @@ export default function FilterJob() {
     setSearchJob(jobCatagories);
     setSearchLocation(jobLocation);
     setJobType(jobTypes);
-    setSortJob(sorting)
+    setSortJob(sorting);
+    setShow(false)
   }
 
-  function clearAll(e){
-    
+  function clearAll(e) {
     e.preventDefault();
+    setShow(true)
     setFilterValue({
-      jobCatagories:"",
-	jobTypes:"",
-	jobLocation:"",
-	experience:"",
-	postedWithin:"",
-	salary:"",
-	sorting:""
-    })
+      jobCatagories: "",
+      jobTypes: "",
+      jobLocation: "",
+      experience: "",
+      postedWithin: "",
+      salary: "",
+      sorting: "",
+    });
     setSearchJob();
     setSearchLocation();
     setJobType();
-    setSortJob()
+    setSortJob();
   }
 
   return (
@@ -100,45 +101,44 @@ export default function FilterJob() {
             </datalist>
           </div>
 
-          <div className={styles.btnn1} onClick={clearAll} >
-             <button type='reset'>All Clear</button></div>
+          {/* <div className={styles.btnn1} onClick={clearAll} >
+             <button type='reset'>Clear All</button></div> */}
         </div>
 
-        {show ? (
-          <div className={styles.radioSection}>
-            <div className={styles.radioBtn1}>
-              <FormControl component="fieldset">
-                <FormLabel component="legend">
-                  <b>JobType</b>
-                </FormLabel>
-                <RadioGroup
-                  aria-label="jobtype"
-                  name="jobtype1"
-                  value={jobTypes}
-                  onChange={(e) =>
-                    setFilterValue({
-                      ...getfilterValue,
-                      jobTypes: e.target.value,
-                    })
-                  }
-                >
-                  <div className={styles.rdiobtn1}>
-                    <FormControlLabel
-                      value="permanent"
-                      control={<Radio />}
-                      label="Permanent"
-                    />
-                    <FormControlLabel
-                      value="contract"
-                      control={<Radio />}
-                      label="Contract"
-                    />
-                  </div>
-                </RadioGroup>
-              </FormControl>
-            </div>
+        <div className={styles.radioSection}>
+          <div className={styles.radioBtn1}>
+            <FormControl component="fieldset">
+              <FormLabel component="legend">
+                <b>JobType</b>
+              </FormLabel>
+              <RadioGroup
+                aria-label="jobtype"
+                name="jobtype1"
+                value={jobTypes}
+                onChange={(e) =>
+                  setFilterValue({
+                    ...getfilterValue,
+                    jobTypes: e.target.value,
+                  })
+                }
+              >
+                <div className={styles.rdiobtn1}>
+                  <FormControlLabel
+                    value="permanent"
+                    control={<Radio />}
+                    label="Permanent"
+                  />
+                  <FormControlLabel
+                    value="contract"
+                    control={<Radio />}
+                    label="Contract"
+                  />
+                </div>
+              </RadioGroup>
+            </FormControl>
+          </div>
 
-            {/* <div className={styles.radioBtn2}>
+          {/* <div className={styles.radioBtn2}>
               <FormControl component="fieldset">
                 <FormLabel component="legend">
                   <b>Salary</b>
@@ -175,49 +175,53 @@ export default function FilterJob() {
               </FormControl>
             </div> */}
 
-{/* Job sorting........................ */}
-<div className={styles.radioBtn2}>
-              <FormControl component="fieldset">
-                <FormLabel component="legend">
-                  <b>Sort By Date</b>
-                </FormLabel>
-                <RadioGroup
-                  aria-label="sorting"
-                  name="sorting1"
-                  value={sorting}
-                  onChange={(e) =>
-                    setFilterValue({
-                      ...getfilterValue,
-                      sorting: e.target.value,
-                    })
-                  }
-                >
-                  <div className={styles.rdiogrp}>
-                    <FormControlLabel
-                      value="asc"
-                      control={<Radio />}
-                      label="Oldest to Newest"
-                    />
-                    <FormControlLabel
-                      value="desc"
-                      control={<Radio />}
-                      label="Newest to Oldest"
-                    />
-                   
-                  </div>
-                </RadioGroup>
-              </FormControl>
-            </div>
-
+          {/* Job sorting........................ */}
+          <div className={styles.radioBtn2}>
+            <FormControl component="fieldset">
+              <FormLabel component="legend">
+                <b>Sort By Date</b>
+              </FormLabel>
+              <RadioGroup
+                aria-label="sorting"
+                name="sorting1"
+                value={sorting}
+                onChange={(e) =>
+                  setFilterValue({
+                    ...getfilterValue,
+                    sorting: e.target.value,
+                  })
+                }
+              >
+                <div className={styles.rdiogrp}>
+                  <FormControlLabel
+                    value="asc"
+                    control={<Radio />}
+                    label="Oldest to Newest"
+                  />
+                  <FormControlLabel
+                    value="desc"
+                    control={<Radio />}
+                    label="Newest to Oldest"
+                  />
+                </div>
+              </RadioGroup>
+            </FormControl>
           </div>
-        ) : null}
-
-        <div className={styles.btnn} onClick={(e) => SearchFilter(e)}>
-          
-          <button>
-            <b>Search</b>
-          </button>
         </div>
+
+        {show ? (
+          <div className={styles.btnn} onClick={(e) => SearchFilter(e)}>
+            <button>
+              <b>Search</b>
+            </button>
+          </div>
+        ) : (
+          <div className={styles.btnn} onClick={clearAll}>
+            <button type="reset">
+              <b>Clear All</b>
+            </button>
+          </div>
+        )}
       </div>
     </>
   );

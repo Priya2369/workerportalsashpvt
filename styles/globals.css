@@ -311,7 +311,7 @@ div .hori-line {
 	background-color: white;
 }
 .suggest{
-	z-index: 2;
+	/* z-index: 2; */
 	width: 300px;
 	height: 100px;
 	margin-left: -150px;
@@ -320,7 +320,7 @@ div .hori-line {
 	overflow: auto;
 }
 .suggestLocation{
-	z-index: 2;
+	/* z-index: 2; */
 	width: 300px;
    height: 100px;
 	font-size: medium;
@@ -402,8 +402,9 @@ border: 0;
     font-size: 14px;
   }
   .gridDiv{
-	
+	/* border: 1px solid black; */
 	width: 750px;
+	margin: auto;
 }
 .regDiv{
 	/* border: 1px solid black; */
