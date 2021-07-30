@@ -136,6 +136,7 @@ const ProfileUpdate = () => {
       if (errors) {
         console.log("feild errro...");
       }
+      console.log(values.PassingYear)
       const testDefault = {
         generalData: {
           registerBy: "self",
@@ -207,7 +208,16 @@ const ProfileUpdate = () => {
         console.log("name" + formik.values.passingYear);
       } catch (error) {
         console.log(`Error: ${error}`);
-        toast.error(error.message, {
+        // toast.error(error.message, {
+        //   hideProgressBar: true,
+        //   closeOnClick: true,
+        //   pauseOnHover: true,
+        //   draggable: true,
+        //   progress: undefined,
+        //   position: "bottom-right",
+        //   autoClose: 5000,
+        // });
+        toast.error(error.response.data.message, {
           hideProgressBar: true,
           closeOnClick: true,
           pauseOnHover: true,
@@ -544,6 +554,9 @@ const ProfileUpdate = () => {
                         value={formik.values.PassingYear}
                         onChange={formik.handleChange}
                       />
+                       {formik.touched.PassingYear && formik.errors.PassingYear ? (
+                      <p className={styles.error}>{formik.errors.PassingYear}</p>
+                    ) : null}
                     </div>
                     <div className={styles.inputDiv}>
                       <span className={styles.icon}>
@@ -590,12 +603,12 @@ const ProfileUpdate = () => {
 
                     <div className={styles.inputDiv}>
                       <span className={styles.icon}>
-                        <b>CGPA & Percentage</b>
+                        <b>Percentage</b>
                       </span>
                       <input
                         className={styles.input}
                         type="number"
-                        placeholder={"CGPA/Percentage%"}
+                        placeholder={"Percentage%"}
                         onBlur={formik.handleBlur}
                         name="CGPAPercentage"
                         value={formik.values.CGPAPercentage}

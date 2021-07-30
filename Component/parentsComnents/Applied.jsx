@@ -82,7 +82,7 @@ const Applied = () => {
                       &nbsp;&nbsp;Applied on {val.appliedOn.split("T")[0]}
                     </div>
                   </div>
-                </div>:<div className={styles.mainDiv}>Unfortunately data has deletd </div>}
+                </div>:<div className={styles.mainDiv}>Unfortunately data has been deleted </div>}
               </div>
             );
           })}

@@ -1,6 +1,7 @@
 import * as yup from 'yup'
 
-import { calculateAge } from "../config/calculateAge";
+import { calculateAge,valdPassYear } from "../config/calculateAge";
+
 
 const Validation = values =>{
     let { firstName,
@@ -82,12 +83,14 @@ if(yearGap<0 || yearGap>50){
 
 if(!CGPAPercentage){
     errors.CGPAPercentage = "Please Fill The Field"
+}else if(CGPAPercentage>100 || CGPAPercentage<0){
+    errors.CGPAPercentage="Must be a safe number"
 }
 
 
-// if(!prefferedLocation){
-//     errors.prefferedLocation = "please fill the field"
-// }
+if(!valdPassYear(PassingYear)){
+    errors.PassingYear = "Must be a safe year"
+}
 
 if(!sector){
     errors.sector = "Please Fill The Field"
