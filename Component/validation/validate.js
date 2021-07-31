@@ -84,7 +84,7 @@ if(yearGap<0 || yearGap>50){
 if(!CGPAPercentage){
     errors.CGPAPercentage = "Please Fill The Field"
 }else if(CGPAPercentage>100 || CGPAPercentage<0){
-    errors.CGPAPercentage="Must be a safe number"
+    errors.CGPAPercentage="Percentage should be 0 to 100"
 }
 
 
