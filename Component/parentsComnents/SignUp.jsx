@@ -36,33 +36,7 @@ export default function SignUp() {
     otp1: "",
   });
 
-  // async function getData() {
-  //   console.log(" get function call......................");
-    
-  //   try {
-  //     if(getCookies){
-  //     const reqUrl =
-  //       API_CONSTANTS.baseUrl + API_CONSTANTS.enrollment.SELF_PROFILE;
-  //     const res = await axios.get(reqUrl, {
-  //       headers: {
-  //         // authorization:cookies.get('access_token') ,
-  //         authorization: getCookies(),
-  //       },
-  //     });
-  //     console.log(res.data.data);
-  //     if (!res.data.data) {
-  //       router.push("/registration");
-  //     } else if (res.data.data) {
-  //       setNaShow(true);
-  //       router.push("/jobs");
-  //     }
-  //   }
-  //   } catch (error) {
-  //     console.log("profile" + error);
-  //   }
-  // }
-
-  // Setup Recatcha...................
+  
 
   const setUpRecaptcha = () => {
     window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier(
@@ -83,7 +57,7 @@ export default function SignUp() {
     console.log(detail);
     setUpRecaptcha();
 
-    const cornfirmResults = tokenauth(detail,setShow );
+    tokenauth(detail,setOpen,setShow );
     // if(cornfirmResults.confirmationResult){
     //   setShow(true)
     // }
@@ -93,7 +67,7 @@ export default function SignUp() {
 
   function otpSubmit(e) {
     e.preventDefault();
-    otpModule(otp, router, dispatch,  setOpen,setShowHeader);
+    otpModule(otp, router, dispatch,  setShowHeader);
     // dispatch({type:'USER', payload: true})
     // getData()
   }
@@ -113,7 +87,8 @@ export default function SignUp() {
             />
 
             <div className={styles.btn}>
-              <button className={styles.login}>Send OTP</button>
+              {open?(<div></div>):
+              (<button className={styles.login}>Send OTP</button>)}
             </div>
             
           </form>

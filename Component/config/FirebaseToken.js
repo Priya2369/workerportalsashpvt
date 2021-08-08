@@ -12,7 +12,7 @@ import { toast } from "react-toastify";
 
 toast.configure();
 
-export default async function tokenauth(detail, setShow) {
+export default async function tokenauth(detail,setOpen, setShow) {
   initFirebase();
 
   //  const router = useRouter();
@@ -21,6 +21,7 @@ export default async function tokenauth(detail, setShow) {
   console.log(phoneNumber);
   let appVerifier = window.recaptchaVerifier;
   try {
+    setOpen(true)
     const confirmationResult = await firebase
       .auth()
       .signInWithPhoneNumber(phoneNumber, appVerifier)
@@ -77,6 +78,7 @@ export function otpModule(otp, router, dispatch,  setOpen, setShowHeader) {
  
   const cookies = new Cookies();
   // const {state, dispatch} = useContext(userContext)
+  
   console.log(otp);
   let otpInput =
     otp.otp1;
@@ -163,16 +165,7 @@ export function otpModule(otp, router, dispatch,  setOpen, setShowHeader) {
   
 }
 
-// export function setCookies() {
-//   const cookies = new Cookies();
-//   console.log("set cookies")
-//   firebase.auth().onIdTokenChanged(async user => {
-//     if (user) {
-//       const token = await user.getIdToken(true);
-//       cookies.set('access_token', token, { path: '/', maxAge: 60 * 60 });
-//     }
-//   });
-// }
+
 
 export let setCookies = new Promise((resolve, reject) => {
   initFirebase()
