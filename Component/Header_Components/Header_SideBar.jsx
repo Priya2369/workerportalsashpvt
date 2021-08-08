@@ -1,13 +1,17 @@
-// import { slide as Menu } from 'react-burger-menu';
 import Menu from 'react-burger-menu/lib/menus/slide';
-import { useState, useEffect, createContext, useReducer,useContext } from "react";
-import {userContext} from '../context/UserContext'
-import initFirebase from '../config/firebaseConfig'
+import { useState, useEffect, createContext, useContext } from "react";
+import { userContext } from '../context/UserContext'
 import firebase from "firebase/app";
 import { useRouter } from 'next/router'
-import { getCookies } from "../config/FirebaseToken";
 import Cookies from 'universal-cookie';
 import Link from 'next/link';
+
+const buttonStyle={
+	margin: 12, 
+	borderRadius: 5, 
+	height: 30, 
+	fontSize:20
+}
 
 const styles = {
 	bmBurgerButton: {
@@ -28,16 +32,18 @@ const styles = {
 	},
 	bmCross: {
 		background: '#bdc3c7',
+		height: '30px',
+		width: '6px',
 	},
 	bmMenuWrap: {
 		display: 'inline-block',
 		position: 'fixed',
 		height: '100%',
 		left: '100vw',
-		top:'0',
+		top: '0',
 	},
 	bmMenu: {
-		zIndex:'4',
+		zIndex: '4',
 		background: '#373a47',
 		padding: '2.5em 1.5em 0',
 		fontSize: '1.15em',
@@ -53,122 +59,119 @@ const styles = {
 	bmItem: {
 		display: 'flex',
 		flexDirection: 'column',
-// 		color: '#d1d1d1',
-//   marginBottom: '10px',
-//   textAlign: 'left',
-//   textDecoration: 'none',
-  
+		// 		color: '#d1d1d1',
+		//   marginBottom: '10px',
+		//   textAlign: 'left',
+		//   textDecoration: 'none',
+
 	},
 
 	bmOverlay: {
 		background: 'rgba(0, 0, 0, 0.3)',
 	},
 
-	// loginButton: {
-	// 	display: 'block',
-	// 	backgroundColor: '#ff6600',
-	// 	border: 'none',
-	// 	color: 'white',
-	// 	padding: '15px 32px',
-	// 	textAlign: 'center',
-	// 	textDecoration: 'none',
-	// 	display:' inline-block',
-	// 	fontsize: '16px',
-	// 	borderRadius: '10px',
-	// 	top:'10px',
-	// },
 };
 
+const MyContext = createContext();
 
-const Header_SideBar = () => {
+const MyProvider = (props) => {
+	const [menuOpenState, setMenuOpenState] = useState(true)
+
+	return (
+		<MyContext.Provider value={{
+			isMenuOpen: menuOpenState,
+			toggleMenu: () => setMenuOpenState(!menuOpenState),
+			stateChangeHandler: (newState) => setMenuOpenState(newState.isOpen)
+		}}>
+			{props.children}
+		</MyContext.Provider>
+	)
+}
+
+const Navigation = () => {
+	const ctx = useContext(MyContext)
 	const router = useRouter();
 	const cookies = new Cookies();
-
-	const {state, dispatch, showHeader, setShowHeader,  setSingleUser, singleUser} = useContext(userContext)
-	function logout(e){
+	const { showHeader, setShowHeader } = useContext(userContext)
+	function logout(e) {
 		e.preventDefault();
-		
-		
 		firebase.auth().signOut()
-	.then(() => {
-	  console.log('Signed Out');
-	  cookies.remove('access_token')
-	  
-	  localStorage.removeItem("user_info");
-	  setShowHeader(false)
-	  router.push('/')
+			.then(() => {
+				console.log('Signed Out');
+				cookies.remove('access_token')
+				localStorage.removeItem("user_info");
+				setShowHeader(false)
+				router.push('/')
+			})
+			.catch(e => {
+				console.error('Sign Out Error', e);
+			});
+	}
 
-	
-	})
-	.catch(e=>{
-	 console.error('Sign Out Error', e);
-	});
-	
-	  }
-
-
-	useEffect(()=>{
-	
+	useEffect(() => {
 		const data = localStorage.getItem("user_info")
-		
-		if(data){ 
-		  setShowHeader(true)
-		 }
-		
-		},[])
+		if (data) {
+			setShowHeader(true)
+		}
+	}, [])
 
+	return (
+		<Menu
+			isOpen={ctx.isMenuOpen}
+			onStateChange={(state) => ctx.stateChangeHandler(state)}
+			styles={styles}
+		>
+			{/* <div >X</div> */}
+			{
+				showHeader ? <nav>
+					<Link href="/">
+						<a className="menuItem" onClick={ctx.toggleMenu} style={{ margin: 12 }}>Home</a>
+					</Link>
+					<Link href="/jobs">
+						<a className="menuItem" onClick={ctx.toggleMenu} style={{ margin: 12 }}>Jobs</a>
+					</Link>
+					<Link href="/about">
+						<a className="menuItem" onClick={ctx.toggleMenu} style={{ margin: 12 }}>About</a>
+					</Link>
+					<Link href="/contact">
+						<a className="menuItem" onClick={ctx.toggleMenu} style={{ margin: 12 }}>Contact</a>
+					</Link>
+					<Link href="/profile">
+						<a className="menuItem" onClick={ctx.toggleMenu} style={{ margin: 12 }}>Profile</a>
+					</Link>
+					<Link href="/">
+						<button className="loginButton" style={buttonStyle} onClick={(e) => { logout(e); ctx.toggleMenu }}>Logout</button>
+					</Link>
+				</nav>
 
-	return(
-		
-		<div id="outer-container">
-	<Menu isOpen={ true } styles={styles}>
-		{showHeader?<nav>
-			<Link href="/">
-				<a className="menuItem" style={{margin:12}}>Home</a>
-			</Link>
-			<Link href="/jobs">
-				<a className="menuItem" style={{margin:12}}>Jobs</a>
-			</Link>
-			{/* <Link href="/companies">
-				<a className="menuItem">Companies</a>
-			</Link> */}
-			<Link href="/about">
-				<a className="menuItem" style={{margin:12}}>About</a>
-			</Link>
-			<Link href="/contact">
-				<a className="menuItem" style={{margin:12}}>Contact</a>
-			</Link>
-			<Link href="/profile">
-			<a className="menuItem" style={{margin:12}}>Profile</a>
-			</Link>
-			<Link href="/">
-			<button className="loginButton" style={{margin:12}} onClick={(e)=>logout(e)}>Logout</button>
-			</Link>
-		</nav>
-		
-		:<nav >
-			<Link href="/">
-				<a className="menuItem" style={{margin:12}}>Home</a>
-			</Link>
-			{/* <Link href="/jobs">
-				<a className="menuItem">Jobs</a>
-			</Link> */}
-			{/* <Link href="/companies">
-				<a className="menuItem">Companies</a>
-			</Link> */}
-			<Link href="/about">
-				<a className="menuItem" style={{margin:12}} >About</a>
-			</Link>
-			<Link href="/contact">
-				<a className="menuItem" style={{margin:12}}>Contact</a>
-			</Link>
-			<Link href="/signup">
-			<button className="loginButton" style={{margin:12}}>Login</button>
-			</Link></nav>}
-	</Menu>
-	</div>
+					: <nav >
+						<Link href="/">
+							<a className="menuItem" onClick={ctx.toggleMenu} style={{ margin: 12 }}>Home</a>
+						</Link>
+						<Link href="/about">
+							<a className="menuItem" onClick={ctx.toggleMenu} style={{ margin: 12 }} >About</a>
+						</Link>
+						<Link href="/contact">
+							<a className="menuItem" onClick={ctx.toggleMenu} style={{ margin: 12 }}>Contact</a>
+						</Link>
+						<Link href="/signup">
+							<button className="loginButton" onClick={ctx.toggleMenu} style={buttonStyle}>Login</button>
+						</Link></nav>
+			}
+		</Menu >
+	)
+}
 
-	)};
+const Header_SideBar = () => {
+
+	return (
+		<MyProvider>
+			<div id="outer-container">
+				<Navigation />
+			</div>
+		</MyProvider>
+
+	)
+};
 
 export default Header_SideBar;
-

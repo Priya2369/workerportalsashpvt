@@ -10,7 +10,7 @@
     /* text-align: center; */
     border: 2px solid #b1aeae;
 
-    position: relative;
+    height: 50px;
     line-height: 70px;
     width: 320px;
     margin-left: 15px;
@@ -26,22 +26,21 @@
 }
 
 
-.form{ 
-    /* margin: 0; */
-margin-left: -160px;
-margin-right: 50px;
-
+.form{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    
 }
 .form form { margin-top: 50px;
     margin-right: 50px;
 }
 .formcontrole{
-    position: relative;
-    left: 175px;
-    top: 20px;
+    height: 50px;
     line-height: 70px;
     border-radius: 6px;
-    width: 320px;
+   
+    width: 270px;
     padding-left: 20px;
     /* padding: 0 125px; */
     font-size: 16px;
@@ -49,17 +48,17 @@ margin-right: 50px;
     border: 2px solid #b1aeae;
 }
 .formcontrolp{
-    position:relative;
-    left: 175px;
-    top: 40px;
+    height: 50px;
     line-height: 70px;
     border-radius: 6px;
-    width: 320px;
+    width: 270px;
+    margin-left: 9px;
     padding-left: 20px;
     /* padding: 0 125px; */
     font-size: 16px;
     /* color: #555; */
     font-weight: bold;
+    
     border: 2px solid #b1aeae;
 
 
@@ -118,7 +117,7 @@ margin-right: 50px;
     
 }
 .inf{
-    font-size: x-small;
+    font-size:inherit;
     color: #0a0a0a;
 }
 .mapouter
@@ -201,4 +200,14 @@ margin-right: 50px;
     .submit {margin-top: -15px;}
     .submit {margin-left: 25px;}
     .box {border: 2px solid #b1aeae;}
+}
+@media (max-width:736px){
+    
+    .formcontrole {
+        width: 157px;
+
+    }
+    .formcontrolp{
+        width: 157px;
+    }
 }

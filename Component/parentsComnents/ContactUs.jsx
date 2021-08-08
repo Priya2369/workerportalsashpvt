@@ -97,8 +97,7 @@ export default function ContactUs() {
                 <div className={styles.cntinf}> CONTACT INFO</div> 
                      <ul className={styles.ul}>< FontAwesomeIcon icon={faMap} className={styles.map}/>
                         <ul className={styles.loc}>
-                        plot 1109/19,Siba Nager(S.N-24),<br></br>
-                        Badagada Brit Colony,Khordha,<br></br>
+                        plot N3/447,ICR Village,<br></br>
                         Bhubaneswar,Odisha-751018(IN)<br></br><br></br>
                         </ul>
 

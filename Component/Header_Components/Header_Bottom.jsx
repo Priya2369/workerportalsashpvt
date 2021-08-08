@@ -18,6 +18,7 @@ import firebase from "firebase/app";
 import { useRouter } from "next/router";
 import { API_CONSTANTS } from "../config/apiConstant";
 import { getCookies } from "../config/FirebaseToken";
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import axios from "axios";
 
 // import StateManager from 'react-select';
@@ -88,20 +89,20 @@ const Header_Bottom = () => {
 
           <nav className={navigation.navigation}>
             <Link href="/">
-              <a>Home</a>
+              <a className={router.pathname == "/" ? "active" : ""}>Home</a>
             </Link>
             <Link href="/jobs">
-              <a>Jobs</a>
+              <a className={router.pathname == "/jobs" ? "active" : ""}>Jobs</a>
             </Link>
 
             <Link href="/about">
-              <a>About</a>
+              <a className={router.pathname == "/about" ? "active" : ""}>About</a>
             </Link>
             <Link href="/contact">
-              <a>Contact</a>
+              <a className={router.pathname == "/contact" ? "active" : ""}>Contact</a>
             </Link>
             <Link href="/profile">
-            <a >Profile</a>
+            <a className={router.pathname == "/profile" ? "active" : ""}>Profile</a>
             </Link>
           </nav>
 
@@ -125,19 +126,19 @@ const Header_Bottom = () => {
 
           <nav className={navigation.navigation}>
             <Link href="/">
-              <a>Home</a>
+              <a className={router.pathname == "/" ? "active" : ""}>Home</a>
             </Link>
 
             <Link href="/about">
-              <a>About</a>
+              <a className={router.pathname == "/about" ? "active" : ""}>About</a>
             </Link>
             <Link href="/contact">
-              <a>Contact</a>
+              <a className={router.pathname == "/contact" ? "active" : ""}>Contact</a>
             </Link>
           </nav>
           <Link href="/signup">
-            <a>
-              <button className={style.loginButton}> Login / Signup</button>
+            <a className={router.pathname == "/signup" ? "active" : ""}>
+              <div className={style.loginButton}>Login / Signup </div>
             </a>
           </Link>
 

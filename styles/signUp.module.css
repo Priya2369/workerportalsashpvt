@@ -79,12 +79,16 @@
   .loginForm {width: 350px;}
   .secDiv {left: 115px;}
   /* .mainDiv{padding-right: 125px;} */
-  .loginForm {height: 400px;}
+  .loginForm {height: 400px;margin-top: 50px;}
   /* .loginForm {border: 1px solid black;} */
-  .mainDiv {padding-top: 50px;}
+  .mainDiv {padding-top: 50px; margin-top: 50px;}
   .secDiv {width: 750px;}
 }
 
 @media only screen and (max-width: 600px){
   .secDiv {position: absolute;}
+}
+
+@media (max-width:736px) {
+  .mainDiv {padding-top: 50px; margin-top: 50px;}
 }

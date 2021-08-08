@@ -119,4 +119,8 @@
     .filterBtn{
         margin-left: 0;
     }
+    .first input{
+        width: 290px;
+        margin-bottom: 10px;
+    }
 }

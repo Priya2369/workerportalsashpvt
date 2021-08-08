@@ -44,7 +44,7 @@
 .name{
   display: flex;
   margin-top: 10px;
-  font-size: 15px;
+  font-size: 10px;
   
 }
 /* .dats{
@@ -138,7 +138,6 @@ font-size:unset;
  }
  .hover{
    color: #0056a2;
-   cursor: pointer;
  }
  .p{
   
@@ -332,14 +331,18 @@ font-size:unset;
  
 @media (max-width: 736px) {
   .body{
+    justify-content: center;
     display: grid;
     width: 100%;
     
   }
+  .imgs{
+    margin-right:40px;
+  }
   .Header{
     position: unset;
-    width: 340px;
-    margin-left: 10px;
+    width: 100%;
+    margin: auto;
   }
   .dats{
     margin-left: -30px;
@@ -353,12 +356,12 @@ font-size:unset;
   }
   .tab{
     
-    width: 340px;
-    margin-left: 10px;
+    width: 100%;
+    
   }
   .tab2{
-    width: 340px;
-    margin-left: 10px;
+    width: 100%;
+    
   }
   .tabDiv{
    
