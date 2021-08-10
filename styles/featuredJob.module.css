@@ -109,6 +109,20 @@
     height: 200px;
     width: 200px;
   }
+  .pagination{
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .p{
+    /* margin-top: 0; */
+    margin: auto;
+    color: #777;
+  }
+  .butt{
+    cursor: pointer;
+  }
   /* .skill.fix{ 
     display:inline;
     position: absolute;

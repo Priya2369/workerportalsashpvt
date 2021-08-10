@@ -1,46 +1,29 @@
-import Head from 'next/head';
-import { useState } from "react";
-import styles from '../styles/Home.module.css';
-import Process from '../Component/parentsComnents/Process'
-import Search from '../Component/parentsComnents/Search'
-import Open from '../Component/parentsComnents/Open'
-import TestimonialSlide from '../Component/parentsComnents/TestimonialSlide'
-import FeaturedJob from '../Component/parentsComnents/FeaturedJobParents'
-import Flex from '../Component/Flex'
-import Footer from '../Component/Footer'
-import { JobSearchContext } from '../Component/context/JobSearchContext';
+// import Head from "next/head";
+// import { useState } from "react";
+// import styles from "../styles/Home.module.css";
+// import Process from "../Component/parentsComnents/Process";
+// import Search from "../Component/parentsComnents/Search";
+import Open from "../Component/parentsComnents/Open";
+import TestimonialSlide from "../Component/parentsComnents/TestimonialSlide";
 
-// function nbox(val){
+import Flex from "../Component/Flex";
+import Footer from "../Component/Footer";
+// import { JobSearchContext } from "../Component/context/JobSearchContext";
 
-// }
+
 
 export default function Home() {
-// 	const [searchLocation, setSearchLocation] = useState("")
-//   const [searchJob, setSearchJob] = useState("")
-	
-// 	const [catagories ,setCatagories]=useState();
-// 	const [location, setLocation] = useState("");
-//   const[jobType, setJobType] = useState("");
-	
+  return (
+    <>
+      <Flex />
 
-	return (
-		<>
-		
-		
-		
-		
-		{/* <JobSearchContext.Provider value={{setLocation, setJobType, location, jobType,catagories, setCatagories, searchLocation, setSearchLocation,searchJob, setSearchJob}}> */}
-		<Flex />
-		{/* <Search/> */}
-			
-			
-      
-	 
-	  <Open/>
-	  
-	  <div><TestimonialSlide /></div>
-	  
-<Footer/>
-	  </>
-	); 
+      <Open />
+
+      <div>
+        <TestimonialSlide />
+      </div>
+
+      <Footer />
+    </>
+  );
 }

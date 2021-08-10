@@ -68,10 +68,10 @@ export default function AddressForm() {
         },
         
       };
-      console.log(values);
+      // console.log(values);
       try {
-        console.log("post data started");
-        console.log(getCookies());
+        // console.log("post data started");
+        // console.log(getCookies());
         const reqUrl =
           API_CONSTANTS.baseUrl + API_CONSTANTS.enrollment.UPDATE_MANPOWER;
         const res = await axios.post(reqUrl, testDefault, {
@@ -91,13 +91,13 @@ export default function AddressForm() {
           autoClose: 5000,
         });
 
-        console.log(res["message"]);
+        // console.log(res["message"]);
         setShowHeader(true)
         localStorage.setItem("user_info",JSON.stringify(res.data.profile))
         
-        console.log("name" + formik.values.passingYear);
+        // console.log("name" + formik.values.passingYear);
       } catch (error) {
-        console.log(`Error: ${error}`);
+        // console.log(`Error: ${error}`);
         toast.error(error.message, {
           hideProgressBar: true,
           closeOnClick: true,

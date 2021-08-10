@@ -12,7 +12,7 @@ export default function TestimonialSlide(){
     const length = TestimonialData.length
 
     const nextSlide = () => { 
-        console.log("working")
+        // console.log("working")
         setCurrent(current === length - 1 ? 0 : current + 1);
       };
     

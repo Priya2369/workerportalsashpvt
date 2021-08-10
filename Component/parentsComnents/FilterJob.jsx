@@ -14,6 +14,7 @@ import ImportExportIcon from "@material-ui/icons/ImportExport";
 import state from "../array/state";
 import skills from "../array/skill";
 
+
 export default function FilterJob() {
   const {
     getfilterValue,
@@ -138,42 +139,7 @@ export default function FilterJob() {
             </FormControl>
           </div>
 
-          {/* <div className={styles.radioBtn2}>
-              <FormControl component="fieldset">
-                <FormLabel component="legend">
-                  <b>Salary</b>
-                </FormLabel>
-                <RadioGroup
-                  aria-label="salary"
-                  name="salary1"
-                  value={salary}
-                  onChange={(e) =>
-                    setFilterValue({
-                      ...getfilterValue,
-                      salary: e.target.value,
-                    })
-                  }
-                >
-                  <div className={styles.rdiogrp}>
-                    <FormControlLabel
-                      value="10,000"
-                      control={<Radio />}
-                      label="10,000 to 20,000"
-                    />
-                    <FormControlLabel
-                      value="20,000"
-                      control={<Radio />}
-                      label="20,000 to 40,000"
-                    />
-                    <FormControlLabel
-                      value="30,000"
-                      control={<Radio />}
-                      label="40,000 to 50,000"
-                    />
-                  </div>
-                </RadioGroup>
-              </FormControl>
-            </div> */}
+          
 
           {/* Job sorting........................ */}
           <div className={styles.radioBtn2}>

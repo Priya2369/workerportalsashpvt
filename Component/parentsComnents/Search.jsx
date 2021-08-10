@@ -22,14 +22,14 @@ const router = useRouter();
         const regex = new RegExp(`${jobType}`, "gi");
         // console.log(area.State);
         const loc = skill.value;
-        console.log(typeof loc);
+        // console.log(typeof loc);
         return loc.match(regex);
       });
     }
     setSuggestion1(matches);
 
    setJobType(jobType)
-    console.log(location);
+    // console.log(location);
   }
 
 
@@ -41,7 +41,7 @@ const router = useRouter();
         const regex = new RegExp(`${location}`, "gi");
         // console.log(area.State);
         const loc = area;
-        console.log(typeof loc);
+        // console.log(typeof loc);
         return loc.match(regex);
       });
     }

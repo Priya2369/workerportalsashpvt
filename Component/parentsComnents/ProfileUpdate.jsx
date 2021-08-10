@@ -37,9 +37,9 @@ const ProfileUpdate = () => {
   const [applied, setApplied] = useState([]);
   const [skill, setSkill] = useState([]);
 
-  console.log("profile............................");
+  // console.log("profile............................");
 
-  console.log(singleUser);
+  // console.log(singleUser);
 
   useEffect(() => {
     try {
@@ -94,7 +94,7 @@ const ProfileUpdate = () => {
         if (data.skillData.yearGap) {
           formik.setFieldValue("yearGap", data.skillData.yearGap);
         }
-        console.log(data.skillData.sectors);
+        // console.log(data.skillData.sectors);
         if (data.skillData.sectors) {
           formik.setFieldValue("sector", data.skillData.sectors);
         }
@@ -103,7 +103,7 @@ const ProfileUpdate = () => {
         }
       }
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   }, []);
 
@@ -134,9 +134,9 @@ const ProfileUpdate = () => {
 
     onSubmit: async (values, { resetForm }, errors) => {
       if (errors) {
-        console.log("feild errro...");
+        // console.log("feild errro...");
       }
-      console.log(values.PassingYear)
+      // console.log(values.PassingYear)
       const testDefault = {
         generalData: {
           registerBy: "self",
@@ -178,11 +178,11 @@ const ProfileUpdate = () => {
           symptomsOther: ["string"],
         },
       };
-      console.log(values);
+      // console.log(values);
 
       try {
-        console.log("post data started");
-        console.log(getCookies());
+        // console.log("post data started");
+        // console.log(getCookies());
         const reqUrl =
           API_CONSTANTS.baseUrl + API_CONSTANTS.enrollment.UPDATE_MANPOWER;
         const res = await axios.post(reqUrl, testDefault, {
@@ -204,10 +204,10 @@ const ProfileUpdate = () => {
 
         localStorage.setItem("user_info", JSON.stringify(res.data.profile));
 
-        console.log(res.data.profile);
-        console.log("name" + formik.values.passingYear);
+        // console.log(res.data.profile);
+        // console.log("name" + formik.values.passingYear);
       } catch (error) {
-        console.log(`Error: ${error}`);
+        // console.log(`Error: ${error}`);
         // toast.error(error.message, {
         //   hideProgressBar: true,
         //   closeOnClick: true,
@@ -416,7 +416,7 @@ const ProfileUpdate = () => {
                           name="date"
                           value={formik.values.date}
                           onChange={formik.handleChange}
-                          placeholder={"Date of birth"}
+                          placeholder={"Date Of Birth"}
                         />
                         <div>
                           {formik.touched.date && formik.errors.date ? (
@@ -525,7 +525,7 @@ const ProfileUpdate = () => {
                       <input
                         className={styles.input}
                         list="education"
-                        placeholder="education"
+                        placeholder="Education"
                         name="education"
                         onBlur={formik.handleBlur}
                         value={formik.values.education}
@@ -582,7 +582,7 @@ const ProfileUpdate = () => {
                       <input
                         className={styles.input}
                         list="collegeUniversity"
-                        placeholder="college & University"
+                        placeholder="College & University"
                         onBlur={formik.handleBlur}
                         name="collegeUniversity"
                         value={formik.values.collegeUniversity}
@@ -643,7 +643,7 @@ const ProfileUpdate = () => {
                       <input
                         className={styles.input}
                         list="sector"
-                        placeholder="sector"
+                        placeholder="Sector"
                         name="sector"
                         onBlur={formik.handleBlur}
                         value={formik.values.sector}
@@ -666,7 +666,7 @@ const ProfileUpdate = () => {
                       <input
                         className={styles.input}
                         list="skill"
-                        placeholder="skill"
+                        placeholder="Skill"
                         name="skill"
                         onBlur={formik.handleBlur}
                         value={formik.values.skill}
@@ -716,6 +716,7 @@ const ProfileUpdate = () => {
                   Save
                 </button>
               </div>
+              
               {/* <div><button type='button' onClick={()=>getData()}>update</button></div> */}
               {/* {SkillSector.map(skill=>
                           formik.values.sector===skill.value && skill.skills.map(item=>

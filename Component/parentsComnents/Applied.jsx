@@ -21,7 +21,7 @@ const Applied = () => {
         setApplyJob(data.appliedProject);
       }
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   }, []);
 
@@ -31,7 +31,7 @@ const Applied = () => {
     appliedJob = applyJob.map((val, id) => {
       return <div key={id}>{val.project}</div>;
     });
-    console.log(appliedJob);
+    // console.log(appliedJob);
   }
   let viewDetails;
   // const viewDetails= ()=>{

@@ -23,8 +23,8 @@ const Singlejob = () => {
 
   const { singleJob, setSingleJob, id, setId } = useContext(userContext);
   const [projectId, setProjectId] = useState(singleJob._id);
-  console.log(singleJob);
-console.log(projectId)
+  // console.log(singleJob);
+// console.log(projectId)
   useEffect(() => {
     async function getJobByID() {
       if (cookies.get("access_token")) {
@@ -41,13 +41,13 @@ console.log(projectId)
               authorization: getCookies(),
             },
           });
-          console.log(res.data.project);
-          console.log(res.data);
-          console.log(res.data.project.contactDetails);
+          // console.log(res.data.project);
+          // console.log(res.data);
+          // console.log(res.data.project.contactDetails);
           setSingleJob(res.data.project);
           
         } catch (error) {
-          console.log(error.message);
+          // console.log(error.message);
           // if(error.message = "Request failed with status code 401"){
           // router.push('/signup');
           // }
@@ -60,7 +60,7 @@ console.log(projectId)
 
   async function applyJob(e) {
     e.preventDefault();
-    console.log(projectId)
+    // console.log(projectId)
     try {
       //  console.log(coookieValue)
       const reqUrl =
@@ -77,7 +77,7 @@ console.log(projectId)
           },
         }
       );
-      console.log(res.data.projectData.value);
+      // console.log(res.data.projectData.value);
       localStorage.setItem("user_info",JSON.stringify(res.data.projectData.value))
       // console.log(res.response.data)
       if (res.data.message === "Project apply successful") {
@@ -92,7 +92,7 @@ console.log(projectId)
         });
       }
     } catch (error) {
-      console.log(error.response.data.statusCode);
+      // console.log(error.response.data.statusCode);
       if (error.response.data.statusCode === 422) {
         toast.error("already applied", {
           hideProgressBar: true,

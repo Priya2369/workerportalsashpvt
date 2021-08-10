@@ -10,7 +10,7 @@ import {initialState, reducer} from '../Component/reducer/UseReducer'
 // const userFormLocalStorage = JSON.parse(window.localStorage.getItem("singleUser"));
 
 const Layout = ({ children }) => {
-	console.log("layout.....................")
+	// console.log("layout.....................")
 
 
 	// state for heade route hide shoe
@@ -58,7 +58,7 @@ const [singleUser, setSingleUser] = useState()
 
 
 const [applied, setApplied] = useState([])
-console.log(singleUser)
+// console.log(singleUser)
 
 
 

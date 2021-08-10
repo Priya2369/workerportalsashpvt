@@ -54,7 +54,7 @@ const Header_Bottom = () => {
       .auth()
       .signOut()
       .then(() => {
-        console.log("Signed Out");
+        // console.log("Signed Out");
         cookies.remove("access_token");
 
         localStorage.removeItem("user_info");
@@ -62,7 +62,7 @@ const Header_Bottom = () => {
         router.push("/");
       })
       .catch((e) => {
-        console.error("Sign Out Error", e);
+        // console.error("Sign Out Error", e);
       });
   }
 

@@ -23,7 +23,7 @@ export default function FeaturedJob(props) {
 
   const router = useRouter();
   const click = async () => {
-    console.log(id);
+    // console.log(id);
     
 
     setId(props.id)

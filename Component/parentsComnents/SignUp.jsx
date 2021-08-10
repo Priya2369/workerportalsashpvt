@@ -44,7 +44,7 @@ export default function SignUp() {
       {
         size: "invisible",
         callback: function (response) {
-          console.log("Captcha Resolved");
+          // console.log("Captcha Resolved");
           submit();
         },
         defaultCountry: "IN",
@@ -54,7 +54,7 @@ export default function SignUp() {
 
   function submit(e) {
     e.preventDefault();
-    console.log(detail);
+    // console.log(detail);
     setUpRecaptcha();
 
     tokenauth(detail,setOpen,setShow );

@@ -5,6 +5,9 @@ import{ faMap} from '@fortawesome/free-regular-svg-icons';
 import { toast } from "react-toastify";
 
 
+// import emailjs from 'emailjs-com'
+
+// let emailjs = require('emailjs-com')
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -17,45 +20,35 @@ import { faMarker } from '@fortawesome/free-solid-svg-icons';
 toast.configure();
 
 export default function ContactUs() {
-    const [detail, setDetail] = useState({
-        name:'',
-        email:'',
-        No:'',
-        message:'',
-        })
+    // const [detail, setDetail] = useState({
+    //     name:'',
+    //     email:'',
+    //     No:'',
+    //     message:'',
+    //     })
 
-       function submit(e){
-           e.preventDefault();
-           console.log(detail)
-        //    emailjs.sendForm('service_sfm7kik','template_mt9b19e',e.target,"user_NxU5uNQCWbHXT7BrIW4r3")
-        fetch('/api/contact', {
-      method: 'POST',
-      headers: {
-        'Accept': 'application/json, text/plain, */*',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(detail)
-    }).then(res=>{
-        if (res.status === 200) {
-            toast.success("Email sent sucessfully", {
-                hideProgressBar: true,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                position: "bottom-right",
-                autoClose: 5000,
-              });
+    //    function submit(e){
+    //        e.preventDefault();
+    //        console.log(e.target.value)
+    //        emailjs.sendForm('service_sfm7kik','template_mt9b19e',e.target,"user_NxU5uNQCWbHXT7BrIW4r3")
+    //        .then(res=>{
+    //         toast.success("Email sent sucessfully", {
+    //             hideProgressBar: true,
+    //             closeOnClick: true,
+    //             pauseOnHover: true,
+    //             draggable: true,
+    //             progress: undefined,
+    //             position: "bottom-right",
+    //             autoClose: 5000,
+    //           });
 
-            }
-            console.log(res);
-
-           }).catch(error=>(console.log(error)))
+    //            console.log(res);
+    //        }).catch(error=>(console.log(error)))
            
     
 
 
-       }
+    //    }
 
 
 
@@ -71,28 +64,28 @@ export default function ContactUs() {
             <form onSubmit={e =>submit(e)}>
             <div >
                 <input type="text" placeholder="Full Name"className={styles.fullName} name="name"
-                onChange={e =>setDetail({name:e.target.value, email:detail.email, No:detail.No , message:detail.message})} 
-                value={detail.name}
+                // onChange={e =>setDetail({Fname:e.target.value, email:detail.email, No:detail.No , message:detail.message})} 
+                // value={detail.Fname}
                 />
             </div>
             <div className={styles.form}>
                 <div className={styles.formgroup}>
-                    <input type="text" placeholder="Email" className={styles.formcontrole} name="email"
-                    onChange={e =>setDetail({name:detail.name, email:e.target.value, No:detail.No , message:detail.message})}
-                    value={detail.email}
+                    <input type="text" placeholder="Email" className={styles.formcontrole} name="user_email"
+                    // onChange={e =>setDetail({Fname:detail.Fname, email:e.target.value, No:detail.No , message:detail.message})}
+                    // value={detail.email}
                     />
                 </div>
                 <div className={styles.formgroup}>
-                    <input type="text" placeholder="Phone No"className={styles.formcontrolp} name='No'
-                    onChange={e =>setDetail({name:detail.name, email:detail.email, No:e.target.value , message:detail.message})}
-                    value={detail.No}
+                    <input type="text" placeholder="Phone No"className={styles.formcontrolp} name='number'
+                    // onChange={e =>setDetail({Fname:detail.Fname, email:detail.email, No:e.target.value , message:detail.message})}
+                    // value={detail.No}
                     />
                 </div>
             </div>
             <div>
                 <textarea type='text' placeholder="message" className={styles.msg} name='message'
-                onChange={e =>setDetail({name:detail.name, email:detail.email, No:detail.No , message:e.target.value})}
-                value={detail.message}
+                // onChange={e =>setDetail({Fname:detail.Fname, email:detail.email, No:detail.No , message:e.target.value})}
+                // value={detail.message}
                 ></textarea>
             </div>
 

@@ -1,15 +1,20 @@
 import Head from "next/head";
 import { React, useState, useEffect, useContext } from "react";
-import { JobSearchContext } from "../context/JobSearchContext";
+// import { JobSearchContext } from "../context/JobSearchContext";
 import {userContext} from '../context/UserContext'
 import styles from "../../styles/featuredJob.module.css";
 import FeaturedJob from "../propComponents/FeaturedJob";
 import axios from "axios";
 import {getCookies} from '../config/FirebaseToken'
 import {API_CONSTANTS} from '../config/apiConstant'
+import SkipPreviousIcon from '@material-ui/icons/SkipPrevious';
+import SkipNextIcon from '@material-ui/icons/SkipNext';
 
 export default function FeaturedJobJobs() {
   const [items, setItems] = useState([]);
+  const [clean,setClean]=useState(false);
+  const [page, setPage] = useState(0);
+  const [count, setCount] = useState("");
   const {   searchLocation,searchJob,jobType, sortJob,setLocation, setJobType} = useContext(userContext);
   
   useEffect(() => {
@@ -19,8 +24,8 @@ export default function FeaturedJobJobs() {
         setJobType("")
         try {
           const params = {
-            page: 0,
-            limit: 50,
+            page: page,
+            limit: 10,
             sort:"createdAt",
             ...(sortJob && {sortOrder:sortJob}),
             ...(searchJob && {sectors:searchJob}),
@@ -37,35 +42,17 @@ export default function FeaturedJobJobs() {
             },
             params,
           });
-          console.log(res.data.projects);
+          // console.log(res.data.projects);
           setItems(res.data.projects);
+          setCount(res.data.count)
         } catch (error) {
-          console.log(error);
+          // console.log(error);
         }
       }
-    //   } else {
-
-    //   try {
-       
-
-    //     const reqUrl = API_CONSTANTS.baseUrl+ API_CONSTANTS.project.SEARCH_ALL_PROJECTS_PUBLIC+"?sectors="+searchJob+"&location="+searchLocation+"&employmentType="+jobType+"&page=0&limit=50&sort=createdAt&sortOrder=asc"
-        
-
-    //     const res = await axios.get(reqUrl, {
-    //       headers: {
-    //         // authorization:cookies.get('access_token') ,
-    //          authorization:getCookies() ,
-    //       },
-    //     });
-    //     console.log(res.data.projects);
-    //     setItems(res.data.projects);
-    //   } catch (error) {
-    //     console.log(error);
-    //   }
-    // }
+   
     
     getData();
-  }, [searchLocation,searchJob, jobType,sortJob]);
+  }, [searchLocation,searchJob, jobType,sortJob,page, clean]);
   return (
     <>
       {items.length ===0?<div className={styles.dataErrorCard}>
@@ -107,7 +94,22 @@ export default function FeaturedJobJobs() {
             );
           })}
       </div>}
-      
+      <div className={styles.pagination}>
+        {page>0?<div className={styles.prev}><SkipPreviousIcon  className={styles.butt} fontSize="large" onClick={() =>setPage(page - 1)}/></div>:
+        <SkipPreviousIcon  fontSize="large" disabled={true}/>}
+        <div>
+                      <p className={styles.p}>
+                        Showing
+                        <span > 4 </span>
+                        to
+                        <span > 5 </span>
+                        of
+                        <span > {count} </span>
+                        results
+                      </p>
+                    </div>
+       <div> <SkipNextIcon className={styles.butt} fontSize="large" onClick={() =>setPage(page + 1)}/></div>
+      </div>
     </>
   );
 }

@@ -97,14 +97,14 @@ const Navigation = () => {
 		e.preventDefault();
 		firebase.auth().signOut()
 			.then(() => {
-				console.log('Signed Out');
+				// console.log('Signed Out');
 				cookies.remove('access_token')
 				localStorage.removeItem("user_info");
 				setShowHeader(false)
 				router.push('/')
 			})
 			.catch(e => {
-				console.error('Sign Out Error', e);
+				// console.error('Sign Out Error', e);
 			});
 	}
 
