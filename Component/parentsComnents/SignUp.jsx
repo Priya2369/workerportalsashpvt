@@ -12,14 +12,14 @@ import initFirebase from "../config/firebaseConfig";
 import Cookies from "universal-cookie";
 import { userContext } from "../context/UserContext";
 import { API_CONSTANTS } from "../config/apiConstant";
-
 import "firebase/auth";
 
 import tokenauth, { otpModule, cookies } from "../config/FirebaseToken";
 // import { auth } from 'firebase'
 
 export default function SignUp() {
-  const { state, dispatch, detail, setDetail,showHeader, setShowHeader} = useContext(userContext);
+  const { state, dispatch,  detail, setDetail,showHeader, setShowHeader } =
+    useContext(userContext);
 
   initFirebase();
 
@@ -36,13 +36,41 @@ export default function SignUp() {
     otp1: "",
   });
 
+  // async function getData() {
+  //   console.log(" get function call......................");
+    
+  //   try {
+  //     if(getCookies){
+  //     const reqUrl =
+  //       API_CONSTANTS.baseUrl + API_CONSTANTS.enrollment.SELF_PROFILE;
+  //     const res = await axios.get(reqUrl, {
+  //       headers: {
+  //         // authorization:cookies.get('access_token') ,
+  //         authorization: getCookies(),
+  //       },
+  //     });
+  //     console.log(res.data.data);
+  //     if (!res.data.data) {
+  //       router.push("/registration");
+  //     } else if (res.data.data) {
+  //       setNaShow(true);
+  //       router.push("/jobs");
+  //     }
+  //   }
+  //   } catch (error) {
+  //     console.log("profile" + error);
+  //   }
+  // }
+
+  // Setup Recatcha...................
+
   const setUpRecaptcha = () => {
     window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier(
       "recaptcha",
       {
         size: "invisible",
         callback: function (response) {
-          // console.log("Captcha Resolved");
+          console.log("Captcha Resolved");
           submit();
         },
         defaultCountry: "IN",
@@ -52,20 +80,20 @@ export default function SignUp() {
 
   function submit(e) {
     e.preventDefault();
-    // console.log(detail);
+    console.log(detail);
     setUpRecaptcha();
 
-    tokenauth(detail, setOpen, setShow);
+    const cornfirmResults = tokenauth(detail,setShow );
     // if(cornfirmResults.confirmationResult){
     //   setShow(true)
     // }
   }
 
-  const props = { otp, setOtp, otpSubmit };
+  const props = { otp, setOtp, otpSubmit,  };
 
   function otpSubmit(e) {
     e.preventDefault();
-    otpModule(otp, router, dispatch, showHeader, setShowHeader);
+    otpModule(otp, router, dispatch,  setOpen,setShowHeader);
     // dispatch({type:'USER', payload: true})
     // getData()
   }
@@ -76,7 +104,7 @@ export default function SignUp() {
         {/* <div className={styles.secDiv}></div> */}
         <div className={styles.loginForm}>
           <form onSubmit={(e) => submit(e)}>
-            <div id="recaptcha"></div>
+            <div id="recaptcha"></div> 
             <TextField
               types="phone number"
               InputEvent={(e) => setDetail({ phoneNo: e.target.value })}
@@ -85,12 +113,9 @@ export default function SignUp() {
             />
 
             <div className={styles.btn}>
-              {open ? (
-                <div></div>
-              ) : (
-                <button className={styles.login}>Send OTP</button>
-              )}
+              <button className={styles.login}>Send OTP</button>
             </div>
+            
           </form>
           <div>{show ? <Otp {...props} /> : null}</div>
         </div>
