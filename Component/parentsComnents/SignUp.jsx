@@ -12,14 +12,14 @@ import initFirebase from "../config/firebaseConfig";
 import Cookies from "universal-cookie";
 import { userContext } from "../context/UserContext";
 import { API_CONSTANTS } from "../config/apiConstant";
+
 import "firebase/auth";
 
 import tokenauth, { otpModule, cookies } from "../config/FirebaseToken";
 // import { auth } from 'firebase'
 
 export default function SignUp() {
-  const { state, dispatch,  detail, setDetail,showHeader, setShowHeader } =
-    useContext(userContext);
+  const { state, dispatch, detail, setDetail,showHeader, setShowHeader} = useContext(userContext);
 
   initFirebase();
 
@@ -35,8 +35,6 @@ export default function SignUp() {
   const [otp, setOtp] = useState({
     otp1: "",
   });
-
-  
 
   const setUpRecaptcha = () => {
     window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier(
@@ -57,17 +55,17 @@ export default function SignUp() {
     // console.log(detail);
     setUpRecaptcha();
 
-    tokenauth(detail,setOpen,setShow );
+    tokenauth(detail, setOpen, setShow);
     // if(cornfirmResults.confirmationResult){
     //   setShow(true)
     // }
   }
 
-  const props = { otp, setOtp, otpSubmit,  };
+  const props = { otp, setOtp, otpSubmit };
 
   function otpSubmit(e) {
     e.preventDefault();
-    otpModule(otp, router, dispatch,  setShowHeader);
+    otpModule(otp, router, dispatch, showHeader, setShowHeader);
     // dispatch({type:'USER', payload: true})
     // getData()
   }
@@ -78,7 +76,7 @@ export default function SignUp() {
         {/* <div className={styles.secDiv}></div> */}
         <div className={styles.loginForm}>
           <form onSubmit={(e) => submit(e)}>
-            <div id="recaptcha"></div> 
+            <div id="recaptcha"></div>
             <TextField
               types="phone number"
               InputEvent={(e) => setDetail({ phoneNo: e.target.value })}
@@ -87,10 +85,12 @@ export default function SignUp() {
             />
 
             <div className={styles.btn}>
-              {open?(<div></div>):
-              (<button className={styles.login}>Send OTP</button>)}
+              {open ? (
+                <div></div>
+              ) : (
+                <button className={styles.login}>Send OTP</button>
+              )}
             </div>
-            
           </form>
           <div>{show ? <Otp {...props} /> : null}</div>
         </div>

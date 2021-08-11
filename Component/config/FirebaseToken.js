@@ -74,7 +74,7 @@ export default async function tokenauth(detail,setOpen, setShow) {
   };
 
 }
-export function otpModule(otp, router, dispatch,  setOpen, setShowHeader) {
+export function otpModule(otp, router, dispatch,  setOpen,showHeader, setShowHeader) {
  
   const cookies = new Cookies();
   // const {state, dispatch} = useContext(userContext)
@@ -132,8 +132,9 @@ export function otpModule(otp, router, dispatch,  setOpen, setShowHeader) {
                
                 // console.log(res.data.data);
                 localStorage.setItem("user_info",JSON.stringify(res.data.data))
-                setShowHeader(true)
+                
                 router.push("/jobs");
+                setShowHeader(true);
               }
             }).catch(error =>
                console.log(error.message));
