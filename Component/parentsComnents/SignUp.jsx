@@ -38,13 +38,15 @@ export default function SignUp() {
 
   
 
+  // Setup Recatcha...................
+
   const setUpRecaptcha = () => {
     window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier(
       "recaptcha",
       {
         size: "invisible",
         callback: function (response) {
-          // console.log("Captcha Resolved");
+          console.log("Captcha Resolved");
           submit();
         },
         defaultCountry: "IN",
@@ -54,10 +56,10 @@ export default function SignUp() {
 
   function submit(e) {
     e.preventDefault();
-    // console.log(detail);
+    console.log(detail);
     setUpRecaptcha();
 
-    tokenauth(detail,setOpen,setShow );
+    const cornfirmResults = tokenauth(detail,setShow );
     // if(cornfirmResults.confirmationResult){
     //   setShow(true)
     // }
@@ -67,7 +69,7 @@ export default function SignUp() {
 
   function otpSubmit(e) {
     e.preventDefault();
-    otpModule(otp, router, dispatch,  setShowHeader);
+    otpModule(otp, router, dispatch,  setOpen,setShowHeader);
     // dispatch({type:'USER', payload: true})
     // getData()
   }
@@ -87,8 +89,7 @@ export default function SignUp() {
             />
 
             <div className={styles.btn}>
-              {open?(<div></div>):
-              (<button className={styles.login}>Send OTP</button>)}
+              <button className={styles.login}>Send OTP</button>
             </div>
             
           </form>

@@ -12,33 +12,31 @@ import { toast } from "react-toastify";
 
 toast.configure();
 
-export default async function tokenauth(detail,setOpen, setShow) {
+export default async function tokenauth(detail, setShow) {
   initFirebase();
 
-  //  const router = useRouter();
+  
 
   let phoneNumber = "+91" + detail.phoneNo;
-  // console.log(phoneNumber);
+  console.log(phoneNumber);
   let appVerifier = window.recaptchaVerifier;
   try {
-    setOpen(true)
     const confirmationResult = await firebase
       .auth()
       .signInWithPhoneNumber(phoneNumber, appVerifier)
       .then(function(confirmationResult) {
-        // SMS sent. Prompt user to type the code from the message, then sign the
-        // user in with confirmationResult.confirm(code).
+        
         if ((window.confirmationResult = confirmationResult)) {
           setShow(true)
         }
-        // console.log(confirmationResult);
-        // console.log("OTP is sent");
+        
+        console.log("OTP is sent");
         return window.confirmationResult
       })
     return confirmationResult
 
   } catch (error) {
-    // console.log(error);
+    console.log(error);
     if(error.code==="auth/internal-error" ){
     toast.error("network errors", {
       hideProgressBar: true,
@@ -77,18 +75,17 @@ export default async function tokenauth(detail,setOpen, setShow) {
 export function otpModule(otp, router, dispatch,  setOpen, setShowHeader) {
  
   const cookies = new Cookies();
-  // const {state, dispatch} = useContext(userContext)
   
-  // console.log(otp);
+  console.log(otp);
   let otpInput =
     otp.otp1;
   let optConfirm = window.confirmationResult;
 
-  // console.log(codee);
+  
   optConfirm
     .confirm(otpInput)
     .then(async function(result) {
-      // console.log("User signed in successfully.");
+      console.log("User signed in successfully.");
       toast.success("OTP verified", {
         hideProgressBar: true,
         closeOnClick: true,
@@ -99,58 +96,51 @@ export function otpModule(otp, router, dispatch,  setOpen, setShowHeader) {
         autoClose: 5000,
       });
 
-      // console.log("Result" + result.verificationID);
+      
       let user = result.user;
        let userToken = await firebase.auth().currentUser.getIdToken(true);
-      //  console.log(userToken)
-      // console.log(user.getIdToken(true))
-      // console.log(user.getIdToken())
-      // console.log(user);
+       console.log(userToken)
+     
+      console.log(user);
       // setCookies();
       setCookies.then(() => {
         const cookies = getCookies()
-        // console.log(cookies);
-        // dispatch({type:'USER', payload: true})
-        // if(user){
-        // dispatch({type:'USER', payload: true})
-        // console.log("get data runing")
+        console.log(cookies);
+        
+        console.log("get data runing")
         try {
           if (user) {
-            // console.log(cookies)
+            console.log(cookies)
             const reqUrl =
               API_CONSTANTS.baseUrl + API_CONSTANTS.enrollment.SELF_PROFILE;
             axios.get(reqUrl, {
               headers: {
-                // authorization:cookies.get('access_token') ,
+                
                 authorization:userToken,
               },
             }).then((res) => {
-              // console.log(res.data.data);
+              console.log(res.data.data);
               if (!res.data.data) {
                 router.push("/registration");
               } else if (res.data.data) {
                
-                // console.log(res.data.data);
+                console.log(res.data.data);
                 localStorage.setItem("user_info",JSON.stringify(res.data.data))
                 setShowHeader(true)
                 router.push("/jobs");
               }
-            }).catch(error =>
-               console.log(error.message));
+            }).catch(error => console.log(error.message));
 
           }
         } catch (error) {
-          // console.log("profile" + error);
+          console.log("profile" + error);
         }
 
-        // getData()
-        // router.push('/registration');
-
-        // }
+       
       })
     })
     .catch(function(error) {
-      // console.log(error);
+      console.log(error);
       
       toast.error("Incorrect OTP", {
         hideProgressBar: true,
@@ -171,46 +161,26 @@ export function otpModule(otp, router, dispatch,  setOpen, setShowHeader) {
 export let setCookies = new Promise((resolve, reject) => {
   initFirebase()
   const cookies = new Cookies();
-  // console.log("set cookies")
+  console.log("set cookies")
   firebase.auth().onIdTokenChanged(async user => {
     if (user) {
       const token = await user.getIdToken(true);
       cookies.set('access_token', token, { path: '/', maxAge: 60 * 60 });
     }
   });
-  // console.log(cookies);
+  console.log(cookies);
   return resolve(true)
 })
 
 
 export function getCookies() {
   const cookies = new Cookies()
-  // console.log("getcookies")
+  console.log("getcookies")
   initFirebase();
 
-  // console.log(cookies);
+  console.log(cookies);
   return cookies.get('access_token');
 }
-
-
-//   export function logout(){
-//     // const {state, dispatch} = useContext(userContext)
-//     const cookies = new Cookies();
-//     // firebase.auth.signOut().then(
-//     // cookies.remove('access_token'))
-//     firebase.auth().signOut()
-// .then(() => {
-//   console.log('Signed Out');
-//   cookies.remove('access_token')
-//   // dispatch({type:'USER', payload: false})
-
-// })
-// .catch(e=>{
-//  console.error('Sign Out Error', e);
-// });
-
-//   }
-
 
 
 

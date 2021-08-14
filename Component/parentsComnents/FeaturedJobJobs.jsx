@@ -94,22 +94,22 @@ export default function FeaturedJobJobs() {
             );
           })}
       </div>}
-      <div className={styles.pagination}>
+      {count>0?<div className={styles.pagination}>
         {page>0?<div className={styles.prev}><SkipPreviousIcon  className={styles.butt} fontSize="large" onClick={() =>setPage(page - 1)}/></div>:
         <SkipPreviousIcon  fontSize="large" disabled={true}/>}
         <div>
                       <p className={styles.p}>
-                        Showing
-                        <span > 4 </span>
+                        Showing 
+                        <span >{page*10} </span>
                         to
-                        <span > 5 </span>
+                        <span > {count>page*10+10?page*10+10:count} </span>
                         of
                         <span > {count} </span>
                         results
                       </p>
                     </div>
-       <div> <SkipNextIcon className={styles.butt} fontSize="large" onClick={() =>setPage(page + 1)}/></div>
-      </div>
+       <div>{count>page*10+10 && count>10? <SkipNextIcon className={styles.butt} fontSize="large" onClick={() =>setPage(page + 1)}/>:null}</div>
+      </div>:null}
     </>
   );
 }
