@@ -26,7 +26,7 @@ export default function ContactUs() {
         message:'',
         })
 
-       function submit(e){
+       async function submit(e){
            e.preventDefault();
            console.log(detail)
     
