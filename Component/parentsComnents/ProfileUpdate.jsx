@@ -158,7 +158,7 @@ const ProfileUpdate = () => {
           // "poultry farmer"
 
           skillsOther: ["string"],
-         ...(values.experience && {experiences: values.experience}),
+          ...(values.experience && { experiences: values.experience }),
 
           education: values.education,
 
@@ -207,16 +207,6 @@ const ProfileUpdate = () => {
         // console.log(res.data.profile);
         // console.log("name" + formik.values.passingYear);
       } catch (error) {
-        // console.log(`Error: ${error}`);
-        // toast.error(error.message, {
-        //   hideProgressBar: true,
-        //   closeOnClick: true,
-        //   pauseOnHover: true,
-        //   draggable: true,
-        //   progress: undefined,
-        //   position: "bottom-right",
-        //   autoClose: 5000,
-        // });
         toast.error(error.response.data.message, {
           hideProgressBar: true,
           closeOnClick: true,
@@ -262,7 +252,6 @@ const ProfileUpdate = () => {
                   <span>
                     <b>{profileName.name}</b>
                   </span>
-                  
                 </div>
               ) : null}
               {profileName.mobileNumber ? (
@@ -341,10 +330,11 @@ const ProfileUpdate = () => {
             </div>
           </div>
 
-          {/* ............................................ */}
+          {/* PROFILE FORM START ............................................ */}
 
           <div className={styles.tab2}>
-            <form onSubmit={formik.handleSubmit}>
+            <form onSubmit={
+              formik.handleSubmit}>
               {/* profile information form componets */}
               <div className={styles.formOne} id="profile">
                 <h2
@@ -359,7 +349,9 @@ const ProfileUpdate = () => {
                       <div className={styles.fname}>
                         <div className={styles.inputDivname}>
                           <span className={styles.icon}>
-                            <b>First Name</b>
+                            <b>
+                              First Name<span className={styles.star}>*</span>
+                            </b>
                           </span>
                           <input
                             className={styles.input}
@@ -383,7 +375,9 @@ const ProfileUpdate = () => {
                       <div className={styles.lname}>
                         <div className={styles.inputDivlast}>
                           <span className={styles.icon}>
-                            <b>Last Name</b>
+                            <b>
+                              Last Name<span className={styles.star}>*</span>
+                            </b>
                           </span>
                           <input
                             className={styles.input}
@@ -408,7 +402,9 @@ const ProfileUpdate = () => {
                     <div className={styles.firstLastName2}>
                       <div className={styles.inputDivdate}>
                         <span className={styles.icon}>
-                          <b>D.O.B</b>
+                          <b>
+                            D.O.B<span className={styles.star}>*</span>
+                          </b>
                         </span>
                         <input
                           className={styles.inputd}
@@ -427,7 +423,9 @@ const ProfileUpdate = () => {
 
                       <div className={styles.inputDivgen}>
                         <span className={styles.icon}>
-                          <b>Gender</b>
+                          <b>
+                            Gender<span className={styles.star}>*</span>
+                          </b>
                         </span>
                         <select
                           className={styles.input}
@@ -447,7 +445,7 @@ const ProfileUpdate = () => {
                       ) : null}
                     </div>
 
-                    <div className={styles.inputDiv}>
+                    {/* <div className={styles.inputDiv}>
                       <span className={styles.icon}>
                         <b>Age</b>
                       </span>
@@ -461,7 +459,7 @@ const ProfileUpdate = () => {
                         onChange={formik.handleChange}
                         readOnly
                       />
-                    </div>
+                    </div> */}
 
                     <div className={styles.inputDiv}>
                       <span className={styles.icon}>
@@ -482,7 +480,9 @@ const ProfileUpdate = () => {
                     ) : null}
                     <div className={styles.inputDiv}>
                       <span className={styles.icon}>
-                        <b>Address</b>
+                        <b>
+                          Address<span className={styles.star}>*</span>
+                        </b>
                       </span>
                       <input
                         className={styles.input}
@@ -520,7 +520,9 @@ const ProfileUpdate = () => {
                   <div className={styles.size}>
                     <div className={styles.inputDiv}>
                       <span className={styles.icon}>
-                        <b>Qualification</b>
+                        <b>
+                          Qualification<span className={styles.star}>*</span>
+                        </b>
                       </span>
                       <input
                         className={styles.input}
@@ -554,9 +556,12 @@ const ProfileUpdate = () => {
                         value={formik.values.PassingYear}
                         onChange={formik.handleChange}
                       />
-                       {formik.touched.PassingYear && formik.errors.PassingYear ? (
-                      <p className={styles.error}>{formik.errors.PassingYear}</p>
-                    ) : null}
+                      {formik.touched.PassingYear &&
+                      formik.errors.PassingYear ? (
+                        <p className={styles.error}>
+                          {formik.errors.PassingYear}
+                        </p>
+                      ) : null}
                     </div>
                     <div className={styles.inputDiv}>
                       <span className={styles.icon}>
@@ -567,7 +572,7 @@ const ProfileUpdate = () => {
                         type="number"
                         placeholder={"Year Gap"}
                         onBlur={formik.handleBlur}
-                        name="yearGap" 
+                        name="yearGap"
                         value={formik.values.yearGap}
                         onChange={formik.handleChange}
                       />
@@ -577,7 +582,10 @@ const ProfileUpdate = () => {
                     ) : null}
                     <div className={styles.inputDiv}>
                       <span className={styles.icon}>
-                        <b>College & University</b>
+                        <b>
+                          College & University
+                          <span className={styles.star}>*</span>
+                        </b>
                       </span>
                       <input
                         className={styles.input}
@@ -603,7 +611,9 @@ const ProfileUpdate = () => {
 
                     <div className={styles.inputDiv}>
                       <span className={styles.icon}>
-                        <b>Percentage</b>
+                        <b>
+                          Percentage<span className={styles.star}>*</span>
+                        </b>
                       </span>
                       <input
                         className={styles.input}
@@ -638,7 +648,7 @@ const ProfileUpdate = () => {
                   <div className={styles.size}>
                     <div className={styles.inputDiv}>
                       <span className={styles.icon}>
-                        <b>Sector</b>
+                        <b>Sector<span className={styles.star}>*</span></b>
                       </span>
                       <input
                         className={styles.input}
@@ -651,17 +661,26 @@ const ProfileUpdate = () => {
                       />
                       <datalist id="sector">
                         {SkillSector.map((val, i) => {
-                          return <option key={val.name} value={val.value}></option>;
+                          return (
+                            <option key={val.name} value={val.value}></option>
+                          );
                         })}
                       </datalist>
+                      <div>
+                        
+                          {formik.touched.sector &&
+                          formik.errors.sector ? (
+                            <p className={styles.error}>
+                              {formik.errors.sector}
+                            </p>
+                          ) : null}
+                        </div>
                     </div>
-                    {formik.touched.sector && formik.errors.sector ? (
-                      <p className={styles.error}>{formik.errors.sector}</p>
-                    ) : null}
+                   
 
                     <div className={styles.inputDiv}>
                       <span className={styles.icon}>
-                        <b>Skill</b>
+                        <b>Skill<span className={styles.star}>*</span></b>
                       </span>
                       <input
                         className={styles.input}
@@ -678,7 +697,7 @@ const ProfileUpdate = () => {
                             <option key={item.name} value={item.value} ></option>)
                           )}
                       </datalist> */}
-                       <datalist id="skill">
+                      <datalist id="skill">
                         {skills.map((val, i) => {
                           return <option key={i} value={val.value}></option>;
                         })}
@@ -703,26 +722,24 @@ const ProfileUpdate = () => {
                       />
                     </div>
                     {formik.touched.experience && formik.errors.experience ? (
-                        <p className={styles.error}>{formik.errors.experience}</p>
-                      ) : null}
+                      <p className={styles.error}>{formik.errors.experience}</p>
+                    ) : null}
                   </div>
                 ) : null}
               </div>
-
-              {/* Term and condition .......................................... */}
 
               <div className={styles.buttonDiv}>
                 <button type="submit" className={styles.button}>
                   Save
                 </button>
               </div>
-              
+
               {/* <div><button type='button' onClick={()=>getData()}>update</button></div> */}
               {/* {SkillSector.map(skill=>
                           formik.values.sector===skill.value && skill.skills.map(item=>
                             <div key={item.name} >{item.value}</div>)
                           )} */}
-                          {/* {SkillSector.map(skill=>
+              {/* {SkillSector.map(skill=>
                          
                             <div key={skill.name} >{skill.value}</div>)
                           } */}

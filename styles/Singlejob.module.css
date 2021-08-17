@@ -1,5 +1,4 @@
-.heading
-{
+.heading{
     border:1px solid black ;
     text-align: center;
     background-color: burlywood;
@@ -117,6 +116,7 @@
         color: white;
         background-color:#0056a2;
         margin-left: 80%;
+        margin-bottom: 8px;
 
     }
     .Submit:hover{

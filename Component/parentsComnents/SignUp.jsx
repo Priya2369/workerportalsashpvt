@@ -36,46 +36,28 @@ export default function SignUp() {
     otp1: "",
   });
 
-  // async function getData() {
-  //   console.log(" get function call......................");
-    
-  //   try {
-  //     if(getCookies){
-  //     const reqUrl =
-  //       API_CONSTANTS.baseUrl + API_CONSTANTS.enrollment.SELF_PROFILE;
-  //     const res = await axios.get(reqUrl, {
-  //       headers: {
-  //         // authorization:cookies.get('access_token') ,
-  //         authorization: getCookies(),
-  //       },
-  //     });
-  //     console.log(res.data.data);
-  //     if (!res.data.data) {
-  //       router.push("/registration");
-  //     } else if (res.data.data) {
-  //       setNaShow(true);
-  //       router.push("/jobs");
-  //     }
-  //   }
-  //   } catch (error) {
-  //     console.log("profile" + error);
-  //   }
-  // }
+  
 
   // Setup Recatcha...................
 
   const setUpRecaptcha = () => {
-    window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier(
-      "recaptcha",
-      {
-        size: "invisible",
-        callback: function (response) {
-          console.log("Captcha Resolved");
-          submit();
-        },
-        defaultCountry: "IN",
-      }
-    );
+    try{
+      window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier(
+        "recaptcha",
+        {
+          size: "invisible",
+          callback: function (response) {
+            console.log("Captcha Resolved");
+            submit();
+          },
+          defaultCountry: "IN",
+        }
+      );    
+
+    }catch(error){
+      
+    }
+   
   };
 
   function submit(e) {

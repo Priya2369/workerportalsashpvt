@@ -3,6 +3,7 @@ import{ React, useState, useEffect} from 'react';
 import{ faEnvelope, } from '@fortawesome/free-regular-svg-icons';
 import{ faMap} from '@fortawesome/free-regular-svg-icons';
 import { toast } from "react-toastify";
+import { sendContactMail } from "../networking/apiCall" 
 
 
 
@@ -24,38 +25,61 @@ export default function ContactUs() {
         message:'',
         })
 
-       function submit(e){
-           e.preventDefault();
-           console.log(detail)
-        //    emailjs.sendForm('service_sfm7kik','template_mt9b19e',e.target,"user_NxU5uNQCWbHXT7BrIW4r3")
-        fetch('/api/contact', {
-      method: 'POST',
-      headers: {
-        'Accept': 'application/json, text/plain, */*',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(detail)
-    }).then(res=>{
-        if (res.status === 200) {
-            toast.success("Email sent sucessfully", {
-                hideProgressBar: true,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                position: "bottom-right",
-                autoClose: 5000,
-              });
+    //    function submit(e){
+    //        e.preventDefault();
+    //        console.log(detail)
+    //     //    emailjs.sendForm('service_sfm7kik','template_mt9b19e',e.target,"user_NxU5uNQCWbHXT7BrIW4r3")
+    //     fetch('/api/contact', {
+    //   method: 'POST',
+    //   headers: {
+    //     'Accept': 'application/json, text/plain, */*',
+    //     'Content-Type': 'application/json'
+    //   },
+    //   body: JSON.stringify(detail)
+    // }).then(res=>{
+    //     if (res.status === 200) {
+    //         toast.success("Email sent sucessfully", {
+    //             hideProgressBar: true,
+    //             closeOnClick: true,
+    //             pauseOnHover: true,
+    //             draggable: true,
+    //             progress: undefined,
+    //             position: "bottom-right",
+    //             autoClose: 5000,
+    //           });
 
-            }
-            console.log(res);
+    //         }
+    //         console.log(res);
 
-           }).catch(error=>(console.log(error)))
+    //        }).catch(error=>(console.log(error)))
            
     
 
 
-       }
+    //    }
+async function submit(e){
+    e.preventDefault();
+    try{
+    const res = await sendContactMail(detail)
+    console.log(res)
+    }catch(err){
+        console.log(err)
+    }
+    // if (res.status < 300) {
+    //     this.setState({
+    //         // formButtonDisabled: true,
+    //         formButtonText: "Thanks for your message",
+    //         name: "",
+    //         mail: "",
+    //         formContent: ""
+    //     })
+
+    // } else {
+    //     this.setState({ formButtonText: "Please fill out all fields." })
+    // }
+//[7]
+}
+
 
 
 

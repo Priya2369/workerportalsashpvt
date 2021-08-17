@@ -24,7 +24,9 @@
   justify-content: center;
    
 }
-
+.star{
+  color:red;
+}
 .left{
  display: grid;
  word-wrap: break-word;

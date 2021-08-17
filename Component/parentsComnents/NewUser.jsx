@@ -139,7 +139,7 @@ export default function AddressForm() {
         name="firstName"
         value={formik.values.firstName}
         onChange={formik.handleChange} autoComplete="off"/>
-        <span className="placeholder">First Name</span>
+        <span className="placeholder">First Name*</span>
       </label>
           {formik.touched.firstName && formik.errors.firstName ? (
                         <p className={styles.error}>{formik.errors.firstName}</p>
@@ -153,7 +153,7 @@ export default function AddressForm() {
         name="lastName"
         value={formik.values.lastName}
         onChange={formik.handleChange}/>
-        <span className="placeholder">Last Name</span>
+        <span className="placeholder">Last Name*</span>
       </label>
            {formik.touched.lastName && formik.errors.lastName ? (
                         <p className={styles.error}>{formik.errors.lastName}</p>
@@ -168,7 +168,7 @@ export default function AddressForm() {
          name="date"
          value={formik.values.date}
          onChange={formik.handleChange}/>
-        <span className="placeholder">DOB</span>
+        <span className="placeholder">DOB*</span>
       </label>
       {formik.touched.date && formik.errors.date ? (
                         <p className={styles.error}>{formik.errors.date}</p>
@@ -178,7 +178,7 @@ export default function AddressForm() {
 
         <Grid item xs={12} >
         <FormControl component="fieldset">
-         <FormLabel component="legend">Gender</FormLabel>
+         <FormLabel component="legend">Gender*</FormLabel>
        <RadioGroup aria-label="gender"  style={{ display: 'initial' }} name="gender"
         value={formik.values.gender}
         onChange={formik.handleChange} >
@@ -201,7 +201,7 @@ export default function AddressForm() {
           setEducationData(e.target.value)
         }}/>
         
-        <span className="placeholder">Education</span>
+        <span className="placeholder">Education*</span>
         <datalist id="education">
                       {educationForm.map((val, i) => {
                         return <option key={i} value={val}></option>;
@@ -236,13 +236,13 @@ export default function AddressForm() {
         
         <Grid item xs={12} >
         <label className="custom-field two">
-        <input list="pin" type="text" placeholder="Pincode,City,District,State" 
+        <input list="pin" type="text" placeholder="&nbsp;" 
         onBlur={formik.handleBlur}
         name="address"
         value={formik.values.address}
         onChange={formik.handleChange}/>
         
-        <span className="placeholder">Pincode</span>
+        <span className="placeholder">Pincode*</span>
         <datalist id="pin">
                       {pincode.map((val, i) => {
                         return <option key={i} value={val}></option>;
