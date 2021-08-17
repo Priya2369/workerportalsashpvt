@@ -4,6 +4,7 @@ import{ faEnvelope, } from '@fortawesome/free-regular-svg-icons';
 import{ faMap} from '@fortawesome/free-regular-svg-icons';
 import { toast } from "react-toastify";
 import { sendContactMail } from "../networking/apiCall" 
+import axios from 'axios';
 
 
 
@@ -25,60 +26,67 @@ export default function ContactUs() {
         message:'',
         })
 
-    //    function submit(e){
-    //        e.preventDefault();
-    //        console.log(detail)
-    //     //    emailjs.sendForm('service_sfm7kik','template_mt9b19e',e.target,"user_NxU5uNQCWbHXT7BrIW4r3")
-    //     fetch('/api/contact', {
-    //   method: 'POST',
-    //   headers: {
-    //     'Accept': 'application/json, text/plain, */*',
-    //     'Content-Type': 'application/json'
-    //   },
-    //   body: JSON.stringify(detail)
-    // }).then(res=>{
-    //     if (res.status === 200) {
-    //         toast.success("Email sent sucessfully", {
-    //             hideProgressBar: true,
-    //             closeOnClick: true,
-    //             pauseOnHover: true,
-    //             draggable: true,
-    //             progress: undefined,
-    //             position: "bottom-right",
-    //             autoClose: 5000,
-    //           });
-
-    //         }
-    //         console.log(res);
-
-    //        }).catch(error=>(console.log(error)))
+       function submit(e){
+           e.preventDefault();
+           console.log(detail)
+    
            
     
+           let config = {
+            method: 'post',
+            url: `/api/contact`,
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            data: detail,
+          };
+      
+          try {
+            const response = await axios(config);
+            console.log(response);
+            if (response.status == 200) {
+              reset();
+            //   toast(
+            //     'success',
+            //     'Thank you for contacting us, we will be in touch soon.'
+            //   );
+            toast.success("Email sent sucessfully", {
+                            hideProgressBar: true,
+                            closeOnClick: true,
+                            pauseOnHover: true,
+                            draggable: true,
+                            progress: undefined,
+                            position: "bottom-right",
+                            autoClose: 5000,
+                          });
+            }
+          } catch (err) {
+              console.log(err)
+          }
 
+       }
+// async function submit(e){
+//     e.preventDefault();
+//     try{
+//     const res = await sendContactMail(detail)
+//     console.log(res)
+//     }catch(err){
+//         console.log(err)
+//     }
+//     if (res.status < 300) {
+//         this.setState({
+//             // formButtonDisabled: true,
+//             formButtonText: "Thanks for your message",
+//             name: "",
+//             mail: "",
+//             formContent: ""
+//         })
 
-    //    }
-async function submit(e){
-    e.preventDefault();
-    try{
-    const res = await sendContactMail(detail)
-    console.log(res)
-    }catch(err){
-        console.log(err)
-    }
-    // if (res.status < 300) {
-    //     this.setState({
-    //         // formButtonDisabled: true,
-    //         formButtonText: "Thanks for your message",
-    //         name: "",
-    //         mail: "",
-    //         formContent: ""
-    //     })
-
-    // } else {
-    //     this.setState({ formButtonText: "Please fill out all fields." })
-    // }
-//[7]
-}
+//     } else {
+//         this.setState({ formButtonText: "Please fill out all fields." })
+//     }
+// [7]
+// }
 
 
 
