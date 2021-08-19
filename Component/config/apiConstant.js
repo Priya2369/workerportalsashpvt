@@ -1,8 +1,8 @@
 
 
 export const API_CONSTANTS = {
-      baseUrl: 'https://adminproductionproject.el.r.appspot.com/api/v1',
-    //    baseUrl: 'http://localhost:8080/api/v1', 
+    //   baseUrl: 'https://adminproductionproject.el.r.appspot.com/api/v1',
+       baseUrl: 'http://localhost:8080/api/v1', 
     
     businessUser: {
         SIGN_UP: '/business/user/signup',
@@ -37,5 +37,8 @@ export const API_CONSTANTS = {
         SELF_PROFILE :'/enrollment/self',
         WORKER_APPLY_PROJRCT:'/enrollment/applyjob/'
         
+    },
+    contact:{
+        CONTACT:'/contact'
     }
 }
