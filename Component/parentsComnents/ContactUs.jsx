@@ -201,14 +201,14 @@ export default function ContactUs() {
                 value={formik.values.message}
                 onChange={formik.handleChange} autoComplete="off"
               ></textarea>
-              {/* <div className={styles.messageError}>
+              <div className={styles.messageError}>
                <FormHelperText error>
               {formik.touched.message && formik.errors.message ? (
                         <p className={styles.error}>{formik.errors.message}</p>
-                      ) : null}</FormHelperText></div> */}
+                      ) : null}</FormHelperText></div>
             </div>
 
-            <div>
+            <div className={styles.btn}>
               <button className={styles.submit}>Send</button>
             </div>
           </form>
