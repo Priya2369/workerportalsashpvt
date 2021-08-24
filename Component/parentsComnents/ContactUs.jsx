@@ -63,7 +63,7 @@ export default function ContactUs() {
         const response = await axios(config);
         console.log(response);
         if (response.status == 200) {
-          toast.success("Email sent sucessfully", {
+          toast.success("Message sent sucessfully", {
             hideProgressBar: true,
             closeOnClick: true,
             pauseOnHover: true,
@@ -72,7 +72,9 @@ export default function ContactUs() {
             position: "bottom-right",
             autoClose: 5000,
           });
+
         }
+        resetForm()
       } catch (err) {
         console.log(err);
         toast.error(err, {

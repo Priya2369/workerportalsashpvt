@@ -67,13 +67,7 @@ const Header_Bottom = () => {
   }
 
   
-  // // SetItem in localStorage for single user
-
-  // useEffect(()=>{
-  // console.log(singleUser)
-  //   localStorage.setItem('data',JSON.stringify(singleUser))
-
-  // },[])
+  
 
   return (
     <>
@@ -88,6 +82,7 @@ const Header_Bottom = () => {
           </span>
 
           <nav className={navigation.navigation}>
+            {/* css for active wrriten in global.css to active the link */}
             <Link href="/">
               <a className={router.pathname == "/" ? "active" : ""}>Home</a>
             </Link>

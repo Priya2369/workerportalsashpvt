@@ -192,7 +192,7 @@ const ProfileUpdate = () => {
           },
         });
         //   formik = useFormik('')
-        toast.success("data submitted sucessfully", {
+        toast.success("Data submitted sucessfully", {
           hideProgressBar: true,
           closeOnClick: true,
           pauseOnHover: true,
@@ -545,7 +545,7 @@ const ProfileUpdate = () => {
                     ) : null}
                     <div className={styles.inputDiv}>
                       <span className={styles.icon}>
-                        <b> Year Of Passing</b>
+                        <b> Year Of Passing<span className={styles.star}>*</span></b>
                       </span>
                       <input
                         className={styles.input}

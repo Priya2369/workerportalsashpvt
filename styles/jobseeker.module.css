@@ -36,7 +36,8 @@
 .ndy .numb{
     
     margin-top: 30px;
-    margin-left: 144px;
+    /* margin-left: 144px; */
+    text-align: center;
 }
 
  .names{
