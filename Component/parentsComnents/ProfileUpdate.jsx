@@ -4,6 +4,8 @@ import { useFormik, FieldArray } from "formik";
 import validation from "../validation/validate";
 import pincodeList from "../array/pincodeCityDistrictState";
 import educations from "../array/education";
+import educationForm from '../array/educationForm'
+import state from "../array/state"
 import univercity from "../array/university";
 import { API_CONSTANTS } from "../config/apiConstant";
 import { getCookies } from "../config/FirebaseToken";
@@ -77,6 +79,9 @@ const ProfileUpdate = () => {
         // skill data
         formik.setFieldValue("passingYear", data.generalData.email);
         formik.setFieldValue("education", data.skillData.education);
+        if (data.skillData.specialization){
+          formik.setFieldValue("specialization" , data.skillData.specialization);
+        }
         if (data.skillData.college) {
           formik.setFieldValue("collegeUniversity", data.skillData.college);
         }
@@ -101,6 +106,9 @@ const ProfileUpdate = () => {
         if (data.skillData.skills) {
           formik.setFieldValue("skill", data.skillData.skills);
         }
+        if (data.skillData.preferredLocations) {
+          formik.setFieldValue("prflocation",data.skillData.preferredLocations);
+        }
       }
     } catch (error) {
       // console.log(error);
@@ -119,6 +127,7 @@ const ProfileUpdate = () => {
       pincode: "",
 
       education: "",
+      specialization:"",
       PassingYear: "",
       yearGap: "",
       collegeUniversity: "",
@@ -127,6 +136,7 @@ const ProfileUpdate = () => {
       // prefferedLocation: "",
       sector: "",
       skill: "",
+      prflocation:"",
       experience: "",
       termCondition: false,
     },
@@ -161,13 +171,14 @@ const ProfileUpdate = () => {
           ...(values.experience && { experiences: values.experience }),
 
           education: values.education,
-
+          specialization: values.specialization,
           college: values.collegeUniversity,
           mark: values.CGPAPercentage,
           passingYear: values.PassingYear,
           yearGap: Number(values.yearGap),
 
           // preferredLocations: prefferedLocation,
+          preferredLocations:[values.prflocation.toString()],
           preferredLocationsOther: ["string"],
           otherInfo: "string",
         },
@@ -535,7 +546,7 @@ const ProfileUpdate = () => {
                       ></input>
 
                       <datalist id="education">
-                        {educations.map((val, i) => {
+                        {educationForm.map((val, i) => {
                           return <option key={i} value={val}></option>;
                         })}
                       </datalist>
@@ -543,6 +554,33 @@ const ProfileUpdate = () => {
                     {formik.touched.education && formik.errors.education ? (
                       <p className={styles.error}>{formik.errors.education}</p>
                     ) : null}
+
+                     <div className={styles.inputDiv}>
+                      <span className={styles.icon}>
+                        <b>
+                          Specialization<span className={styles.star}>*</span>
+                        </b>
+                      </span>
+                      <input
+                        className={styles.input}
+                        list="educationList"
+                        placeholder="Specialization"
+                        name="specialization"
+                        onBlur={formik.handleBlur}
+                        value={formik.values.specialization}
+                        onChange={formik.handleChange}
+                      ></input>
+
+                      <datalist id="educationList">
+                        {educations.map((val, i) => {
+                          return <option key={i} value={val}></option>;
+                        })}
+                      </datalist>
+                    </div>
+                    {formik.touched.educationList && formik.errors.educationList ? (
+                      <p className={styles.error}>{formik.errors.educationList}</p>
+                    ) : null}
+
                     <div className={styles.inputDiv}>
                       <span className={styles.icon}>
                         <b> Year Of Passing<span className={styles.star}>*</span></b>
@@ -706,6 +744,32 @@ const ProfileUpdate = () => {
                     {formik.touched.skill && formik.errors.skill ? (
                       <p className={styles.error}>{formik.errors.skill}</p>
                     ) : null}
+                    
+                    <div className={styles.inputDiv}>
+                      <span className={styles.icon}>
+                        <b>
+                        Prefered Location<span className={styles.star}>*</span>
+                        </b>
+                      </span>
+                      <input
+                        
+                        className={styles.input}
+                        list="prflocation"
+                        placeholder="Prefered Location"
+                        name="prflocation"
+                        onBlur={formik.handleBlur}
+                        value={formik.values.prflocation}
+                        onChange={formik.handleChange}
+                      ></input>
+
+                      <datalist    id="prflocation">
+                        {state.map((val, i) => {
+                          return <option key={i} value={val}></option>;
+                        })}
+                      </datalist>
+                      
+                    </div>
+                       
 
                     <div className={styles.inputDiv}>
                       <span className={styles.icon}>

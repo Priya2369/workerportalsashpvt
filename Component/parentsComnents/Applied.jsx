@@ -74,7 +74,12 @@ const Applied = () => {
                     </div>
                     <div className={styles.location}>
                       <LocationOnIcon fontSize="small" />
-                      &nbsp;&nbsp;{val.project.location.split(",")[1]}
+                      &nbsp;&nbsp;{typeof val.project.location === 'object'?
+                  val.project.location.map((loc, id)=>{ 
+                    return <span key={id}>{loc},</span>
+                  })
+                  :val.project.location
+                  }
                     </div>
 
                     <div className={styles.time}>

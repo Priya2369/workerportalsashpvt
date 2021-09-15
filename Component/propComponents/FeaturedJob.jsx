@@ -51,7 +51,7 @@ export default function FeaturedJob(props) {
             <button
               className={styles.apply}
 
-              //  onClick={handleLogin}
+              //onClick={handleLogin}
             >
               <b>Apply</b>
             </button>

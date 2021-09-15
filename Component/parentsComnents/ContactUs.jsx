@@ -220,7 +220,7 @@ export default function ContactUs() {
           <ul className={styles.ul}>
             <FontAwesomeIcon icon={faMap} className={styles.map} />
             <ul className={styles.loc}>
-              plot N3/447,IRC Village,<br></br>
+              Plot N3/447,IRC Village,<br></br>
               Bhubaneswar,Odisha-751018(IN)<br></br>
               <br></br>
             </ul>

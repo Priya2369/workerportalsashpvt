@@ -95,6 +95,7 @@
     margin-left: 32vh;
     float: right;
     margin-top: -40px;
+    cursor: pointer;
 }
 /* .btnn button:hover{
     background-color:rgb(74, 74, 141);

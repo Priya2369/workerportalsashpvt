@@ -46,7 +46,7 @@
 .name{
   display: flex;
   margin-top: 10px;
-  font-size: 10px;
+  font-size: 17px;
   
 }
 /* .dats{
@@ -140,6 +140,7 @@ font-size:unset;
  }
  .hover{
    color: #0056a2;
+   cursor: pointer;
  }
  .p{
   
@@ -260,7 +261,7 @@ font-size:unset;
   background-color:#0056a2;
   margin-left: 87px;
   margin-bottom: 30px;
-  
+  cursor: pointer;
 }
 
 

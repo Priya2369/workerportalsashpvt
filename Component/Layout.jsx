@@ -33,7 +33,7 @@ const Layout = ({ children }) => {
   const [catagories, setCatagories] = useState();
   const [location, setLocation] = useState("");
   const [jobType, setJobType] = useState("");
-  const [sortJob, setSortJob] = useState("");
+  const [sortJob, setSortJob] = useState("desc");
 
   //   state for filter job search
 

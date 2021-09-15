@@ -183,7 +183,12 @@ const Singlejob = () => {
               <br />
               <li className={styles.li}>
                 <LocationOnOutlinedIcon />
-                &nbsp;<b>{singleJob.location}</b>
+                &nbsp;<b>{typeof singleJob.location === 'object'?
+                  singleJob.location.map((loc, id)=>{
+                    return <span key={id}>{loc},</span>
+                  })
+                  :singleJob.location
+                  }</b>
               </li>
               <br />
               <li className={styles.li}>
@@ -206,7 +211,7 @@ const Singlejob = () => {
               <div className={styles.pos}>
                 <EventAvailableIcon />
                 &nbsp;&nbsp;<b>Posted Date</b>&nbsp; &nbsp; &nbsp;
-                &nbsp;:&nbsp;&nbsp;<b>1 Mar 2021</b>
+                &nbsp;:&nbsp;&nbsp;<b>{singleJob.createdAt.split("T")[0]}</b>
               </div>
               <div className={styles.vac}>
                 <AssessmentIcon />

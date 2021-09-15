@@ -51,12 +51,12 @@ if(!email){
 
 // validation for address
 if(!address){
-    errors.address = "address is required"
+    errors.address = "Address is required"
 }
 
 // validation for education
 if(!education){
-   errors.education = " please fill your education"
+   errors.education = "Education is required"
 }
 
 

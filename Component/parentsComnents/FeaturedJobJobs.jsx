@@ -72,7 +72,13 @@ export default function FeaturedJobJobs() {
                       <div key={id}>{skill.skill}</div>
                     )
                   })}
-                  location={item.location}
+                  location={typeof item.location === 'object'?
+                  item.location.map((loc, id)=>{
+                    return <span key={id}>{loc},</span>
+                  })
+                  :item.location
+                  }
+
                   salary={item.requirements.map((requ, id) => {
                     return (
                       <div key={id}>
