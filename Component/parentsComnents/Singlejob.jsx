@@ -13,7 +13,7 @@ import AssessmentIcon from "@material-ui/icons/Assessment";
 import ScheduleIcon from "@material-ui/icons/Schedule";
 import ClearIcon from "@material-ui/icons/Clear";
 import CheckIcon from "@material-ui/icons/Check";
-import VisibilityIcon from "@material-ui/icons/Visibility";
+import SaveJob from '../propComponents/SaveJob'
 import FavoriteIcon from "@material-ui/icons/Favorite";
 
 toast.configure();
@@ -21,11 +21,12 @@ toast.configure();
 const Singlejob = () => {
   const cookies = new Cookies();
 
-  const { singleJob, setSingleJob, id, setId } = useContext(userContext);
+  const { singleJob, setSingleJob, id } = useContext(userContext);
   const [projectId, setProjectId] = useState(singleJob._id);
   // console.log(singleJob);
-// console.log(projectId)
+  // console.log(projectId)
   useEffect(() => {
+    if(id && (id!==singleJob._id)) {
     async function getJobByID() {
       if (cookies.get("access_token")) {
         try {
@@ -41,21 +42,16 @@ const Singlejob = () => {
               authorization: getCookies(),
             },
           });
-          // console.log(res.data.project);
-          // console.log(res.data);
-          // console.log(res.data.project.contactDetails);
+        
           setSingleJob(res.data.project);
-          
         } catch (error) {
-          // console.log(error.message);
-          // if(error.message = "Request failed with status code 401"){
-          // router.push('/signup');
-          // }
+        console.log(error)
         }
-      } 
+      }
     }
 
     getJobByID();
+  }
   }, []);
 
   async function applyJob(e) {
@@ -65,10 +61,10 @@ const Singlejob = () => {
       //  console.log(coookieValue)
       const reqUrl =
         API_CONSTANTS.baseUrl +
-        API_CONSTANTS.enrollment.WORKER_APPLY_PROJRCT +
+        API_CONSTANTS.project.APPLY_PROJECT +
         singleJob._id;
 
-      const res = await axios.post(
+      const res = await axios.put(
         reqUrl,
         {},
         {
@@ -78,8 +74,8 @@ const Singlejob = () => {
         }
       );
       // console.log(res.data.projectData.value);
-      localStorage.setItem("user_info",JSON.stringify(res.data.projectData.value))
-      // console.log(res.response.data)
+      // localStorage.setItem("user_info",JSON.stringify(res.data.projectData.value))
+      console.log(res);
       if (res.data.message === "Project apply successful") {
         toast.success("Project apply successful", {
           hideProgressBar: true,
@@ -93,8 +89,9 @@ const Singlejob = () => {
       }
     } catch (error) {
       // console.log(error.response.data.statusCode);
-      if (error.response.data.statusCode === 422) {
-        toast.error("already applied", {
+      console.log(error);
+      if (error.response) {
+        toast.error(error.response.data.message, {
           hideProgressBar: true,
           closeOnClick: true,
           pauseOnHover: true,
@@ -152,21 +149,13 @@ const Singlejob = () => {
         <div className={styles.sigjob}>
           {/* jobcard */}
           <div className={styles.ARAPL}>
-            {/* <div className={styles.flexi}>
-              <div className={styles.visible}>
-                <VisibilityIcon fontSize="small" />
-              </div>
-              <div className={styles.favr}>
-                <FavoriteIcon fontSize="small" />
-              </div>
-              <button
-                type="button"
-                className={styles.Submit}
-                onClick={(e) => applyJob(e)}
-              >
-                Apply Now
-              </button>
-            </div> */}
+            <div className={styles.flexi}>
+              
+              {/* <div className={styles.favr}>
+                <SaveJob />
+              </div> */}
+             
+            </div>
 
             <ul className={styles.ul}>
               <li className={styles.li}>
@@ -183,16 +172,17 @@ const Singlejob = () => {
               <br />
               <li className={styles.li}>
                 <LocationOnOutlinedIcon />
-                &nbsp;<b>{typeof singleJob.location === 'object'?
-                  singleJob.location.map((loc, id)=>{
-                    return <span key={id}>{loc},</span>
-                  })
-                  :singleJob.location
-                  }</b>
+                &nbsp;
+                <b>
+                  {typeof singleJob.location === "object"
+                    ? singleJob.location.map((loc, id) => {
+                        return <span key={id}>{loc},</span>;
+                      })
+                    : singleJob.location}
+                </b>
               </li>
               <br />
               <li className={styles.li}>
-               
                 <span>
                   <b>₹</b>
                 </span>
@@ -334,22 +324,22 @@ const Singlejob = () => {
                 </div>
                 {/* <p>projectid{singleJob._id}</p> */}
               </div>
-              <button
-                type="button"
-                className={styles.Submit}
-                onClick={(e) => applyJob(e)}
-              >
-                Apply Now
-              </button>
+              <div className={styles.butDiv}>
+                <button
+                  type="button"
+                  className={styles.Submit}
+                  onClick={(e) => applyJob(e)}
+                >
+                  Apply Now
+                </button>
+              </div>
             </div>
           </div>
 
           {/* Job Description */}
           <div className={styles.Description}>
             <h2 className={styles.h2}>Job Description</h2>
-            <p className={styles.p}>
-              {singleJob.description}
-            </p>
+            <p className={styles.p}>{singleJob.description}</p>
           </div>
         </div>
       ) : (

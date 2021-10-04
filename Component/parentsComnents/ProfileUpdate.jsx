@@ -171,7 +171,7 @@ const ProfileUpdate = () => {
           ...(values.experience && { experiences: values.experience }),
 
           education: values.education,
-          specialization: values.specialization,
+          ...(values.specialization&&{specialization: values.specialization}),
           college: values.collegeUniversity,
           mark: values.CGPAPercentage,
           passingYear: values.PassingYear,
@@ -288,17 +288,17 @@ const ProfileUpdate = () => {
           {applied ? (
             <div className={styles.right} onClick={(e) => onApplied(e)}>
               <LaptopIcon />
-              <div className={styles.marg}>
+              {/* <div className={styles.marg}>
                 <span className={styles.applied}> {applied.length}</span>
-              </div>
+              </div> */}
               &nbsp;&nbsp;&nbsp;Applied Job &nbsp;&nbsp;
             </div>
           ) : (
             <div className={styles.right} onClick={(e) => onApplied(e)}>
               <LaptopIcon />
-              <div className={styles.marg}>
+              {/* <div className={styles.marg}>
                 <span className={styles.applied}> 0</span>
-              </div>
+              </div> */}
               &nbsp;&nbsp;&nbsp;Applied Job &nbsp;&nbsp;
             </div>
           )}
@@ -445,7 +445,7 @@ const ProfileUpdate = () => {
                           value={formik.values.gender}
                           onChange={formik.handleChange}
                         >
-                          <option value="gender">Gender</option>
+                         
                           <option value="female">Female</option>
                           <option value="male">Male</option>
                           <option value="other">Other</option>
@@ -456,22 +456,7 @@ const ProfileUpdate = () => {
                       ) : null}
                     </div>
 
-                    {/* <div className={styles.inputDiv}>
-                      <span className={styles.icon}>
-                        <b>Age</b>
-                      </span>
-                      <input
-                        className={styles.input}
-                        type="number"
-                        placeholder={"Age"}
-                        onBlur={formik.handleBlur}
-                        name="age"
-                        value={formik.values.age}
-                        onChange={formik.handleChange}
-                        readOnly
-                      />
-                    </div> */}
-
+                   
                     <div className={styles.inputDiv}>
                       <span className={styles.icon}>
                         <b>E-Mail</b>
@@ -577,8 +562,8 @@ const ProfileUpdate = () => {
                         })}
                       </datalist>
                     </div>
-                    {formik.touched.educationList && formik.errors.educationList ? (
-                      <p className={styles.error}>{formik.errors.educationList}</p>
+                    {formik.touched.specialization && formik.errors.specialization ? (
+                      <p className={styles.error}>{formik.errors.specialization}</p>
                     ) : null}
 
                     <div className={styles.inputDiv}>
@@ -754,7 +739,7 @@ const ProfileUpdate = () => {
                       <input
                         
                         className={styles.input}
-                        list="prflocation"
+                        list="Prefered"
                         placeholder="Prefered Location"
                         name="prflocation"
                         onBlur={formik.handleBlur}
@@ -762,14 +747,17 @@ const ProfileUpdate = () => {
                         onChange={formik.handleChange}
                       ></input>
 
-                      <datalist    id="prflocation">
+                      <datalist    id="Prefered">
                         {state.map((val, i) => {
                           return <option key={i} value={val}></option>;
                         })}
                       </datalist>
                       
                     </div>
-                       
+                    {formik.touched.prflocation && formik.errors.prflocation ? (
+                      <p className={styles.error}>{formik.errors.prflocation}</p>
+                    ) : null}
+                    
 
                     <div className={styles.inputDiv}>
                       <span className={styles.icon}>

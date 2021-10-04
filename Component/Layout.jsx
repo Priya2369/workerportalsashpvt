@@ -19,7 +19,7 @@ const Layout = ({ children }) => {
   const [id, setId] = useState();
 
   // state for store single job details
-  const [singleJob, setSingleJob] = useState({});
+  const [singleJob, setSingleJob] = useState(false);
   const [state, dispatch] = useReducer(reducer, initialState);
   const [searchLocation, setSearchLocation] = useState("");
   const [searchJob, setSearchJob] = useState("");

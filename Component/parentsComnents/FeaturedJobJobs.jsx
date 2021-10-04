@@ -70,6 +70,7 @@ export default function FeaturedJobJobs() {
                   skill={item.requirements.map((skill, id)=>{
                     return(
                       <div key={id}>{skill.skill}</div>
+                    
                     )
                   })}
                   location={typeof item.location === 'object'?

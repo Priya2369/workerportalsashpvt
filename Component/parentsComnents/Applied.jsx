@@ -6,7 +6,12 @@ import LocationOnIcon from "@material-ui/icons/LocationOn";
 import ScheduleIcon from "@material-ui/icons/Schedule";
 import LaptopIcon from "@material-ui/icons/Laptop";
 import Tooltip from "@material-ui/core/Tooltip";
+import {API_CONSTANTS} from '../config/apiConstant'
 import { useRouter } from "next/router";
+import axios from "axios";
+import {getCookies} from '../config/FirebaseToken'
+
+
 const Applied = () => {
   const router = useRouter();
   const { detail, singleUser, applied, setApplied, setSingleJob, setId } =
@@ -14,34 +19,40 @@ const Applied = () => {
   const [applyJob, setApplyJob] = useState(false);
   // const [jobid, setjobId] = useState(val.project._id)
   useEffect(() => {
-    try {
-      const data = JSON.parse(localStorage.getItem("user_info"));
-
-      if (data) {
-        setApplyJob(data.appliedProject);
-      }
-    } catch (error) {
-      // console.log(error);
-    }
+    
+      async function getData() {
+        console.log("get api call .......................")
+       
+          try {
+           
+  
+            const reqUrl = API_CONSTANTS.baseUrl+ API_CONSTANTS.project.SEARCH_APPLIED_PROJECTS
+            const res = await axios.get(reqUrl, {
+              headers: {
+                // authorization:cookies.get('access_token') ,
+                 authorization:getCookies() ,
+              },
+            
+            });
+            console.log(res)
+            console.log(res.data.projects)
+            setApplyJob(res.data.projects)
+          } catch (error) {
+            // console.log(error);
+          }
+        }
+     
+      
+      getData();
+   
   }, []);
 
-  let appliedJob;
-
-  if (applyJob) {
-    appliedJob = applyJob.map((val, id) => {
-      return <div key={id}>{val.project}</div>;
-    });
-    // console.log(appliedJob);
-  }
+  
   let viewDetails;
-  // const viewDetails= ()=>{
-
-  // console.log(jobid)
-  // setSingleJob(appliedJob.project._id)
-  // }
+  
   return (
     <>
-      {applyJob &&  applyJob.length != 0 && Object.keys(appliedJob).length != 0 ? (
+      {applyJob &&  applyJob.length != 0  ? (
         <div>
           <div className={styles.headerDiv}>
             <p>You've applied on {applyJob.length} jobs so far. Good luck.</p>
@@ -50,14 +61,15 @@ const Applied = () => {
           {applyJob.map((val, id) => {
             return (
               <div className={styles.Body}>
-                {val.project?<div key={id} className={styles.mainDiv}>
+                {/* {val.project && val.project!== null? */}
+                <div key={id} className={styles.mainDiv}>
                   <div className={styles.right}>
                     <Tooltip title="View Jobs" placement="top">
                       <div
                         onClick={
                           (viewDetails = () => {
                             router.push("./companies");
-                            setId(val.project._id);
+                            setSingleJob(val);
                           })
                         }
                         className={styles.viewDiv}
@@ -70,24 +82,25 @@ const Applied = () => {
                   <div className={styles.left}>
                     <div className={styles.work}>
                       <LaptopIcon fontSize="small" />
-                      &nbsp;&nbsp;{val.project.title}
+                      &nbsp;&nbsp;{val.title}
                     </div>
                     <div className={styles.location}>
                       <LocationOnIcon fontSize="small" />
-                      &nbsp;&nbsp;{typeof val.project.location === 'object'?
-                  val.project.location.map((loc, id)=>{ 
+                      &nbsp;&nbsp;{typeof val.location === 'object'?
+                  val.location.map((loc, id)=>{ 
                     return <span key={id}>{loc},</span>
                   })
-                  :val.project.location
+                  :val.location
                   }
                     </div>
 
                     <div className={styles.time}>
                       <ScheduleIcon fontSize="small" />
-                      &nbsp;&nbsp;Applied on {val.appliedOn.split("T")[0]}
+                      &nbsp;&nbsp;Applied on {val.workerApplications.appliedOn.split("T")[0]}
                     </div>
                   </div>
-                </div>:<div className={styles.mainDiv}>Unfortunately data has been deleted </div>}
+                </div>
+                {/* :<div className={styles.mainDiv}>Unfortunately data has been deleted </div>} */}
               </div>
             );
           })}

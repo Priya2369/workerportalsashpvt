@@ -12,7 +12,7 @@ const Validation = values =>{
         age,
         email,
         address,
-        
+        prflocation,
         education,
         specialization,
         PassingYear,
@@ -20,7 +20,7 @@ const Validation = values =>{
         collegeUniversity,
         CGPAPercentage,
         interestArea,
-        prefferedLocation,
+       
         sector,
         skill,
         experience,
@@ -100,14 +100,17 @@ if(!skill){
     errors.skill = "Please Fill The Field"
 }
 
+if(!prflocation){
+    errors.prflocation = "Please Fill The Preferred Location"
+}
+
 if(experience>40 || experience<0 ){
     errors.experience = "Must be a safe number"
 }
 
-
-
-
-
+if(!specialization){
+    errors.specialization = "Please Fill The specialization"
+}
 return errors
 
 }
