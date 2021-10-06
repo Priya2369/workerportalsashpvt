@@ -21,6 +21,7 @@ import { useRouter } from "next/router";
 import SkillSector from "../array/skillSector";
 import skills from "../array/skill";
 import { calculateAge } from "../config/calculateAge";
+import ProfileImage from "../propComponents/ProfileImage";
 
 import { Link } from "react-scroll";
 // import {StickyContainer, Sticky} from 'react-sticky'
@@ -255,7 +256,8 @@ const ProfileUpdate = () => {
         <div className={styles.Header}>
           <div className={styles.left}>
             <div className={styles.imgs}>
-              <img src="./4.png" />
+              {/* <img src="./4.png" /> */}
+              <ProfileImage/>
             </div>
             <div className={styles.dats}>
               {profileName.name ? (
