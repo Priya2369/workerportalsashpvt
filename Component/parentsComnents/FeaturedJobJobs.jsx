@@ -57,7 +57,7 @@ export default function FeaturedJobJobs() {
     <>
       {items.length ===0?<div className={styles.dataErrorCard}>
         
-        <img className={styles.serachImg} src='./job-search-svg-png-icon-free-download-543505-onlinewebfontscom-job-search-png-980_982.png'/>
+        <img className={styles.serachImg} src='./NoDataFound.png'/>
         <p>No data found with current search</p></div>:<div>
         
         {items.map((item, id) => {

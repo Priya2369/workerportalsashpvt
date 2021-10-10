@@ -1,0 +1,36 @@
+.mainDiv{
+    display: grid;
+    text-align: center;
+    font-weight: bolder;
+    
+}
+.mainDiv span {
+    margin-bottom: 15px;
+}
+.inptDiv{
+    margin-bottom:15px;
+    margin-left: auto;
+}
+.input{
+    display: none; 
+}
+/* .fulDiv{
+   
+    width:600px;
+    height: 400px;
+} */
+.cam{
+   
+    width: 60px;
+    height:60px;
+    border-radius: 50%;
+    background-color: rgb(160, 160, 207);
+    color: rgb(253, 252, 250);
+}
+.btnDiv{
+    display: grid;
+}
+.btnDiv span{
+    font-weight: normal;
+    
+}

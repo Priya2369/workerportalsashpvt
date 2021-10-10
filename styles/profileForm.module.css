@@ -41,7 +41,8 @@
   width: 100px;
   height: 100px;
   margin-top: 10px;
-  border: 1px solid black;
+  border-radius: 50%;
+  
 }
 .name{
   display: flex;

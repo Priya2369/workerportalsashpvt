@@ -103,11 +103,11 @@
 	align-items: center;
 	font-family: 'Merriweather Sans', sans-serif;
   margin-left: 10px;
-  border: 1px solid black;
+
   }
   .serachImg{
-    height: 200px;
-    width: 200px;
+    height: 500px;
+    width: 600px;
   }
   .pagination{
     /* border: 1px solid black; */
