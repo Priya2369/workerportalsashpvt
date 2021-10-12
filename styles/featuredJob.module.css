@@ -103,7 +103,7 @@
 	align-items: center;
 	font-family: 'Merriweather Sans', sans-serif;
   margin-left: 10px;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   }
   .serachImg{
     height: 200px;

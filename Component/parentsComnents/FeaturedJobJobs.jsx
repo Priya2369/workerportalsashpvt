@@ -9,9 +9,9 @@ import {getCookies} from '../config/FirebaseToken'
 import {API_CONSTANTS} from '../config/apiConstant'
 import SkipPreviousIcon from '@material-ui/icons/SkipPrevious';
 import SkipNextIcon from '@material-ui/icons/SkipNext';
-
+import LoadingSpinner from '../propComponents/ReactSpinner'
 export default function FeaturedJobJobs() {
-  const [items, setItems] = useState([]);
+  const [items, setItems] = useState(false);
   const [clean,setClean]=useState(false);
   const [page, setPage] = useState(0);
   const [count, setCount] = useState("");
@@ -27,7 +27,7 @@ export default function FeaturedJobJobs() {
             page: page,
             limit: 10,
             sort:"createdAt",
-            ...(sortJob && {sortOrder:sortJob}),
+            sortOrder:"desc",
             ...(searchJob && {sectors:searchJob}),
             ...(searchLocation && {location:searchLocation}),
             ...(jobType && {employmentType:jobType}),
@@ -52,15 +52,17 @@ export default function FeaturedJobJobs() {
    
     
     getData();
-  }, [searchLocation,searchJob, jobType,sortJob,page, clean]);
+  }, [searchLocation,searchJob, jobType,page, clean]);
   return (
     <>
-      {items.length ===0?<div className={styles.dataErrorCard}>
+      {!items?<div className={styles.dataErrorCard}>
+        <LoadingSpinner/></div>
         
-        <img className={styles.serachImg} src='./job-search-svg-png-icon-free-download-543505-onlinewebfontscom-job-search-png-980_982.png'/>
-        <p>No data found with current search</p></div>:<div>
+       
         
-        {items.map((item, id) => {
+        :<>
+        {items.length === 0?<> <img className={styles.serachImg} src='./job-search-svg-png-icon-free-download-543505-onlinewebfontscom-job-search-png-980_982.png'/>
+        <p>No data found with current search</p> </>:<div>{items.map((item, id) => {
             return (
               <div key={id}>
                 <FeaturedJob
@@ -99,8 +101,9 @@ export default function FeaturedJobJobs() {
                 />
               </div>
             );
-          })}
-      </div>}
+          })}</div>}
+       
+      </>}
       {count>0?<div className={styles.pagination}>
         {page>0?<div className={styles.prev}><SkipPreviousIcon  className={styles.butt} fontSize="large" onClick={() =>setPage(page - 1)}/></div>:
         <SkipPreviousIcon  fontSize="large" disabled={true}/>}
