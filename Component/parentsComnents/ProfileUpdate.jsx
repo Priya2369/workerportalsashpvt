@@ -1,4 +1,4 @@
-import { React, useState, useEffect, useContext } from "react";
+import { React, useState, useEffect, useContext, useRef} from "react";
 import { userContext } from "../context/UserContext";
 import { useFormik, FieldArray } from "formik";
 import validation from "../validation/validate";
@@ -21,6 +21,8 @@ import { useRouter } from "next/router";
 import SkillSector from "../array/skillSector";
 import skills from "../array/skill";
 import { calculateAge } from "../config/calculateAge";
+import Avatar from '../propComponents/Avatar'
+import CvUpload from '../propComponents/CvUpload'
 
 import { Link } from "react-scroll";
 // import {StickyContainer, Sticky} from 'react-sticky'
@@ -34,6 +36,7 @@ const ProfileUpdate = () => {
   const [showProfile, setShowprofile] = useState(true);
   const [showEducation, setShowEducation] = useState(false);
   const [showJobDescription, setShowJobDescription] = useState(false);
+  const [showResume, setShowResume] = useState(false);
   const [showCondition, setShowCondition] = useState(false);
   const [profileName, setProfileName] = useState({});
   const [applied, setApplied] = useState([]);
@@ -254,9 +257,10 @@ const ProfileUpdate = () => {
         {/* profile Header */}
         <div className={styles.Header}>
           <div className={styles.left}>
-            <div className={styles.imgs}>
-              <img src="./4.png" />
-            </div>
+            {/* <div className={styles.imgs}> */}
+              {/* <img src="./4.png" /> */}
+              <Avatar/>
+            {/* </div> */}
             <div className={styles.dats}>
               {profileName.name ? (
                 <div className={styles.name}>
@@ -285,8 +289,10 @@ const ProfileUpdate = () => {
               ) : null}
             </div>
           </div>
+          <div><CvUpload/></div> 
           {applied ? (
             <div className={styles.right} onClick={(e) => onApplied(e)}>
+              
               <LaptopIcon />
               {/* <div className={styles.marg}>
                 <span className={styles.applied}> {applied.length}</span>
@@ -779,6 +785,36 @@ const ProfileUpdate = () => {
                   </div>
                 ) : null}
               </div>
+
+               {/* Form of Resume upload details........................... */}
+               <div className={styles.formOne} id="resumeUpload">
+                <h2
+                  className={styles.hover}
+                  onClick={() => setShowResume(!showResume)}
+                >
+                  Attach Resume
+                </h2>
+
+                {showResume ? (
+                 <div className={styles.r}>
+               
+     <div className={styles.e}>
+         <label className={styles.s}>
+             <div class={styles.u}>
+                
+                 <div className={styles.k}>
+                 <img className={styles.t} src="https://img.freepik.com/free-vector/image-upload-concept-landing-page_52683-27130.jpg?size=338&ext=jpg" alt="freepik image"/>
+                 </div>
+                 <p class="pointer-none text-gray-500 "><span class="text-sm">Drag and drop</span> files here <br /> or <a href="" id="" class="text-blue-600 hover:underline">select a file</a> </p>
+                
+             </div>
+             <input type="file"  class={styles.m}></input>
+         </label>
+     </div>
+ </div>
+                ) : null}
+              </div>
+              {/* Attach  resume end */}
 
               <div className={styles.buttonDiv}>
                 <button type="submit" className={styles.button}>

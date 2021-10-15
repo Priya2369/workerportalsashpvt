@@ -94,8 +94,8 @@
     margin-bottom: -22px;
   }
   .dataErrorCard{
-    height: 80vh;
-	width: 50vw;
+    height: 500px;
+	width: 800px;
 	background: #fff;
 	display: flex;
 	flex-direction: column;
@@ -103,7 +103,11 @@
 	align-items: center;
 	font-family: 'Merriweather Sans', sans-serif;
   margin-left: 10px;
-  border: 1px solid black;
+  border-radius:10px;
+  /* border: 1px solid black; */
+
+  --tw-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
   .serachImg{
     height: 200px;

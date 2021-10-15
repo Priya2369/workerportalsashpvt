@@ -34,7 +34,8 @@ export const API_CONSTANTS = {
     UPDATE_MANPOWER: "/enrollment/update",
     SELF_PROFILE: "/enrollment/self",
     WORKER_APPLY_PROJRCT: "/enrollment/applyjob/",
-    
+    WORKER_PHOTO_UPLOAD: "/enrollment/photo/update",
+    WORKER_CV_UPLOAD:'/enrollment/cv/update'
   },
   contact: {
     CONTACT: "/contact",

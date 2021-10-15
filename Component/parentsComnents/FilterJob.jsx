@@ -67,7 +67,7 @@ export default function FilterJob() {
             {/* <h6 >Job Category</h6> */}
             <input
               list="jobs"
-              placeholder="All Categories"
+              placeholder="Job Title"
               value={jobCatagories}
               onChange={(e) =>
                 setFilterValue({
@@ -142,7 +142,7 @@ export default function FilterJob() {
           
 
           {/* Job sorting........................ */}
-          <div className={styles.radioBtn2}>
+          {/* <div className={styles.radioBtn2}>
             <FormControl component="fieldset">
               <FormLabel component="legend">
                 <b>Sort By Date</b>
@@ -172,7 +172,7 @@ export default function FilterJob() {
                 </div>
               </RadioGroup>
             </FormControl>
-          </div>
+          </div> */}
         </div>
 
         {show ? (

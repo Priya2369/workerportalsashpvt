@@ -1,0 +1,99 @@
+.fulDiv{
+	width:700px;
+    height: 500px;
+  }
+  .cv{
+    width: 30vh;
+    height: 8vh;
+    
+    
+    margin-left: 0px;
+    background-color: #0056a2;
+    border-radius: 5px;
+    border: 0px;
+    cursor: pointer;
+    margin-top: 30px;
+    cursor: pointer;
+    justify-items: center;
+    outline: none;
+  }
+  .cv a{
+    font-size: medium;
+    color: #fff;
+   
+}
+  .hov{
+    margin-left: 20px;
+  }
+  .r{
+   display: flex;
+   align-items: center;
+   justify-items: center;
+   width: 100%;
+
+  }
+  .e{
+    text-align: center;
+    flex-direction: column;
+    display: flex;
+    /* border-radius: 0.5rem; */
+    border-width: 2px;
+    border-style: dashed;
+    --tw-border-opacity: 1;
+border-color: rgba(209, 213, 219, var(--tw-border-opacity));
+    
+    width: 80%;
+    height: 15rem;
+    padding: 2.5rem;
+  }
+  .s{
+    text-align: center;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:100%;
+    height: 100%;
+   
+  }
+  .u{
+    height: 9rem;
+    object-position: center;
+  }
+  .m{
+    width: 120px;
+  height: 50px;
+  border-radius: 6px;
+  border: 0px;
+  color: white;
+  background-color:#0056a2;
+  /* margin-left: 87px; */
+  /* margin-bottom: 30px; */
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  cursor: pointer;
+  align-items: center;
+  margin-left:90px;
+  }
+  
+  .p{
+    margin-top: 0.5rem;
+    margin-left: 2.5rem;
+    height: 1rem;
+    position: relative;
+    width: 15rem;
+    border-radius: 9999px;
+    overflow: hidden;
+   }
+   .g{
+    height: 100%;
+    width: 100%;
+    background-color:rgb(240, 235, 235);
+    position:absolute;
+   }
+   .b{
+     height: 100%;
+     /* width: 80%; */
+     background-color:#0056a2;
+     position:absolute;
+   }

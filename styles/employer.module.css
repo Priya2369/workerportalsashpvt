@@ -1,11 +1,17 @@
 
+
 .ndy{
     display: flex;
     /* margin-left: 72px; */
     justify-content: center;
     width: 100%;
+    /* justify-content: space-between; */
+
+    margin-top:5%;
     
 }
+
+
 
 .circ{
     width: 90px;
@@ -15,57 +21,81 @@
     text-align: center;
     margin-left: 100px;
     margin-top: 40px;
-    
 }
 .first{
-    
-    width:300px;
+   
+    width: 300px;
+    --tw-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+background-color:#36404c
 }
 .secon{
     width: 300px;
-    
+    --tw-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+background-color:#00bea3
 }
 .third{
     width: 300px;
+    --tw-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+   background-color: #79a377;
+   
 }
 .four{
     width: 300px;
+    --tw-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+    background-color:#f1894c
    
+}
+.ndy .numb{
+    
+    margin-top: 30px;
+    /* margin-left: 144px; */
+    text-align: center;
+    color:#fff;
+}
+
+ .names{
+  
+   margin-top: 10px;
+   margin-left: 65px;
+   color:#fff;
+   font-size: 16px;
+   
+}
+ .namej{
+    margin-top: 10px;
+    margin-left: 60px;
+    color:#fff;
+    margin-bottom:15px;
+    font-size: 16px;
+}
+.namee{
+    margin-top: 10px;
+    margin-left: 29px;
+    text-align: center;
+    color:#fff;
+    font-size: 16px;
+}
+.nameh{
+    margin-top: 10px;
+    margin-left: 50px;
+    color:#fff; 
+    font-size: 16px;
 }
 .ndy .circ img{
     width: 100px;
     height: 100px;
-}
-
-.names{
-    text-align: center;
-    margin-top: 20px;
-    margin-left: 0px;
- }
-  .namej{
-     margin-top: 20px;
-     margin-left: 50px;
- }
- .namee{
-     margin-top: 20px;
-     margin-left: 10px;
-     text-align: center;
- }
- .nameh{
-     margin-top: 20px;
-     margin-left: 20px; 
-     text-align: center;
- }
-.numb{
-    margin-top: 30px;
-    /* margin-left: 144px; */
-    text-align: center;
+    color:#fff;
 }
 @media(max-width:736px){
     .ndy{
         display:grid;
         
         margin-top: 50px;
-        
+        margin-bottom: 5px;
     }
+    
 }
