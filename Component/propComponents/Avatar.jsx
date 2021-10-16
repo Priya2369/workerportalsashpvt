@@ -24,6 +24,7 @@ export default function RenderAvatar() {
   const [image, setImage] = useState();
   const [avatar, setAvatar] = useState();
   const [anchorEl, setAnchorEl] = useState(null);
+  const [avtarTrue, setAvtarTrue] = useState(false);
 
   const inputRef = useRef();
 
@@ -43,7 +44,7 @@ export default function RenderAvatar() {
     } catch (error) {
       console.log(error);
     }
-  }, []);
+  }, [avtarTrue]);
 
   //close
 
@@ -81,7 +82,7 @@ export default function RenderAvatar() {
   const handleClose = () => {
     setOpen(false);
   };
-  const props = { image };
+  const props = { image,setAvtarTrue,setOpen };
 
   return (
     <>
@@ -115,9 +116,9 @@ export default function RenderAvatar() {
         aria-labelledby="form-dialog-title"
       >
         <DialogContent className={styles.fulDiv}>
-          {/* <DialogContentText className={styles.fulDiv}> */}
+          
             <ImageCroper {...props} />
-          {/* </DialogContentText> */}
+          
         </DialogContent>
       </Dialog>
       </div>

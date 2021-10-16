@@ -78,6 +78,10 @@ export default function ImageCroper(props) {
           position: "bottom-right",
           autoClose: 5000,
         });
+        
+        props.setAvtarTrue(true)
+        
+        setTimeout(() => props.setOpen(false), 9000);
       } else {
         setLoading(true);
       }
