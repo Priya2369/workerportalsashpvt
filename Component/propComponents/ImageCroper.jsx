@@ -1,5 +1,5 @@
 import { ScaleLoader } from "react-spinners";
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useEffect } from "react";
 import Cropper from "react-easy-crop";
 import Button from "@material-ui/core/Button";
 import styles from "../../styles/imageCroper.module.css";
@@ -52,6 +52,7 @@ export default function ImageCroper(props) {
   };
 
   const uploadImage = async (base64EncodedImage) => {
+    setloader(true);
     try {
       const data = {
         photo: base64EncodedImage,
@@ -67,7 +68,9 @@ export default function ImageCroper(props) {
       });
 
       console.log(res.data);
+      
       if (res.data) {
+        setloader(false);
         localStorage.setItem("user_info", JSON.stringify(res.data.data));
         toast.success("Photo Uploaded sucessfully", {
           hideProgressBar: true,
@@ -81,9 +84,9 @@ export default function ImageCroper(props) {
         
         props.setAvtarTrue(true)
         
-        setTimeout(() => props.setOpen(false), 9000);
+        setOpen(false)
       } else {
-        setLoading(true);
+        setloader(true);
       }
     } catch (error) {
       console.log(error);
@@ -162,7 +165,9 @@ export default function ImageCroper(props) {
           color="secondary"
         />
       </div> */}
+      {/* {loader ?<Spinner />:null} */}
       <div className={styles.btnDiv}>
+      {loader ? <Spinner />:
       <Button
         className={styles.btn}
         variant="contained"
@@ -171,11 +176,11 @@ export default function ImageCroper(props) {
         color="primary"
         component="span"
       >
-        {loader ? <Spinner /> : <b>Upload</b>}
-      </Button>
+        <b>Upload</b>
+      </Button>}
       </div>
 
-      {loader ? <Spinner /> : null}
+      
       </div>
     </>
   );

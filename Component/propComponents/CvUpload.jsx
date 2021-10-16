@@ -17,10 +17,26 @@ export default function CvUpload(props) {
   const [fileName, setFileName] = useState(false);
   const [resume, setResume] = useState(false);
   const [uploadPercentage, setUploadPercentage] = useState(0);
+  const [uploadSuccess, setUploadSuccess] = useState(false);
+  const [uploadedMessage, setUploadedMessage] = useState(false);
 
   const inputRef = useRef();
 
   const triggerFileSelectPopup = () => inputRef.current.click();
+  useEffect(() => {
+    try {
+      const data = JSON.parse(localStorage.getItem("user_info"));
+
+      if (data) {
+        if (data.candidateCV) {
+          setUploadedMessage(true)
+        } 
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }, []);
+
 
   const handleClose = () => {
     setOpen(false);
@@ -45,8 +61,7 @@ export default function CvUpload(props) {
     setOpen(true);
   }
   const onUpload = async (cvData) => {
-    // e.preventDefault();
-    // console.log(resume)
+    setUploadSuccess(false);
     try {
       const data = {
         candidateCV: cvData,
@@ -69,6 +84,7 @@ export default function CvUpload(props) {
       });
       if (res.data) {
         // setTimeout(() => setUploadPercentage(0), 10000);
+        setUploadSuccess(true)
         toast.success("Resume Uploaded sucessfully", {
           hideProgressBar: true,
           closeOnClick: true,
@@ -86,7 +102,7 @@ export default function CvUpload(props) {
       if (error.response) {
         toast.error(error.response.message, {
           hideProgressBar: true,
-          closeOnClick: true,
+          closeOnClick: true, 
           pauseOnHover: true,
           draggable: true,
           progress: undefined,
@@ -110,6 +126,7 @@ export default function CvUpload(props) {
     <>
       <button className={styles.cv} onClick={openCvCard}>
         <a>Upload Your resume</a>
+        
       </button>
 
       <Dialog
@@ -118,7 +135,7 @@ export default function CvUpload(props) {
         aria-labelledby="form-dialog-title"
       >
         <h2 className={styles.hov}>Attach Resume</h2>
-
+        {uploadedMessage?<p>you have already upload your resume</p>:null}
         <DialogContent className={styles.fulDiv}>
           <div className={styles.r}>
             <div className={styles.e}>
@@ -137,13 +154,13 @@ export default function CvUpload(props) {
                     onChange={onSelectFile}
                     style={{ display: "none" }}
                   />
-                  <div className={styles.p}>
+                  {uploadSuccess?<div>done</div>:<div className={styles.p}>
                     <div className={styles.g}></div>
                     <div
                       className={styles.b}
                       style={{ width: `${uploadPercentage}%` }}
                     ></div>
-                  </div>
+                  </div>}
                 </div>
               </div>
               {/* {fileName} */}

@@ -786,35 +786,7 @@ const ProfileUpdate = () => {
                 ) : null}
               </div>
 
-               {/* Form of Resume upload details........................... */}
-               <div className={styles.formOne} id="resumeUpload">
-                <h2
-                  className={styles.hover}
-                  onClick={() => setShowResume(!showResume)}
-                >
-                  Attach Resume
-                </h2>
-
-                {showResume ? (
-                 <div className={styles.r}>
-               
-     <div className={styles.e}>
-         <label className={styles.s}>
-             <div class={styles.u}>
-                
-                 <div className={styles.k}>
-                 <img className={styles.t} src="https://img.freepik.com/free-vector/image-upload-concept-landing-page_52683-27130.jpg?size=338&ext=jpg" alt="freepik image"/>
-                 </div>
-                 <p class="pointer-none text-gray-500 "><span class="text-sm">Drag and drop</span> files here <br /> or <a href="" id="" class="text-blue-600 hover:underline">select a file</a> </p>
-                
-             </div>
-             <input type="file"  class={styles.m}></input>
-         </label>
-     </div>
- </div>
-                ) : null}
-              </div>
-              {/* Attach  resume end */}
+              
 
               <div className={styles.buttonDiv}>
                 <button type="submit" className={styles.button}>

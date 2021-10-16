@@ -37,6 +37,7 @@ export default function RenderAvatar() {
       if (data) {
         if (data.photo) {
           setAvatar(data.photo);
+          setAvtarTrue(false)
         } else {
           setAvatar("./4.png");
         }
@@ -107,7 +108,7 @@ export default function RenderAvatar() {
       >
         <MenuItem onClick={openUploadFile}>Upload</MenuItem>
 
-        <MenuItem onClick={removeUploadimage}>Remove</MenuItem>
+        {/* <MenuItem onClick={removeUploadimage}>Remove</MenuItem> */}
       </Menu>
 
       <Dialog
