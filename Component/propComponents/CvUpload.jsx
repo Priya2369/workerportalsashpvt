@@ -57,7 +57,7 @@ if(event.target.files[0].type==='application/pdf'){
         onUpload(reader.result);
 
 }else{
-  toast.error("file type should be pdf format", {
+  toast.error("File type should be in pdf format.", {
     hideProgressBar: true,
     closeOnClick: true, 
     pauseOnHover: true,
