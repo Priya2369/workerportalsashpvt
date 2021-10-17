@@ -10,6 +10,8 @@ import axios from "axios";
 import Spinner from "./ReactSpinner";
 import UploadFileIcon from "@mui/icons-material/UploadFile";
 import CloseIcon from "@mui/icons-material/Close";
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import DriveFolderUploadIcon from '@mui/icons-material/DriveFolderUpload';
 toast.configure();
 
 export default function CvUpload(props) {
@@ -83,7 +85,7 @@ export default function CvUpload(props) {
         },
       });
       if (res.data) {
-        // setTimeout(() => setUploadPercentage(0), 10000);
+        localStorage.setItem("user_info", JSON.stringify(res.data.data));
         setUploadSuccess(true)
         toast.success("Resume Uploaded sucessfully", {
           hideProgressBar: true,
@@ -124,10 +126,11 @@ export default function CvUpload(props) {
   };
   return (
     <>
-      <button className={styles.cv} onClick={openCvCard}>
-        <a>Upload Your resume</a>
+      <div className={styles.cv} onClick={openCvCard}>
+      <DriveFolderUploadIcon />
+        &nbsp;Upload Resume &nbsp;
         
-      </button>
+      </div>
 
       <Dialog
         open={open}
@@ -135,7 +138,7 @@ export default function CvUpload(props) {
         aria-labelledby="form-dialog-title"
       >
         <h2 className={styles.hov}>Attach Resume</h2>
-        {uploadedMessage?<p>you have already upload your resume</p>:null}
+        {uploadedMessage?<p className={styles.vo}>You have already uploaded your resume</p>:null}
         <DialogContent className={styles.fulDiv}>
           <div className={styles.r}>
             <div className={styles.e}>
@@ -143,9 +146,9 @@ export default function CvUpload(props) {
                 <img className={styles.u} src="./upload.png" alt="image" />
 
                 <div>
-                  <div className={styles.m} onClick={triggerFileSelectPopup}>
+                  <button className={styles.m} onClick={triggerFileSelectPopup}>
                     Select Files
-                  </div>
+                  </button>
 
                   <input
                     type="file"
@@ -154,7 +157,7 @@ export default function CvUpload(props) {
                     onChange={onSelectFile}
                     style={{ display: "none" }}
                   />
-                  {uploadSuccess?<div>done</div>:<div className={styles.p}>
+                  {uploadSuccess?<div className={styles.d}><CheckCircleIcon/></div>:<div className={styles.p}>
                     <div className={styles.g}></div>
                     <div
                       className={styles.b}

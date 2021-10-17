@@ -23,6 +23,7 @@ import skills from "../array/skill";
 import { calculateAge } from "../config/calculateAge";
 import Avatar from '../propComponents/Avatar'
 import CvUpload from '../propComponents/CvUpload'
+import PersonIcon from '@mui/icons-material/Person';
 
 import { Link } from "react-scroll";
 // import {StickyContainer, Sticky} from 'react-sticky'
@@ -264,27 +265,27 @@ const ProfileUpdate = () => {
             <div className={styles.dats}>
               {profileName.name ? (
                 <div className={styles.name}>
-                  <span>
-                    <b>{profileName.name}</b>
-                  </span>
+                  
+                  <PersonIcon />
+                    &nbsp;{profileName.name}
                 </div>
               ) : null}
               {profileName.mobileNumber ? (
                 <div className={styles.phone}>
                   <PhoneEnabledOutlinedIcon fontSize="small" />{" "}
-                  {profileName.mobileNumber}
+                  &nbsp; {profileName.mobileNumber}  &nbsp;
                 </div>
               ) : null}
               {profileName.email ? (
                 <div className={styles.email}>
                   <EmailOutlinedIcon fontSize="small" />
-                  {profileName.email}
+                  &nbsp; {profileName.email} &nbsp;
                 </div>
               ) : null}
               {skill.experiences ? (
                 <div className={styles.exp}>
                   <BusinessCenterOutlinedIcon fontSize="small" />
-                  {skill.experiences} year{" "}
+                  &nbsp; {skill.experiences} year{" "}
                 </div>
               ) : null}
             </div>
@@ -297,7 +298,7 @@ const ProfileUpdate = () => {
               {/* <div className={styles.marg}>
                 <span className={styles.applied}> {applied.length}</span>
               </div> */}
-              &nbsp;&nbsp;&nbsp;Applied Job &nbsp;&nbsp;
+              &nbsp;Applied Job &nbsp;
             </div>
           ) : (
             <div className={styles.right} onClick={(e) => onApplied(e)}>
@@ -305,7 +306,7 @@ const ProfileUpdate = () => {
               {/* <div className={styles.marg}>
                 <span className={styles.applied}> 0</span>
               </div> */}
-              &nbsp;&nbsp;&nbsp;Applied Job &nbsp;&nbsp;
+              &nbsp;Applied Job &nbsp;
             </div>
           )}
         </div>
