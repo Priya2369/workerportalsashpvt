@@ -50,10 +50,23 @@ export default function CvUpload(props) {
       reader.readAsDataURL(event.target.files[0]);
       setFileName(event.target.files[0].name);
       console.log(event.target.files[0]);
+      console.log(event.target.files[0].type)
       reader.addEventListener("load", () => {
         setResume(reader.result);
-
+if(event.target.files[0].type==='application/pdf'){
         onUpload(reader.result);
+
+}else{
+  toast.error("file type should be pdf format", {
+    hideProgressBar: true,
+    closeOnClick: true, 
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    position: "bottom-right",
+    autoClose: 5000,
+  });
+}
       });
       //   setOpen(true);
     }
@@ -85,9 +98,12 @@ export default function CvUpload(props) {
         },
       });
       if (res.data) {
+        if(res.data.photo || res.data.candidateCV){
         localStorage.setItem("user_info", JSON.stringify(res.data.data));
         setUploadSuccess(true)
-        toast.success("Resume Uploaded sucessfully", {
+        }
+        
+        toast.success(res.data.message, {
           hideProgressBar: true,
           closeOnClick: true,
           pauseOnHover: true,
@@ -97,12 +113,13 @@ export default function CvUpload(props) {
           autoClose: 5000,
         });
         setUploadPercentage(0);
+        setOpen(false)
       }
       console.log(res.data);
     } catch (error) {
       console.log(error);
       if (error.response) {
-        toast.error(error.response.message, {
+        toast.error(error.response.data.message, {
           hideProgressBar: true,
           closeOnClick: true, 
           pauseOnHover: true,
