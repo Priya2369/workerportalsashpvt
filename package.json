@@ -44,6 +44,7 @@
 		"react-sticky": "^6.0.3",
 		"react-sticky-box": "^0.9.3",
 		"react-toastify": "^7.0.4",
+		"socket.io-client": "^4.3.2",
 		"universal-cookie": "^4.0.4",
 		"uuid": "^8.3.2",
 		"yup": "^0.32.9"

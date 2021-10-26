@@ -20,6 +20,7 @@ import { API_CONSTANTS } from "../config/apiConstant";
 import { getCookies } from "../config/FirebaseToken";
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import axios from "axios";
+import BellNotification from "../propComponents/BellNotification"
 
 // import StateManager from 'react-select';
 
@@ -102,7 +103,7 @@ const Header_Bottom = () => {
           </nav>
 
           <div className={style.notification}>
-            <NotificationsActiveOutlinedIcon fontSize="small" />
+           <BellNotification/>
           </div>
           <button onClick={(e) => logout(e)} className={navigation.logout}>Logout</button>
           <div className={style.sideBar}>

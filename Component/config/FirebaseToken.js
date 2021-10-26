@@ -163,6 +163,7 @@ export let setCookies = new Promise((resolve, reject) => {
   const cookies = new Cookies();
   console.log("set cookies")
   firebase.auth().onIdTokenChanged(async user => {
+    
     if (user) {
       const token = await user.getIdToken(true);
       cookies.set('access_token', token, { path: '/', maxAge: 60 * 60 });

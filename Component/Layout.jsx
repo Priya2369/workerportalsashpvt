@@ -6,13 +6,18 @@ import Footer from "./Footer";
 import Flex from "./Flex";
 import { userContext } from "../Component/context/UserContext";
 import { initialState, reducer } from "../Component/reducer/UseReducer";
+import socketio from "socket.io-client";
 
-// const userFormLocalStorage = JSON.parse(window.localStorage.getItem("singleUser"));
+// const socket = socketio.connect("http://localhost:8080");
+
 
 const Layout = ({ children }) => {
-  // console.log("layout.....................")
-
-  // state for heade route hide shoe
+  const [socket, setSocket] = useState(null);
+  // useEffect(() => {
+  //   setSocket(socketio.connect("http://localhost:8080"));
+  // }, []);
+  
+  
   const [showHeader, setShowHeader] = useState(false);
 
   // state for single job id
@@ -101,6 +106,7 @@ const Layout = ({ children }) => {
           setApplied,
           showHeader,
           setShowHeader,
+          socket
         }}
       >
         <Header />
