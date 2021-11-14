@@ -37,7 +37,7 @@ export default function FeaturedJobJobs() {
           const reqUrl = API_CONSTANTS.baseUrl+ API_CONSTANTS.project.SEARCH_ALL_PROJECTS_PUBLIC
           const res = await axios.get(reqUrl, {
             headers: {
-              // authorization:cookies.get('access_token') ,
+              
                authorization:getCookies() ,
             },
             params,

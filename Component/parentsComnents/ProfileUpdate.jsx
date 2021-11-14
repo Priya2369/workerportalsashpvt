@@ -7,9 +7,6 @@ import educations from "../array/education";
 import educationForm from '../array/educationForm'
 import state from "../array/state"
 import univercity from "../array/university";
-import { API_CONSTANTS } from "../config/apiConstant";
-import { getCookies } from "../config/FirebaseToken";
-import axios from "axios";
 import styles from "../../styles/profileForm.module.css";
 import { toast } from "react-toastify";
 import CreateOutlinedIcon from "@material-ui/icons/CreateOutlined";
@@ -24,6 +21,10 @@ import { calculateAge } from "../config/calculateAge";
 import Avatar from '../propComponents/Avatar'
 import CvUpload from '../propComponents/CvUpload'
 import PersonIcon from '@mui/icons-material/Person';
+import axios from "axios";
+import {getCookies} from '../config/FirebaseToken'
+import {API_CONSTANTS} from '../config/apiConstant'
+import Loader from '../propComponents/ReactSpinner'
 
 import { Link } from "react-scroll";
 // import {StickyContainer, Sticky} from 'react-sticky'
@@ -37,22 +38,33 @@ const ProfileUpdate = () => {
   const [showProfile, setShowprofile] = useState(true);
   const [showEducation, setShowEducation] = useState(false);
   const [showJobDescription, setShowJobDescription] = useState(false);
-  const [showResume, setShowResume] = useState(false);
-  const [showCondition, setShowCondition] = useState(false);
-  const [profileName, setProfileName] = useState({});
+  const [profileName, setProfileName] = useState(false);
   const [applied, setApplied] = useState([]);
   const [skill, setSkill] = useState([]);
+  const [avtarImage, setAvtarImage] = useState(false);
 
-  // console.log("profile............................");
-
-  // console.log(singleUser);
-
+  
   useEffect(() => {
+    async function getSelfProfile() {
     try {
-      const data = JSON.parse(localStorage.getItem("user_info"));
+      // const data = JSON.parse(localStorage.getItem("user_info"));
+      const reqUrl =API_CONSTANTS.baseUrl + API_CONSTANTS.enrollment.SELF_PROFILE;
+           
 
-      if (data) {
-        setProfileName(data.generalData);
+          const res = await axios.get(reqUrl, {
+            headers: {
+             
+              authorization: getCookies(),
+            },
+          });
+        
+
+      if (res) {
+        const data = res.data.data
+        if(data.photo){
+        setAvtarImage(data.photo)
+        }
+        
         setApplied(data.appliedProject);
         setSkill(data.skillData);
         //  general data custom input
@@ -113,10 +125,14 @@ const ProfileUpdate = () => {
         if (data.skillData.preferredLocations) {
           formik.setFieldValue("prflocation",data.skillData.preferredLocations);
         }
+
+        setProfileName(data.generalData);
       }
     } catch (error) {
       // console.log(error);
     }
+  }
+  getSelfProfile()
   }, []);
 
   const formik = useFormik({
@@ -239,29 +255,23 @@ const ProfileUpdate = () => {
   });
   // map for applied project
   let apply;
-  // if(applied){
-  //   apply= applied.map((appl, id)=>{
-  //     return <p key={id}>{appl.project.title}</p>
-  //   })
-  // }
-
-  // if(formik.errors){
-  //   console.log("error error .......")
-  // }
+  
   function onApplied(e) {
     e.preventDefault();
     router.push("/appliedjob");
   }
+
+
+  const props = {avtarImage}
   return (
     <>
       <div className={styles.body}>
         {/* profile Header */}
         <div className={styles.Header}>
           <div className={styles.left}>
-            {/* <div className={styles.imgs}> */}
-              {/* <img src="./4.png" /> */}
-              <Avatar/>
-            {/* </div> */}
+            
+              <Avatar {...props}/>
+            
             <div className={styles.dats}>
               {profileName.name ? (
                 <div className={styles.name}>
@@ -351,6 +361,7 @@ const ProfileUpdate = () => {
           {/* PROFILE FORM START ............................................ */}
 
           <div className={styles.tab2}>
+          {profileName?
             <form onSubmit={
               formik.handleSubmit}>
               {/* profile information form componets */}
@@ -804,8 +815,11 @@ const ProfileUpdate = () => {
                          
                             <div key={skill.name} >{skill.value}</div>)
                           } */}
+                           
             </form>
+            :<Loader/>}
           </div>
+         
         </div>
       </div>
     </>

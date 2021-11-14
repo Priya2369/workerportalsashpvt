@@ -48,6 +48,10 @@
     color: #777;
     margin-left: -10px;
     margin-top: -55px;
+    /* border: 1px black solid; */
+    overflow: hidden;
+    white-space:nowrap;
+    text-overflow: ellipsis;
   }
   .company{
     margin-left: -10px;
@@ -105,7 +109,23 @@
    background-color:#0056a2;
    cursor: pointer;
   }
+  .company span{
+    margin-right: 70px;
+    margin-left: 10px;
+  }
   
+   .span{
+    padding-right: 75px;
+    padding-left:10px;
+  }
+  .skillr span{
+    margin-right: 44px;
+    margin-left: 14px;
+  }
+  .skillp span {
+    margin-right: 65px;
+    margin-left: 10px;
+  }
   
   .visible{
     margin-top: 5px;
@@ -134,7 +154,7 @@
     }
     .skillsContainer{
       margin-top: 5px;
-      word-wrap: break-word;
+     
       
     }
   }

@@ -71,6 +71,7 @@ export default function ImageCroper(props) {
       
       if (res.data) {
         setloader(false);
+        // props.setAvtar()
         localStorage.setItem("user_info", JSON.stringify(res.data.data));
         toast.success("Photo Uploaded sucessfully", {
           hideProgressBar: true,
@@ -82,7 +83,7 @@ export default function ImageCroper(props) {
           autoClose: 5000,
         });
         
-        props.setAvtarTrue(true)
+        props.setAvtarTrue(res.data.data)
         
         setOpen(false)
       } else {

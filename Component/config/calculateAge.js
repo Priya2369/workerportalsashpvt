@@ -1,3 +1,5 @@
+import Education from '../array/education' 
+ 
  export function calculateAge(bday){
     const birthday = new Date(bday)
     var ageDifMs = Date.now() - birthday.getTime();
@@ -13,4 +15,17 @@ export function valdPassYear(passYear){
     }else{
       return false;
     }
+}
+
+
+export function Specialization(value){
+  const res = Education.filter((val) => {
+        
+    if(val === value){
+      return true;
+    }else{
+      return false;
+    }
+  })
+  console.log(res)
 }

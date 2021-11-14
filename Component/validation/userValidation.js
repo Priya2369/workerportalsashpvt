@@ -1,6 +1,8 @@
 import * as yup from 'yup'
 import { calculateAge } from "../config/calculateAge";
-
+import Specializations from "../array/education";
+import Educations from "../array/educationForm";
+import pincodeList from "../array/pincodeCityDistrictState";
 const Validation = values =>{
     
     let { firstName,
@@ -11,7 +13,7 @@ const Validation = values =>{
         
         email,
         address,
-        
+        specialization,
         education,
         } = values;
 let errors = {};
@@ -52,12 +54,24 @@ if(!email){
 // validation for address
 if(!address){
     errors.address = "Address is required"
-}
+}else if (!pincodeList.includes(address)) {
+    errors.address = "Select from list";
+  }
+
 
 // validation for education
 if(!education){
    errors.education = "Education is required"
-}
+}else if (!Educations.includes(education)) {
+    errors.education = "Select from list";
+  }
+
+
+  if (!specialization) {
+    errors.specialization = "Please Fill The specialization";
+  } else if (!Specializations.includes(specialization)) {
+    errors.specialization = "Select from list";
+  }
 
 
 

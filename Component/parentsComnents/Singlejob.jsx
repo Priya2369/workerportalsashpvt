@@ -38,7 +38,7 @@ const Singlejob = () => {
 
           const res = await axios.get(reqUrl, {
             headers: {
-              // authorization:cookies.get('access_token') ,
+             
               authorization: getCookies(),
             },
           });

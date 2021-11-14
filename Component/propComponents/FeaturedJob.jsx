@@ -58,25 +58,26 @@ export default function FeaturedJob(props) {
           </div>
         </div>
         <div className={styles.skillsContainer}>
-          <div className={styles.company}>
-            <BusinessIcon fontSize="small" />&nbsp;&nbsp;
-            Company &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp; {props.company}
+        <div className={styles.company}>
+            <BusinessIcon fontSize="small"/>
+            
+           <span>Company  </span>{props.company}
           </div>
           <div className={styles.skills}>
-            <DehazeIcon fontSize="small" />&nbsp;&nbsp;
-            Category &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;{props.skill}
+            <DehazeIcon fontSize="small" />
+            <span className={styles.span}>Category   </span>{props.skill}
           </div>
           <div className={styles.skilll}>
-            <LocationOnIcon fontSize="small" />&nbsp;&nbsp;
-            Location &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: &nbsp;{props.location}
+            <LocationOnIcon fontSize="small" />
+            <span className={styles.span}>Location    </span>{props.location}
           </div>
           <div className={styles.skillr}>
             
-           <b>₹</b> &nbsp;&nbsp; Salary Range &nbsp;:&nbsp;&nbsp;{props.salary}
+           <b>₹</b> &nbsp; <span>Salary Range  </span> {props.salary}
           </div>
           <div className={styles.skillp}>
-            <EventAvailableIcon fontSize="small" />&nbsp;&nbsp;
-            Posted on &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp; {props.postedOn}
+            <EventAvailableIcon fontSize="small" />
+            <span>Posted on  </span> {props.postedOn}
           </div>
         </div>
       </div>

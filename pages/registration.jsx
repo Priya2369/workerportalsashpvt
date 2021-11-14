@@ -1,7 +1,6 @@
  
 import NewUser from '../Component/parentsComnents/NewUser'
 import { getCookies } from "../Component/config/FirebaseToken";
-import SignUp from '../Component/parentsComnents/SignUp'
 import { useRouter } from "next/router";
 import {useEffect} from "react"; 
 

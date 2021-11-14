@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   /* background-color: rgb(209, 203, 196); */
-  background-color: whitesmoke;
+  /* background-color: whitesmoke; */
  
 }
 /*Header-----------*/
@@ -69,6 +69,7 @@
    margin-top: 5px;
    width: 20vw;
  font-size:unset;
+ /* border: 1px solid black; */
   
  }
  .exp{
@@ -354,6 +355,9 @@
     position: unset;
     width: 100%;
     margin: auto;
+  }
+  .email{
+    width: 150px
   }
   .dats{
     margin-left: -30px;

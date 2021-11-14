@@ -14,12 +14,11 @@ import DialogContentText from "@material-ui/core/DialogContentText";
 import CameraAltOutlinedIcon from '@material-ui/icons/CameraAltOutlined';
 import Badge from '@material-ui/core/Badge';
 import ImageCroper from "./ImageCroper";
-import * as Yup from "yup";
 
-export default function RenderAvatar() {
-  // const classes = useStyles();
 
-  // Menu
+
+export default function RenderAvatar({avtarImage}) {
+  
   const [open, setOpen] = useState(false);
   const [image, setImage] = useState();
   const [avatar, setAvatar] = useState();
@@ -32,20 +31,26 @@ export default function RenderAvatar() {
 
   useEffect(() => {
     try {
-      const data = JSON.parse(localStorage.getItem("user_info"));
+      // const data = JSON.parse(localStorage.getItem("user_info"));
 
-      if (data) {
-        if (data.photo) {
-          setAvatar(data.photo);
-          setAvtarTrue(false)
+      // if (data) {
+        if (avtarImage || avtarTrue) {
+          console.log(avtarTrue)
+          if(avtarTrue){
+            setAvatar(avtarTrue.photo)
+          }else{
+            if(avtarImage){
+              setAvatar(avtarImage);
+              }
+          }
         } else {
           setAvatar("./4.png");
         }
-      }
+      // }
     } catch (error) {
       console.log(error);
     }
-  }, [avtarTrue]);
+  }, [avtarTrue, avtarImage]);
 
   //close
 
@@ -83,7 +88,7 @@ export default function RenderAvatar() {
   const handleClose = () => {
     setOpen(false);
   };
-  const props = { image,setAvtarTrue,setOpen };
+  const props = { image,setAvtarTrue,setAvatar,setOpen };
 
   return (
     <>

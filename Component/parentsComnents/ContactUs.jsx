@@ -28,9 +28,9 @@ export default function ContactUs() {
     .string()
     .matches(/^[a-z]([a-z,.'-]*)+(\s[a-z,.'-]+)*$/i, 'Please enter valid name')
     .max(40)
-    .required("name is required"),
+    .required("Name is required"),
     email:  Yup.string()
-    .required("email is required")
+    .required("Email is required")
     .email("Enter valid email").trim(),
     No: Yup.string()
     .required("Mobile number is required")
@@ -38,7 +38,7 @@ export default function ContactUs() {
       message: "Please enter valid number.",
       excludeEmptyString: false,
     }),
-    message:Yup.string().required("description is required").trim().min(20).max(100000)
+    message:Yup.string().required("Message is required").trim().min(20).max(100000)
   });
   const formik = useFormik({
     initialValues: {
