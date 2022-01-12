@@ -68,7 +68,7 @@ export default function FeaturedJobJobs() {
                 <FeaturedJob
                 postedOn={item.createdAt.split("T")[0]}
                 id={item._id}
-                  company={item.title}
+                  company={item.companyId? item.companyId.CompanyName: item.title}
                   skill={item.requirements.map((skill, id)=>{
                     return(
                       <div key={id}>{skill.skill}</div>

@@ -12,7 +12,7 @@ import Grid from "@material-ui/core/Grid";
 import AddIcon from "@material-ui/icons/Add";
 import ImportExportIcon from "@material-ui/icons/ImportExport";
 import state from "../array/state";
-import skills from "../array/skill";
+import skills from "../array/skillList";
 
 
 export default function FilterJob() {
@@ -78,7 +78,7 @@ export default function FilterJob() {
             />
             <datalist id="jobs">
               {skills.map((val, i) => {
-                return <option key={i} value={val.value}></option>;
+                return <option key={i} value={val}></option>;
               })}
             </datalist>
 

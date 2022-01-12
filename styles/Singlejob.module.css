@@ -91,22 +91,64 @@
     }
     .pos{
         display: flex;
-        margin-left: 35px;
+       
     }
     .vac{
         display: flex;
-        margin-left: 35px;
-        margin-top: 5px;
+        
+        margin-top: 15px;
     }
     .sch{
         display: flex;
-        margin-left: 35px;
-        margin-top: 5px;
+        
+        margin-top: 15px;
     }
     .sal{
         display: flex;
+       
+        margin-top: 15px;
+    }
+    .divData{
+        width: 720px;
+        margin: auto;
+       
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .skill{
+       display: flex;
+       margin-top: 15px;
+
+    }
+    /* .bskill{
         margin-left: 40px;
-        margin-top: 5px;
+    } */
+    .new{
+        display: flex;
+        margin-top: 15px;
+
+    }
+    .gender{
+        display: flex;
+    }
+    .gen{
+        margin-left: 90px;
+    }
+    .edu{
+        margin-left: 70px;
+    }
+    .jobt{
+        margin-left: 60px;
+    }
+    .tag{
+        margin-left: 117px;
+    }
+    .enghb{
+        margin-left: 73px;
+    }
+    .expb{
+        margin-left:36px ;
     }
     .Submit{
         width: 120px;
@@ -128,9 +170,9 @@
     .trans{
         margin-left: 20px;
     }
-    .canten{
+    /* .canten{
         margin-left: 50px;
-    }
+    } */
     .cookg{
         margin-left: 60px;
     }
@@ -192,6 +234,10 @@
       }
       .true{
           display: flex;
+           width: 720px;
+        margin: auto;
+        justify-content: space-between;
+       
       }
       .false{
           display: flex;
@@ -205,6 +251,10 @@
             margin-left: 0px;
             
             
+        }
+        .divData{
+            display: grid;
+            width: fit-content;
         }
         .ul{
             margin-left: -20px;
@@ -270,7 +320,7 @@
             justify-content: center;
             width: 340;
             /* margin: auto; */
-            border: 1px solid black;
+           
         }
         .Description{
             width: 340px;

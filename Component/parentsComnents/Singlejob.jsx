@@ -13,8 +13,20 @@ import AssessmentIcon from "@material-ui/icons/Assessment";
 import ScheduleIcon from "@material-ui/icons/Schedule";
 import ClearIcon from "@material-ui/icons/Clear";
 import CheckIcon from "@material-ui/icons/Check";
-import SaveJob from '../propComponents/SaveJob'
+import SaveJob from "../propComponents/SaveJob";
+import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import FavoriteIcon from "@material-ui/icons/Favorite";
+
+//Icons
+import GTranslateIcon from "@mui/icons-material/GTranslate";
+import WorkIcon from "@mui/icons-material/Work";
+import PsychologyIcon from "@mui/icons-material/Psychology";
+import MiscellaneousServicesIcon from "@mui/icons-material/MiscellaneousServices";
+import MenuBookIcon from "@mui/icons-material/MenuBook";
+import AccountBalanceIcon from "@mui/icons-material/AccountBalance";
+import AvTimerIcon from "@mui/icons-material/AvTimer";
+import WcIcon from "@mui/icons-material/Wc";
+import BadgeIcon from "@mui/icons-material/Badge";
 
 toast.configure();
 
@@ -26,32 +38,32 @@ const Singlejob = () => {
   // console.log(singleJob);
   // console.log(projectId)
   useEffect(() => {
-    if(id && (id!==singleJob._id)) {
-    async function getJobByID() {
-      if (cookies.get("access_token")) {
-        try {
-          //  console.log(coookieValue)
-          const reqUrl =
-            API_CONSTANTS.baseUrl +
-            API_CONSTANTS.project.SEARCH_OTHER_PROJECT_BY_ID +
-            id;
+    if (id && id !== singleJob._id) {
+      async function getJobByID() {
+        if (cookies.get("access_token")) {
+          try {
+            //  console.log(coookieValue)
+            const reqUrl =
+              API_CONSTANTS.baseUrl +
+              API_CONSTANTS.project.SEARCH_OTHER_PROJECT_BY_ID +
+              id;
 
-          const res = await axios.get(reqUrl, {
-            headers: {
-             
-              authorization: getCookies(),
-            },
-          });
-        
-          setSingleJob(res.data.project);
-        } catch (error) {
-        console.log(error)
+            const res = await axios.get(reqUrl, {
+              headers: {
+                // authorization:cookies.get('access_token') ,
+                authorization: getCookies(),
+              },
+            });
+
+            setSingleJob(res.data.project);
+          } catch (error) {
+            console.log(error);
+          }
         }
       }
-    }
 
-    getJobByID();
-  }
+      getJobByID();
+    }
   }, []);
 
   async function applyJob(e) {
@@ -139,22 +151,113 @@ const Singlejob = () => {
     });
   }
 
+  //Map for English skill
+  let englishs;
+  if (singleJob.requirements) {
+    englishs = singleJob.requirements.map((eng, id) => {
+      return (
+        <div key={id}>
+          <div>{eng.english}</div>
+        </div>
+      );
+    });
+  }
+
+  //Map for experience.......................
+  // let experiance;
+  // if (singleJob.requirements) {
+  //   experiance = singleJob.requirements.map((exp, id) => {
+  //     return (
+  //       <div key={id}>
+  //         <div>{exp.experience}</div>
+  //       </div>
+  //     );
+  //   });
+  // }
+  //Map for experiance in year
+  // let experianceInYear;
+  // if (singleJob.requirements) {
+  //   experianceInYear = singleJob.requirements.map((expy, id) => {
+  //     return (
+  //       <div key={id}>
+  //         <div>{expy.experienceInYear}</div>
+  //       </div>
+  //     );
+  //   });
+  // }
+
+  //map for  minimum Education
+  let minEducation;
+  if (singleJob.requirements) {
+    minEducation = singleJob.requirements.map((mined, id) => {
+      return (
+        <div key={id}>
+          <div>{mined.minimumEducation}</div>
+        </div>
+      );
+    });
+  }
+  //map for skill
+  let skills;
+  if (singleJob.requirements) {
+    skills = singleJob.requirements.map((skil, id) => {
+      return (
+        <div key={id}>
+          <div>{skil.skill}</div>
+        </div>
+      );
+    });
+  }
+  //map for Other Skill
+  let otherskills;
+  if (singleJob.requirements) {
+    otherskills = singleJob.requirements.map((otherskil, id) => {
+      return (
+        <div key={id}>
+          <div>{otherskil.skillOther}</div>
+        </div>
+      );
+    });
+  }
+  //Map for Sector
+  let sectors;
+  if (singleJob.sectors) {
+    sectors = singleJob.sectors.map((sec, id) => {
+      return (
+        <div key={id}>
+          <div>{sec}</div>
+        </div>
+      );
+    });
+  }
+  //Map for natureOfproject
+
+  let natureofprojct;
+  if (singleJob.sectors) {
+    natureofprojct = singleJob.natureOfProject.map((nop, id) => {
+      return (
+        <div key={id}>
+          <div>{nop}</div>
+        </div>
+      );
+    });
+  }
+
   return (
     <>
       {singleJob.title &&
       singleJob.location &&
       singleJob.natureOfEmployment &&
       singleJob.facility &&
+      singleJob.requirements &&
       singleJob.description ? (
         <div className={styles.sigjob}>
           {/* jobcard */}
           <div className={styles.ARAPL}>
             <div className={styles.flexi}>
-              
               {/* <div className={styles.favr}>
                 <SaveJob />
               </div> */}
-             
             </div>
 
             <ul className={styles.ul}>
@@ -167,7 +270,12 @@ const Singlejob = () => {
               <br />
               <li className={styles.li}>
                 <WorkOutlineOutlinedIcon />
-                &nbsp;<b>{singleJob.title}</b>
+                &nbsp;
+                <b>
+                  {singleJob.companyId
+                    ? singleJob.companyId.CompanyName
+                    : singleJob.title}
+                </b>
               </li>
               <br />
               <li className={styles.li}>
@@ -181,6 +289,7 @@ const Singlejob = () => {
                     : singleJob.location}
                 </b>
               </li>
+
               <br />
               <li className={styles.li}>
                 <span>
@@ -198,30 +307,119 @@ const Singlejob = () => {
           <div className={styles.Overview}>
             <h2 className={styles.h2}>Job Overview</h2>
             <div className={styles.div}>
-              <div className={styles.pos}>
-                <EventAvailableIcon />
-                &nbsp;&nbsp;<b>Posted Date</b>&nbsp; &nbsp; &nbsp;
-                &nbsp;:&nbsp;&nbsp;<b>{singleJob.createdAt.split("T")[0]}</b>
-              </div>
-              <div className={styles.vac}>
-                <AssessmentIcon />
-                &nbsp;&nbsp;<b>Vacancy </b> &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: &nbsp;&nbsp;
-                <b>{vacancy}</b>
+              <div className={styles.divData}>
+                <div className={styles.divSec}>
+                  <div className={styles.pos}>
+                    <EventAvailableIcon />
+                    &nbsp;&nbsp;<b>Posted Date</b>&nbsp; &nbsp; &nbsp; &nbsp;
+                    <b>:</b>&nbsp;&nbsp;
+                    <b>{singleJob.createdAt.split("T")[0]}</b>
+                  </div>
+                  <div className={styles.vac}>
+                    <AssessmentIcon />
+                    &nbsp;&nbsp;<b>Vacancy </b> &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>:</b> &nbsp;&nbsp;
+                    <b>{vacancy}</b>
+                  </div>
+
+                  <div className={styles.sch}>
+                    <ScheduleIcon />
+                    &nbsp;&nbsp;<b>Job Nature </b>&nbsp; &nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;<b>:</b> &nbsp;&nbsp;
+                    <b>{natureofprojct}</b>
+                  </div>
+                  <div className={styles.sal}>
+                    &nbsp;
+                    <b>₹ &nbsp;&nbsp; Salary</b> &nbsp; &nbsp;&nbsp;
+                    &nbsp;&nbsp; &nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>:</b>
+                    &nbsp;&nbsp;
+                    <b>{salaryRang}</b>&nbsp;<b>Monthly</b>
+                  </div>
+
+                  {singleJob.requirements[0].english?<div className={styles.new}>
+                    <GTranslateIcon />
+                    &nbsp;
+                    <b>English</b>
+                    <b className={styles.enghb}>:</b>&nbsp; <b>{singleJob.requirements[0].english}</b>
+                  </div>:null}
+                  <div className={styles.new}>
+                    <WorkIcon />
+                    &nbsp;
+                    <b>Experience</b>&nbsp;&nbsp;
+                    <b className={styles.expb}>:</b>&nbsp;
+                    <b>
+                      {singleJob.requirements[0].experienceInYear
+                        ? singleJob.requirements[0].experienceInYear+" Year"
+                        : "Fresher"}
+                    </b>
+                  </div>
+
+                  <div className={styles.skill}>
+                    <PsychologyIcon />
+                    &nbsp;
+                    <b>Skill</b>&nbsp; &nbsp; <b>:</b>&nbsp; &nbsp;{" "}
+                    <b>{skills}</b>
+                  </div>
+
+                  <div className={styles.new}>
+                    <AccountBalanceIcon />
+                    &nbsp;
+                    <b>Sector</b>&nbsp;&nbsp; <b>:</b> &nbsp;&nbsp;
+                    <b>{sectors}</b>
+                  </div>
+                </div>
+
+                <div className={styles.divthrd}>
+                  {/* <div className={styles.new}>
+              <MiscellaneousServicesIcon/>
+                <b>Other Skill</b> : <b>{otherskills}</b>
+               
+              </div> */}
+
+                  {singleJob.gender?<div className={styles.new}>
+                    <WcIcon />
+                    &nbsp;
+                    <b>Gender</b> <b className={styles.gen}>:</b>&nbsp;&nbsp;
+                    <b>{singleJob.gender}</b>
+                  </div>:null}
+                  {singleJob.requirements[0].minimumEducation?<div className={styles.new}>
+                    <MenuBookIcon />
+                    &nbsp;
+                    <b>Education</b> <b className={styles.edu}>:</b>&nbsp;&nbsp;{" "}
+                    <b>{singleJob.requirements[0].minimumEducation}</b>
+                  </div>:null}
+                  {singleJob.natureOfEmployment.jobTiming?<div className={styles.new}>
+                    <AccessTimeIcon />
+                    &nbsp;
+                    <b>Job Timing </b> <b className={styles.jobt}>:</b>{" "}
+                    &nbsp;&nbsp;<b>{singleJob.natureOfEmployment.jobTiming}</b>
+                  </div>:null}
+                  {singleJob.natureOfEmployment.durationInDays?<div className={styles.new}>
+                    <AvTimerIcon />
+                    &nbsp;
+                    <b>
+                      Duration In Days &nbsp;&nbsp; <b>:</b>&nbsp;&nbsp;
+                      {singleJob.natureOfEmployment.durationInDays}
+                    </b>
+                  </div>:null}
+                  {singleJob.tag?<div className={styles.new}>
+                    <BadgeIcon />
+                    &nbsp;
+                    <b>Tag</b> <b className={styles.tag}>:</b>&nbsp;
+                    <b>{singleJob.tag}</b>
+                  </div>:null}
+                  {/* {experiance === "experianced" && (
+                    <div className={styles.new}>
+                      <AccessTimeIcon />
+                      &nbsp;
+                      <b>Experience In Year</b>&nbsp;&nbsp; <b>:</b>&nbsp;{" "}
+                      <b>{experianceInYear}</b>
+                    </div>
+                  )} */}
+                </div>
               </div>
 
-              <div className={styles.sch}>
-                <ScheduleIcon />
-                &nbsp;&nbsp;<b>Job Nature </b>&nbsp; &nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;: &nbsp;&nbsp;
-                <b>{singleJob.natureOfEmployment.employmentType}</b>
-              </div>
-              <div className={styles.sal}>
-                <b>₹ &nbsp;&nbsp; Salary</b> &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
-                &nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;
-                <b>{salaryRang}</b>&nbsp;<b>Monthly</b>
-              </div>
               <div className={styles.trfls}>
                 <div className={styles.true}>
                   <div>
@@ -235,7 +433,19 @@ const Singlejob = () => {
                       </p>
                     )}
                   </div>
-                  <div className={styles.trans}>
+                  <div className={styles.canten}>
+                    {singleJob.facility.workFromHome ? (
+                      <p>
+                        Work From Home: <CheckIcon />
+                      </p>
+                    ) : (
+                      <p>
+                        Work From Home:
+                        <ClearIcon />
+                      </p>
+                    )}
+                  </div>
+                  {/* <div className={styles.trans}>
                     {singleJob.facility.transport ? (
                       <p>
                         transport: <CheckIcon />{" "}
@@ -246,7 +456,7 @@ const Singlejob = () => {
                         <ClearIcon />
                       </p>
                     )}
-                  </div>
+                  </div> */}
                   <div className={styles.canten}>
                     {singleJob.facility.canteen ? (
                       <p>
@@ -259,7 +469,7 @@ const Singlejob = () => {
                       </p>
                     )}
                   </div>
-                  <div className={styles.cookg}>
+                  {/* <div className={styles.cookg}>
                     {singleJob.facility.cookingArea ? (
                       <p>
                         cookingArea: <CheckIcon />
@@ -270,9 +480,7 @@ const Singlejob = () => {
                         <ClearIcon />
                       </p>
                     )}
-                  </div>
-                </div>
-                <div className={styles.false}>
+                  </div> */}
                   <div>
                     {singleJob.facility.medicalCheckup ? (
                       <p>
@@ -285,43 +493,13 @@ const Singlejob = () => {
                       </p>
                     )}
                   </div>
-                  <div>
-                    {singleJob.facility.healthInsurance ? (
-                      <p>
-                        healthInsurance: <CheckIcon />
-                      </p>
-                    ) : (
-                      <p>
-                        healthInsurance:
-                        <ClearIcon />
-                      </p>
-                    )}
-                  </div>
-                  <div>
-                    {singleJob.facility.industrialSafetyGears ? (
-                      <p>
-                        industrialSafetyGears: <CheckIcon />{" "}
-                      </p>
-                    ) : (
-                      <p>
-                        industrialSafetyGears:
-                        <ClearIcon />
-                      </p>
-                    )}
-                  </div>
-                  <div>
-                    {singleJob.facility.overTime ? (
-                      <p>
-                        overTime: <CheckIcon />{" "}
-                      </p>
-                    ) : (
-                      <p>
-                        overTime:
-                        <ClearIcon />
-                      </p>
-                    )}
-                  </div>
                 </div>
+                {/* <div className={styles.false}>
+                
+                  
+                
+               
+                </div> */}
                 {/* <p>projectid{singleJob._id}</p> */}
               </div>
               <div className={styles.butDiv}>
