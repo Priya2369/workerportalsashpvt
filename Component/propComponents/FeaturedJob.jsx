@@ -77,7 +77,7 @@ export default function FeaturedJob(props) {
           </div>
           <div className={styles.skillp}>
             <EventAvailableIcon fontSize="small" />
-            <span>Posted on  </span> {props.postedOn}
+            <span>Posted On  </span> {props.postedOn}
           </div>
         </div>
       </div>

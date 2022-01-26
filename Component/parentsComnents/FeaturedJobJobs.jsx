@@ -69,12 +69,7 @@ export default function FeaturedJobJobs() {
                 postedOn={item.createdAt.split("T")[0]}
                 id={item._id}
                   company={item.companyId? item.companyId.CompanyName: item.title}
-                  skill={item.requirements.map((skill, id)=>{
-                    return(
-                      <div key={id}>{skill.skill}</div>
-                    
-                    )
-                  })}
+                  skill={item.sectors}
                   location={typeof item.location === 'object'?
                   item.location.map((loc, id)=>{
                     return <span key={id}>{loc},</span>

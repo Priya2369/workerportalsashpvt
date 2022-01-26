@@ -245,12 +245,7 @@ const Singlejob = () => {
 
   return (
     <>
-      {singleJob.title &&
-      singleJob.location &&
-      singleJob.natureOfEmployment &&
-      singleJob.facility &&
-      singleJob.requirements &&
-      singleJob.description ? (
+      {singleJob ? (
         <div className={styles.sigjob}>
           {/* jobcard */}
           <div className={styles.ARAPL}>
@@ -359,7 +354,10 @@ const Singlejob = () => {
                     <PsychologyIcon />
                     &nbsp;
                     <b>Skill</b>&nbsp; &nbsp; <b>:</b>&nbsp; &nbsp;{" "}
-                    <b>{skills}</b>
+                    <b>{typeof singleJob.requirements[0].skill === "object"
+                    ? singleJob.requirements[0].skill.map((skil, id) => {
+                        return <span key={id}>{skil} ,</span>;
+                      }):singleJob.requirements[0].skill}</b>
                   </div>
 
                   <div className={styles.new}>
@@ -389,13 +387,13 @@ const Singlejob = () => {
                     <b>Education</b> <b className={styles.edu}>:</b>&nbsp;&nbsp;{" "}
                     <b>{singleJob.requirements[0].minimumEducation}</b>
                   </div>:null}
-                  {singleJob.natureOfEmployment.jobTiming?<div className={styles.new}>
+                  {singleJob.natureOfEmployment && singleJob.natureOfEmployment.jobTiming ?<div className={styles.new}>
                     <AccessTimeIcon />
                     &nbsp;
                     <b>Job Timing </b> <b className={styles.jobt}>:</b>{" "}
                     &nbsp;&nbsp;<b>{singleJob.natureOfEmployment.jobTiming}</b>
                   </div>:null}
-                  {singleJob.natureOfEmployment.durationInDays?<div className={styles.new}>
+                  {singleJob.natureOfEmployment && singleJob.natureOfEmployment.durationInDays?<div className={styles.new}>
                     <AvTimerIcon />
                     &nbsp;
                     <b>

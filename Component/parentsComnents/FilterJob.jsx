@@ -107,7 +107,7 @@ export default function FilterJob() {
         </div>
 
         <div className={styles.radioSection}>
-          <div className={styles.radioBtn1}>
+          {/* <div className={styles.radioBtn1}>
             <FormControl component="fieldset">
               <FormLabel component="legend">
                 <b>JobType</b>
@@ -137,7 +137,7 @@ export default function FilterJob() {
                 </div>
               </RadioGroup>
             </FormControl>
-          </div>
+          </div> */}
 
           
 

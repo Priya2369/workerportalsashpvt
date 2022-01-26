@@ -691,7 +691,8 @@ const education = [
 "XI Science",
 "XII Arts",
 "XII Commerce",
-"XII Science"]
+"XII Science",
+"Other"]
     
     
 
