@@ -70,7 +70,7 @@ const Layout = ({ children }) => {
   return (
     <>
     <Head>
-      <title>Mosahay: Putting people back to work</title>
+      <title>Mosahay: Putting people back to Productive work</title>
     </Head>
       <userContext.Provider
         value={{

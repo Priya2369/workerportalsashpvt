@@ -76,7 +76,10 @@ export default function FeaturedJobJobs() {
                   })
                   :item.location
                   }
-
+                  jobRole={typeof item.requirements[0].skill === "object"
+                  ? item.requirements[0].skill.map((skil, id) => {
+                      return <span key={id}>{skil} ,</span>;
+                    }):item.requirements[0].skill}
                   salary={item.requirements.map((requ, id) => {
                     return (
                       <div key={id}>
