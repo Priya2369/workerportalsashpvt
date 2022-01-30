@@ -47,6 +47,7 @@ export default function AddressForm() {
     },
     validate: validation,
     onSubmit: async (values,{resetForm}) => {
+      console.log("submit start")
       const testDefault = {
         generalData: {
            registerBy: "self",
@@ -55,7 +56,7 @@ export default function AddressForm() {
           // age: Number(values.age),
           gender: values.gender,
           // mobileNumber: phoneNo,
-          email: values.email,
+          ...(values.email && {email: values.email}),
           pinCode: values.address.split(",")[0].trim(),
           address: values.address,
         },
@@ -93,7 +94,11 @@ export default function AddressForm() {
 
         // console.log(res["message"]);
         setShowHeader(true)
+        if(res){
         localStorage.setItem("user_info",JSON.stringify(res.data.profile))
+        resetForm({values:''})
+       router.push('/jobs');
+        }
         
         // console.log("name" + formik.values.passingYear);
       } catch (error) {
@@ -108,8 +113,7 @@ export default function AddressForm() {
           autoClose: 5000,
         });
       }
-       resetForm({values:''})
-       router.push('/jobs');
+       
       //  setNaShow(true)
     },
   })
