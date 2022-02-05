@@ -15,7 +15,7 @@ import ClearIcon from "@material-ui/icons/Clear";
 import CheckIcon from "@material-ui/icons/Check";
 import SaveJob from "../propComponents/SaveJob";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
-import FavoriteIcon from "@material-ui/icons/Favorite";
+import { useRouter } from 'next/router'
 
 //Icons
 import GTranslateIcon from "@mui/icons-material/GTranslate";
@@ -32,11 +32,10 @@ toast.configure();
 
 const Singlejob = () => {
   const cookies = new Cookies();
-
+  const router = useRouter();
   const { singleJob, setSingleJob, id } = useContext(userContext);
   const [projectId, setProjectId] = useState(singleJob._id);
-  // console.log(singleJob);
-  // console.log(projectId)
+  const [applyBtnHide, setApplyBtnHide] = useState(true)
   useEffect(() => {
     if (id && id !== singleJob._id) {
       async function getJobByID() {
@@ -67,6 +66,7 @@ const Singlejob = () => {
   }, []);
 
   async function applyJob(e) {
+    setApplyBtnHide(false)
     e.preventDefault();
     // console.log(projectId)
     try {
@@ -89,7 +89,7 @@ const Singlejob = () => {
       // localStorage.setItem("user_info",JSON.stringify(res.data.projectData.value))
       console.log(res);
       if (res.data.message === "Project apply successful") {
-        toast.success("Project apply successful", {
+        toast.success("Job apply successful", {
           hideProgressBar: true,
           closeOnClick: true,
           pauseOnHover: true,
@@ -98,7 +98,14 @@ const Singlejob = () => {
           position: "bottom-right",
           autoClose: 5000,
         });
+
+        const timer = setTimeout(() => {
+          router.push('/jobs');
+        }, 2000);
+        return () => clearTimeout(timer);
+        
       }
+      setApplyBtnHide(true)
     } catch (error) {
       // console.log(error.response.data.statusCode);
       console.log(error);
@@ -112,6 +119,9 @@ const Singlejob = () => {
           position: "bottom-right",
           autoClose: 5000,
         });
+        const timer = setTimeout(() => {
+          router.push('/jobs');
+        }, 2000);
       }
     }
   }
@@ -163,29 +173,7 @@ const Singlejob = () => {
     });
   }
 
-  //Map for experience.......................
-  // let experiance;
-  // if (singleJob.requirements) {
-  //   experiance = singleJob.requirements.map((exp, id) => {
-  //     return (
-  //       <div key={id}>
-  //         <div>{exp.experience}</div>
-  //       </div>
-  //     );
-  //   });
-  // }
-  //Map for experiance in year
-  // let experianceInYear;
-  // if (singleJob.requirements) {
-  //   experianceInYear = singleJob.requirements.map((expy, id) => {
-  //     return (
-  //       <div key={id}>
-  //         <div>{expy.experienceInYear}</div>
-  //       </div>
-  //     );
-  //   });
-  // }
-
+  
   //map for  minimum Education
   let minEducation;
   if (singleJob.requirements) {
@@ -501,13 +489,13 @@ const Singlejob = () => {
                 {/* <p>projectid{singleJob._id}</p> */}
               </div>
               <div className={styles.butDiv}>
-                <button
+                {applyBtnHide?<button
                   type="button"
                   className={styles.Submit}
                   onClick={(e) => applyJob(e)}
                 >
                   Apply Now
-                </button>
+                </button>:<button type="button" disabled className={styles.Submit}>wait..</button>}
               </div>
             </div>
           </div>
