@@ -17,26 +17,39 @@ import Cookies from "universal-cookie";
 
 export default function FeaturedJob(props) {
   const cookies = new Cookies();
-  const {  setSingleJob,id, setId } = useContext(userContext);
+  const { setSingleJob, id, setId } = useContext(userContext);
   // const [id, setId] = useState();
-  
-  
+
+  function capitalizeFirstLetter(string) {
+    return (
+      string.map((word) => word[0].toUpperCase() + word.slice(1))
+    )
+  }
+
+  function capitalize(arr) {
+    const result = arr.map((element) => {
+      const word = element.split(" ")
+      const capital = word.map((letter) => letter[0].toUpperCase() + letter.slice(1))
+      return capital.join(" ")
+    })
+    return result.toString()
+  }
 
   const router = useRouter();
   const click = async () => {
     // console.log(id);
-    
+
 
     setId(props.id)
     router.push("/companies");
-    
+
   };
   return (
     <>
-     
+
       <div className={styles.jobCard} onClick={click} id={props.id}>
         <div className={styles.main}>
-          
+
           <div className={styles.jobTitle}>
             <b>{props.company}</b>
           </div>
@@ -52,21 +65,21 @@ export default function FeaturedJob(props) {
             <button
               className={styles.apply}
 
-              //onClick={handleLogin}
+            //onClick={handleLogin}
             >
               <b>Apply</b>
             </button>
           </div>
         </div>
         <div className={styles.skillsContainer}>
-        <div className={styles.company}>
-            <BusinessIcon fontSize="small"/>
-            
-           <span>Company  </span>{props.company}
+          <div className={styles.company}>
+            <BusinessIcon fontSize="small" />
+
+            <span>Company  </span>{props.company}
           </div>
           <div className={styles.skills}>
             <DehazeIcon fontSize="small" />
-            <span className={styles.span}>Category   </span>{props.skill}
+            <span className={styles.span}>Category   </span>{capitalize(props.skill)}
           </div>
           <div className={styles.skills}>
             <AssignmentIndIcon fontSize="small" />
@@ -77,8 +90,8 @@ export default function FeaturedJob(props) {
             <span className={styles.span}>Location    </span>{props.location}
           </div>
           <div className={styles.skillr}>
-            
-           <b>₹</b> &nbsp; <span>Salary Range  </span> {props.salary}
+
+            <b>₹</b> &nbsp; <span>Salary Range  </span> {props.salary}
           </div>
           <div className={styles.skillp}>
             <EventAvailableIcon fontSize="small" />

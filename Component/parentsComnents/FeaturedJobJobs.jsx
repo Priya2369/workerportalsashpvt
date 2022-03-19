@@ -17,6 +17,10 @@ export default function FeaturedJobJobs() {
   const [count, setCount] = useState("");
   const {   searchLocation,searchJob,jobType, sortJob,setLocation, setJobType} = useContext(userContext);
   
+  function capitalizeFirstLetter(string) {
+    return string[0].toUpperCase() + string.slice(1);
+}
+
   useEffect(() => {
     async function getData() {
       // if(searchLocation || searchJob|| jobType || shortJob){
@@ -87,8 +91,7 @@ export default function FeaturedJobJobs() {
                           {requ.details.map((sal, id) => {
                             return (
                               <div key={id}>
-                                {sal.salaryPerMonth.minValue}-
-                                {sal.salaryPerMonth.maxValue}
+                                {sal.salaryPerMonth.minValue.toLocaleString()} - {sal.salaryPerMonth.maxValue.toLocaleString()}
                               </div>
                             );
                           })}

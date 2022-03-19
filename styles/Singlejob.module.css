@@ -27,6 +27,22 @@
         background-color: white;
         color: rgb(105, 128, 128);
     }
+
+    .BackButton{
+        background-color: #0056a2;
+        padding: 5px 5px;
+        color: white;
+        border-radius: 18px;
+        border: none;
+        margin-top: 10px;
+        cursor: pointer;
+        margin-left: 91%;
+    }
+    
+    .BackButton:hover{
+        background-color: rgb(119, 115, 196);
+    }
+
     .li span{
         font-size: large;
         margin-left: 5px;
