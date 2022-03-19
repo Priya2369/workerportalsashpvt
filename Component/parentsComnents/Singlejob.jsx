@@ -343,7 +343,7 @@ function capitalizeFirstLetter(string) {
                     <b>
                       {singleJob.requirements[0].experienceInYear
                         ? singleJob.requirements[0].experienceInYear+" Year"
-                        : "Fresher"}
+                        :singleJob.requirements[0].minExperienceInYear&&singleJob.requirements[0].maxExperienceInYear?singleJob.requirements[0].minExperienceInYear +"-"+ singleJob.requirements[0].maxExperienceInYear +" years" :"Fresher"}
                     </b>
                   </div>
 
@@ -376,7 +376,7 @@ function capitalizeFirstLetter(string) {
                     <WcIcon />
                     &nbsp;
                     <b>Gender</b> <b className={styles.gen}>:</b>&nbsp;&nbsp;
-                    <b>{singleJob.gender==="male"?"Male":singleJob.gender==="female"?"Female":"Male/Female"}</b>
+                    <b>{singleJob.gender}</b>
                   </div>:null}
                   {singleJob.requirements[0].minimumEducation?<div className={styles.new}>
                     <MenuBookIcon />
@@ -402,7 +402,7 @@ function capitalizeFirstLetter(string) {
                     <BadgeIcon />
                     &nbsp;
                     <b>Tag</b> <b className={styles.tag}>:</b>&nbsp;
-                    <b>{singleJob.tag === "whitecolar"?"White Collar":"Blue Collar"}</b>
+                    <b>{singleJob.tag === "whitecollar"?"White Collar":"Blue Collar"}</b>
                   </div>:null}
                   {/* {experiance === "experianced" && (
                     <div className={styles.new}>
