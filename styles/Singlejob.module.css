@@ -27,6 +27,22 @@
         background-color: white;
         color: rgb(105, 128, 128);
     }
+
+    .BackButton{
+        background-color: #0056a2;
+        padding: 5px 5px;
+        color: white;
+        border-radius: 18px;
+        border: none;
+        margin-top: 10px;
+        cursor: pointer;
+        margin-left: 91%;
+    }
+    
+    .BackButton:hover{
+        background-color: rgb(119, 115, 196);
+    }
+
     .li span{
         font-size: large;
         margin-left: 5px;
@@ -75,6 +91,7 @@
     .Overview h2{
        margin-left: 45px;
        word-wrap:break-word;
+       color: #ff6600;
     }
     .Overview p{
         margin-left: 40px;
@@ -198,8 +215,11 @@
         text-align: center;
         word-wrap:break-word;
         
-        
+        color:#ff6600;
     }
+    /* .icon{
+        color:#53b427;
+    } */
     .Description p{
         margin-left: 50px;
         word-wrap:break-word;

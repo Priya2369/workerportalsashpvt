@@ -15,6 +15,7 @@ import ClearIcon from "@material-ui/icons/Clear";
 import CheckIcon from "@material-ui/icons/Check";
 import SaveJob from "../propComponents/SaveJob";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { useRouter } from 'next/router'
 
 //Icons
@@ -36,6 +37,7 @@ const Singlejob = () => {
   const { singleJob, setSingleJob, id } = useContext(userContext);
   const [projectId, setProjectId] = useState(singleJob._id);
   const [applyBtnHide, setApplyBtnHide] = useState(true)
+
   useEffect(() => {
     if (id && id !== singleJob._id) {
       async function getJobByID() {
@@ -64,6 +66,10 @@ const Singlejob = () => {
       getJobByID();
     }
   }, []);
+
+function capitalizeFirstLetter(string) {
+  return string[0].toUpperCase() + string.slice(1);
+}
 
   async function applyJob(e) {
     setApplyBtnHide(false)
@@ -135,7 +141,7 @@ const Singlejob = () => {
             {requ.details.map((sal, id) => {
               return (
                 <div key={id}>
-                  {sal.salaryPerMonth.minValue}-{sal.salaryPerMonth.maxValue}
+                  {sal.salaryPerMonth.minValue.toLocaleString()} - {sal.salaryPerMonth.maxValue.toLocaleString()}
                 </div>
               );
             })}
@@ -213,7 +219,7 @@ const Singlejob = () => {
     sectors = singleJob.sectors.map((sec, id) => {
       return (
         <div key={id}>
-          <div>{sec}</div>
+          <div>{sec.charAt(0).toUpperCase() + sec.substring(1).toLowerCase()}</div>
         </div>
       );
     });
@@ -242,7 +248,10 @@ const Singlejob = () => {
                 <SaveJob />
               </div> */}
             </div>
-
+            
+            <ArrowBackIcon fontSize="large" className={styles.BackButton}
+                            onClick={() => { router.push("./jobs"); }} />
+            
             <ul className={styles.ul}>
               <li className={styles.li}>
                 <div className={styles.Square}>
@@ -252,7 +261,7 @@ const Singlejob = () => {
               <br />
               <br />
               <li className={styles.li}>
-                <WorkOutlineOutlinedIcon />
+                <WorkOutlineOutlinedIcon className={styles.icon}/>
                 &nbsp;
                 <b>
                   {singleJob.companyId
@@ -309,7 +318,7 @@ const Singlejob = () => {
                     <ScheduleIcon />
                     &nbsp;&nbsp;<b>Job Nature </b>&nbsp; &nbsp;&nbsp;
                     &nbsp;&nbsp;&nbsp;&nbsp;<b>:</b> &nbsp;&nbsp;
-                    <b>{natureofprojct}</b>
+                    <b>{natureofprojct[0]}</b>
                   </div>
                   <div className={styles.sal}>
                     &nbsp;
@@ -324,7 +333,7 @@ const Singlejob = () => {
                     <GTranslateIcon />
                     &nbsp;
                     <b>English</b>
-                    <b className={styles.enghb}>:</b>&nbsp; <b>{singleJob.requirements[0].english}</b>
+                    <b className={styles.enghb}>:</b>&nbsp; <b>{capitalizeFirstLetter(singleJob.requirements[0].english)}</b>
                   </div>:null}
                   <div className={styles.new}>
                     <WorkIcon />
@@ -367,7 +376,7 @@ const Singlejob = () => {
                     <WcIcon />
                     &nbsp;
                     <b>Gender</b> <b className={styles.gen}>:</b>&nbsp;&nbsp;
-                    <b>{singleJob.gender}</b>
+                    <b>{singleJob.gender==="male"?"Male":singleJob.gender==="female"?"Female":"Male/Female"}</b>
                   </div>:null}
                   {singleJob.requirements[0].minimumEducation?<div className={styles.new}>
                     <MenuBookIcon />
@@ -393,7 +402,7 @@ const Singlejob = () => {
                     <BadgeIcon />
                     &nbsp;
                     <b>Tag</b> <b className={styles.tag}>:</b>&nbsp;
-                    <b>{singleJob.tag}</b>
+                    <b>{singleJob.tag === "whitecolar"?"White Collar":"Blue Collar"}</b>
                   </div>:null}
                   {/* {experiance === "experianced" && (
                     <div className={styles.new}>
@@ -411,11 +420,11 @@ const Singlejob = () => {
                   <div>
                     {singleJob.facility.accommodation ? (
                       <p>
-                        accommodation: <CheckIcon />{" "}
+                        Accommodation: <CheckIcon />{" "}
                       </p>
                     ) : (
                       <p>
-                        accommodation: <ClearIcon />
+                        Accommodation: <ClearIcon />
                       </p>
                     )}
                   </div>
@@ -446,11 +455,11 @@ const Singlejob = () => {
                   <div className={styles.canten}>
                     {singleJob.facility.canteen ? (
                       <p>
-                        canteen: <CheckIcon />
+                        Canteen: <CheckIcon />
                       </p>
                     ) : (
                       <p>
-                        canteen:
+                        Canteen:
                         <ClearIcon />
                       </p>
                     )}
@@ -470,11 +479,11 @@ const Singlejob = () => {
                   <div>
                     {singleJob.facility.medicalCheckup ? (
                       <p>
-                        medicalCheckup: <CheckIcon />{" "}
+                        MedicalCheckup: <CheckIcon />{" "}
                       </p>
                     ) : (
                       <p>
-                        medicalCheckup:
+                        MedicalCheckup:
                         <ClearIcon />
                       </p>
                     )}
