@@ -13,6 +13,7 @@ import VisibilityIcon from "@material-ui/icons/Visibility";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import { API_CONSTANTS } from "../config/apiConstant";
 import AssignmentIndIcon from '@mui/icons-material/AssignmentInd';
+import AttributionIcon from '@mui/icons-material/Attribution';
 import Cookies from "universal-cookie";
 
 export default function FeaturedJob(props) {
@@ -81,10 +82,14 @@ export default function FeaturedJob(props) {
             <DehazeIcon fontSize="small" />
             <span className={styles.span}>Category   </span>{capitalize(props.skill)}
           </div>
-          <div className={styles.skills}>
+          {props.jobRole&&<div className={styles.skills}>
             <AssignmentIndIcon fontSize="small" />
             <span className={styles.span}>Job Role  </span>{props.jobRole}
-          </div>
+          </div>}
+          {/* <div className={styles.skilll}>
+            <AttributionIcon fontSize="small"/>
+            <span className={styles.span}>skill    </span>{props.skills}
+          </div> */}
           <div className={styles.skilll}>
             <LocationOnIcon fontSize="small" />
             <span className={styles.span}>Location    </span>{props.location}

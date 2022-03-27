@@ -353,7 +353,7 @@ function capitalizeFirstLetter(string) {
                     <b>Skill</b>&nbsp; &nbsp; <b>:</b>&nbsp; &nbsp;{" "}
                     <b>{typeof singleJob.requirements[0].skill === "object"
                     ? singleJob.requirements[0].skill.map((skil, id) => {
-                        return <span key={id}>{skil} ,</span>;
+                        return <span key={id}>{skil==="Other"?"not":skil} ,</span>;
                       }):singleJob.requirements[0].skill}</b>
                   </div>
 

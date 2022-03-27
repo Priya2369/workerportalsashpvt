@@ -1,6 +1,6 @@
 export const API_CONSTANTS = {
-    baseUrl: "https://adminproductionproject.el.r.appspot.com/api/v1",
-    //  baseUrl: 'http://localhost:8080/api/v1',
+    // baseUrl: "https://adminproductionproject.el.r.appspot.com/api/v1",
+     baseUrl: 'http://localhost:8080/api/v1',
     // baseUrl:'https://mosahay-production.el.r.appspot.com/api/v1',
 
   businessUser: {

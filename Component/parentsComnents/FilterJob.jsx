@@ -11,39 +11,52 @@ import FormLabel from "@material-ui/core/FormLabel";
 import Grid from "@material-ui/core/Grid";
 import AddIcon from "@material-ui/icons/Add";
 import ImportExportIcon from "@material-ui/icons/ImportExport";
+import { SECTORSCONSTANTS } from "../Array/sectorsConstants";
+import { SKILLS } from "../Array/skills";
 import state from "../array/state";
 import skills from "../array/skillList";
-
+import { JOBROLE_CONSTANTS } from "../Array/JobRole";
 
 export default function FilterJob() {
   const {
     getfilterValue,
     setFilterValue,
     jobCatagories,
-    jobLocation,
+    jobLocation,jobRoles,
+    jobSkill,
+
     setSearchLocation,
     setSearchJob,
     jobTypes,
     sorting,
     setJobType,
     setSortJob,
+    skill,
+    setSkill,
+    jobRole,
+    setJobRole,
+    searchSkill,
+    setSearchSkill,
+    searchJobRole,
+    setSearchJobRole,
   } = useContext(userContext);
 
   const [show, setShow] = useState(true);
 
   function SearchFilter(e) {
     e.preventDefault();
-
+    setSearchSkill(jobSkill);
+    setSearchJobRole(jobRoles);
     setSearchJob(jobCatagories);
     setSearchLocation(jobLocation);
     setJobType(jobTypes);
     setSortJob(sorting);
-    setShow(false)
+    setShow(false);
   }
 
   function clearAll(e) {
     e.preventDefault();
-    setShow(true)
+    setShow(true);
     setFilterValue({
       jobCatagories: "",
       jobTypes: "",
@@ -52,6 +65,8 @@ export default function FilterJob() {
       postedWithin: "",
       salary: "",
       sorting: "",
+      jobSkill: "",
+      jobRoles:""
     });
     setSearchJob();
     setSearchLocation();
@@ -67,7 +82,7 @@ export default function FilterJob() {
             {/* <h6 >Job Category</h6> */}
             <input
               list="jobs"
-              placeholder="Job Title"
+              placeholder="Category/sector"
               value={jobCatagories}
               onChange={(e) =>
                 setFilterValue({
@@ -77,11 +92,44 @@ export default function FilterJob() {
               }
             />
             <datalist id="jobs">
-              {skills.map((val, i) => {
+              {SECTORSCONSTANTS.map((val, i) => {
                 return <option key={i} value={val}></option>;
               })}
             </datalist>
-
+            {/* input list for skill */}
+            <input
+              list="skills"
+              placeholder="skill"
+              value={jobSkill}
+              onChange={(e) =>
+                setFilterValue({
+                  ...getfilterValue,
+                  jobSkill: e.target.value,
+                })
+              }
+            />
+            <datalist id="skills">
+              {SKILLS.map((val, i) => {
+                return <option key={i} value={val}></option>;
+              })}
+            </datalist>
+            {/* input list for job role or title */}
+            <input
+              list="role"
+              placeholder="Job Role/ Title"
+              value={jobRoles}
+              onChange={(e) =>
+                setFilterValue({
+                  ...getfilterValue,
+                  jobRoles: e.target.value,
+                })
+              }
+            />
+            <datalist id="role">
+              {JOBROLE_CONSTANTS.map((val, i) => {
+                return <option key={i} value={val}></option>;
+              })}
+            </datalist>
             {/* <h6>Job Location</h6> */}
             <input
               list="locations"
@@ -138,8 +186,6 @@ export default function FilterJob() {
               </RadioGroup>
             </FormControl>
           </div> */}
-
-          
 
           {/* Job sorting........................ */}
           {/* <div className={styles.radioBtn2}>
