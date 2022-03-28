@@ -22,7 +22,7 @@ export default function FilterJob() {
     getfilterValue,
     setFilterValue,
     jobCatagories,
-    jobLocation,jobRoles,
+    jobLocation, jobRoles,
     jobSkill,
 
     setSearchLocation,
@@ -66,7 +66,7 @@ export default function FilterJob() {
       salary: "",
       sorting: "",
       jobSkill: "",
-      jobRoles:""
+      jobRoles: ""
     });
     setSearchJob();
     setSearchLocation();
@@ -78,11 +78,13 @@ export default function FilterJob() {
     <>
       <div className={styles.mainDiv}>
         <div className={styles.first}>
-          <div>
-            {/* <h6 >Job Category</h6> */}
+
+          {/* <h6 >Job Category</h6> */}
+          <div className={styles.form}>
             <input
               list="jobs"
-              placeholder="Category/sector"
+              placeholder=" "
+              className={styles.input}
               value={jobCatagories}
               onChange={(e) =>
                 setFilterValue({
@@ -91,15 +93,19 @@ export default function FilterJob() {
                 })
               }
             />
-            <datalist id="jobs">
-              {SECTORSCONSTANTS.map((val, i) => {
-                return <option key={i} value={val}></option>;
-              })}
-            </datalist>
-            {/* input list for skill */}
+            <label className={styles.label}>Category/sector</label>
+          </div>
+          <datalist id="jobs">
+            {SECTORSCONSTANTS.map((val, i) => {
+              return <option key={i} value={val}></option>;
+            })}
+          </datalist>
+          {/* input list for skill */}
+          <div className={styles.form}>
             <input
               list="skills"
-              placeholder="skill"
+              placeholder=" "
+              className={styles.input}
               value={jobSkill}
               onChange={(e) =>
                 setFilterValue({
@@ -108,15 +114,19 @@ export default function FilterJob() {
                 })
               }
             />
-            <datalist id="skills">
-              {SKILLS.map((val, i) => {
-                return <option key={i} value={val}></option>;
-              })}
-            </datalist>
-            {/* input list for job role or title */}
+            <label className={styles.label}>skill</label>
+          </div>
+          <datalist id="skills">
+            {SKILLS.map((val, i) => {
+              return <option key={i} value={val}></option>;
+            })}
+          </datalist>
+          {/* input list for job role or title */}
+          <div className={styles.form}>
             <input
               list="role"
-              placeholder="Job Role/ Title"
+              placeholder=" "
+              className={styles.input}
               value={jobRoles}
               onChange={(e) =>
                 setFilterValue({
@@ -125,15 +135,19 @@ export default function FilterJob() {
                 })
               }
             />
-            <datalist id="role">
-              {JOBROLE_CONSTANTS.map((val, i) => {
-                return <option key={i} value={val}></option>;
-              })}
-            </datalist>
-            {/* <h6>Job Location</h6> */}
+            <label className={styles.label}>Job Role/ Title</label>
+          </div>
+          <datalist id="role">
+            {JOBROLE_CONSTANTS.map((val, i) => {
+              return <option key={i} value={val}></option>;
+            })}
+          </datalist>
+          {/* <h6>Job Location</h6> */}
+          <div className={styles.form}>
             <input
               list="locations"
-              placeholder="Location"
+              placeholder=" "
+              className={styles.input}
               value={jobLocation}
               onChange={(e) =>
                 setFilterValue({
@@ -142,13 +156,27 @@ export default function FilterJob() {
                 })
               }
             />
-            <br />
-            <datalist id="locations">
-              {state.map((val, i) => {
-                return <option key={i} value={val}></option>;
-              })}
-            </datalist>
+            <label className={styles.label}>Location</label>
           </div>
+          <br />
+          <datalist id="locations">
+            {state.map((val, i) => {
+              return <option key={i} value={val}></option>;
+            })}
+          </datalist>
+          {show ? (
+            <div className={styles.btnn} onClick={(e) => SearchFilter(e)}>
+              <button>
+                <b>Search</b>
+              </button>
+            </div>
+          ) : (
+            <div className={styles.btnn} onClick={clearAll}>
+              <button type="reset">
+                <b>Clear All</b>
+              </button>
+            </div>
+          )}
 
           {/* <div className={styles.btnn1} onClick={clearAll} >
              <button type='reset'>Clear All</button></div> */}
@@ -221,19 +249,7 @@ export default function FilterJob() {
           </div> */}
         </div>
 
-        {show ? (
-          <div className={styles.btnn} onClick={(e) => SearchFilter(e)}>
-            <button>
-              <b>Search</b>
-            </button>
-          </div>
-        ) : (
-          <div className={styles.btnn} onClick={clearAll}>
-            <button type="reset">
-              <b>Clear All</b>
-            </button>
-          </div>
-        )}
+
       </div>
     </>
   );
