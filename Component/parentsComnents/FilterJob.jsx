@@ -15,7 +15,7 @@ import { SECTORSCONSTANTS } from "../array/sectorsConstants";
 import { SKILLS } from "../array/skills";
 import state from "../array/state";
 import skills from "../array/skillList";
-import { JOBROLE_CONSTANTS } from "../Array/JobRole";
+import { JOBROLE_CONSTANTS } from "../array/JobRole";
 
 export default function FilterJob() {
   const {
