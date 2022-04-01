@@ -64,7 +64,7 @@ const Layout = ({ children }) => {
     salary,
     sorting,
     jobRoles,
-    jobSkill
+    jobSkill,
   } = getfilterValue;
 
   //   get single user value for profile update
@@ -98,7 +98,7 @@ const Layout = ({ children }) => {
           setSearchJob,
           jobCatagories,
           jobRoles,
-    jobSkill,
+          jobSkill,
           jobTypes,
           jobLocation,
           experience,

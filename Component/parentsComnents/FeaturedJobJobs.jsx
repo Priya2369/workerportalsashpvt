@@ -19,13 +19,10 @@ export default function FeaturedJobJobs() {
     searchLocation,
     searchJob,
     jobType,
-    sortJob,
     setLocation,
     setJobType,
-    setSearchSkill,
     searchSkill,
     searchJobRole,
-    setSearchJobRole,
   } = useContext(userContext);
 
   function capitalizeFirstLetter(string) {

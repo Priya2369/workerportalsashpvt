@@ -72,6 +72,8 @@ export default function FilterJob() {
     setSearchLocation();
     setJobType();
     setSortJob();
+    setSearchSkill();
+    setSearchJobRole();
   }
 
   return (
