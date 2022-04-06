@@ -16,6 +16,7 @@ import CheckIcon from "@material-ui/icons/Check";
 import SaveJob from "../propComponents/SaveJob";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import { TextField, Button, FormHelperText } from "@material-ui/core";
 import { useRouter } from 'next/router'
 
 //Icons
@@ -512,8 +513,24 @@ function capitalizeFirstLetter(string) {
           {/* Job Description */}
           <div className={styles.Description}>
             <h2 className={styles.h2}>Job Description</h2>
-            <p className={styles.p}>{singleJob.description}</p>
+            <p 
+            className={styles.p}
+            >{singleJob.description}</p>
+            {/* <TextField
+                    // as={TextField}
+                    multiline
+                    className={styles.p}
+                    name="description"
+                    required
+                    id="outlined-basic"
+                    disabled
+                    // label="Job Description"
+                    // variant="outlined"
+                    value={singleJob.description}
+                    // error={!!errors.description}
+                  /> */}
           </div>
+          
         </div>
       ) : (
         <div>Loading...................</div>

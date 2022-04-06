@@ -95,11 +95,11 @@ export default function FilterJob() {
                 })
               }
             />
-            <label className={styles.label}>Category/sector</label>
+            <label className={styles.label}>Category/Sector</label>
           </div>
           <datalist id="jobs">
             {SECTORSCONSTANTS.map((val, i) => {
-              return <option key={i} value={val}></option>;
+              return <option key={i} value={val.charAt(0).toUpperCase() + val.slice(1)}></option>;
             })}
           </datalist>
           {/* input list for skill */}
@@ -116,7 +116,7 @@ export default function FilterJob() {
                 })
               }
             />
-            <label className={styles.label}>skill</label>
+            <label className={styles.label}>Skill</label>
           </div>
           <datalist id="skills">
             {SKILLS.map((val, i) => {
@@ -141,7 +141,7 @@ export default function FilterJob() {
           </div>
           <datalist id="role">
             {JOBROLE_CONSTANTS.map((val, i) => {
-              return <option key={i} value={val}></option>;
+              return <option key={i} value={val.charAt(0).toUpperCase() + val.slice(1)}></option>;
             })}
           </datalist>
           {/* <h6>Job Location</h6> */}
