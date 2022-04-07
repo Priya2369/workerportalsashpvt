@@ -8,6 +8,7 @@ import { toast } from "react-toastify";
 import axios from "axios";
 import LocationOnOutlinedIcon from "@material-ui/icons/LocationOnOutlined";
 import WorkOutlineOutlinedIcon from "@material-ui/icons/WorkOutlineOutlined";
+import AccountBalanceWalletOutlinedIcon from '@mui/icons-material/AccountBalanceWalletOutlined';
 import EventAvailableIcon from "@material-ui/icons/EventAvailable";
 import AssessmentIcon from "@material-ui/icons/Assessment";
 import ScheduleIcon from "@material-ui/icons/Schedule";
@@ -142,7 +143,7 @@ function capitalizeFirstLetter(string) {
             {requ.details.map((sal, id) => {
               return (
                 <div key={id}>
-                  {sal.salaryPerMonth.minValue.toLocaleString()} - {sal.salaryPerMonth.maxValue.toLocaleString()}
+                 ₹ {sal.salaryPerMonth.minValue.toLocaleString()} - ₹ {sal.salaryPerMonth.maxValue.toLocaleString()}
                 </div>
               );
             })}
@@ -285,9 +286,7 @@ function capitalizeFirstLetter(string) {
 
               <br />
               <li className={styles.li}>
-                <span>
-                  <b>₹</b>
-                </span>
+              <AccountBalanceWalletOutlinedIcon />
                 &nbsp;<b>{salaryRang}</b>
               </li>
             </ul>
@@ -322,8 +321,9 @@ function capitalizeFirstLetter(string) {
                     <b>{natureofprojct[0]}</b>
                   </div>
                   <div className={styles.sal}>
+                  <AccountBalanceWalletOutlinedIcon />
                     &nbsp;
-                    <b>₹ &nbsp;&nbsp; Salary</b> &nbsp; &nbsp;&nbsp;
+                    <b>Salary</b> &nbsp; &nbsp;&nbsp;
                     &nbsp;&nbsp; &nbsp;&nbsp;
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>:</b>
                     &nbsp;&nbsp;
@@ -396,7 +396,7 @@ function capitalizeFirstLetter(string) {
                     &nbsp;
                     <b>
                       Duration In Days &nbsp;&nbsp; <b>:</b>&nbsp;&nbsp;
-                      {singleJob.natureOfEmployment.durationInDays}
+                      {singleJob.natureOfEmployment.durationInDays} Days
                     </b>
                   </div>:null}
                   {singleJob.tag?<div className={styles.new}>
@@ -513,13 +513,14 @@ function capitalizeFirstLetter(string) {
           {/* Job Description */}
           <div className={styles.Description}>
             <h2 className={styles.h2}>Job Description</h2>
-            <p 
-            className={styles.p}
-            >{singleJob.description}</p>
-            {/* <TextField
+            {/* <p
+            className={styles.p}>
+            {singleJob.description} </p> */}
+            <div className={styles.p}>
+            <TextField
                     // as={TextField}
                     multiline
-                    className={styles.p}
+                    className={styles.text}
                     name="description"
                     required
                     id="outlined-basic"
@@ -528,7 +529,8 @@ function capitalizeFirstLetter(string) {
                     // variant="outlined"
                     value={singleJob.description}
                     // error={!!errors.description}
-                  /> */}
+                  />
+                  </div>
           </div>
           
         </div>
