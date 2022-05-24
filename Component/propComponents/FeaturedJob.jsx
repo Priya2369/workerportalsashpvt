@@ -52,7 +52,7 @@ export default function FeaturedJob(props) {
         <div className={styles.main}>
 
           <div className={styles.jobTitle}>
-            <b>{props.company}</b>
+            <b>{capitalize(props.skill)}</b>
           </div>
           <div className={styles.flexi}>
             {/* <div className={styles.visible}>
@@ -68,7 +68,7 @@ export default function FeaturedJob(props) {
 
             //onClick={handleLogin}
             >
-              <b>Apply</b>
+              <b>View</b>
             </button>
           </div>
         </div>
