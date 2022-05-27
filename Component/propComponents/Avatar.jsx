@@ -1,13 +1,8 @@
 import { useState, useRef, useEffect } from "react";
 // import "./avatar.css";
 import styles from "../../styles/avatar.module.css";
-import CameraAltIcon from "@material-ui/icons/CameraAlt";
-import { makeStyles } from "@material-ui/core/styles";
-import { IconButton } from "@material-ui/core";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
-import Button from "@material-ui/core/Button";
-import TextField from "@material-ui/core/TextField";
 import Dialog from "@material-ui/core/Dialog";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";

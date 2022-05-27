@@ -11,39 +11,52 @@ import FormLabel from "@material-ui/core/FormLabel";
 import Grid from "@material-ui/core/Grid";
 import AddIcon from "@material-ui/icons/Add";
 import ImportExportIcon from "@material-ui/icons/ImportExport";
+import { SECTORSCONSTANTS } from "../array/sectorsConstants";
+import { SKILLS } from "../array/skills";
 import state from "../array/state";
 import skills from "../array/skillList";
-
+import { JOBROLE_CONSTANTS } from "../array/JobRole";
 
 export default function FilterJob() {
   const {
     getfilterValue,
     setFilterValue,
     jobCatagories,
-    jobLocation,
+    jobLocation, jobRoles,
+    jobSkill,
+
     setSearchLocation,
     setSearchJob,
     jobTypes,
     sorting,
     setJobType,
     setSortJob,
+    skill,
+    setSkill,
+    jobRole,
+    setJobRole,
+    searchSkill,
+    setSearchSkill,
+    searchJobRole,
+    setSearchJobRole,
   } = useContext(userContext);
 
   const [show, setShow] = useState(true);
 
   function SearchFilter(e) {
     e.preventDefault();
-
+    setSearchSkill(jobSkill);
+    setSearchJobRole(jobRoles);
     setSearchJob(jobCatagories);
     setSearchLocation(jobLocation);
     setJobType(jobTypes);
     setSortJob(sorting);
-    setShow(false)
+    setShow(false);
   }
 
   function clearAll(e) {
     e.preventDefault();
-    setShow(true)
+    setShow(true);
     setFilterValue({
       jobCatagories: "",
       jobTypes: "",
@@ -52,22 +65,28 @@ export default function FilterJob() {
       postedWithin: "",
       salary: "",
       sorting: "",
+      jobSkill: "",
+      jobRoles: ""
     });
     setSearchJob();
     setSearchLocation();
     setJobType();
     setSortJob();
+    setSearchSkill();
+    setSearchJobRole();
   }
 
   return (
     <>
       <div className={styles.mainDiv}>
         <div className={styles.first}>
-          <div>
-            {/* <h6 >Job Category</h6> */}
+
+          {/* <h6 >Job Category</h6> */}
+          <div className={styles.form}>
             <input
               list="jobs"
-              placeholder="Job Title"
+              placeholder=" "
+              className={styles.input}
               value={jobCatagories}
               onChange={(e) =>
                 setFilterValue({
@@ -76,16 +95,61 @@ export default function FilterJob() {
                 })
               }
             />
-            <datalist id="jobs">
-              {skills.map((val, i) => {
-                return <option key={i} value={val}></option>;
-              })}
-            </datalist>
-
-            {/* <h6>Job Location</h6> */}
+            <label className={styles.label}>Category/Sector</label>
+          </div>
+          <datalist id="jobs">
+            {SECTORSCONSTANTS.map((val, i) => {
+              return <option key={i} value={val.charAt(0).toUpperCase() + val.slice(1)}></option>;
+            })}
+          </datalist>
+          {/* input list for skill */}
+          <div className={styles.form}>
+            <input
+              list="skills"
+              placeholder=" "
+              className={styles.input}
+              value={jobSkill}
+              onChange={(e) =>
+                setFilterValue({
+                  ...getfilterValue,
+                  jobSkill: e.target.value,
+                })
+              }
+            />
+            <label className={styles.label}>Skill</label>
+          </div>
+          <datalist id="skills">
+            {SKILLS.map((val, i) => {
+              return <option key={i} value={val}></option>;
+            })}
+          </datalist>
+          {/* input list for job role or title */}
+          <div className={styles.form}>
+            <input
+              list="role"
+              placeholder=" "
+              className={styles.input}
+              value={jobRoles}
+              onChange={(e) =>
+                setFilterValue({
+                  ...getfilterValue,
+                  jobRoles: e.target.value,
+                })
+              }
+            />
+            <label className={styles.label}>Job Role/ Title</label>
+          </div>
+          <datalist id="role">
+            {JOBROLE_CONSTANTS.map((val, i) => {
+              return <option key={i} value={val.charAt(0).toUpperCase() + val.slice(1)}></option>;
+            })}
+          </datalist>
+          {/* <h6>Job Location</h6> */}
+          <div className={styles.form}>
             <input
               list="locations"
-              placeholder="Location"
+              placeholder=" "
+              className={styles.input}
               value={jobLocation}
               onChange={(e) =>
                 setFilterValue({
@@ -94,13 +158,27 @@ export default function FilterJob() {
                 })
               }
             />
-            <br />
-            <datalist id="locations">
-              {state.map((val, i) => {
-                return <option key={i} value={val}></option>;
-              })}
-            </datalist>
+            <label className={styles.label}>Location</label>
           </div>
+          <br />
+          <datalist id="locations">
+            {state.map((val, i) => {
+              return <option key={i} value={val}></option>;
+            })}
+          </datalist>
+          {show ? (
+            <div className={styles.btnn} onClick={(e) => SearchFilter(e)}>
+              <button>
+                <b>Search</b>
+              </button>
+            </div>
+          ) : (
+            <div className={styles.btnn} onClick={clearAll}>
+              <button type="reset">
+                <b>Clear All</b>
+              </button>
+            </div>
+          )}
 
           {/* <div className={styles.btnn1} onClick={clearAll} >
              <button type='reset'>Clear All</button></div> */}
@@ -139,8 +217,6 @@ export default function FilterJob() {
             </FormControl>
           </div> */}
 
-          
-
           {/* Job sorting........................ */}
           {/* <div className={styles.radioBtn2}>
             <FormControl component="fieldset">
@@ -175,19 +251,7 @@ export default function FilterJob() {
           </div> */}
         </div>
 
-        {show ? (
-          <div className={styles.btnn} onClick={(e) => SearchFilter(e)}>
-            <button>
-              <b>Search</b>
-            </button>
-          </div>
-        ) : (
-          <div className={styles.btnn} onClick={clearAll}>
-            <button type="reset">
-              <b>Clear All</b>
-            </button>
-          </div>
-        )}
+
       </div>
     </>
   );

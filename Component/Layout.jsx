@@ -10,14 +10,12 @@ import socketio from "socket.io-client";
 
 // const socket = socketio.connect("http://localhost:8080");
 
-
 const Layout = ({ children }) => {
   const [socket, setSocket] = useState(null);
   // useEffect(() => {
   //   setSocket(socketio.connect("http://localhost:8080"));
   // }, []);
-  
-  
+
   const [showHeader, setShowHeader] = useState(false);
 
   // state for single job id
@@ -28,7 +26,9 @@ const Layout = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const [searchLocation, setSearchLocation] = useState("");
   const [searchJob, setSearchJob] = useState("");
+  const [searchSkill, setSearchSkill] = useState("");
 
+  const [searchJobRole, setSearchJobRole] = useState("");
   //   signup state...................
   const [detail, setDetail] = useState({
     phoneNo: "",
@@ -37,6 +37,8 @@ const Layout = ({ children }) => {
   // state for serach component   Search.jsx
   const [catagories, setCatagories] = useState();
   const [location, setLocation] = useState("");
+  const [skill, setSkill] = useState("");
+  const [jobRole, setJobRole] = useState("");
   const [jobType, setJobType] = useState("");
   const [sortJob, setSortJob] = useState("desc");
 
@@ -50,6 +52,8 @@ const Layout = ({ children }) => {
     postedWithin: "",
     salary: "",
     sorting: "",
+    jobRoles: "",
+    jobSkill: "",
   });
   let {
     jobCatagories,
@@ -59,6 +63,8 @@ const Layout = ({ children }) => {
     postedWithin,
     salary,
     sorting,
+    jobRoles,
+    jobSkill,
   } = getfilterValue;
 
   //   get single user value for profile update
@@ -69,9 +75,9 @@ const Layout = ({ children }) => {
 
   return (
     <>
-    <Head>
-      <title>Mosahay: Putting People Back To Productive Work</title>
-    </Head>
+      <Head>
+        <title>Mosahay: Putting People Back To Productive Work</title>
+      </Head>
       <userContext.Provider
         value={{
           state,
@@ -91,6 +97,8 @@ const Layout = ({ children }) => {
           searchJob,
           setSearchJob,
           jobCatagories,
+          jobRoles,
+          jobSkill,
           jobTypes,
           jobLocation,
           experience,
@@ -109,7 +117,16 @@ const Layout = ({ children }) => {
           setApplied,
           showHeader,
           setShowHeader,
-          socket
+          socket,
+          skill,
+          setSkill,
+          jobRole,
+          setJobRole,
+          jobRole,
+          searchSkill,
+          setSearchSkill,
+          searchJobRole,
+          setSearchJobRole,
         }}
       >
         <Header />

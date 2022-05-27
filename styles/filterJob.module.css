@@ -1,7 +1,6 @@
 .mainDiv{
     display: grid;
-  
-    width: 90%;
+    width: 100%;
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
     /* box-shadow: 0 0 2px; */
     border-radius: 10px;
@@ -10,28 +9,57 @@
     margin-bottom: 20px;
     margin-left: 10px;
     /* height: 250px; */
-    width: 800px;
     background-color: white;
 }
 .first{
     display: flex;
-    margin-bottom: 20px;
     justify-content:space-between;
-    margin-left: -30px;
-   
+    
 }
 
-.first input{
+.form{
+    position: relative; 
+}
+
+.label{
+    position: absolute;
+    top: 0.8rem;
+    left: 2rem;
+    cursor: text;
+    font-size: small;
+    pointer-events: none;
+    color: gray;
+    transition: top 200ms ease-in, left 200ms ease-in, font-size 200ms ease-in;
+}
+
+.input:focus ~ .label,
+.input:not(:placeholder-shown).input:not(:focus)~.label{
+    top: -0.5rem;
+    left: 1.2rem;
+    font-size: 11px;
+    background: white;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+.input{
     background: inherit;
     border: 1px solid #ccc;
-    border-radius: 1rem;
-    margin-left: 40px;
-    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-left: 10px;
+    padding: 0.7rem;
     line-height: 1.25rem;
-    width: 200px;
+    width: 250px;
     outline: none;
-    
- 
+    margin-bottom: 5px;
+}
+
+.input:hover{
+    border-color: black;
+}
+
+.input:focus{
+    border: 2px solid green;
 }
 
 .radioSection{
@@ -91,10 +119,9 @@
    border: 0px;
    color: white;
    background-color:#0056a2;
-  
-    margin-left: 32vh;
+    margin-left: 2vh;
     float: right;
-    margin-top: -40px;
+    margin-top: 4px;
     cursor: pointer;
 }
 /* .btnn button:hover{
@@ -105,16 +132,38 @@
     display: grid;
     border: 1px solid black;
 }
+
+@media (max-width:1200px) {
+    .mainDiv{
+        width: fit-content; 
+    }
+    .input{
+        width: 160px;
+        margin-left: 5px;
+    }
+    .btnn button{
+        width: 60px;
+    }
+}
+
 @media (max-width:736px) {
     .mainDiv{
         width: 340px;
-        margin-left: 0;
-        
+        margin-left: 0;  
     }
+
+    .first{
+        flex-direction: column;
+    }
+
+    .form{
+      margin-bottom: 5px;
+    }
+
     .btnn button{
         margin-top: 0;
         float: none;
-        margin-left: 17vh;
+        margin-left: 20vh;
         width: 80px;
     }
     .filterBtn{
@@ -122,6 +171,6 @@
     }
     .first input{
         width: 290px;
-        margin-bottom: 10px;
+        margin-bottom: 10px;  
     }
 }
