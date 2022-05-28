@@ -89,7 +89,7 @@ export default function FeaturedJobJobs() {
               <p>No data found with current search</p>{" "}
             </>
           ) : (
-            <div>
+            <div className={styles.gridview}>
               {items.map((item, id) => {
                 return (
                   <div key={id}>
@@ -103,13 +103,31 @@ export default function FeaturedJobJobs() {
                       location={
                         typeof item.location === "object"
                           ? item.location.map((loc, id) => {
-                              return <span key={id}>{loc},</span>;
-                            })
+                            return <span key={id}>{loc},</span>;
+                          })
                           : item.location
                       }
                       jobRole={
                         item.title
-                        
+
+                      }
+
+                      education={
+                        item.requirements[0].minimumEducation
+                      }
+
+                      vacancy={
+                        item.requirements[0].details[0].noOfPeople + " " + "openings"
+                      }
+
+                      experience={
+                        item.requirements[0].minExperienceInYear &&
+                          item.requirements[0].maxExperienceInYear
+                          ? item.requirements[0].minExperienceInYear +
+                          "-" +
+                          item.requirements[0].maxExperienceInYear +
+                          " years"
+                          : "Fresher"
                       }
                       // skills={
                       //   typeof item.requirements[0].skill === "object"
@@ -125,9 +143,11 @@ export default function FeaturedJobJobs() {
                               {requ.details.map((sal, id) => {
                                 return (
                                   <div key={id}>
-                                    {sal.salaryPerMonth.minValue.toLocaleString()}{" "}
+
+                                    ₹{sal.salaryPerMonth.minValue.toLocaleString()}{" "}
                                     -{" "}
-                                    {sal.salaryPerMonth.maxValue.toLocaleString()}
+
+                                    ₹{sal.salaryPerMonth.maxValue.toLocaleString()}
                                   </div>
                                 );
                               })}

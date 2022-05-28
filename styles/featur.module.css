@@ -1,162 +1,174 @@
 .jobCard {
-    display: grid;
-  
-    width: 90%;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-    /* box-shadow: 0 0 2px; */
-    border-radius: 10px;
-    font-family: 'Helvetica';
-    padding: 14px;
-    margin-bottom: 10px;
-    margin-left: 10px;
-    height: 250px;
-    width: 800px;
-    background-color: white;
+  display: grid;
+  width: 90%;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  /* box-shadow: 0 0 2px; */
+  border-radius: 10px;
+  font-family: 'Helvetica';
+  margin-bottom: 30px;
+  margin-left: 10px;
+  height: 220px;
+  width: 600px;
+  background-color: white;
+}
+
+
+
+.jobCard:hover {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.main {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+
+.flexi {
+  display: flex;
+}
+
+.jobTitle {
+  color: #0056a2;
+  font-size: large;
+  font-weight: 500;
+  font-family: sans-serif;
+
+}
+
+.skillsContainer {
+  font-size: small;
+  align-self: center;
+  padding: 10px 20px;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  color: #777;
+
+  /* border: 1px black solid; */
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.company {
+  display: inline-flex;
+  font-size: large;
+  font-weight: bold;
+  color: rgb(68, 68, 68);
+  padding: 0px 20px;
+}
+
+.skills {
+  display: flex;
+  font-size: large;
+  font-weight: bold;
+  color: rgb(68, 68, 68);
+}
+
+.infodiv {
+  display: flex;
+  align-items: center;
+  font-size: small;
+  padding: 5px 0px;
+}
+
+.skillr {
+  color: rgb(68, 68, 68);
+  font-size: 0.9em;
+  display: flex;
+  margin-top: 2px;
+}
+
+.skillp {
+  background-color: #f1f1f1;
+  color: #777;
+  padding: 5px 0px;
+  font-size: 15px;
+  display: flex;
+  font-size: small;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.main button:hover {
+
+  background-color: rgb(74, 74, 141);
+
+}
+
+.apply {
+  width: 120px;
+  height: 35px;
+  border-radius: 5px;
+  border: 0px;
+  color: white;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  background-color: #0056a2;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.company span {
+  margin-right: 70px;
+  margin-left: 10px;
+}
+
+.span {
+  padding-right: 75px;
+  padding-left: 10px;
+}
+
+
+.visible {
+  margin-top: 5px;
+  margin-right: 20px;
+}
+
+.favr {
+  margin-top: 5px;
+  margin-right: 15px;
+}
+
+.company span {
+  margin-left: 10px;
+}
+
+@media (max-width:1200px) {
+  .jobCard {
+    width: 95%;
+    margin: 10px auto;
+    height: 200px;
   }
 
-  
-
-  .jobCard:hover{
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-  }
-  .main{
-    display: flex;
-    justify-content: space-between;
-    width: 780px;
-   
-  }
-  .flexi{
-    display: flex;
-  }
-  .jobTitle {
-     
-     font-size: 16px;
-     color: #0056a2;
-     align-self: start;
-     font-weight: 500;
-     margin-top: 8px;
-     padding: 0 24px;
-     margin-left: -10px;
-     font-family: sans-serif;
-   
-   }
-   .skillsContainer {
-    font-size: small;
-    align-self: center;
-    padding-top: 10px;
-    padding: 0 24px;
-    color: #777;
-    margin-left: -10px;
-    margin-top: -55px;
-    /* border: 1px black solid; */
-    overflow: hidden;
-    white-space:nowrap;
-    text-overflow: ellipsis;
-  }
-  .company{
-    margin-left: -10px;
-    font-size: 15px;
-    padding: 5px 8px ;
-    display: inline-flex;
-   font-size: small;
-  }
   .skills {
-    margin-left: -10px;
-    padding: 5px 8px;
-    font-size: 15px;
-    display: flex;
-    font-size: small;
+    font-size: medium;
   }
-  
-  .skilll {
-    margin-left: -10px;
-    padding: 5px 8px;
-    font-size: 15px;
-    display: flex;
-    font-size: small;
-  }
-  
+
   .skillr {
-    margin-left: -5px;
-    padding: 5px 8px;
-    font-size: 15px;
-    display: flex;
-    font-size: small;
-    
-  }
-  
-  .skillp {
-    margin-left: -10px;
-    padding: 5px 8px;
-    font-size: 15px;
-    display: flex;
-    font-size: small;
-  }
-  .main button:hover{
-    
-      background-color: rgb(74, 74, 141);
-    
-  }
-  .apply{
-   
-   margin-top: 2px;
-   width: 120px;
-   height: 35px;
-   border-radius: 5px;
-   border: 0px;
-   color: white;
-   margin-right: 7px;
-   background-color:#0056a2;
-   cursor: pointer;
-  }
-  .company span{
-    margin-right: 70px;
-    margin-left: 10px;
-  }
-  
-   .span{
-    padding-right: 75px;
-    padding-left:10px;
-  }
-  .skillr span{
-    margin-right: 44px;
-    margin-left: 14px;
-  }
-  .skillp span {
-    margin-right: 65px;
-    margin-left: 10px;
-  }
-  
-  .visible{
-    margin-top: 5px;
-    margin-right: 20px;
-  }
-  .favr{
-    margin-top: 5px;
-    margin-right: 15px;
-  }
-  .company span{
-    margin-left: 10px;
-  }
-  
-  @media (max-width:736px){
-    .jobCard{
-      width: 340px;
-      margin-left: 0px;
+    font-size: 0.8em;
 
-    }
-    .main{
-      width: 320px;
-
-    }
-    .apply{
-      width:80px;
-    }
-    .skillsContainer{
-      margin-top: 5px;
-     
-      
-    }
   }
- 
-  
+
+  .company {
+    font-size: medium;
+    padding: 0px 20px;
+  }
+
+  .apply {
+    width: 80px;
+  }
+
+  .skillsContainer {
+    margin-top: 5px;
+    grid-template-columns: auto auto;
+  }
+
+  .infodiv {
+    font-size: 0.9em;
+  }
+
+}
