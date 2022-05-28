@@ -16,13 +16,15 @@
 
     justify-content: center;
 }
-
+.input[type="text"][disabled] {
+    color: red;
+ }
 .ARAPL {
     box-shadow: 0 0 5px rgb(228, 222, 215);
     width: 100%;
     word-wrap: break-word;
     height: fit-content;
-    background-image: url("C:\Users\mohit\Desktop\workerportalsashpvt\public\slide08.jpg");
+    background-image: url("../public/slide08.jpg");
     background-repeat: no-repeat, repeat;
     background-size: cover;
     background-position: center;

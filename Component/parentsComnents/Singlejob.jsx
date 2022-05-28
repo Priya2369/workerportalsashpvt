@@ -620,7 +620,8 @@ const Singlejob = () => {
                 name="description"
                 required
                 id="outlined-basic"
-                disabled
+                // disabled
+                readonly="readonly"
                 // label="Job Description"
                 // variant="outlined"
                 value={singleJob.description}
