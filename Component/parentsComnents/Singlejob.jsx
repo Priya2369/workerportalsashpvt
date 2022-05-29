@@ -21,6 +21,7 @@ import HourglassEmptyIcon from '@mui/icons-material/HourglassEmpty';
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { TextField, Button, FormHelperText } from "@material-ui/core";
 import { useRouter } from "next/router";
+import TextareaAutosize from '@mui/material/TextareaAutosize';
 
 //Icons
 import GTranslateIcon from "@mui/icons-material/GTranslate";
@@ -35,6 +36,10 @@ import BadgeIcon from "@mui/icons-material/Badge";
 import { style } from "@mui/system";
 
 toast.configure();
+
+const fontColor = {
+  style: { color: 'rgb(50, 50, 50)' }
+}
 
 const Singlejob = () => {
   const cookies = new Cookies();
@@ -621,12 +626,12 @@ const Singlejob = () => {
                 required
                 id="outlined-basic"
                 disabled
+                inputProps={fontColor}
                 // label="Job Description"
                 // variant="outlined"
                 value={singleJob.description}
               // error={!!errors.description}
               />
-
             </div>
           </div>
         </div>
