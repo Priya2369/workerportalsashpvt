@@ -22,10 +22,10 @@
     width: 100%;
     word-wrap: break-word;
     height: fit-content;
-    background-image: url("C:\Users\mohit\Desktop\workerportalsashpvt\public\slide08.jpg");
+    background-image: url("../public/singleJob.jpg");
     background-repeat: no-repeat, repeat;
     background-size: cover;
-    background-position: center;
+    background-position: 50% 30%;
     padding: 10px 20px;
     display: flex;
     justify-content: space-between;
@@ -49,24 +49,27 @@
 }
 
 .BackButton {
-    background-color: #1ba633;
+    background-color: transparent;
     padding: 5px 5px;
     color: white;
-    border: none;
+    border: 2px solid white;
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 120px;
+    width: 160px;
     margin: 5px auto;
-    height: 40px;
+    height: 50px;
     border-radius: 5px;
     margin-bottom: 5px;
     font-size: medium;
 }
 
 .BackButton:hover {
-    background-color: rgb(143, 188, 143);
+    background-color: #1ba633;
+    border: none;
+    transition: 0.2s;
+    transition-timing-function: ease-in;
 }
 
 .divelement {
@@ -102,7 +105,6 @@
     font-size: 250%;
     display: flex;
     color: white;
-
 }
 
 .flexi {
@@ -129,7 +131,7 @@
     justify-items: center;
     margin-top: -30px;
     background-color: white;
-    color: rgb(105, 128, 128);
+    color: rgb(49, 68, 90);
     padding: 10px 30px;
     /* margin-left: 25px; */
 }
@@ -158,7 +160,7 @@
 }
 
 .Submit {
-    width: 150px;
+    width: 160px;
     height: 50px;
     border-radius: 5px;
     border: 0px;
@@ -167,6 +169,7 @@
     margin-bottom: 8px;
     cursor: pointer;
     font-size: medium;
+    font-weight: bold;
 }
 
 .Submit:hover {
@@ -181,6 +184,7 @@
     justify-content: space-between;
     align-items: flex-end;
     width: 30%;
+    padding: 0px 10px;
 }
 
 .vac {
@@ -203,7 +207,7 @@
     background-color: white;
     color: black;
     height: 50px;
-    width: 150px;
+    width: 220px;
     border-radius: 25px;
     margin: 25px auto;
 }
@@ -375,7 +379,7 @@
 
     .ARAPL .li {
 
-        font-size: 230%;
+        font-size: 200%;
         margin: 0 auto;
     }
 
@@ -510,8 +514,10 @@
         width: 150px;
         margin-left: auto;
         /* border: 1px solid black; */
+    }
 
-
+    .BackButton {
+        width: 150px;
     }
 
     .butDiv {

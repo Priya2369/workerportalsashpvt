@@ -38,7 +38,7 @@ import { style } from "@mui/system";
 toast.configure();
 
 const fontColor = {
-  style: { color: 'rgb(50, 50, 50)' }
+  style: { color: 'rgb(49, 68, 90)' }
 }
 
 const Singlejob = () => {
