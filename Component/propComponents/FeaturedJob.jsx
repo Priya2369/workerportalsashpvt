@@ -9,6 +9,9 @@ import BusinessIcon from "@material-ui/icons/Business";
 import LocationOnIcon from "@material-ui/icons/LocationOn";
 import DehazeIcon from "@material-ui/icons/Dehaze";
 import EventAvailableIcon from "@material-ui/icons/EventAvailable";
+import MenuBookIcon from '@mui/icons-material/MenuBook';
+import WorkOutlineIcon from '@mui/icons-material/WorkOutline';
+import StarOutlineIcon from '@mui/icons-material/StarOutline';
 import VisibilityIcon from "@material-ui/icons/Visibility";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import { API_CONSTANTS } from "../config/apiConstant";
@@ -51,9 +54,14 @@ export default function FeaturedJob(props) {
       <div className={styles.jobCard} onClick={click} id={props.id}>
         <div className={styles.main}>
 
-          <div className={styles.jobTitle}>
+          {props.jobRole && <div className={styles.skills}>
+
+            {props.jobRole}
+          </div>}
+
+          {/* <div className={styles.jobTitle}>
             <b>{capitalize(props.skill)}</b>
-          </div>
+          </div> */}
           <div className={styles.flexi}>
             {/* <div className={styles.visible}>
               <VisibilityIcon fontSize="small" />
@@ -62,46 +70,70 @@ export default function FeaturedJob(props) {
               
               <FavoriteIcon fontSize="small" />
             </div> */}
+            <div className={styles.skillr}>
 
-            <button
-              className={styles.apply}
+              &nbsp; {props.salary}
+            </div>
 
-            //onClick={handleLogin}
-            >
-              <b>View</b>
-            </button>
+
           </div>
         </div>
-        <div className={styles.skillsContainer}>
-          <div className={styles.company}>
-            <BusinessIcon fontSize="small" />
 
-            <span>Company  </span>{props.company}
-          </div>
-          <div className={styles.skills}>
+        <div className={styles.company}>
+          <BusinessIcon fontSize="small" />
+
+          &nbsp;{props.company}
+        </div>
+
+        <div className={styles.skillsContainer}>
+
+          {/* <div className={styles.skills}>
             <DehazeIcon fontSize="small" />
             <span className={styles.span}>Category   </span>{capitalize(props.skill)}
-          </div>
-          {props.jobRole&&<div className={styles.skills}>
-            <AssignmentIndIcon fontSize="small" />
-            <span className={styles.span}>Job Role  </span>{props.jobRole}
-          </div>}
+          </div> */}
+
           {/* <div className={styles.skilll}>
             <AttributionIcon fontSize="small"/>
             <span className={styles.span}>skill    </span>{props.skills}
           </div> */}
-          <div className={styles.skilll}>
-            <LocationOnIcon fontSize="small" />
-            <span className={styles.span}>Location    </span>{props.location}
+          <div className={styles.infodiv}>
+            <LocationOnIcon fontSize="small" /> &nbsp;
+            {props.location}
           </div>
-          <div className={styles.skillr}>
 
-            <b>₹</b> &nbsp; <span>Salary Range  </span> {props.salary}
+          <div className={styles.infodiv}>
+            <WorkOutlineIcon /> &nbsp;
+            {props.vacancy}
           </div>
-          <div className={styles.skillp}>
-            <EventAvailableIcon fontSize="small" />
-            <span>Posted On  </span> {props.postedOn}
+
+          <div className={styles.infodiv}>
+            <MenuBookIcon /> &nbsp;
+            {props.education}
           </div>
+
+          <div className={styles.infodiv}>
+            <StarOutlineIcon /> &nbsp;
+            {props.experience}
+          </div>
+
+
+
+
+        </div>
+
+
+
+        <button
+          className={styles.apply}
+
+        //onClick={handleLogin}
+        >
+          <b>View</b>
+        </button>
+
+        <div className={styles.skillp}>
+          <EventAvailableIcon fontSize="small" />&nbsp;
+          <span>Posted On</span>&nbsp;<b>:</b>&nbsp;{props.postedOn}
         </div>
       </div>
     </>
