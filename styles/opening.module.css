@@ -1,33 +1,505 @@
-.hedar{
+.hedar {
     width: 100%;
     /* height: 600px; */
-   
+
     background-color: white;
-    
+
 }
-.hedar h1{
+
+.slogan h2 {
+    font-size: 60px;
+    display: flex;
+    justify-content: center;
+    color: #36404c;
+    padding: 0px 10px;
+}
+
+.slogan p {
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    color: #36404c;
+    padding: 0px 10px;
+}
+
+.cardDiv {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 100px;
+}
+
+.card {
+    background-color: #79a377;
+    height: 280px;
+    width: 40%;
+    border-radius: 20px;
+    display: flex;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-out;
+}
+
+.card:hover {
+    transform: translate(0px, -10px);
+}
+
+.cardDiv .card h1 {
+    font-size: 30px;
+    color: white;
+}
+
+.cardButton {
+    width: 200px;
+    height: 50px;
+    background-color: #0056A2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: large;
+    margin-bottom: 50px;
+    cursor: pointer;
+    transition-duration: 0.3s;
+}
+
+.cardButton:hover {
+    background-color: rgba(0, 86, 162, 0.5);
+}
+
+.card img {
+    height: 200px;
+    width: 50%;
+    margin: auto;
+    padding-left: 10px;
+}
+
+.cardInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.divArea {
+    height: 400px;
+}
+
+.divArea h2 {
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    color: #36404c;
+}
+
+.flexdiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+    padding: 90px;
+}
+
+.firstdiv {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.firstdiv h1 {
+    color: #36404c;
+}
+
+.imgcard {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 3px 3px 7px gray;
+    width: 150px;
+    height: 60px;
+    margin: 10px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imgdiv {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: fit-content;
+    width: 80%;
+    margin-top: 20px;
+}
+
+.mapimg {
+    width: 80%;
+}
+
+.hedar .getjobdiv h1 {
+    font-size: 2.5em;
+    color: #36404c;
+    margin-top: 0px;
+    margin-bottom: 40px;
+}
+
+.jobdiv {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.icondiv {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.jobimg {
+    width: 130px;
+    height: 110px;
+    margin-bottom: 5px;
+}
+
+.jobcard {
+    width: 290px;
+    height: 170px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 40px 0px;
+    padding: 10px;
+    box-shadow: 5px 5px 10px gray;
+}
+
+.jobcard span {
+    color: white;
+    font-size: medium;
+    font-weight: bold;
+}
+
+.arrow {
+    color: #79a377;
+    font-size: 50px;
+    margin: auto 0px;
+}
+
+.employer {
+    height: 450px;
+    width: 100%;
+    background-color: #0056A2;
+    margin-top: 80px;
+    padding: 0px 50px;
+    display: flex;
+}
+
+.employerimgdiv {
+    display: flex;
+    justify-content: center;
+}
+
+.employerdesc {
+    width: 60%;
+    margin: auto 20px;
+}
+
+.para {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-top: 20px;
+}
+
+.icon {
+    color: white;
+    height: 60px;
+    width: 60px;
+}
+
+.employer p {
+    color: white;
+    font-size: 35px;
+    font-weight: 500;
+    margin: 15px;
+}
+
+.hedar .employer h1 {
+    font-size: 3em;
+    color: white;
+    padding: 10px;
+    display: flex;
+    margin: 0;
+    justify-content: flex-start;
+}
+
+.employerbtn {
+    width: 400px;
+    height: 60px;
+    border: none;
+    border-radius: 5px;
+    font-size: large;
+    font-weight: bold;
+    background-color: #53b427;
+    color: white;
+    margin-top: 20px;
+    cursor: pointer;
+    transition-duration: 0.3s;
+}
+
+.employerimg {
+    width: 400px;
+    height: 550px;
+    right: 100px;
+    transform: translateY(-100px);
+    position: absolute;
+}
+
+.download {
+    height: 700px;
+    background-color: #00bea3;
+    padding: 50px;
+    display: flex;
+}
+
+.hdivs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hedar .download h1 {
+    font-size: 50px;
+    display: flex;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+.hedar .download h2 {
+    font-size: 50px;
+    display: flex;
+    color: white;
+    font-weight: 300;
+    margin: 0;
+    padding: 0;
+}
+
+.link {
+    display: flex;
+    flex-direction: column;
+}
+
+.appdiv {
+    width: 60%;
+}
+
+.downloadimgdiv {
+    display: flex;
+    justify-content: center;
+}
+
+.downloadimg {
+    width: 20%;
+    height: 80%;
+    right: 80px;
+    position: absolute;
+}
+
+.inputpart {
+    background-color: white;
+    width: 500px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    padding: 5px;
+    padding-left: 20px;
+    border: 1px solid gray;
+    box-shadow: 5px 5px 10px gray;
+}
+
+.inputpart input {
+    width: 400px;
+    height: 45px;
+    border-radius: 30px;
+    border: none;
+    font-size: large;
+}
+
+.inputpart input::placeholder {
+    letter-spacing: 3px;
+    font-size: medium;
+}
+
+.inputpart input:focus {
+    outline: none;
+}
+
+.inputpart button {
+    width: 150px;
+    height: 50px;
+    background-color: #0056A2;
+    color: white;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    transition-duration: 0.3s;
+}
+
+.inputpart button:hover {
+    background-color: rgba(0, 86, 162, 0.5);
+}
+
+.googleplaydiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.googleplaydiv span {
+    font-size: large;
+    letter-spacing: 2px;
+    color: white;
+    font-weight: 600;
+}
+
+.googleplay {
+    width: 500px;
+    height: 180px;
+    margin-top: 30px;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+}
+
+.googleplay:hover {
+    opacity: 70%;
+}
+
+.qr {
+    width: 200px;
+    height: 200px;
+    margin-top: 45px;
+    border-radius: 15px;
+    box-shadow: 5px 5px 10px gray;
+}
+
+.qrdiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left: 10px;
+}
+
+.qrdiv span {
+    font-size: large;
+    letter-spacing: 2px;
+    color: white;
+    font-weight: 600;
+    margin-top: 30px;
+}
+
+.downloadway {
+    display: flex;
+    align-items: center;
+    width: 60%;
+    height: 80%;
+    padding: 80px;
+    gap: 30px;
+}
+
+.slidemain {
+    width: 100%;
+}
+
+.slideimg {
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+}
+
+.hedar .slideimg h1 {
+    font-size: 40px;
+    margin-bottom: 30px;
+    color: #36404c;
+}
+
+.slidediv {
+    margin: 0;
+}
+
+.slidediv h3 {
+    margin: 0;
+}
+
+.slidediv p {
+    font-weight: 600;
+    font-style: normal;
+}
+
+.slides {
+    height: 280px;
+    width: 90%;
+    background-color: #f1f1f1;
+    color: #36404c;
+    border-radius: 15px;
+    margin: auto;
+    margin-bottom: 30px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 5px 5px 10px gray;
+}
+
+.slides p {
+    font-style: italic;
+    font-size: medium;
+    margin: 0;
+}
+
+.slidediv {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: auto;
+}
+
+.slidediv img {
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+}
+
+.hedar h1 {
     margin-top: 40px;
     align-items: center;
     font-size: 20px;
 }
-  .btngrp{
-    width:100%;
+
+.btngrp {
+    width: 100%;
     height: 7rem;
-   
+
     display: flex;
-    
+
     /* align-content: center; */
     justify-content: center;
-   
+
 }
-.post{
-   /* width: 12rem;
+
+.post {
+    /* width: 12rem;
     height: 3.3rem;*/
-    
+
     width: 30vh;
     height: 8vh;
-    
-    
+
+
     margin-left: 0px;
     background-color: #53b427;
     border-radius: 5px;
@@ -39,19 +511,20 @@
     font-size: medium;
     outline: none;
 }
- /* .post a{
+
+/* .post a{
     color: white;
     font-size: medium;
 } */
- .srch{
-  /*  width: 12rem;
+.srch {
+    /*  width: 12rem;
     height: 3.3rem;*/
-    
+
     width: 30vh;
     height: 8vh;
-  
+
     margin-left: 40px;
-    background-color:#0056A2;
+    background-color: #0056A2;
     border-radius: 5px;
     box-shadow: 0 0 10px rgb(137, 125, 148);
     border: 0px;
@@ -59,28 +532,542 @@
     margin-top: 30px;
     outline: none;
 }
- .srch a{
+
+.srch a {
     color: white;
     font-size: medium;
 }
 
 
 
-@media (max-width:736px) {
-    .post{
+@media (max-width:768px) {
+    .slogan h2 {
+        font-size: 30px;
+    }
+
+    .slogan p {
+        font-size: 18px;
+    }
+
+    .cardDiv {
+        display: block;
+        padding: 10px 20px;
+    }
+
+    .card img {
+        height: 160px;
+    }
+
+    .card {
+        height: 200px;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .cardDiv .card h1 {
+        font-size: 20px;
+    }
+
+
+    .cardButton {
+        width: 150px;
+        height: 40px;
+        font-size: small;
+    }
+
+    .divArea h2 {
+        font-size: 25px;
+    }
+
+
+    .flexdiv {
+        display: block;
+        height: 40%;
+        padding: 10px;
+    }
+
+    .imgdiv {
+        flex-wrap: nowrap;
+        width: 100%;
+    }
+
+    .imgcard {
+        width: 150px;
+        height: 40px;
+        margin: 10px 5px;
+    }
+
+    .hedar .getjobdiv h1 {
+        font-size: 1.5em;
+    }
+
+    .jobdiv {
+        display: block;
+    }
+
+    .jobcard {
+        width: 80%;
+        height: 130px;
+        margin: 20px auto;
+    }
+
+    .arrow {
+        display: none;
+    }
+
+    .imgspan {
+        display: flex;
+        width: 100%;
+    }
+
+    .imgspan span {
+        width: 100%;
+        margin: auto;
+        padding-left: 20px;
+    }
+
+    .jobimg {
+        margin: auto;
+    }
+
+    .icondiv {
+        width: 50%;
+    }
+
+    .employer {
+        height: fit-content;
+        padding: 0px 10px;
+        flex-direction: column-reverse;
+    }
+
+    .employerimgdiv {
+        align-items: flex-end;
+    }
+
+    .employerimg {
+        width: 200px;
+        height: 300px;
+        bottom: 0;
+        transform: translateY(0);
+        position: static;
+    }
+
+    .employerdesc {
+        width: 100%;
+        padding-top: 0px;
+    }
+
+    .hedar .employer h1 {
+        font-size: 1.8em;
+        padding: 0px;
+        margin-top: 30px;
+    }
+
+    .para {
+        display: flex;
+        align-items: center;
+        gap: 0px;
+        padding-top: 10px;
+    }
+
+    .icon {
+        color: white;
+        height: 40px;
+        width: 40px;
+    }
+
+    .employer p {
+        font-size: 18px;
+        margin: 15px;
+    }
+
+    .employerbtndiv {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 30px 0px;
+    }
+
+    .employerbtn {
+        width: 250px;
+        height: 50px;
+        font-size: medium;
+    }
+
+    .download {
+        height: fit-content;
+        background-color: #00bea3;
+        padding: 10px;
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .downloadimg {
+        width: 40%;
+        height: 80%;
+        position: static;
+    }
+
+    .appdiv {
+        width: 100%;
+    }
+
+    .hedar .download h1 {
+        font-size: 22px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .hedar .download h2 {
+        font-size: 22px;
+        display: flex;
+    }
+
+    .downloadway {
+        display: block;
+        width: 100%;
+        height: 100%;
+        padding: 30px 10px;
+    }
+
+    .inputpart {
+        background-color: white;
+        width: 90%;
+        height: 50px;
+        margin: 0 auto;
+    }
+
+    .inputpart input {
+        width: 90%;
+        height: 40px;
+        font-size: small;
+    }
+
+    .inputpart input::placeholder {
+        letter-spacing: 2px;
+        font-size: small;
+    }
+
+    .inputpart button {
+        width: 130px;
+        height: 40px;
+    }
+
+    .googleplaydiv span {
+        font-size: small;
+    }
+
+    .googleplay {
+        width: 350px;
+        height: 130px;
+        margin-top: 20px;
+    }
+
+    .qr {
+        width: 150px;
+        height: 150px;
+        margin-top: 30px;
+    }
+
+    .qrdiv {
+        padding-left: 0px;
+    }
+
+    .qrdiv span {
+        font-size: small;
+        margin-top: 20px;
+    }
+
+    .slideimg {
+        height: 400px;
+    }
+
+    .hedar .slideimg h1 {
+        font-size: 30px;
+    }
+
+    .slides {
+        height: 230px;
+        padding: 15px;
+    }
+
+    .slides p {
+        font-size: small;
+    }
+
+    .slidediv h3 {
+        font-size: medium;
+    }
+
+    .slidediv img {
+        height: 50px;
+        width: 50px;
+    }
+
+    .post {
         width: 20vh;
         height: 5vh;
     }
-    .srch{
+
+    .srch {
         width: 20vh;
         height: 5vh;
     }
-    .hedar{
-       
+
+    .hedar {
+
         height: 1360px;
-        
-      
-       
+
+
+
+    }
+}
+
+@media (min-width: 768px) and (max-width:1200px) {
+    .slogan h2 {
+        font-size: 50px;
+    }
+
+    .slogan p {
+        font-size: 25px;
+    }
+
+    .cardDiv {
+        display: flex;
+        padding: 10px 20px;
+    }
+
+    .card {
+        height: 200px;
+        width: 350px;
+        margin-bottom: 20px;
+    }
+
+    .card img {
+        height: 160px;
+    }
+
+
+    .cardDiv .card h1 {
+        font-size: 20px;
+    }
+
+
+    .cardButton {
+        width: 150px;
+        height: 40px;
+        font-size: small;
+    }
+
+    .divArea h2 {
+        font-size: 25px;
+    }
+
+
+    .flexdiv {
+        display: flex;
+        height: 80%;
+        padding: 10px;
+    }
+
+    .imgdiv {
+        flex-wrap: wrap;
+    }
+
+    .imgcard {
+        width: 150px;
+        height: 60px;
+        margin: 10px 5px;
+    }
+
+    .hedar .getjobdiv h1 {
+        font-size: 2em;
+    }
+
+    .jobdiv {
+        display: block;
+    }
+
+    .jobcard {
+        width: 60%;
+        height: 130px;
+        margin: 20px auto;
+    }
+
+    .arrow {
+        display: none;
+    }
+
+    .imgspan {
+        display: flex;
+        width: 100%;
+    }
+
+    .imgspan span {
+        width: 100%;
+        margin: auto;
+        padding-left: 20px;
+        font-size: large;
+    }
+
+    .jobimg {
+        margin: auto;
+    }
+
+    .icondiv {
+        width: 50%;
+    }
+
+    .employer {
+        height: fit-content;
+        padding: 0px 10px;
+    }
+
+    .employerimgdiv {
+        align-items: flex-end;
+    }
+
+    .employerimg {
+        width: 300px;
+        height: 400px;
+        right: 10px;
+        transform: translateY(0);
+        position: absolute;
+    }
+
+    .hedar .employer h1 {
+        font-size: 2em;
+        padding: 0px;
+        margin-top: 30px;
+    }
+
+    .para {
+        display: flex;
+        align-items: center;
+        gap: 0px;
+        padding-top: 10px;
+    }
+
+    .icon {
+        color: white;
+        height: 40px;
+        width: 40px;
+    }
+
+    .employer p {
+        font-size: 18px;
+        margin: 15px;
+    }
+
+    .employerbtndiv {
+        padding: 30px 0px;
+    }
+
+    .employerbtn {
+        width: 300px;
+        height: 55px;
+        font-size: medium;
+    }
+
+    .download {
+        height: fit-content;
+        background-color: #00bea3;
+        padding: 10px;
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .downloadimg {
+        width: 20%;
+        height: 50%;
+        position: static;
+    }
+
+    .appdiv {
+        width: 100%;
+    }
+
+    .hedar .download h1 {
+        font-size: 30px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .hedar .download h2 {
+        font-size: 30px;
+    }
+
+    .downloadway {
+        display: block;
+        width: 100%;
+        height: 100%;
+        padding: 30px 10px;
+    }
+
+    .inputpart {
+        background-color: white;
+        width: 60%;
+        height: 50px;
+        margin: 0 auto;
+    }
+
+    .inputpart input {
+        width: 90%;
+        height: 40px;
+        font-size: small;
+    }
+
+    .inputpart input::placeholder {
+        letter-spacing: 2px;
+        font-size: small;
+    }
+
+    .inputpart button {
+        width: 130px;
+        height: 40px;
+    }
+
+    .googleplaydiv span {
+        font-size: small;
+    }
+
+    .googleplay {
+        width: 350px;
+        height: 130px;
+        margin-top: 20px;
+    }
+
+    .qr {
+        width: 150px;
+        height: 150px;
+        margin-top: 30px;
+    }
+
+    .qrdiv {
+        padding-left: 0px;
+    }
+
+    .qrdiv span {
+        font-size: small;
+        margin-top: 20px;
+    }
+
+    .slides {
+        height: fit-content;
+    }
+
+    .post {
+        width: 20vh;
+        height: 5vh;
+    }
+
+    .srch {
+        width: 20vh;
+        height: 5vh;
+    }
+
+    .hedar {
+        height: 1360px;
     }
 }
 
@@ -102,4 +1089,3 @@
           position: relative;
       }
 }*/
-
