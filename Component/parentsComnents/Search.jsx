@@ -6,6 +6,7 @@ import state from "../array/state";
 import skills from "../array/skill";
 import { userContext } from "../context/UserContext";
 import { useRouter } from "next/router";
+import { BsSearch } from 'react-icons/bs';
 
 // const JobSearchContext = createContext({});
 export default function Search() {
@@ -89,7 +90,7 @@ export default function Search() {
             name="search"
             value={jobType}
             onChange={(e) => jobTypeHandler(e.target.value)}
-            
+
           />
 
           <input
@@ -100,16 +101,16 @@ export default function Search() {
             name="search"
             value={location}
             onChange={(e) => LocationHandler(e.target.value)}
-            // onBlur={()=>{
-            //     setTimeout(()=>{
-            //         setSuggestions([])
-            //     },100);
+          // onBlur={()=>{
+          //     setTimeout(()=>{
+          //         setSuggestions([])
+          //     },100);
 
-            // }}
+          // }}
           />
 
           <button className="sbtn" type="submit" onClick={(e) => submit(e)}>
-            Search
+            <span> Search &nbsp; <BsSearch /></span>
           </button>
 
           <div className="suggestionCard">

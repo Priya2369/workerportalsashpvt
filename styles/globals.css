@@ -13,8 +13,9 @@ a {
 	color: inherit;
 	text-decoration: none;
 }
+
 /* css for header buttom code for active link */
-a.active{
+a.active {
 	text-decoration: underline;
 	color: #ff6600;
 }
@@ -22,17 +23,20 @@ a.active{
 * {
 	box-sizing: border-box;
 }
+
 /*Header Style*/
 header,
 footer {
 	position: absolute;
 	width: 100%;
 }
+
 .header {
 	background-color: rgba(255, 255, 255, 0.9);
 	overflow: hidden;
 	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
+
 .header a {
 	float: left;
 	font-family: inherit;
@@ -42,26 +46,32 @@ footer {
 	padding: 5px 8px;
 	text-decoration: none;
 }
+
 .header-logo {
 	float: left;
 	padding: 5px 8px;
 }
+
 .header-logo a {
 	float: left;
 	color: #0e0e00;
 	padding: 0px;
 }
+
 .float-right-header {
 	float: right;
 	padding: 5px 8px;
 }
+
 .float-right-header {
 	padding-left: 5px;
 	padding-bottom: 5px;
 }
+
 .header a:hover {
 	color: #ff6600;
 }
+
 .btn {
 	border-radius: 0;
 	font-family: 'Poppins', sans-serif;
@@ -86,6 +96,7 @@ footer {
 	line-height: 1;
 	padding: 23px;
 }
+
 .btn-maincolor2,
 .btn-maincolor3,
 .btn-maincolor4,
@@ -107,6 +118,7 @@ footer {
 	background-color: #36404c;
 	border: 3px solid #36404c;
 }
+
 .navbar {
 	overflow: hidden;
 	background-color: whitesmoke;
@@ -117,6 +129,7 @@ footer {
 	height: 70px;
 	margin: auto;
 }
+
 .navbar a {
 	float: left;
 	font-family: inherit;
@@ -127,6 +140,7 @@ footer {
 
 	text-decoration: none;
 }
+
 .navbar a:hover {
 	background-color: #ff6600;
 	border-bottom: solid #0056a2;
@@ -137,21 +151,25 @@ footer {
 
 	padding: 5px 8px;
 }
+
 .navbar-logo a {
 	float: left;
 	color: rgb(10, 10, 10);
 	padding: 0px 20px;
 }
+
 .float-navbar {
 	float: right;
 	color: rgb(10, 10, 10);
 	padding: 10px 16px;
 }
+
 .float-navbar a {
 	/* padding-left: 10px; */
 	padding-bottom: 10px;
 	color: rgb(10, 10, 10);
 }
+
 h1 {
 	margin: 0;
 	padding: 0px 50px;
@@ -167,6 +185,7 @@ h1 {
 	color: rgb(0, 0, 0);
 	border-top: 2px solid #ddd;
 }
+
 .inner-footer {
 	margin: 0;
 	padding: 0;
@@ -176,6 +195,7 @@ h1 {
 	align-items: center;
 	flex-direction: column;
 }
+
 .quick-links {
 	/* text-align: center; */
 	display: flex;
@@ -196,9 +216,11 @@ h1 {
 .quick-links ul {
 	display: flex;
 }
+
 .quick-items {
 	list-style: none;
 }
+
 .quick-items a {
 	text-decoration: none;
 	padding: 0px 35px;
@@ -206,12 +228,15 @@ h1 {
 	color: rgb(10, 10, 10);
 	transition: all 0.25s;
 }
+
 .quick-items a:hover {
 	color: #ff6600;
 }
+
 .social-links {
 	display: flex;
 }
+
 .social-links ul {
 	padding: 10px;
 	display: flex;
@@ -219,15 +244,18 @@ h1 {
 	height: 50px;
 	margin: auto;
 }
+
 .social-items {
 	list-style: none;
 }
+
 .social-items a {
 	padding: 10px 20px;
 	padding-bottom: 5px;
 	font-size: 20px;
 	color: #0056a2;
 }
+
 .social-items a:hover {
 	color: #ff6600;
 }
@@ -241,8 +269,9 @@ div .hori-line {
 	height: 1px;
 	/* width: 900px; */
 	width: 80%;
-  margin-top: 10px;
+	margin-top: 10px;
 }
+
 .outer-footer {
 	padding: 5px;
 	text-align: center;
@@ -250,13 +279,12 @@ div .hori-line {
 	color: #000;
 	background-color: rgb(241, 241, 241);
 }
-.SearchTitle{
-	
+
+.SearchTitle {
 	text-align: center;
 	/* display: flex; */
 	flex-wrap: wrap;
-	padding-top: 20px;
-	
+	padding-top: 50px;
 }
 
 /* Search....................... */
@@ -294,28 +322,30 @@ div .hori-line {
 	border-right: 1px solid black;
 	border-left: 1px solid black;
 	border-bottom: 1px solid black;*/
-	/* justify-content: center; */
-	/* width: 300px; */
-	/* cursor: pointer; */
-	/* float: inline-end; */
-	/* padding: 5px;  */
-	
-	/* flex-wrap: wrap; */
-    
-/* } */ 
+/* justify-content: center; */
+/* width: 300px; */
+/* cursor: pointer; */
+/* float: inline-end; */
+/* padding: 5px;  */
 
-.suggestionCard{
+/* flex-wrap: wrap; */
+
+/* } */
+
+.suggestionCard {
 	width: 100%;
-	
+
 	display: flex;
 	justify-content: center;
 }
-.suggestion{
-	
+
+.suggestion {
+
 	padding: 5px;
 	background-color: white;
 }
-.suggest{
+
+.suggest {
 	/* z-index: 2; */
 	width: 300px;
 	height: 100px;
@@ -324,10 +354,11 @@ div .hori-line {
 	word-wrap: break-word;
 	overflow: auto;
 }
-.suggestLocation{
+
+.suggestLocation {
 	/* z-index: 2; */
 	width: 300px;
-   height: 100px;
+	height: 100px;
 	font-size: medium;
 	word-wrap: break-word;
 	overflow: auto;
@@ -335,42 +366,56 @@ div .hori-line {
 }
 
 
-.suggestion:hover{
+.suggestion:hover {
 	background-color: #0056a2;
-	
+
 }
-.jobt{
+
+.jobt {
+	border-top-left-radius: 2em;
+	border-bottom-left-radius: 2em;
 	width: 300px;
-	height: 40px;
+	height: 60px;
+	background-color: rgb(255, 255, 255);
 	font-size: 18px;
 	text-align: center;
 	border: 0;
 	outline: none;
 	border-right: 1px solid black;
 }
-.dropbtn{
-width: 300px;
-height: 40px;
-background-color: rgb(255, 255, 255);
-border: 0;
-font-size: 18px;
-outline: none;
-text-align: center;
+
+.dropbtn {
+	width: 300px;
+	height: 60px;
+	background-color: rgb(255, 255, 255);
+	border: 0;
+	font-size: 18px;
+	outline: none;
+	text-align: center;
 
 
 }
-.sbtn{
-width: 150px;
-height: 40px;
-background-color: #0056a2;
-color: white;
-font-size: 18px;
-cursor: pointer;
-outline: none;
-border: 0;
+
+.sbtn {
+	border-top-right-radius: 2em;
+	border-bottom-right-radius: 2em;
+	width: 200px;
+	height: 60px;
+	background-color: #0056a2;
+	color: white;
+	font-size: 18px;
+	cursor: pointer;
+	outline: none;
+	border: 0;
 }
 
-.indexh1{
+.sbtn span {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.indexh1 {
 	padding-top: 20px;
 
 	/* border: 1px solid black; */
@@ -380,123 +425,138 @@ border: 0;
 /* ..................css for registration form and the registeration form path(
 	componets/parentComponets/Newuser
 )......................... */
- 
-  .custom-field {
+
+.custom-field {
 	display: flex;
 	font-family: sans-serif;
-    font-size: 16px;
-	  /* width: 100%; */
-    position: relative;
-    font-size: 14px;
-    border-top: 20px solid transparent;
-    margin-bottom: 5px;
-    --field-padding: 12px;
-  }
-  
-  .custom-field input {
-    border: none;
-    -webkit-appearance: none;
-    -ms-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    background: #f2f2f2;
-    padding: var(--field-padding);
-    border-radius: 3px;
-    width: 100%;
-    outline: none;
-    font-size: 14px;
-  }
-  .gridDiv{
+	font-size: 16px;
+	/* width: 100%; */
+	position: relative;
+	font-size: 14px;
+	border-top: 20px solid transparent;
+	margin-bottom: 5px;
+	--field-padding: 12px;
+}
+
+.custom-field input {
+	border: none;
+	-webkit-appearance: none;
+	-ms-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	background: #f2f2f2;
+	padding: var(--field-padding);
+	border-radius: 3px;
+	width: 100%;
+	outline: none;
+	font-size: 14px;
+}
+
+.gridDiv {
 	/* border: 1px solid black; */
 	width: 750px;
 	margin: auto;
 }
-.regDiv{
+
+.regDiv {
 	/* border: 1px solid black; */
 	margin-left: 5px;
 }
-  
-  .custom-field .placeholder {
-    position: absolute;
-    left: var(--field-padding);
-    width: calc(100% - (var(--field-padding) * 2));
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    top: 22px;
-    line-height: 100%;
-    transform: translateY(-50%);
-    color: #aaa;
-    transition: 
-      top 0.3s ease,
-      color 0.3s ease,
-      font-size 0.3s ease;
-  }
-  
-  .custom-field input.dirty + .placeholder,
-  .custom-field input:focus + .placeholder,
-  .custom-field input:not(:placeholder-shown) + .placeholder {
-    top: -10px;
-    font-size: 10px;
-    color: #4158d0;
-  }
-  
-  
-  .custom-field.two input {
-    border-radius: 0;
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px;
-    background:
-      linear-gradient(90deg,#4158d0, #4158d0) center bottom/0 0.15em no-repeat,
-      linear-gradient(90deg, #ccc, #ccc) left bottom/100% 0.15em no-repeat,
-      linear-gradient(90deg, #fafafa, #fafafa) left bottom/100% no-repeat;
-    transition: background-size 0.3s ease;
-  }
-  
-  .custom-field.two input.dirty,
-  .custom-field.two input:not(:placeholder-shown),
-  .custom-field.two input:focus {
-    background-size: 100% 0.15em, 100% 0.1em, 100%;
-  }
 
-  @media (max-width:736px) {
-	  .custom-field.two input{
-		  width: 250px;
-   
-	  }
-	  .regDiv{
+.custom-field .placeholder {
+	position: absolute;
+	left: var(--field-padding);
+	width: calc(100% - (var(--field-padding) * 2));
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	top: 22px;
+	line-height: 100%;
+	transform: translateY(-50%);
+	color: #aaa;
+	transition:
+		top 0.3s ease,
+		color 0.3s ease,
+		font-size 0.3s ease;
+}
+
+.custom-field input.dirty+.placeholder,
+.custom-field input:focus+.placeholder,
+.custom-field input:not(:placeholder-shown)+.placeholder {
+	top: -10px;
+	font-size: 10px;
+	color: #4158d0;
+}
+
+
+.custom-field.two input {
+	border-radius: 0;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+	background:
+		linear-gradient(90deg, #4158d0, #4158d0) center bottom/0 0.15em no-repeat,
+		linear-gradient(90deg, #ccc, #ccc) left bottom/100% 0.15em no-repeat,
+		linear-gradient(90deg, #fafafa, #fafafa) left bottom/100% no-repeat;
+	transition: background-size 0.3s ease;
+}
+
+.custom-field.two input.dirty,
+.custom-field.two input:not(:placeholder-shown),
+.custom-field.two input:focus {
+	background-size: 100% 0.15em, 100% 0.1em, 100%;
+}
+
+@media (max-width:736px) {
+	.custom-field.two input {
+		width: 250px;
+
+	}
+
+	.regDiv {
 		width: 340px;
 	}
-	.gridDiv{
+
+	.gridDiv {
 		width: 310px;
 	}
-	  .newUserBtns button{
-		  width: 100px;
 
-	  }
+	.newUserBtns button {
+		width: 100px;
 
-	  /* search */
-	  .suggest{
+	}
+
+	/* search */
+	.suggest {
 		width: 120px;
 		margin-left: -90px;
 	}
-	.suggestLocation{
+
+	.suggestLocation {
 		width: 120px;
 	}
-	.SearchTitle {
-	 display: flex;
-	 justify-content: center;
- }
-  }
-  
+}
 
-@media only screen and (max-width: 600px) {
-    .jobt {width: 30%;}
-	.dropbtn {width: 30%;
+
+@media only screen and (max-width: 768px) {
+	.jobt {
+		width: 35%;
+		height: 40px;
 		font-size: 11px;
-		text-align: center;}
-	.sbtn {width: 20%;}
-	.jobt{font-size: 10px;}
+	}
+
+	.dropbtn {
+		width: 35%;
+		height: 40px;
+		font-size: 11px;
+		text-align: center;
+	}
+
+	.sbtn {
+		width: 25%;
+		height: 40px;
+		font-size: 11px;
+	}
+
 	/* .dropbtn{font-size: 10px;}
 	.dropbtn{font-size: 10px;} */
-  }
+}
