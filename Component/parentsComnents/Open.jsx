@@ -162,7 +162,7 @@ export default function Open() {
                       <span>{getJobs.text}</span>
                     </div>
                   </div>
-                  {getJob.index == 3 ? null : <div key={indexx - 1} className={styles.arrow}><FaArrowRight /> </div>}
+                  {indexx== 3 ? null : <div className={styles.arrow}><FaArrowRight /> </div>}
                 </>
               )
             }
