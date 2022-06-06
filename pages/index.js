@@ -4,6 +4,7 @@ import TestimonialSlide from "../Component/parentsComnents/TestimonialSlide";
 
 import Flex from "../Component/Flex";
 import Footer from "../Component/Footer";
+import Whatsapp from "../Component/propComponents/Whatsapp";
 // import { JobSearchContext } from "../Component/context/JobSearchContext";
 
 
@@ -20,6 +21,8 @@ export default function Home() {
       </div> */}
 
       <Footer />
+      
+      <Whatsapp />
     </>
   );
 }

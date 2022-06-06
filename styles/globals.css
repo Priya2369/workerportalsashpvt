@@ -506,6 +506,27 @@ div .hori-line {
 	background-size: 100% 0.15em, 100% 0.1em, 100%;
 }
 
+.whatsapp {
+	position: fixed;
+	bottom: 15px;
+	right: 15px;
+}
+
+.whatsapp img {
+	height: 50px;
+	width: 50px;
+	border-radius: 15px;
+	margin: 0;
+	padding: 0;
+	cursor: pointer;
+	transition: 0.2s;
+	transition-timing-function: ease-in;
+}
+
+.whatsapp img:hover {
+	box-shadow: 5px 5px 10px black;
+}
+
 @media (max-width:736px) {
 	.custom-field.two input {
 		width: 250px;

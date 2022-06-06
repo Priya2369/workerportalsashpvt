@@ -162,7 +162,7 @@ export default function Open() {
                       <span>{getJobs.text}</span>
                     </div>
                   </div>
-                  {indexx== 3 ? null : <div className={styles.arrow}><FaArrowRight /> </div>}
+                  {indexx == 3 ? null : <div className={styles.arrow}><FaArrowRight /> </div>}
                 </>
               )
             }
@@ -208,10 +208,10 @@ export default function Open() {
             </div>
             <div className={styles.downloadway}>
               <div className={styles.link}>
-                <div className={styles.inputpart}>
+                {/* <div className={styles.inputpart}>
                   <input type="text" placeholder="Enter Mobile Number" />
                   <button>Get Link</button>
-                </div>
+                </div> */}
 
                 <div className={styles.googleplaydiv}>
                   <a href="https://play.google.com/store/apps/details?id=com.mosahay.android.app" rel="noopener noreferrer" target="_blank" >

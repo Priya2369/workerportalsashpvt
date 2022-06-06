@@ -255,9 +255,9 @@
 }
 
 .download {
-    height: 700px;
+    height: 670px;
     background-color: #00bea3;
-    padding: 50px;
+    padding: 20px;
     display: flex;
 }
 
@@ -297,16 +297,17 @@
 .downloadimgdiv {
     display: flex;
     justify-content: center;
+    margin-top: 30px;
 }
 
 .downloadimg {
-    width: 20%;
-    height: 80%;
-    right: 80px;
+    width: 300px;
+    height: 590px;
+    right: 120px;
     position: absolute;
 }
 
-.inputpart {
+/* .inputpart {
     background-color: white;
     width: 500px;
     height: 60px;
@@ -318,9 +319,9 @@
     padding-left: 20px;
     border: 1px solid gray;
     box-shadow: 5px 5px 10px gray;
-}
+} */
 
-.inputpart input {
+/* .inputpart input {
     width: 400px;
     height: 45px;
     border-radius: 30px;
@@ -335,9 +336,9 @@
 
 .inputpart input:focus {
     outline: none;
-}
+} */
 
-.inputpart button {
+/* .inputpart button {
     width: 150px;
     height: 50px;
     background-color: #0056A2;
@@ -350,13 +351,14 @@
 
 .inputpart button:hover {
     background-color: rgba(0, 86, 162, 0.5);
-}
+} */
 
 .googleplaydiv {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-bottom: 20px;
 }
 
 .googleplaydiv span {
@@ -369,7 +371,7 @@
 .googleplay {
     width: 500px;
     height: 180px;
-    margin-top: 30px;
+
     transition-duration: 0.3s;
     transition-timing-function: ease-out;
 }
@@ -381,7 +383,7 @@
 .qr {
     width: 200px;
     height: 200px;
-    margin-top: 45px;
+
     border-radius: 15px;
     box-shadow: 5px 5px 10px gray;
 }
@@ -392,6 +394,7 @@
     justify-content: center;
     align-items: center;
     padding-left: 10px;
+    margin-bottom: 20px;
 }
 
 .qrdiv span {
@@ -402,14 +405,14 @@
     margin-top: 30px;
 }
 
-.downloadway {
+/* .downloadway {
     display: flex;
     align-items: center;
     width: 60%;
     height: 80%;
     padding: 80px;
     gap: 30px;
-}
+} */
 
 .slidemain {
     width: 100%;
@@ -722,12 +725,12 @@
         display: flex;
     }
 
-    .downloadway {
+    /* .downloadway {
         display: block;
         width: 100%;
         height: 100%;
         padding: 30px 10px;
-    }
+    } */
 
     .inputpart {
         background-color: white;
@@ -760,6 +763,10 @@
         width: 350px;
         height: 130px;
         margin-top: 20px;
+    }
+
+    .googleplaydiv {
+        margin-bottom: 0px;
     }
 
     .qr {
@@ -814,11 +821,7 @@
     }
 
     .hedar {
-
-        height: 1360px;
-
-
-
+        height: 100%;
     }
 }
 
@@ -996,12 +999,13 @@
         font-size: 30px;
     }
 
+    /* 
     .downloadway {
         display: block;
         width: 100%;
         height: 100%;
         padding: 30px 10px;
-    }
+    } */
 
     .inputpart {
         background-color: white;
@@ -1036,6 +1040,10 @@
         margin-top: 20px;
     }
 
+    .googleplaydiv {
+        margin-bottom: 0px;
+    }
+
     .qr {
         width: 150px;
         height: 150px;
@@ -1053,6 +1061,7 @@
 
     .slides {
         height: fit-content;
+        min-height: 340px;
     }
 
     .post {
@@ -1066,7 +1075,7 @@
     }
 
     .hedar {
-        height: 1360px;
+        height: 100%;
     }
 }
 
