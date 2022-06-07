@@ -79,7 +79,7 @@
 }
 
 .divArea {
-    height: 400px;
+    height: fit-content;
 }
 
 .divArea h2 {
@@ -87,14 +87,15 @@
     display: flex;
     justify-content: center;
     color: #36404c;
+    margin-top: 50px;
 }
 
 .flexdiv {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 80%;
-    padding: 90px;
+    height: 100%;
+    padding: 0px 90px;
 }
 
 .firstdiv {
@@ -133,6 +134,10 @@
 
 .mapimg {
     width: 80%;
+}
+
+.getjobdiv {
+    margin-top: 70px;
 }
 
 .hedar .getjobdiv h1 {
