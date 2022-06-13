@@ -506,6 +506,27 @@ div .hori-line {
 	background-size: 100% 0.15em, 100% 0.1em, 100%;
 }
 
+.whatsapp {
+	position: fixed;
+	bottom: 15px;
+	right: 15px;
+}
+
+.whatsapp img {
+	height: 50px;
+	width: 50px;
+	border-radius: 15px;
+	margin: 0;
+	padding: 0;
+	cursor: pointer;
+	transition: 0.2s;
+	transition-timing-function: ease-in;
+}
+
+.whatsapp img:hover {
+	box-shadow: 5px 5px 10px black;
+}
+
 @media (max-width:736px) {
 	.custom-field.two input {
 		width: 250px;
@@ -527,12 +548,14 @@ div .hori-line {
 
 	/* search */
 	.suggest {
-		width: 120px;
+		width: 180px;
 		margin-left: -90px;
+		font-size: 11px;
 	}
 
 	.suggestLocation {
-		width: 120px;
+		width: 160px;
+		font-size: 11px;
 	}
 }
 
@@ -559,4 +582,36 @@ div .hori-line {
 
 	/* .dropbtn{font-size: 10px;}
 	.dropbtn{font-size: 10px;} */
+}
+
+@media (min-width: 768px) and (max-width:1200px) {
+	.jobt {
+		width: 250px;
+		height: 50px;
+		font-size: 15px;
+	}
+
+	.dropbtn {
+		width: 250px;
+		height: 50px;
+		font-size: 15px;
+	}
+
+	.sbtn {
+		width: 150px;
+		height: 50px;
+		font-size: 15px;
+	}
+
+	.suggest {
+		/* z-index: 2; */
+		width: 230px;
+		height: 100px;
+		margin-left: -130px;
+	}
+
+	.suggestLocation {
+		width: 250px;
+		height: 100px;
+	}
 }

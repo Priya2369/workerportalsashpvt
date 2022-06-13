@@ -56,7 +56,7 @@ export default function Open() {
   { url: "grab.png" },
   ]
 
-  const getJob = [{ text: "Register at Mosahay", color: "#36404c", url: "register.png" },
+  const getJob = [{ text: "Register at MoSahay", color: "#36404c", url: "register.png" },
   { text: "Search and apply for jobs", color: "#00bea3", url: "search.png" },
   { text: "Directly call or whatsapp employers", color: "#79a377", url: "call.png" },
   { text: "Give interview and get hired", color: "#f1894c", url: "interview.png" }]
@@ -94,7 +94,7 @@ export default function Open() {
         {/* putting people back to productive work section */}
         <div className={styles.slogan}>
           <h2>Putting People Back To Productive Work</h2>
-          <p>60+ Clients | 5000+ People in productive work</p>
+          <p>100+ Clients | 5000+ People in productive work</p>
         </div>
 
         <div className={styles.cardDiv}>
@@ -119,7 +119,7 @@ export default function Open() {
 
         {/* partner MNCs and SMEs */}
         <div className={styles.divArea}>
-          <h2>Trusted By 60+ Companies</h2>
+          <h2>Trusted By 100+ Companies</h2>
           <div className={styles.flexdiv}>
             <div className={styles.firstdiv}>
               <h1>Our partner MNCs</h1>
@@ -149,7 +149,7 @@ export default function Open() {
 
         {/* how to get job section */}
         <div className={styles.getjobdiv}>
-          <h1>How To Get A Job On Mosahay</h1>
+          <h1>How To Get A Job On MoSahay</h1>
           <div className={styles.jobdiv}>
             {
               getJob.map((getJobs, indexx) =>
@@ -162,7 +162,7 @@ export default function Open() {
                       <span>{getJobs.text}</span>
                     </div>
                   </div>
-                  {indexx== 3 ? null : <div className={styles.arrow}><FaArrowRight /> </div>}
+                  {indexx == 3 ? null : <div className={styles.arrow}><FaArrowRight /> </div>}
                 </>
               )
             }
@@ -175,7 +175,7 @@ export default function Open() {
             <img src="employer.png" alt="employer" className={styles.employerimg} />
           </div>
           <div className={styles.employerdesc}>
-            <h1>Mosahay For Employers</h1>
+            <h1>MoSahay For Employers</h1>
             <div className={styles.para}>
               <FaHandsHelping className={styles.icon} />
               <p>Hire Staff in 48 hours for free</p>
@@ -203,15 +203,15 @@ export default function Open() {
 
           <div className={styles.appdiv}>
             <div className={styles.hdivs}>
-              <h1>Download The Mosahay App</h1>
+              <h1>Download The MoSahay App</h1>
               <h2>And Find Jobs Easily</h2>
             </div>
             <div className={styles.downloadway}>
               <div className={styles.link}>
-                <div className={styles.inputpart}>
+                {/* <div className={styles.inputpart}>
                   <input type="text" placeholder="Enter Mobile Number" />
                   <button>Get Link</button>
-                </div>
+                </div> */}
 
                 <div className={styles.googleplaydiv}>
                   <a href="https://play.google.com/store/apps/details?id=com.mosahay.android.app" rel="noopener noreferrer" target="_blank" >
@@ -244,7 +244,7 @@ export default function Open() {
             {
               slidecard.map((slidercard, ind) =>
                 <div key={ind} className={styles.slides} >
-                  <p>{slidercard.text}</p>
+                  <p>"{slidercard.text}"</p>
                   <div className={styles.slidediv}>
                     <div>
                       <h3>{slidercard.name}</h3>
