@@ -29,6 +29,22 @@ export default function FeaturedJobJobs() {
     return string[0].toUpperCase() + string.slice(1);
   }
 
+  function capitalize(arr) {
+    const result = arr.map((element) => {
+      const word = element.split(" ")
+      const capital = word.map((letter) => letter[0].toUpperCase() + letter.slice(1))
+      return capital.join(" ")
+    })
+    return result
+  }
+
+  
+  function capitalizer(str) {
+      const word = str.split(" ")
+      const capital = word.map((letter) => letter[0].toUpperCase() + letter.slice(1))
+      return capital.join(" ")
+  }
+
   useEffect(() => {
     async function getData() {
       // if(searchLocation || searchJob|| jobType || shortJob){
@@ -90,7 +106,8 @@ export default function FeaturedJobJobs() {
             </>
           ) : (
             <div className={styles.gridview}>
-              {items.map((item, id) => {
+              {items.map((item, id) => { 
+                const locations = capitalize(item.location)
                 return (
                   <div key={id}>
                     <FeaturedJob
@@ -101,19 +118,19 @@ export default function FeaturedJobJobs() {
                       }
                       skill={item.sectors}
                       location={
-                        typeof item.location === "object"
-                          ? item.location.map((loc, id) => {
+                        typeof locations === "object"
+                          ? locations.map((loc, id) => {
                             return <span key={id}>{loc},</span>;
                           })
                           : item.location
                       }
                       jobRole={
-                        item.title
+                        item.title? capitalizer(item.title) : null
 
                       }
 
                       education={
-                        item.requirements[0].minimumEducation
+                        item.requirements[0].minimumEducation? item.requirements[0].minimumEducation: 'N/A'
                       }
 
                       vacancy={

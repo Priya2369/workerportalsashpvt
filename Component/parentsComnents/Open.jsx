@@ -45,7 +45,7 @@ export default function Open() {
   const imgg = [{ url: "flipkart.png" },
   { url: "swiggy.png" },
   { url: "ola.png" },
-  { url: "jioMart.png" },
+  { url: "JioMart.png" },
   { url: "reliance.png" },
   ]
 
