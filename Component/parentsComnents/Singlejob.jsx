@@ -394,7 +394,7 @@ const Singlejob = () => {
                         ? singleJob.requirements[0].minExperienceInYear +
                         "-" +
                         singleJob.requirements[0].maxExperienceInYear +
-                        " years"
+                        " Years"
                         : "Fresher"}
                   </p>
                 </div>
@@ -404,7 +404,7 @@ const Singlejob = () => {
                     <GTranslateIcon />
                     &nbsp;
                     <b>English</b>&nbsp;
-                    <b >:</b>&nbsp;{" "}
+                    <b >:</b>&nbsp;
                     <p>
                       {capitalizeFirstLetter(
                         singleJob.requirements[0].english
@@ -427,7 +427,7 @@ const Singlejob = () => {
                     <MenuBookIcon />
                     &nbsp;
                     <b>Education</b>&nbsp; <b className={styles.edu}>:</b>
-                    &nbsp;{" "}
+                    &nbsp;
                     <p>{singleJob.requirements[0].minimumEducation}</p>
                   </div>
                 ) : null}

@@ -134,7 +134,7 @@ export default function FeaturedJobJobs() {
                       }
 
                       vacancy={
-                        item.requirements[0].details[0].noOfPeople + " " + "openings"
+                        item.requirements[0].details[0].noOfPeople + " " + "Openings"
                       }
 
                       experience={
@@ -143,7 +143,7 @@ export default function FeaturedJobJobs() {
                           ? item.requirements[0].minExperienceInYear +
                           "-" +
                           item.requirements[0].maxExperienceInYear +
-                          " years"
+                          " Years"
                           : "Fresher"
                       }
                       // skills={
