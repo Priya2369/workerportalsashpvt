@@ -19,7 +19,7 @@ import SaveJob from "../propComponents/SaveJob";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import HourglassEmptyIcon from '@mui/icons-material/HourglassEmpty';
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
-import { TextField, Button, FormHelperText } from "@material-ui/core";
+import { TextField, Button, FormHelperText, capitalize } from "@material-ui/core";
 import { useRouter } from "next/router";
 import TextareaAutosize from '@mui/material/TextareaAutosize';
 
@@ -81,6 +81,21 @@ const Singlejob = () => {
     return string[0].toUpperCase() + string.slice(1);
   }
 
+  function capitalize(arr) {
+    const result = arr.map((element) => {
+      const word = element.split(" ")
+      const capital = word.map((letter) => letter[0].toUpperCase() + letter.slice(1))
+      return capital.join(" ")
+    })
+    return result
+  }
+
+  function capitalizer(str) {
+    const word = str.split(" ")
+    const capital = word.map((letter) => letter[0].toUpperCase() + letter.slice(1))
+    return capital.join(" ")
+}
+
   async function applyJob(e) {
     setApplyBtnHide(false);
     e.preventDefault();
@@ -140,6 +155,8 @@ const Singlejob = () => {
       }
     }
   }
+ 
+  const locations = singleJob.location? capitalize(singleJob.location): null
   // map for salary range
   let salaryRang;
   if (singleJob.requirements) {
@@ -273,7 +290,7 @@ const Singlejob = () => {
                 <li className={styles.li}>
                   {/* <WorkOutlineOutlinedIcon className={styles.icon} />
                 &nbsp; */}
-                  <b>{singleJob.title && singleJob.title}</b>
+                  <b>{capitalizer(singleJob.title) && capitalizer(singleJob.title)}</b>
                 </li>
 
                 <div className={styles.company}>
@@ -291,8 +308,8 @@ const Singlejob = () => {
                   <p>
                     <LocationOnOutlinedIcon />
                     &nbsp;
-                    {typeof singleJob.location === "object"
-                      ? singleJob.location.map((loc, id) => {
+                    {typeof locations === "object"
+                      ? locations.map((loc, id) => {
                         return <span key={id}>{loc},</span>;
                       })
                       : singleJob.location}
