@@ -124,7 +124,9 @@ const Header_Bottom = () => {
             <Link href="/">
               <a className={router.pathname == "/" ? "active" : ""}>Home</a>
             </Link>
-
+            <Link href="/jobs">
+              <a className={router.pathname == "/jobs" ? "active" : ""}>Jobs</a>
+            </Link>
             <Link href="/about">
               <a className={router.pathname == "/about" ? "active" : ""}>About</a>
             </Link>
