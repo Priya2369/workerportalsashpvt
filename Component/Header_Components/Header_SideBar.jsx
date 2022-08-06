@@ -6,11 +6,11 @@ import { useRouter } from 'next/router'
 import Cookies from 'universal-cookie';
 import Link from 'next/link';
 
-const buttonStyle={
-	margin: 12, 
-	borderRadius: 5, 
-	height: 30, 
-	fontSize:20
+const buttonStyle = {
+	margin: 12,
+	borderRadius: 5,
+	height: 30,
+	fontSize: 20
 }
 
 const styles = {
@@ -147,6 +147,9 @@ const Navigation = () => {
 					: <nav >
 						<Link href="/">
 							<a className="menuItem" onClick={ctx.toggleMenu} style={{ margin: 12 }}>Home</a>
+						</Link>
+						<Link href="/jobs">
+							<a className="menuItem" onClick={ctx.toggleMenu} style={{ margin: 12 }}>Jobs</a>
 						</Link>
 						<Link href="/about">
 							<a className="menuItem" onClick={ctx.toggleMenu} style={{ margin: 12 }} >About</a>

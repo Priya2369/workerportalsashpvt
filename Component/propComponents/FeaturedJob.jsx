@@ -98,7 +98,11 @@ export default function FeaturedJob(props) {
           </div> */}
           <div className={styles.infodiv}>
             <LocationOnIcon fontSize="small" /> &nbsp;
-            {props.location}
+            {props.location.length > 3 ?
+              <>
+                {`${(props.location.map((loc, i) => (loc.props.children[0]))).slice(0, 3)} ...`}
+              </>
+              : props.location}
           </div>
 
           <div className={styles.infodiv}>

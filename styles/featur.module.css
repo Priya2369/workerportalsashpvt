@@ -66,10 +66,15 @@
 }
 
 .infodiv {
+  overflow: auto;
   display: flex;
   align-items: center;
   font-size: small;
-  padding: 5px 0px;
+  padding: 5px 5px;
+}
+
+.infodiv::-webkit-scrollbar {
+  display: none;
 }
 
 .skillr {
@@ -160,7 +165,9 @@
   }
 
   .apply {
-    width: 80px;
+    width: 60px;
+    height: 30px;
+    margin-bottom: 5px;
   }
 
   .skillsContainer {
