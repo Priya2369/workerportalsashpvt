@@ -47,6 +47,9 @@ export default function Open() {
   { url: "ola.png" },
   { url: "JioMart.png" },
   { url: "reliance.png" },
+  {url: "himalaya.png"},
+  { url: "re-gen-insurance.png"},
+  { url: "tata-trent.png"},
   ]
 
   const imggg = [{ url: "monster.png" },
@@ -54,6 +57,9 @@ export default function Open() {
   { url: "zomato.png" },
   { url: "urban.png" },
   { url: "grab.png" },
+  {url:"hamleys.png"},
+  { url: "7-11.png"},
+  { url: "h&g.png"}
   ]
 
   const getJob = [{ text: "Register at MoSahay", color: "#36404c", url: "register.png" },
