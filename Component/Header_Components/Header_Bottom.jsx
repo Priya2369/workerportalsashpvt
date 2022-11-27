@@ -94,6 +94,9 @@ const Header_Bottom = () => {
             <Link href="/about">
               <a className={router.pathname == "/about" ? "active" : ""}>About</a>
             </Link>
+            <Link href="/achievement">
+              <a className={router.pathname == "/achievement" ? "active" : ""}>Achievement</a>
+            </Link>
             <Link href="/contact">
               <a className={router.pathname == "/contact" ? "active" : ""}>Contact</a>
             </Link>
@@ -129,6 +132,9 @@ const Header_Bottom = () => {
             </Link>
             <Link href="/about">
               <a className={router.pathname == "/about" ? "active" : ""}>About</a>
+            </Link>
+            <Link href="/achievement">
+              <a className={router.pathname == "/achievement" ? "active" : ""}>Achievement</a>
             </Link>
             <Link href="/contact">
               <a className={router.pathname == "/contact" ? "active" : ""}>Contact</a>

@@ -1,0 +1,141 @@
+.div {  
+    /* float:right; */
+    width: 80vw;
+}
+
+.HR_div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    border-bottom: 0.5px solid #D3D3D3;
+}
+
+.HR_div p {
+   font-size: 20px;
+   font-weight: bolder;
+   color: #36404c;
+}
+
+.HR_India {
+    display: block;
+    width: 50%;
+    height: 50%;
+    margin-top: 30px;
+    /* border: 1px solid black; */
+    margin-bottom: 20px;
+}
+.HR_IndiaAward {
+    display: block;
+    width: 50%;
+    height: 700px;
+    margin-top: 30px;
+    /* border: 1px solid black; */
+    margin-bottom: 20px;
+}
+
+
+.leftmargin {
+    margin-left: 900px;
+}
+
+.h2 {
+    font-family: sans-serif;
+    padding-left: 8px;
+    padding-bottom: 8px;
+    display: flex;
+    align-items: center;
+    font-size: 50px;
+    font-weight: bolder;
+    position: relative;
+    color: #36404c;
+}
+
+.achvmntIcon{
+    color: #f1894c;
+}
+
+.h2::after {
+    background-color: #f1894c;
+    bottom: 0;
+    content: "";
+    height: 5px;
+    left: 0;
+    position: absolute;
+    width: 50px;
+}
+
+.h3 {
+    font-family: sans-serif;
+    padding-bottom: 8px;
+    font-size: 30px;
+    font-weight: bolder;
+    position: relative;
+    color: #36404c;
+}
+
+.h3::after {
+    background-color: #0056A2;
+    bottom: 0;
+    content: "";
+    height: 5px;
+    left: 0;
+    position: absolute;
+    width: 50px;
+}
+
+.achievement {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+}
+
+@media only screen and (max-width: 1024px) {
+    .h2 {
+        font-size: 30px;
+    }
+
+    .HR_India {
+        width: 50%;
+        height: 50%;
+    }
+
+    .HR_IndiaAward {
+        width: 50%;
+        height: 50%;
+    }
+
+    .HR_div p {
+        font-size: 17px;
+     }
+
+}
+
+@media only screen and (max-width: 600px) {
+    .h2 {
+        font-size: 30px;
+    }
+
+    .div {
+        width: 350px;
+    }
+
+    .HR_div {
+        display: block;
+    }
+
+    .HR_India {
+        width: 100%;
+        height: 50%;
+    }
+
+    .HR_IndiaAward {
+        width: 100%;
+        height: 50%;
+    }
+
+    .HR_div p {
+        font-size: 17px;
+     }
+}
